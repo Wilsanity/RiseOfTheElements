@@ -6,6 +6,15 @@ Shader "TorchFlameShader"
 	{
 		[HideInInspector] _AlphaCutoff("Alpha Cutoff ", Range(0, 1)) = 0.5
 		[HideInInspector] _EmissionColor("Emission Color", Color) = (1,1,1,1)
+		[ASEBegin][HDR]_FlameShape("Flame Shape", 2D) = "white" {}
+		_NoiseSpeed("Noise Speed", Vector) = (0,-1,0,0)
+		_FlameSpeed("Flame Speed", Vector) = (0,-3,0,0)
+		_DistortionAmount("Distortion Amount", Float) = 0.05
+		_DistortionScale("Distortion Scale", Float) = 2
+		_FlameScale("Flame Scale", Float) = 2.22
+		[HDR]_BaseColor("Base Color", Color) = (1,0.31858,0,0)
+		_FlameWidth("Flame Width", Float) = 1.43
+		[ASEEnd]_AlphaClip("Alpha Clip", Range( 0 , 1)) = 0
 
 		//_TransmissionShadow( "Transmission Shadow", Range( 0, 1 ) ) = 0.5
 		//_TransStrength( "Trans Strength", Range( 0, 50 ) ) = 1
@@ -28,8 +37,8 @@ Shader "TorchFlameShader"
 
 		
 
-		Tags { "RenderPipeline"="UniversalPipeline" "RenderType"="Opaque" "Queue"="Geometry" }
-		Cull Back
+		Tags { "RenderPipeline"="UniversalPipeline" "RenderType"="Transparent" "Queue"="Transparent" }
+		Cull Off
 		AlphaToMask Off
 		
 		HLSLINCLUDE
@@ -149,8 +158,8 @@ Shader "TorchFlameShader"
 			Name "Forward"
 			Tags { "LightMode"="UniversalForward" }
 			
-			Blend One Zero, One Zero
-			ZWrite On
+			Blend SrcAlpha OneMinusSrcAlpha, One OneMinusSrcAlpha
+			ZWrite Off
 			ZTest LEqual
 			Offset 0 , 0
 			ColorMask RGBA
@@ -163,6 +172,8 @@ Shader "TorchFlameShader"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
+			#define _EMISSION
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 110000
 
 			
@@ -226,13 +237,21 @@ Shader "TorchFlameShader"
 				#if defined(ASE_NEEDS_FRAG_SCREEN_POSITION)
 				float4 screenPos : TEXCOORD6;
 				#endif
-				
+				float4 ase_texcoord7 : TEXCOORD7;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-						#ifdef _TRANSMISSION_ASE
+			float4 _BaseColor;
+			float2 _NoiseSpeed;
+			float2 _FlameSpeed;
+			float _DistortionScale;
+			float _DistortionAmount;
+			float _FlameScale;
+			float _FlameWidth;
+			float _AlphaClip;
+			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
 			#ifdef _TRANSLUCENCY_ASE
@@ -252,9 +271,65 @@ Shader "TorchFlameShader"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
+			sampler2D _FlameShape;
+
+
+			float2 UnityGradientNoiseDir( float2 p )
+			{
+				p = fmod(p , 289);
+				float x = fmod((34 * p.x + 1) * p.x , 289) + p.y;
+				x = fmod( (34 * x + 1) * x , 289);
+				x = frac( x / 41 ) * 2 - 1;
+				return normalize( float2(x - floor(x + 0.5 ), abs( x ) - 0.5 ) );
+			}
+			
+			float UnityGradientNoise( float2 UV, float Scale )
+			{
+				float2 p = UV * Scale;
+				float2 ip = floor( p );
+				float2 fp = frac( p );
+				float d00 = dot( UnityGradientNoiseDir( ip ), fp );
+				float d01 = dot( UnityGradientNoiseDir( ip + float2( 0, 1 ) ), fp - float2( 0, 1 ) );
+				float d10 = dot( UnityGradientNoiseDir( ip + float2( 1, 0 ) ), fp - float2( 1, 0 ) );
+				float d11 = dot( UnityGradientNoiseDir( ip + float2( 1, 1 ) ), fp - float2( 1, 1 ) );
+				fp = fp * fp * fp * ( fp * ( fp * 6 - 15 ) + 10 );
+				return lerp( lerp( d00, d01, fp.y ), lerp( d10, d11, fp.y ), fp.x ) + 0.5;
+			}
+			
+			inline float2 UnityVoronoiRandomVector( float2 UV, float offset )
+			{
+				float2x2 m = float2x2( 15.27, 47.63, 99.41, 89.98 );
+				UV = frac( sin(mul(UV, m) ) * 46839.32 );
+				return float2( sin(UV.y* +offset ) * 0.5 + 0.5, cos( UV.x* offset ) * 0.5 + 0.5 );
+			}
+			
+			//x - Out y - Cells
+			float3 UnityVoronoi( float2 UV, float AngleOffset, float CellDensity, inout float2 mr )
+			{
+				float2 g = floor( UV * CellDensity );
+				float2 f = frac( UV * CellDensity );
+				float t = 8.0;
+				float3 res = float3( 8.0, 0.0, 0.0 );
+			
+				for( int y = -1; y <= 1; y++ )
+				{
+					for( int x = -1; x <= 1; x++ )
+					{
+						float2 lattice = float2( x, y );
+						float2 offset = UnityVoronoiRandomVector( lattice + g, AngleOffset );
+						float d = distance( lattice + offset, f );
+			
+						if( d < res.x )
+						{
+							mr = f - lattice - offset;
+							res = float3( d, offset.x, offset.y );
+						}
+					}
+				}
+				return res;
+			}
 			
 
-			
 			VertexOutput VertexFunction( VertexInput v  )
 			{
 				VertexOutput o = (VertexOutput)0;
@@ -262,7 +337,10 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
+				o.ase_texcoord7.xy = v.texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord7.zw = 0;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
 				#else
@@ -448,16 +526,27 @@ Shader "TorchFlameShader"
 	
 				WorldViewDirection = SafeNormalize( WorldViewDirection );
 
+				float2 texCoord18 = IN.ase_texcoord7.xy * float2( 1,1 ) + float2( 0,0 );
+				float2 panner11 = ( _TimeParameters.x * _NoiseSpeed + float2( 0,0 ));
+				float2 texCoord9 = IN.ase_texcoord7.xy * float2( 1,1 ) + panner11;
+				float gradientNoise8 = UnityGradientNoise(texCoord9,_DistortionScale);
+				float2 temp_cast_0 = (gradientNoise8).xx;
+				float2 lerpResult17 = lerp( texCoord18 , temp_cast_0 , _DistortionAmount);
+				float2 panner24 = ( _TimeParameters.x * _FlameSpeed + float2( 0,0 ));
+				float2 texCoord28 = IN.ase_texcoord7.xy * float2( 1,1 ) + panner24;
+				float2 uv26 = 0;
+				float3 unityVoronoy26 = UnityVoronoi(texCoord28,7.85,_FlameScale,uv26);
+				float4 temp_output_33_0 = ( ( _BaseColor * tex2D( _FlameShape, lerpResult17 ) ) * ( gradientNoise8 * pow( unityVoronoy26.x , _FlameWidth ) ) );
 				
-				float3 Albedo = float3(0.5, 0.5, 0.5);
+				float3 Albedo = temp_output_33_0.rgb;
 				float3 Normal = float3(0, 0, 1);
-				float3 Emission = 0;
+				float3 Emission = temp_output_33_0.rgb;
 				float3 Specular = 0.5;
 				float Metallic = 0;
 				float Smoothness = 0.5;
 				float Occlusion = 1;
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = temp_output_33_0.r;
+				float AlphaClipThreshold = _AlphaClip;
 				float AlphaClipThresholdShadow = 0.5;
 				float3 BakedGI = 0;
 				float3 RefractionColor = 1;
@@ -629,6 +718,8 @@ Shader "TorchFlameShader"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
+			#define _EMISSION
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 110000
 
 			
@@ -650,7 +741,7 @@ Shader "TorchFlameShader"
 			{
 				float4 vertex : POSITION;
 				float3 ase_normal : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -663,13 +754,21 @@ Shader "TorchFlameShader"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 				float4 shadowCoord : TEXCOORD1;
 				#endif
-				
+				float4 ase_texcoord2 : TEXCOORD2;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-						#ifdef _TRANSMISSION_ASE
+			float4 _BaseColor;
+			float2 _NoiseSpeed;
+			float2 _FlameSpeed;
+			float _DistortionScale;
+			float _DistortionAmount;
+			float _FlameScale;
+			float _FlameWidth;
+			float _AlphaClip;
+			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
 			#ifdef _TRANSLUCENCY_ASE
@@ -689,9 +788,65 @@ Shader "TorchFlameShader"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
+			sampler2D _FlameShape;
+
+
+			float2 UnityGradientNoiseDir( float2 p )
+			{
+				p = fmod(p , 289);
+				float x = fmod((34 * p.x + 1) * p.x , 289) + p.y;
+				x = fmod( (34 * x + 1) * x , 289);
+				x = frac( x / 41 ) * 2 - 1;
+				return normalize( float2(x - floor(x + 0.5 ), abs( x ) - 0.5 ) );
+			}
+			
+			float UnityGradientNoise( float2 UV, float Scale )
+			{
+				float2 p = UV * Scale;
+				float2 ip = floor( p );
+				float2 fp = frac( p );
+				float d00 = dot( UnityGradientNoiseDir( ip ), fp );
+				float d01 = dot( UnityGradientNoiseDir( ip + float2( 0, 1 ) ), fp - float2( 0, 1 ) );
+				float d10 = dot( UnityGradientNoiseDir( ip + float2( 1, 0 ) ), fp - float2( 1, 0 ) );
+				float d11 = dot( UnityGradientNoiseDir( ip + float2( 1, 1 ) ), fp - float2( 1, 1 ) );
+				fp = fp * fp * fp * ( fp * ( fp * 6 - 15 ) + 10 );
+				return lerp( lerp( d00, d01, fp.y ), lerp( d10, d11, fp.y ), fp.x ) + 0.5;
+			}
+			
+			inline float2 UnityVoronoiRandomVector( float2 UV, float offset )
+			{
+				float2x2 m = float2x2( 15.27, 47.63, 99.41, 89.98 );
+				UV = frac( sin(mul(UV, m) ) * 46839.32 );
+				return float2( sin(UV.y* +offset ) * 0.5 + 0.5, cos( UV.x* offset ) * 0.5 + 0.5 );
+			}
+			
+			//x - Out y - Cells
+			float3 UnityVoronoi( float2 UV, float AngleOffset, float CellDensity, inout float2 mr )
+			{
+				float2 g = floor( UV * CellDensity );
+				float2 f = frac( UV * CellDensity );
+				float t = 8.0;
+				float3 res = float3( 8.0, 0.0, 0.0 );
+			
+				for( int y = -1; y <= 1; y++ )
+				{
+					for( int x = -1; x <= 1; x++ )
+					{
+						float2 lattice = float2( x, y );
+						float2 offset = UnityVoronoiRandomVector( lattice + g, AngleOffset );
+						float d = distance( lattice + offset, f );
+			
+						if( d < res.x )
+						{
+							mr = f - lattice - offset;
+							res = float3( d, offset.x, offset.y );
+						}
+					}
+				}
+				return res;
+			}
 			
 
-			
 			float3 _LightDirection;
 #if ASE_SRP_VERSION >= 110000 
 			float3 _LightPosition;
@@ -703,7 +858,10 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO( o );
 
+				o.ase_texcoord2.xy = v.ase_texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord2.zw = 0;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
 				#else
@@ -760,7 +918,8 @@ Shader "TorchFlameShader"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 ase_normal : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
+
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -777,7 +936,7 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.vertex;
 				o.ase_normal = v.ase_normal;
-				
+				o.ase_texcoord = v.ase_texcoord;
 				return o;
 			}
 
@@ -816,7 +975,7 @@ Shader "TorchFlameShader"
 				VertexInput o = (VertexInput) 0;
 				o.vertex = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.ase_normal = patch[0].ase_normal * bary.x + patch[1].ase_normal * bary.y + patch[2].ase_normal * bary.z;
-				
+				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -862,9 +1021,20 @@ Shader "TorchFlameShader"
 					#endif
 				#endif
 
+				float2 texCoord18 = IN.ase_texcoord2.xy * float2( 1,1 ) + float2( 0,0 );
+				float2 panner11 = ( _TimeParameters.x * _NoiseSpeed + float2( 0,0 ));
+				float2 texCoord9 = IN.ase_texcoord2.xy * float2( 1,1 ) + panner11;
+				float gradientNoise8 = UnityGradientNoise(texCoord9,_DistortionScale);
+				float2 temp_cast_0 = (gradientNoise8).xx;
+				float2 lerpResult17 = lerp( texCoord18 , temp_cast_0 , _DistortionAmount);
+				float2 panner24 = ( _TimeParameters.x * _FlameSpeed + float2( 0,0 ));
+				float2 texCoord28 = IN.ase_texcoord2.xy * float2( 1,1 ) + panner24;
+				float2 uv26 = 0;
+				float3 unityVoronoy26 = UnityVoronoi(texCoord28,7.85,_FlameScale,uv26);
+				float4 temp_output_33_0 = ( ( _BaseColor * tex2D( _FlameShape, lerpResult17 ) ) * ( gradientNoise8 * pow( unityVoronoy26.x , _FlameWidth ) ) );
 				
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = temp_output_33_0.r;
+				float AlphaClipThreshold = _AlphaClip;
 				float AlphaClipThresholdShadow = 0.5;
 				#ifdef ASE_DEPTH_WRITE_ON
 				float DepthValue = 0;
@@ -908,6 +1078,8 @@ Shader "TorchFlameShader"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
+			#define _EMISSION
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 110000
 
 			
@@ -927,7 +1099,7 @@ Shader "TorchFlameShader"
 			{
 				float4 vertex : POSITION;
 				float3 ase_normal : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -940,13 +1112,21 @@ Shader "TorchFlameShader"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 				float4 shadowCoord : TEXCOORD1;
 				#endif
-				
+				float4 ase_texcoord2 : TEXCOORD2;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-						#ifdef _TRANSMISSION_ASE
+			float4 _BaseColor;
+			float2 _NoiseSpeed;
+			float2 _FlameSpeed;
+			float _DistortionScale;
+			float _DistortionAmount;
+			float _FlameScale;
+			float _FlameWidth;
+			float _AlphaClip;
+			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
 			#ifdef _TRANSLUCENCY_ASE
@@ -966,9 +1146,65 @@ Shader "TorchFlameShader"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
+			sampler2D _FlameShape;
+
+
+			float2 UnityGradientNoiseDir( float2 p )
+			{
+				p = fmod(p , 289);
+				float x = fmod((34 * p.x + 1) * p.x , 289) + p.y;
+				x = fmod( (34 * x + 1) * x , 289);
+				x = frac( x / 41 ) * 2 - 1;
+				return normalize( float2(x - floor(x + 0.5 ), abs( x ) - 0.5 ) );
+			}
+			
+			float UnityGradientNoise( float2 UV, float Scale )
+			{
+				float2 p = UV * Scale;
+				float2 ip = floor( p );
+				float2 fp = frac( p );
+				float d00 = dot( UnityGradientNoiseDir( ip ), fp );
+				float d01 = dot( UnityGradientNoiseDir( ip + float2( 0, 1 ) ), fp - float2( 0, 1 ) );
+				float d10 = dot( UnityGradientNoiseDir( ip + float2( 1, 0 ) ), fp - float2( 1, 0 ) );
+				float d11 = dot( UnityGradientNoiseDir( ip + float2( 1, 1 ) ), fp - float2( 1, 1 ) );
+				fp = fp * fp * fp * ( fp * ( fp * 6 - 15 ) + 10 );
+				return lerp( lerp( d00, d01, fp.y ), lerp( d10, d11, fp.y ), fp.x ) + 0.5;
+			}
+			
+			inline float2 UnityVoronoiRandomVector( float2 UV, float offset )
+			{
+				float2x2 m = float2x2( 15.27, 47.63, 99.41, 89.98 );
+				UV = frac( sin(mul(UV, m) ) * 46839.32 );
+				return float2( sin(UV.y* +offset ) * 0.5 + 0.5, cos( UV.x* offset ) * 0.5 + 0.5 );
+			}
+			
+			//x - Out y - Cells
+			float3 UnityVoronoi( float2 UV, float AngleOffset, float CellDensity, inout float2 mr )
+			{
+				float2 g = floor( UV * CellDensity );
+				float2 f = frac( UV * CellDensity );
+				float t = 8.0;
+				float3 res = float3( 8.0, 0.0, 0.0 );
+			
+				for( int y = -1; y <= 1; y++ )
+				{
+					for( int x = -1; x <= 1; x++ )
+					{
+						float2 lattice = float2( x, y );
+						float2 offset = UnityVoronoiRandomVector( lattice + g, AngleOffset );
+						float d = distance( lattice + offset, f );
+			
+						if( d < res.x )
+						{
+							mr = f - lattice - offset;
+							res = float3( d, offset.x, offset.y );
+						}
+					}
+				}
+				return res;
+			}
 			
 
-			
 			VertexOutput VertexFunction( VertexInput v  )
 			{
 				VertexOutput o = (VertexOutput)0;
@@ -976,7 +1212,10 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
+				o.ase_texcoord2.xy = v.ase_texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord2.zw = 0;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
 				#else
@@ -1012,7 +1251,8 @@ Shader "TorchFlameShader"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 ase_normal : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
+
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1029,7 +1269,7 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.vertex;
 				o.ase_normal = v.ase_normal;
-				
+				o.ase_texcoord = v.ase_texcoord;
 				return o;
 			}
 
@@ -1068,7 +1308,7 @@ Shader "TorchFlameShader"
 				VertexInput o = (VertexInput) 0;
 				o.vertex = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.ase_normal = patch[0].ase_normal * bary.x + patch[1].ase_normal * bary.y + patch[2].ase_normal * bary.z;
-				
+				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -1113,9 +1353,20 @@ Shader "TorchFlameShader"
 					#endif
 				#endif
 
+				float2 texCoord18 = IN.ase_texcoord2.xy * float2( 1,1 ) + float2( 0,0 );
+				float2 panner11 = ( _TimeParameters.x * _NoiseSpeed + float2( 0,0 ));
+				float2 texCoord9 = IN.ase_texcoord2.xy * float2( 1,1 ) + panner11;
+				float gradientNoise8 = UnityGradientNoise(texCoord9,_DistortionScale);
+				float2 temp_cast_0 = (gradientNoise8).xx;
+				float2 lerpResult17 = lerp( texCoord18 , temp_cast_0 , _DistortionAmount);
+				float2 panner24 = ( _TimeParameters.x * _FlameSpeed + float2( 0,0 ));
+				float2 texCoord28 = IN.ase_texcoord2.xy * float2( 1,1 ) + panner24;
+				float2 uv26 = 0;
+				float3 unityVoronoy26 = UnityVoronoi(texCoord28,7.85,_FlameScale,uv26);
+				float4 temp_output_33_0 = ( ( _BaseColor * tex2D( _FlameShape, lerpResult17 ) ) * ( gradientNoise8 * pow( unityVoronoy26.x , _FlameWidth ) ) );
 				
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = temp_output_33_0.r;
+				float AlphaClipThreshold = _AlphaClip;
 				#ifdef ASE_DEPTH_WRITE_ON
 				float DepthValue = 0;
 				#endif
@@ -1152,6 +1403,8 @@ Shader "TorchFlameShader"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
+			#define _EMISSION
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 110000
 
 			
@@ -1175,7 +1428,7 @@ Shader "TorchFlameShader"
 				float3 ase_normal : NORMAL;
 				float4 texcoord1 : TEXCOORD1;
 				float4 texcoord2 : TEXCOORD2;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1188,13 +1441,21 @@ Shader "TorchFlameShader"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 				float4 shadowCoord : TEXCOORD1;
 				#endif
-				
+				float4 ase_texcoord2 : TEXCOORD2;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-						#ifdef _TRANSMISSION_ASE
+			float4 _BaseColor;
+			float2 _NoiseSpeed;
+			float2 _FlameSpeed;
+			float _DistortionScale;
+			float _DistortionAmount;
+			float _FlameScale;
+			float _FlameWidth;
+			float _AlphaClip;
+			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
 			#ifdef _TRANSLUCENCY_ASE
@@ -1214,9 +1475,65 @@ Shader "TorchFlameShader"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
+			sampler2D _FlameShape;
+
+
+			float2 UnityGradientNoiseDir( float2 p )
+			{
+				p = fmod(p , 289);
+				float x = fmod((34 * p.x + 1) * p.x , 289) + p.y;
+				x = fmod( (34 * x + 1) * x , 289);
+				x = frac( x / 41 ) * 2 - 1;
+				return normalize( float2(x - floor(x + 0.5 ), abs( x ) - 0.5 ) );
+			}
+			
+			float UnityGradientNoise( float2 UV, float Scale )
+			{
+				float2 p = UV * Scale;
+				float2 ip = floor( p );
+				float2 fp = frac( p );
+				float d00 = dot( UnityGradientNoiseDir( ip ), fp );
+				float d01 = dot( UnityGradientNoiseDir( ip + float2( 0, 1 ) ), fp - float2( 0, 1 ) );
+				float d10 = dot( UnityGradientNoiseDir( ip + float2( 1, 0 ) ), fp - float2( 1, 0 ) );
+				float d11 = dot( UnityGradientNoiseDir( ip + float2( 1, 1 ) ), fp - float2( 1, 1 ) );
+				fp = fp * fp * fp * ( fp * ( fp * 6 - 15 ) + 10 );
+				return lerp( lerp( d00, d01, fp.y ), lerp( d10, d11, fp.y ), fp.x ) + 0.5;
+			}
+			
+			inline float2 UnityVoronoiRandomVector( float2 UV, float offset )
+			{
+				float2x2 m = float2x2( 15.27, 47.63, 99.41, 89.98 );
+				UV = frac( sin(mul(UV, m) ) * 46839.32 );
+				return float2( sin(UV.y* +offset ) * 0.5 + 0.5, cos( UV.x* offset ) * 0.5 + 0.5 );
+			}
+			
+			//x - Out y - Cells
+			float3 UnityVoronoi( float2 UV, float AngleOffset, float CellDensity, inout float2 mr )
+			{
+				float2 g = floor( UV * CellDensity );
+				float2 f = frac( UV * CellDensity );
+				float t = 8.0;
+				float3 res = float3( 8.0, 0.0, 0.0 );
+			
+				for( int y = -1; y <= 1; y++ )
+				{
+					for( int x = -1; x <= 1; x++ )
+					{
+						float2 lattice = float2( x, y );
+						float2 offset = UnityVoronoiRandomVector( lattice + g, AngleOffset );
+						float d = distance( lattice + offset, f );
+			
+						if( d < res.x )
+						{
+							mr = f - lattice - offset;
+							res = float3( d, offset.x, offset.y );
+						}
+					}
+				}
+				return res;
+			}
 			
 
-			
 			VertexOutput VertexFunction( VertexInput v  )
 			{
 				VertexOutput o = (VertexOutput)0;
@@ -1224,7 +1541,10 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
+				o.ase_texcoord2.xy = v.ase_texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord2.zw = 0;
 				
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
@@ -1262,7 +1582,8 @@ Shader "TorchFlameShader"
 				float3 ase_normal : NORMAL;
 				float4 texcoord1 : TEXCOORD1;
 				float4 texcoord2 : TEXCOORD2;
-				
+				float4 ase_texcoord : TEXCOORD0;
+
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1281,7 +1602,7 @@ Shader "TorchFlameShader"
 				o.ase_normal = v.ase_normal;
 				o.texcoord1 = v.texcoord1;
 				o.texcoord2 = v.texcoord2;
-				
+				o.ase_texcoord = v.ase_texcoord;
 				return o;
 			}
 
@@ -1322,7 +1643,7 @@ Shader "TorchFlameShader"
 				o.ase_normal = patch[0].ase_normal * bary.x + patch[1].ase_normal * bary.y + patch[2].ase_normal * bary.z;
 				o.texcoord1 = patch[0].texcoord1 * bary.x + patch[1].texcoord1 * bary.y + patch[2].texcoord1 * bary.z;
 				o.texcoord2 = patch[0].texcoord2 * bary.x + patch[1].texcoord2 * bary.y + patch[2].texcoord2 * bary.z;
-				
+				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -1358,12 +1679,23 @@ Shader "TorchFlameShader"
 					#endif
 				#endif
 
+				float2 texCoord18 = IN.ase_texcoord2.xy * float2( 1,1 ) + float2( 0,0 );
+				float2 panner11 = ( _TimeParameters.x * _NoiseSpeed + float2( 0,0 ));
+				float2 texCoord9 = IN.ase_texcoord2.xy * float2( 1,1 ) + panner11;
+				float gradientNoise8 = UnityGradientNoise(texCoord9,_DistortionScale);
+				float2 temp_cast_0 = (gradientNoise8).xx;
+				float2 lerpResult17 = lerp( texCoord18 , temp_cast_0 , _DistortionAmount);
+				float2 panner24 = ( _TimeParameters.x * _FlameSpeed + float2( 0,0 ));
+				float2 texCoord28 = IN.ase_texcoord2.xy * float2( 1,1 ) + panner24;
+				float2 uv26 = 0;
+				float3 unityVoronoy26 = UnityVoronoi(texCoord28,7.85,_FlameScale,uv26);
+				float4 temp_output_33_0 = ( ( _BaseColor * tex2D( _FlameShape, lerpResult17 ) ) * ( gradientNoise8 * pow( unityVoronoy26.x , _FlameWidth ) ) );
 				
 				
-				float3 Albedo = float3(0.5, 0.5, 0.5);
-				float3 Emission = 0;
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float3 Albedo = temp_output_33_0.rgb;
+				float3 Emission = temp_output_33_0.rgb;
+				float Alpha = temp_output_33_0.r;
+				float AlphaClipThreshold = _AlphaClip;
 
 				#ifdef _ALPHATEST_ON
 					clip(Alpha - AlphaClipThreshold);
@@ -1385,8 +1717,8 @@ Shader "TorchFlameShader"
 			Name "Universal2D"
 			Tags { "LightMode"="Universal2D" }
 
-			Blend One Zero, One Zero
-			ZWrite On
+			Blend SrcAlpha OneMinusSrcAlpha, One OneMinusSrcAlpha
+			ZWrite Off
 			ZTest LEqual
 			Offset 0 , 0
 			ColorMask RGBA
@@ -1398,6 +1730,8 @@ Shader "TorchFlameShader"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
+			#define _EMISSION
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 110000
 
 			
@@ -1420,7 +1754,7 @@ Shader "TorchFlameShader"
 			{
 				float4 vertex : POSITION;
 				float3 ase_normal : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1433,13 +1767,21 @@ Shader "TorchFlameShader"
 				#if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR) && defined(ASE_NEEDS_FRAG_SHADOWCOORDS)
 				float4 shadowCoord : TEXCOORD1;
 				#endif
-				
+				float4 ase_texcoord2 : TEXCOORD2;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-						#ifdef _TRANSMISSION_ASE
+			float4 _BaseColor;
+			float2 _NoiseSpeed;
+			float2 _FlameSpeed;
+			float _DistortionScale;
+			float _DistortionAmount;
+			float _FlameScale;
+			float _FlameWidth;
+			float _AlphaClip;
+			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
 			#ifdef _TRANSLUCENCY_ASE
@@ -1459,9 +1801,65 @@ Shader "TorchFlameShader"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
+			sampler2D _FlameShape;
+
+
+			float2 UnityGradientNoiseDir( float2 p )
+			{
+				p = fmod(p , 289);
+				float x = fmod((34 * p.x + 1) * p.x , 289) + p.y;
+				x = fmod( (34 * x + 1) * x , 289);
+				x = frac( x / 41 ) * 2 - 1;
+				return normalize( float2(x - floor(x + 0.5 ), abs( x ) - 0.5 ) );
+			}
+			
+			float UnityGradientNoise( float2 UV, float Scale )
+			{
+				float2 p = UV * Scale;
+				float2 ip = floor( p );
+				float2 fp = frac( p );
+				float d00 = dot( UnityGradientNoiseDir( ip ), fp );
+				float d01 = dot( UnityGradientNoiseDir( ip + float2( 0, 1 ) ), fp - float2( 0, 1 ) );
+				float d10 = dot( UnityGradientNoiseDir( ip + float2( 1, 0 ) ), fp - float2( 1, 0 ) );
+				float d11 = dot( UnityGradientNoiseDir( ip + float2( 1, 1 ) ), fp - float2( 1, 1 ) );
+				fp = fp * fp * fp * ( fp * ( fp * 6 - 15 ) + 10 );
+				return lerp( lerp( d00, d01, fp.y ), lerp( d10, d11, fp.y ), fp.x ) + 0.5;
+			}
+			
+			inline float2 UnityVoronoiRandomVector( float2 UV, float offset )
+			{
+				float2x2 m = float2x2( 15.27, 47.63, 99.41, 89.98 );
+				UV = frac( sin(mul(UV, m) ) * 46839.32 );
+				return float2( sin(UV.y* +offset ) * 0.5 + 0.5, cos( UV.x* offset ) * 0.5 + 0.5 );
+			}
+			
+			//x - Out y - Cells
+			float3 UnityVoronoi( float2 UV, float AngleOffset, float CellDensity, inout float2 mr )
+			{
+				float2 g = floor( UV * CellDensity );
+				float2 f = frac( UV * CellDensity );
+				float t = 8.0;
+				float3 res = float3( 8.0, 0.0, 0.0 );
+			
+				for( int y = -1; y <= 1; y++ )
+				{
+					for( int x = -1; x <= 1; x++ )
+					{
+						float2 lattice = float2( x, y );
+						float2 offset = UnityVoronoiRandomVector( lattice + g, AngleOffset );
+						float d = distance( lattice + offset, f );
+			
+						if( d < res.x )
+						{
+							mr = f - lattice - offset;
+							res = float3( d, offset.x, offset.y );
+						}
+					}
+				}
+				return res;
+			}
 			
 
-			
 			VertexOutput VertexFunction( VertexInput v  )
 			{
 				VertexOutput o = (VertexOutput)0;
@@ -1469,7 +1867,10 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID( v, o );
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO( o );
 
+				o.ase_texcoord2.xy = v.ase_texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord2.zw = 0;
 				
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
@@ -1508,7 +1909,8 @@ Shader "TorchFlameShader"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 ase_normal : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
+
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1525,7 +1927,7 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.vertex;
 				o.ase_normal = v.ase_normal;
-				
+				o.ase_texcoord = v.ase_texcoord;
 				return o;
 			}
 
@@ -1564,7 +1966,7 @@ Shader "TorchFlameShader"
 				VertexInput o = (VertexInput) 0;
 				o.vertex = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.ase_normal = patch[0].ase_normal * bary.x + patch[1].ase_normal * bary.y + patch[2].ase_normal * bary.z;
-				
+				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -1600,11 +2002,22 @@ Shader "TorchFlameShader"
 					#endif
 				#endif
 
+				float2 texCoord18 = IN.ase_texcoord2.xy * float2( 1,1 ) + float2( 0,0 );
+				float2 panner11 = ( _TimeParameters.x * _NoiseSpeed + float2( 0,0 ));
+				float2 texCoord9 = IN.ase_texcoord2.xy * float2( 1,1 ) + panner11;
+				float gradientNoise8 = UnityGradientNoise(texCoord9,_DistortionScale);
+				float2 temp_cast_0 = (gradientNoise8).xx;
+				float2 lerpResult17 = lerp( texCoord18 , temp_cast_0 , _DistortionAmount);
+				float2 panner24 = ( _TimeParameters.x * _FlameSpeed + float2( 0,0 ));
+				float2 texCoord28 = IN.ase_texcoord2.xy * float2( 1,1 ) + panner24;
+				float2 uv26 = 0;
+				float3 unityVoronoy26 = UnityVoronoi(texCoord28,7.85,_FlameScale,uv26);
+				float4 temp_output_33_0 = ( ( _BaseColor * tex2D( _FlameShape, lerpResult17 ) ) * ( gradientNoise8 * pow( unityVoronoy26.x , _FlameWidth ) ) );
 				
 				
-				float3 Albedo = float3(0.5, 0.5, 0.5);
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float3 Albedo = temp_output_33_0.rgb;
+				float Alpha = temp_output_33_0.r;
+				float AlphaClipThreshold = _AlphaClip;
 
 				half4 color = half4( Albedo, Alpha );
 
@@ -1636,6 +2049,8 @@ Shader "TorchFlameShader"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
+			#define _EMISSION
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 110000
 
 			
@@ -1655,7 +2070,7 @@ Shader "TorchFlameShader"
 			{
 				float4 vertex : POSITION;
 				float3 ase_normal : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1669,13 +2084,21 @@ Shader "TorchFlameShader"
 				float4 shadowCoord : TEXCOORD1;
 				#endif
 				float3 worldNormal : TEXCOORD2;
-				
+				float4 ase_texcoord3 : TEXCOORD3;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-						#ifdef _TRANSMISSION_ASE
+			float4 _BaseColor;
+			float2 _NoiseSpeed;
+			float2 _FlameSpeed;
+			float _DistortionScale;
+			float _DistortionAmount;
+			float _FlameScale;
+			float _FlameWidth;
+			float _AlphaClip;
+			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
 			#ifdef _TRANSLUCENCY_ASE
@@ -1695,9 +2118,65 @@ Shader "TorchFlameShader"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
+			sampler2D _FlameShape;
+
+
+			float2 UnityGradientNoiseDir( float2 p )
+			{
+				p = fmod(p , 289);
+				float x = fmod((34 * p.x + 1) * p.x , 289) + p.y;
+				x = fmod( (34 * x + 1) * x , 289);
+				x = frac( x / 41 ) * 2 - 1;
+				return normalize( float2(x - floor(x + 0.5 ), abs( x ) - 0.5 ) );
+			}
+			
+			float UnityGradientNoise( float2 UV, float Scale )
+			{
+				float2 p = UV * Scale;
+				float2 ip = floor( p );
+				float2 fp = frac( p );
+				float d00 = dot( UnityGradientNoiseDir( ip ), fp );
+				float d01 = dot( UnityGradientNoiseDir( ip + float2( 0, 1 ) ), fp - float2( 0, 1 ) );
+				float d10 = dot( UnityGradientNoiseDir( ip + float2( 1, 0 ) ), fp - float2( 1, 0 ) );
+				float d11 = dot( UnityGradientNoiseDir( ip + float2( 1, 1 ) ), fp - float2( 1, 1 ) );
+				fp = fp * fp * fp * ( fp * ( fp * 6 - 15 ) + 10 );
+				return lerp( lerp( d00, d01, fp.y ), lerp( d10, d11, fp.y ), fp.x ) + 0.5;
+			}
+			
+			inline float2 UnityVoronoiRandomVector( float2 UV, float offset )
+			{
+				float2x2 m = float2x2( 15.27, 47.63, 99.41, 89.98 );
+				UV = frac( sin(mul(UV, m) ) * 46839.32 );
+				return float2( sin(UV.y* +offset ) * 0.5 + 0.5, cos( UV.x* offset ) * 0.5 + 0.5 );
+			}
+			
+			//x - Out y - Cells
+			float3 UnityVoronoi( float2 UV, float AngleOffset, float CellDensity, inout float2 mr )
+			{
+				float2 g = floor( UV * CellDensity );
+				float2 f = frac( UV * CellDensity );
+				float t = 8.0;
+				float3 res = float3( 8.0, 0.0, 0.0 );
+			
+				for( int y = -1; y <= 1; y++ )
+				{
+					for( int x = -1; x <= 1; x++ )
+					{
+						float2 lattice = float2( x, y );
+						float2 offset = UnityVoronoiRandomVector( lattice + g, AngleOffset );
+						float d = distance( lattice + offset, f );
+			
+						if( d < res.x )
+						{
+							mr = f - lattice - offset;
+							res = float3( d, offset.x, offset.y );
+						}
+					}
+				}
+				return res;
+			}
 			
 
-			
 			VertexOutput VertexFunction( VertexInput v  )
 			{
 				VertexOutput o = (VertexOutput)0;
@@ -1705,7 +2184,10 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
+				o.ase_texcoord3.xy = v.ase_texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord3.zw = 0;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
 				#else
@@ -1744,7 +2226,8 @@ Shader "TorchFlameShader"
 			{
 				float4 vertex : INTERNALTESSPOS;
 				float3 ase_normal : NORMAL;
-				
+				float4 ase_texcoord : TEXCOORD0;
+
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
@@ -1761,7 +2244,7 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				o.vertex = v.vertex;
 				o.ase_normal = v.ase_normal;
-				
+				o.ase_texcoord = v.ase_texcoord;
 				return o;
 			}
 
@@ -1800,7 +2283,7 @@ Shader "TorchFlameShader"
 				VertexInput o = (VertexInput) 0;
 				o.vertex = patch[0].vertex * bary.x + patch[1].vertex * bary.y + patch[2].vertex * bary.z;
 				o.ase_normal = patch[0].ase_normal * bary.x + patch[1].ase_normal * bary.y + patch[2].ase_normal * bary.z;
-				
+				o.ase_texcoord = patch[0].ase_texcoord * bary.x + patch[1].ase_texcoord * bary.y + patch[2].ase_texcoord * bary.z;
 				#if defined(ASE_PHONG_TESSELLATION)
 				float3 pp[3];
 				for (int i = 0; i < 3; ++i)
@@ -1845,9 +2328,20 @@ Shader "TorchFlameShader"
 					#endif
 				#endif
 
+				float2 texCoord18 = IN.ase_texcoord3.xy * float2( 1,1 ) + float2( 0,0 );
+				float2 panner11 = ( _TimeParameters.x * _NoiseSpeed + float2( 0,0 ));
+				float2 texCoord9 = IN.ase_texcoord3.xy * float2( 1,1 ) + panner11;
+				float gradientNoise8 = UnityGradientNoise(texCoord9,_DistortionScale);
+				float2 temp_cast_0 = (gradientNoise8).xx;
+				float2 lerpResult17 = lerp( texCoord18 , temp_cast_0 , _DistortionAmount);
+				float2 panner24 = ( _TimeParameters.x * _FlameSpeed + float2( 0,0 ));
+				float2 texCoord28 = IN.ase_texcoord3.xy * float2( 1,1 ) + panner24;
+				float2 uv26 = 0;
+				float3 unityVoronoy26 = UnityVoronoi(texCoord28,7.85,_FlameScale,uv26);
+				float4 temp_output_33_0 = ( ( _BaseColor * tex2D( _FlameShape, lerpResult17 ) ) * ( gradientNoise8 * pow( unityVoronoy26.x , _FlameWidth ) ) );
 				
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = temp_output_33_0.r;
+				float AlphaClipThreshold = _AlphaClip;
 				#ifdef ASE_DEPTH_WRITE_ON
 				float DepthValue = 0;
 				#endif
@@ -1876,8 +2370,8 @@ Shader "TorchFlameShader"
 			Name "GBuffer"
 			Tags { "LightMode"="UniversalGBuffer" }
 			
-			Blend One Zero, One Zero
-			ZWrite On
+			Blend SrcAlpha OneMinusSrcAlpha, One OneMinusSrcAlpha
+			ZWrite Off
 			ZTest LEqual
 			Offset 0 , 0
 			ColorMask RGBA
@@ -1890,6 +2384,8 @@ Shader "TorchFlameShader"
 			#pragma multi_compile _ LOD_FADE_CROSSFADE
 			#pragma multi_compile_fog
 			#define ASE_FOG 1
+			#define _EMISSION
+			#define _ALPHATEST_ON 1
 			#define ASE_SRP_VERSION 110000
 
 			
@@ -1951,13 +2447,21 @@ Shader "TorchFlameShader"
 				#if defined(ASE_NEEDS_FRAG_SCREEN_POSITION)
 				float4 screenPos : TEXCOORD6;
 				#endif
-				
+				float4 ase_texcoord7 : TEXCOORD7;
 				UNITY_VERTEX_INPUT_INSTANCE_ID
 				UNITY_VERTEX_OUTPUT_STEREO
 			};
 
 			CBUFFER_START(UnityPerMaterial)
-						#ifdef _TRANSMISSION_ASE
+			float4 _BaseColor;
+			float2 _NoiseSpeed;
+			float2 _FlameSpeed;
+			float _DistortionScale;
+			float _DistortionAmount;
+			float _FlameScale;
+			float _FlameWidth;
+			float _AlphaClip;
+			#ifdef _TRANSMISSION_ASE
 				float _TransmissionShadow;
 			#endif
 			#ifdef _TRANSLUCENCY_ASE
@@ -1977,9 +2481,65 @@ Shader "TorchFlameShader"
 				float _TessMaxDisp;
 			#endif
 			CBUFFER_END
+			sampler2D _FlameShape;
+
+
+			float2 UnityGradientNoiseDir( float2 p )
+			{
+				p = fmod(p , 289);
+				float x = fmod((34 * p.x + 1) * p.x , 289) + p.y;
+				x = fmod( (34 * x + 1) * x , 289);
+				x = frac( x / 41 ) * 2 - 1;
+				return normalize( float2(x - floor(x + 0.5 ), abs( x ) - 0.5 ) );
+			}
+			
+			float UnityGradientNoise( float2 UV, float Scale )
+			{
+				float2 p = UV * Scale;
+				float2 ip = floor( p );
+				float2 fp = frac( p );
+				float d00 = dot( UnityGradientNoiseDir( ip ), fp );
+				float d01 = dot( UnityGradientNoiseDir( ip + float2( 0, 1 ) ), fp - float2( 0, 1 ) );
+				float d10 = dot( UnityGradientNoiseDir( ip + float2( 1, 0 ) ), fp - float2( 1, 0 ) );
+				float d11 = dot( UnityGradientNoiseDir( ip + float2( 1, 1 ) ), fp - float2( 1, 1 ) );
+				fp = fp * fp * fp * ( fp * ( fp * 6 - 15 ) + 10 );
+				return lerp( lerp( d00, d01, fp.y ), lerp( d10, d11, fp.y ), fp.x ) + 0.5;
+			}
+			
+			inline float2 UnityVoronoiRandomVector( float2 UV, float offset )
+			{
+				float2x2 m = float2x2( 15.27, 47.63, 99.41, 89.98 );
+				UV = frac( sin(mul(UV, m) ) * 46839.32 );
+				return float2( sin(UV.y* +offset ) * 0.5 + 0.5, cos( UV.x* offset ) * 0.5 + 0.5 );
+			}
+			
+			//x - Out y - Cells
+			float3 UnityVoronoi( float2 UV, float AngleOffset, float CellDensity, inout float2 mr )
+			{
+				float2 g = floor( UV * CellDensity );
+				float2 f = frac( UV * CellDensity );
+				float t = 8.0;
+				float3 res = float3( 8.0, 0.0, 0.0 );
+			
+				for( int y = -1; y <= 1; y++ )
+				{
+					for( int x = -1; x <= 1; x++ )
+					{
+						float2 lattice = float2( x, y );
+						float2 offset = UnityVoronoiRandomVector( lattice + g, AngleOffset );
+						float d = distance( lattice + offset, f );
+			
+						if( d < res.x )
+						{
+							mr = f - lattice - offset;
+							res = float3( d, offset.x, offset.y );
+						}
+					}
+				}
+				return res;
+			}
 			
 
-			
 			VertexOutput VertexFunction( VertexInput v  )
 			{
 				VertexOutput o = (VertexOutput)0;
@@ -1987,7 +2547,10 @@ Shader "TorchFlameShader"
 				UNITY_TRANSFER_INSTANCE_ID(v, o);
 				UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
 
+				o.ase_texcoord7.xy = v.texcoord.xy;
 				
+				//setting value to unused interpolator channels and avoid initialization warnings
+				o.ase_texcoord7.zw = 0;
 				#ifdef ASE_ABSOLUTE_VERTEX_POS
 					float3 defaultVertexValue = v.vertex.xyz;
 				#else
@@ -2172,16 +2735,27 @@ Shader "TorchFlameShader"
 	
 				WorldViewDirection = SafeNormalize( WorldViewDirection );
 
+				float2 texCoord18 = IN.ase_texcoord7.xy * float2( 1,1 ) + float2( 0,0 );
+				float2 panner11 = ( _TimeParameters.x * _NoiseSpeed + float2( 0,0 ));
+				float2 texCoord9 = IN.ase_texcoord7.xy * float2( 1,1 ) + panner11;
+				float gradientNoise8 = UnityGradientNoise(texCoord9,_DistortionScale);
+				float2 temp_cast_0 = (gradientNoise8).xx;
+				float2 lerpResult17 = lerp( texCoord18 , temp_cast_0 , _DistortionAmount);
+				float2 panner24 = ( _TimeParameters.x * _FlameSpeed + float2( 0,0 ));
+				float2 texCoord28 = IN.ase_texcoord7.xy * float2( 1,1 ) + panner24;
+				float2 uv26 = 0;
+				float3 unityVoronoy26 = UnityVoronoi(texCoord28,7.85,_FlameScale,uv26);
+				float4 temp_output_33_0 = ( ( _BaseColor * tex2D( _FlameShape, lerpResult17 ) ) * ( gradientNoise8 * pow( unityVoronoy26.x , _FlameWidth ) ) );
 				
-				float3 Albedo = float3(0.5, 0.5, 0.5);
+				float3 Albedo = temp_output_33_0.rgb;
 				float3 Normal = float3(0, 0, 1);
-				float3 Emission = 0;
+				float3 Emission = temp_output_33_0.rgb;
 				float3 Specular = 0.5;
 				float Metallic = 0;
 				float Smoothness = 0.5;
 				float Occlusion = 1;
-				float Alpha = 1;
-				float AlphaClipThreshold = 0.5;
+				float Alpha = temp_output_33_0.r;
+				float AlphaClipThreshold = _AlphaClip;
 				float AlphaClipThresholdShadow = 0.5;
 				float3 BakedGI = 0;
 				float3 RefractionColor = 1;
@@ -2335,14 +2909,69 @@ Shader "TorchFlameShader"
 }
 /*ASEBEGIN
 Version=18930
-6.666667;6.666667;1266.667;685.6667;801.3333;266.8333;1;True;False
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;0;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ExtraPrePass;0;0;ExtraPrePass;5;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;True;1;1;False;-1;0;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;True;1;False;-1;True;3;False;-1;True;True;0;False;-1;0;False;-1;True;0;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;0,0;Float;False;True;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;2;TorchFlameShader;94348b07e5e8bab40bd6c8a1e3df54cd;True;Forward;0;1;Forward;18;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;True;1;1;False;-1;0;False;-1;1;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;True;1;False;-1;True;3;False;-1;True;True;0;False;-1;0;False;-1;True;1;LightMode=UniversalForward;False;False;0;Hidden/InternalErrorShader;0;0;Standard;38;Workflow;1;0;Surface;0;0;  Refraction Model;0;0;  Blend;0;0;Two Sided;1;0;Fragment Normal Space,InvertActionOnDeselection;0;0;Transmission;0;0;  Transmission Shadow;0.5,False,-1;0;Translucency;0;0;  Translucency Strength;1,False,-1;0;  Normal Distortion;0.5,False,-1;0;  Scattering;2,False,-1;0;  Direct;0.9,False,-1;0;  Ambient;0.1,False,-1;0;  Shadow;0.5,False,-1;0;Cast Shadows;1;0;  Use Shadow Threshold;0;0;Receive Shadows;1;0;GPU Instancing;1;0;LOD CrossFade;1;0;Built-in Fog;1;0;_FinalColorxAlpha;0;0;Meta Pass;1;0;Override Baked GI;0;0;Extra Pre Pass;0;0;DOTS Instancing;0;0;Tessellation;0;0;  Phong;0;0;  Strength;0.5,False,-1;0;  Type;0;0;  Tess;16,False,-1;0;  Min;10,False,-1;0;  Max;25,False,-1;0;  Edge Length;16,False,-1;0;  Max Displacement;25,False,-1;0;Write Depth;0;0;  Early Z;0;0;Vertex Position,InvertActionOnDeselection;1;0;0;8;False;True;True;True;True;True;True;True;False;;False;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;2;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ShadowCaster;0;2;ShadowCaster;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;False;False;True;False;False;False;False;0;False;-1;False;False;False;False;False;False;False;False;False;True;1;False;-1;True;3;False;-1;False;True;1;LightMode=ShadowCaster;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;3;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;DepthOnly;0;3;DepthOnly;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;False;False;True;False;False;False;False;0;False;-1;False;False;False;False;False;False;False;False;False;True;1;False;-1;False;False;True;1;LightMode=DepthOnly;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;4;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;Meta;0;4;Meta;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=Meta;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;5;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;Universal2D;0;5;Universal2D;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;True;1;1;False;-1;0;False;-1;1;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;1;False;-1;True;3;False;-1;True;True;0;False;-1;0;False;-1;True;1;LightMode=Universal2D;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;6;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;DepthNormals;0;6;DepthNormals;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;True;1;1;False;-1;0;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;False;-1;True;3;False;-1;False;True;1;LightMode=DepthNormals;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
-Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;7;0,0;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;GBuffer;0;7;GBuffer;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;True;1;1;False;-1;0;False;-1;1;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;True;1;False;-1;True;3;False;-1;True;True;0;False;-1;0;False;-1;True;1;LightMode=UniversalGBuffer;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
+-211.3333;150.6667;1266.667;673.6667;835.1161;575.3294;1.742727;True;False
+Node;AmplifyShaderEditor.SimpleTimeNode;10;-1344.969,8.251342;Inherit;False;1;0;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.Vector2Node;13;-1349.046,-169.8477;Inherit;False;Property;_NoiseSpeed;Noise Speed;1;0;Create;True;0;0;0;False;0;False;0,-1;0.12,-1.1;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
+Node;AmplifyShaderEditor.SimpleTimeNode;25;-1349.722,389.9302;Inherit;False;1;0;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.Vector2Node;23;-1353.799,211.8312;Inherit;False;Property;_FlameSpeed;Flame Speed;2;0;Create;True;0;0;0;False;0;False;0,-3;-0.47,-1.02;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
+Node;AmplifyShaderEditor.PannerNode;11;-1122.846,-161.5363;Inherit;True;3;0;FLOAT2;0,0;False;2;FLOAT2;0,-1;False;1;FLOAT;1;False;1;FLOAT2;0
+Node;AmplifyShaderEditor.PannerNode;24;-1129.385,220.1426;Inherit;True;3;0;FLOAT2;0,0;False;2;FLOAT2;0,0;False;1;FLOAT;1;False;1;FLOAT2;0
+Node;AmplifyShaderEditor.TextureCoordinatesNode;9;-892.9039,-349.6838;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;20;-871.8573,-52.82935;Inherit;False;Property;_DistortionScale;Distortion Scale;4;0;Create;True;0;0;0;False;0;False;2;6.08;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;27;-874.7628,279.524;Inherit;False;Property;_FlameScale;Flame Scale;5;0;Create;True;0;0;0;False;0;False;2.22;2.77;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;19;-631.5823,-372.3581;Inherit;False;Property;_DistortionAmount;Distortion Amount;3;0;Create;True;0;0;0;False;0;False;0.05;0.13;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.NoiseGeneratorNode;8;-648.6976,-204.3944;Inherit;True;Gradient;False;True;2;0;FLOAT2;0,0;False;1;FLOAT;2;False;1;FLOAT;0
+Node;AmplifyShaderEditor.TextureCoordinatesNode;18;-634.3946,-518.4092;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.TextureCoordinatesNode;28;-887.3444,113.1452;Inherit;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.RangedFloatNode;30;-446.9302,276.3574;Inherit;False;Property;_FlameWidth;Flame Width;7;0;Create;True;0;0;0;False;0;False;1.43;2.62;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.VoronoiNode;26;-634.1638,193.2234;Inherit;True;0;1;1;0;1;False;1;True;False;False;4;0;FLOAT2;0,0;False;1;FLOAT;7.85;False;2;FLOAT;1;False;3;FLOAT;0;False;3;FLOAT;0;FLOAT2;1;FLOAT2;2
+Node;AmplifyShaderEditor.LerpOp;17;-386.2586,-418.0887;Inherit;True;3;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;1;FLOAT2;0
+Node;AmplifyShaderEditor.ColorNode;21;-42.46187,-401.9204;Inherit;False;Property;_BaseColor;Base Color;6;1;[HDR];Create;True;0;0;0;False;0;False;1,0.31858,0,0;5.278032,2.049118,0.496756,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.SamplerNode;14;-136.7439,-210.0336;Inherit;True;Property;_FlameShape;Flame Shape;0;1;[HDR];Create;True;0;0;0;False;0;False;14;None;6c9d5d523dd9fe24f8e6d2d8fbba9a7e;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.PowerNode;29;-276.9302,200.3574;Inherit;True;False;2;0;FLOAT;0;False;1;FLOAT;1;False;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;22;244.3178,-271.6228;Inherit;True;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;31;57.89574,65.80533;Inherit;True;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;57;386.8894,-490.4494;Inherit;False;Constant;_Float0;Float 0;9;0;Create;True;0;0;0;False;0;False;0;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.SimpleMultiplyOpNode;33;488.3172,-117.7437;Inherit;True;2;2;0;COLOR;0,0,0,0;False;1;FLOAT;0;False;1;COLOR;0
+Node;AmplifyShaderEditor.RangedFloatNode;55;693.1224,118.6006;Inherit;False;Property;_AlphaClip;Alpha Clip;8;0;Create;True;0;0;0;False;0;False;0;0.46;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;58;365.1026,-368.9043;Inherit;False;Constant;_Float1;Float 1;9;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.ClampOpNode;56;595.5803,-485.8629;Inherit;True;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;COLOR;1,1,1,0;False;1;COLOR;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;49;785.7712,-264.1717;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ShadowCaster;0;2;ShadowCaster;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;False;False;True;False;False;False;False;0;False;-1;False;False;False;False;False;False;False;False;False;True;1;False;-1;True;3;False;-1;False;True;1;LightMode=ShadowCaster;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;51;785.7712,-264.1717;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;Meta;0;4;Meta;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;2;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;LightMode=Meta;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;50;785.7712,-264.1717;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;DepthOnly;0;3;DepthOnly;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;False;False;True;False;False;False;False;0;False;-1;False;False;False;False;False;False;False;False;False;True;1;False;-1;False;False;True;1;LightMode=DepthOnly;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;48;867.721,-216.7269;Float;False;True;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;2;TorchFlameShader;94348b07e5e8bab40bd6c8a1e3df54cd;True;Forward;0;1;Forward;18;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;2;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Transparent=RenderType;Queue=Transparent=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;True;1;5;False;-1;10;False;-1;1;1;False;-1;10;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;True;2;False;-1;True;3;False;-1;True;True;0;False;-1;0;False;-1;True;1;LightMode=UniversalForward;False;False;0;Hidden/InternalErrorShader;0;0;Standard;38;Workflow;1;0;Surface;1;637751280064845801;  Refraction Model;0;0;  Blend;0;0;Two Sided;0;637751305172601855;Fragment Normal Space,InvertActionOnDeselection;0;0;Transmission;0;0;  Transmission Shadow;0.5,False,-1;0;Translucency;0;0;  Translucency Strength;1,False,-1;0;  Normal Distortion;0.5,False,-1;0;  Scattering;2,False,-1;0;  Direct;0.9,False,-1;0;  Ambient;0.1,False,-1;0;  Shadow;0.5,False,-1;0;Cast Shadows;1;0;  Use Shadow Threshold;0;0;Receive Shadows;1;0;GPU Instancing;1;0;LOD CrossFade;1;0;Built-in Fog;1;0;_FinalColorxAlpha;0;0;Meta Pass;1;0;Override Baked GI;0;0;Extra Pre Pass;0;0;DOTS Instancing;0;0;Tessellation;0;0;  Phong;0;0;  Strength;0.5,False,-1;0;  Type;0;0;  Tess;16,False,-1;0;  Min;10,False,-1;0;  Max;25,False,-1;0;  Edge Length;16,False,-1;0;  Max Displacement;25,False,-1;0;Write Depth;0;0;  Early Z;0;0;Vertex Position,InvertActionOnDeselection;1;0;0;8;False;True;True;True;True;True;True;True;False;;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;53;785.7712,-264.1717;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;DepthNormals;0;6;DepthNormals;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;True;1;1;False;-1;0;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;1;False;-1;True;3;False;-1;False;True;1;LightMode=DepthNormals;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;54;785.7712,-264.1717;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;GBuffer;0;7;GBuffer;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;True;1;5;False;-1;10;False;-1;1;1;False;-1;10;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;True;2;False;-1;True;3;False;-1;True;True;0;False;-1;0;False;-1;True;1;LightMode=UniversalGBuffer;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;47;785.7712,-264.1717;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ExtraPrePass;0;0;ExtraPrePass;5;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;True;1;1;False;-1;0;False;-1;0;1;False;-1;0;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;True;1;False;-1;True;3;False;-1;True;True;0;False;-1;0;False;-1;True;0;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
+Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;52;785.7712,-264.1717;Float;False;False;-1;2;UnityEditor.ShaderGraph.PBRMasterGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;Universal2D;0;5;Universal2D;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;-1;False;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;False;255;False;-1;255;False;-1;255;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;7;False;-1;1;False;-1;1;False;-1;1;False;-1;False;False;False;False;True;3;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;True;0;True;17;d3d9;d3d11;glcore;gles;gles3;metal;vulkan;xbox360;xboxone;xboxseries;ps4;playstation;psp2;n3ds;wiiu;switch;nomrt;0;False;True;1;5;False;-1;10;False;-1;1;1;False;-1;10;False;-1;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;True;True;True;True;0;False;-1;False;False;False;False;False;False;False;False;False;True;2;False;-1;True;3;False;-1;True;True;0;False;-1;0;False;-1;True;1;LightMode=Universal2D;False;False;0;Hidden/InternalErrorShader;0;0;Standard;0;False;0
+WireConnection;11;2;13;0
+WireConnection;11;1;10;0
+WireConnection;24;2;23;0
+WireConnection;24;1;25;0
+WireConnection;9;1;11;0
+WireConnection;8;0;9;0
+WireConnection;8;1;20;0
+WireConnection;28;1;24;0
+WireConnection;26;0;28;0
+WireConnection;26;2;27;0
+WireConnection;17;0;18;0
+WireConnection;17;1;8;0
+WireConnection;17;2;19;0
+WireConnection;14;1;17;0
+WireConnection;29;0;26;0
+WireConnection;29;1;30;0
+WireConnection;22;0;21;0
+WireConnection;22;1;14;0
+WireConnection;31;0;8;0
+WireConnection;31;1;29;0
+WireConnection;33;0;22;0
+WireConnection;33;1;31;0
+WireConnection;56;0;33;0
+WireConnection;56;1;57;0
+WireConnection;56;2;58;0
+WireConnection;48;0;33;0
+WireConnection;48;2;33;0
+WireConnection;48;6;33;0
+WireConnection;48;7;55;0
 ASEEND*/
-//CHKSM=ACB525F33A317E8BF6813B1571C297ECF97E782B
+//CHKSM=96AA252B0AE4F0F2BE750D378F070380C93AD17A

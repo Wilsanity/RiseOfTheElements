@@ -1,0 +1,282 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!95 &1313041940303363895
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3500263827500468173}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &1447419141274254446
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3500263827760056146}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &8203762267360321897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3758052655590470658}
+  - component: {fileID: 406319685}
+  m_Layer: 0
+  m_Name: TorchEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3758052655590470658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8203762267360321897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0038174111, y: -0.011252081, z: -0.30185297}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3500263827500468176}
+  - {fileID: 3500263827760056149}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &406319685
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8203762267360321897}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d37c17777301d464f8966582b43b85e1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &1901461055075373680
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3758052655590470658}
+    m_Modifications:
+    - target: {fileID: 3094034133056771362, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_Name
+      value: TorchFlameExtinguish
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771362, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0038174111
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.011252081
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.30185297
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133355838479, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094034133355838479, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+      propertyPath: LightsModule.intensityCurve.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+--- !u!1 &3500263827760056146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3094034133056771362, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+  m_PrefabInstance: {fileID: 1901461055075373680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3500263827760056149 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3094034133056771365, guid: ef673a4540fd90b4ba3b1bd5169f4d9d, type: 3}
+  m_PrefabInstance: {fileID: 1901461055075373680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7509410447356509406
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3758052655590470658}
+    m_Modifications:
+    - target: {fileID: 1551835184, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_Name
+      value: TorchCenterIgnite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551835184, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551835187, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551835187, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[1].countCurve.scalar
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953308837178110229, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0038174111
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.011252081
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.30185297
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353296, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_AllowRoll
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353296, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353296, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_RenderAlignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353297, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: lengthInSec
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353297, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353299, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_Name
+      value: TorchFlameParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387694594940353299, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+--- !u!1 &3500263827500468173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6387694594940353299, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+  m_PrefabInstance: {fileID: 7509410447356509406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3500263827500468176 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6387694594940353294, guid: 3bb60ff3ce5741742922d9364f345306, type: 3}
+  m_PrefabInstance: {fileID: 7509410447356509406}
+  m_PrefabAsset: {fileID: 0}

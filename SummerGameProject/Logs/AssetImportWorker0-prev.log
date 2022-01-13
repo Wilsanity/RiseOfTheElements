@@ -15,11 +15,11 @@ D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49690
+54926
 Successfully changed project path to: D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 95.60 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 96.76 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.11f1 (4d8c25f7477e)
 [Subsystems] Discovering subsystems at path D:/Unity/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,90 +36,90 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2021.1.11f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56260
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56312
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008591 seconds.
+Registered in 0.008141 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 73.90 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 83.37 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  8.389 seconds
+- Completed reload, in  2.187 seconds
 Domain Reload Profiling:
-	ReloadAssembly (8389ms)
-		BeginReloadAssembly (112ms)
+	ReloadAssembly (2188ms)
+		BeginReloadAssembly (126ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (508ms)
-			LoadAssemblies (103ms)
+		EndReloadAssembly (564ms)
+			LoadAssemblies (116ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (189ms)
+			SetupTypeCache (216ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (218ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (242ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (74ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (102ms)
-				ProcessInitializeOnLoadMethodAttributes (33ms)
+				RefreshPlugins (84ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (114ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.015024 seconds.
+Registered in 0.015852 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 88.25 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 81.04 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.862 seconds
+- Completed reload, in  1.738 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1862ms)
-		BeginReloadAssembly (214ms)
+	ReloadAssembly (1739ms)
+		BeginReloadAssembly (215ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (23ms)
-		EndReloadAssembly (1543ms)
-			LoadAssemblies (167ms)
+			CreateAndSetChildDomain (22ms)
+		EndReloadAssembly (1422ms)
+			LoadAssemblies (159ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (430ms)
+			SetupTypeCache (385ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (87ms)
-			SetupLoadedEditorAssemblies (745ms)
+			RebuildScriptCaches (79ms)
+			SetupLoadedEditorAssemblies (704ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (88ms)
-				BeforeProcessingInitializeOnLoad (147ms)
-				ProcessInitializeOnLoadAttributes (469ms)
-				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (27ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (81ms)
+				BeforeProcessingInitializeOnLoad (134ms)
+				ProcessInitializeOnLoadAttributes (447ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (28ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.81 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.88 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3939 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 203.5 MB.
-System memory in use after: 203.7 MB.
+System memory in use before: 204.1 MB.
+System memory in use after: 204.3 MB.
 
-Unloading 108 unused Assets to reduce memory usage. Loaded Objects now: 4377.
-Total: 3.473400 ms (FindLiveObjects: 0.300600 ms CreateObjectMapping: 0.171000 ms MarkObjects: 2.816000 ms  DeleteObjects: 0.184700 ms)
+Unloading 108 unused Assets to reduce memory usage. Loaded Objects now: 4378.
+Total: 3.117300 ms (FindLiveObjects: 0.296900 ms CreateObjectMapping: 0.177300 ms MarkObjects: 2.465900 ms  DeleteObjects: 0.176100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,133 +133,871 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/RotE VFX/VFX Testing Scene/ReflectionProbe-0.exr
-  artifactKey: Guid(acab2eb6ea017f64fb36454a18877fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/VFX Testing Scene/ReflectionProbe-0.exr using Guid(acab2eb6ea017f64fb36454a18877fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3c4df84a89955fce150c44d5bb7e697') in 0.138320 seconds 
+  path: Assets/RotE VFX/Shaders
+  artifactKey: Guid(1fa5820213c1a0f4dad8c4af860eafbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders using Guid(1fa5820213c1a0f4dad8c4af860eafbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60552ba74ca54e3ca8c2d402dd228f52') in 0.011753 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000278 seconds.
-  path: Assets/RotE VFX/VFX Testing Scene/LightingData.asset
-  artifactKey: Guid(ebcf1ff79088e5f4abce91d72d26141c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/VFX Testing Scene/LightingData.asset using Guid(ebcf1ff79088e5f4abce91d72d26141c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c3d70e42653f3d68fdb98f6397688b3') in 0.012302 seconds 
+  Time since last request: 31.318710 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '313d3ce52feac74dd26ebcbcc09cc1db') in 0.039428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 315.627857 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/TextureReferenceBg.png
+  artifactKey: Guid(f9bd85ea2601b824c87556c13e852933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/TextureReferenceBg.png using Guid(f9bd85ea2601b824c87556c13e852933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28125a724175be3bdd3dd7a49cebb168') in 0.090037 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.986401 seconds.
+  path: Assets/RotE VFX/Fire/TorchFireMat.mat
+  artifactKey: Guid(1f93c476575d4aa478d6bf297b68dfa6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Fire/TorchFireMat.mat using Guid(1f93c476575d4aa478d6bf297b68dfa6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ae793e3e818fb20bba5c24e86b03a7b8') in 0.069629 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000805 seconds.
+  path: Assets/RotE VFX/Shaders
+  artifactKey: Guid(1fa5820213c1a0f4dad8c4af860eafbd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders using Guid(1fa5820213c1a0f4dad8c4af860eafbd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '9bd9c8ba70caacd6668ac11bb1e7b885') in 0.041087 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/RotE VFX/Fire/FlamesExtinguishMat.mat
+  artifactKey: Guid(0e8575aa87062d943ae80464a49a7144) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Fire/FlamesExtinguishMat.mat using Guid(0e8575aa87062d943ae80464a49a7144) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'b74b76110208803c94e6001d04133b04') in 0.017647 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofMat.mat
+  artifactKey: Guid(0fbad52a50c42314d9d1ba266b444683) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofMat.mat using Guid(0fbad52a50c42314d9d1ba266b444683) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'b1ceba7df722742644f119554adcc0af') in 0.070745 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/PolyToots/ZeldaBotW_Explosion
+  artifactKey: Guid(080e984e80708c74f811946d9cf533bb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/PolyToots/ZeldaBotW_Explosion using Guid(080e984e80708c74f811946d9cf533bb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '455c83a4904f82db75448b68a56e20a1') in 0.013742 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/RotE VFX/Fire/TorchLightAnim.anim
+  artifactKey: Guid(9d8734eccd006c44c9b16d42548a3929) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Fire/TorchLightAnim.anim using Guid(9d8734eccd006c44c9b16d42548a3929) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'c02b8681a43a3d15fea2c0d1bbad123f') in 0.052771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/RotE VFX/SmokeEffect/DodgeEffect
+  artifactKey: Guid(ce4b422d415e0bc4395a0d4067a0732c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect using Guid(ce4b422d415e0bc4395a0d4067a0732c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '9bbb883cc7088e59f3a35504b7819766') in 0.038837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofEffect.shader
+  artifactKey: Guid(ad3dd520b8f4cf047b65ef20cbe6d2f6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofEffect.shader using Guid(ad3dd520b8f4cf047b65ef20cbe6d2f6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '958c03a3bc8e69b247401bf0727deda3') in 0.013604 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000223 seconds.
-  path: Assets/RotE VFX/VFX
-  artifactKey: Guid(98b4c0863ae8aaf40b2080cd6d07974c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/VFX using Guid(98b4c0863ae8aaf40b2080cd6d07974c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd45ca1fc84ac9164b98bfad26f80828') in 0.008815 seconds 
+  path: Assets/RotE VFX/Fire/TorchEffects.controller
+  artifactKey: Guid(d37c17777301d464f8966582b43b85e1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Fire/TorchEffects.controller using Guid(d37c17777301d464f8966582b43b85e1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '0ae8abb89f6eee9e491e87b7e32efe38') in 0.033593 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/NPC Characters/NPC-Rancher-Mat.mat
+  artifactKey: Guid(31ab6d406a9cba44886ba131a7b12273) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/NPC Characters/NPC-Rancher-Mat.mat using Guid(31ab6d406a9cba44886ba131a7b12273) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ca6c6e060c02cf6da4ccf429f9648f6f') in 0.012667 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/RotE VFX/Fire/TorchEffects.prefab
+  artifactKey: Guid(9f449e0c92f3e1444afaae69a6294cd3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Fire/TorchEffects.prefab using Guid(9f449e0c92f3e1444afaae69a6294cd3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '50545fbccdf436405f8b0bedd7261128') in 0.008320 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000266 seconds.
+  path: Assets/RotE VFX/Fire/TorchFlameExtinguish.prefab
+  artifactKey: Guid(ef673a4540fd90b4ba3b1bd5169f4d9d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Fire/TorchFlameExtinguish.prefab using Guid(ef673a4540fd90b4ba3b1bd5169f4d9d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '61bced452e01ce24048405ab4a01e601') in 0.030456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
   path: Assets/RotE VFX/VFX Testing Scene/PostProcessing Profile.asset
-  artifactKey: Guid(8fe60e517eaadb04f88e32f7777f3c81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/VFX Testing Scene/PostProcessing Profile.asset using Guid(8fe60e517eaadb04f88e32f7777f3c81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '294c4ed364237cc535af1504e5a7d237') in 0.019314 seconds 
+  artifactKey: Guid(8fe60e517eaadb04f88e32f7777f3c81) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/VFX Testing Scene/PostProcessing Profile.asset using Guid(8fe60e517eaadb04f88e32f7777f3c81) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'a3897df9bec2cb59cddd6655ce695ecc') in 0.024962 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.541082 seconds.
-  path: Assets/RotE VFX/SmokeEffect
-  artifactKey: Guid(98b4c0863ae8aaf40b2080cd6d07974c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/SmokeEffect using Guid(98b4c0863ae8aaf40b2080cd6d07974c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '485f69d594f8eb897eea0f93f42914d5') in 0.008231 seconds 
+  Time since last request: 0.000189 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '333525eaf6174d480f5578696b824aea') in 0.014352 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.034730 seconds.
-  path: Assets/RotE VFX/SmokeEffect/DodgeEffect
-  artifactKey: Guid(ce4b422d415e0bc4395a0d4067a0732c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect using Guid(ce4b422d415e0bc4395a0d4067a0732c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac9e71603cf94472aef4ec9e298f840b') in 0.011141 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.069970 seconds.
-  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgeDustPoof.prefab
-  artifactKey: Guid(5f0f9e10a7d9ec943aa82716279dfecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgeDustPoof.prefab using Guid(5f0f9e10a7d9ec943aa82716279dfecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4a82257a02022ec374f4685fd08e081') in 0.020645 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000326 seconds.
-  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofMat.mat
-  artifactKey: Guid(0fbad52a50c42314d9d1ba266b444683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofMat.mat using Guid(0fbad52a50c42314d9d1ba266b444683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abd46c3d9c3b3ac7f1dca4e932a456d9') in 0.677677 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.154429 seconds.
-  path: Assets/RotE VFX/FruitSplat/fruitsplash.png
-  artifactKey: Guid(741bfd57196e76443917606cfd93cf89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/FruitSplat/fruitsplash.png using Guid(741bfd57196e76443917606cfd93cf89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f51cbd39fdb75177be9fe36eb7bddb5f') in 0.030915 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.527046 seconds.
-  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofEffect.shader
-  artifactKey: Guid(ad3dd520b8f4cf047b65ef20cbe6d2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofEffect.shader using Guid(ad3dd520b8f4cf047b65ef20cbe6d2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38bc677ea54938a604c0bfea69c938d7') in 0.008786 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 17.909223 seconds.
-  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofEffect.shader
-  artifactKey: Guid(ad3dd520b8f4cf047b65ef20cbe6d2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofEffect.shader using Guid(ad3dd520b8f4cf047b65ef20cbe6d2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b7ba62435802bf7e533906275f6a793') in 0.003505 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 899.565082 seconds.
-  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofEffect.shader
-  artifactKey: Guid(ad3dd520b8f4cf047b65ef20cbe6d2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofEffect.shader using Guid(ad3dd520b8f4cf047b65ef20cbe6d2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4d6313b8982c80832312d426520a4f6') in 0.008921 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2543.430580 seconds.
-  path: Assets/RotE VFX/Character/Effects
-  artifactKey: Guid(09d59133305002d4bb9e4cc9dadb8a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Character/Effects using Guid(09d59133305002d4bb9e4cc9dadb8a5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62c73492ded32e1c09670a68411ee0c3') in 0.007044 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.048944 seconds.
-  path: Assets/RotE VFX/Character/Effects/SnowPuff.prefab
-  artifactKey: Guid(781fec49a08807944aa8f842e21ff063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Character/Effects/SnowPuff.prefab using Guid(781fec49a08807944aa8f842e21ff063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fa19abc0384855b9a28214fbb8bedca') in 0.011402 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.196563 seconds.
-  path: Assets/RotE VFX/Character/Textures and Materials/SnowPuffmat.mat
-  artifactKey: Guid(beb01e77f92f85741954fa535ffd0c7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Character/Textures and Materials/SnowPuffmat.mat using Guid(beb01e77f92f85741954fa535ffd0c7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84665c1feba417651a98180524d37ff5') in 0.418013 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.469171 seconds.
-  path: Assets/RotE VFX/Character/Effects/SnowPuff.shadergraph
-  artifactKey: Guid(425bf1ff205a1564fa7f3148ce081be1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Character/Effects/SnowPuff.shadergraph using Guid(425bf1ff205a1564fa7f3148ce081be1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27cc1e32f8b94ca5ee913cf2a68681e6') in 0.008803 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.659559 seconds.
+  Time since last request: 0.000177 seconds.
   path: Assets/PolyToots/ZeldaBotW_Explosion/Textures/DistortNormalTile.png
-  artifactKey: Guid(73ad01cf98af75f46880d7d88b3ce234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolyToots/ZeldaBotW_Explosion/Textures/DistortNormalTile.png using Guid(73ad01cf98af75f46880d7d88b3ce234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a96856641de29db340418855b604e55b') in 0.032616 seconds 
+  artifactKey: Guid(73ad01cf98af75f46880d7d88b3ce234) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/PolyToots/ZeldaBotW_Explosion/Textures/DistortNormalTile.png using Guid(73ad01cf98af75f46880d7d88b3ce234) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '56e4ab0ca9123548a44a4a840f7c7afb') in 0.013096 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000206 seconds.
+  Time since last request: 0.000188 seconds.
   path: Assets/PolyToots/ZeldaBotW_Explosion/Textures/ZeldaSmoke.png
-  artifactKey: Guid(46dcd935af2aac24ba76a82cd0a132e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/PolyToots/ZeldaBotW_Explosion/Textures/ZeldaSmoke.png using Guid(46dcd935af2aac24ba76a82cd0a132e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd451004540b0c54c9db9889ec9987b2') in 0.016853 seconds 
+  artifactKey: Guid(46dcd935af2aac24ba76a82cd0a132e8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/PolyToots/ZeldaBotW_Explosion/Textures/ZeldaSmoke.png using Guid(46dcd935af2aac24ba76a82cd0a132e8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'aa62cbf225eeb2524a0a81a0094ee538') in 0.037699 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 170.783908 seconds.
-  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofMat.mat
-  artifactKey: Guid(0fbad52a50c42314d9d1ba266b444683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofMat.mat using Guid(0fbad52a50c42314d9d1ba266b444683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27695055daaaa69bce5aae2eacc008b5') in 0.017352 seconds 
+  Time since last request: 0.000169 seconds.
+  path: Assets/RotE VFX/Fire/FlameCenterMat.mat
+  artifactKey: Guid(e4f327aaa06cac64c92171f7b22432c3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Fire/FlameCenterMat.mat using Guid(e4f327aaa06cac64c92171f7b22432c3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '15772591b1b4c9c1d66f0341d0fd6005') in 0.015946 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.259269 seconds.
-  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofEffect.shader
-  artifactKey: Guid(ad3dd520b8f4cf047b65ef20cbe6d2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofEffect.shader using Guid(ad3dd520b8f4cf047b65ef20cbe6d2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36a3f8ad90ca76f399d33c8aec8033cc') in 0.004348 seconds 
+  Time since last request: 0.000183 seconds.
+  path: Assets/RotE VFX/Fire/TorchIgniteMat.mat
+  artifactKey: Guid(81683c46324d36b4cbbeb0f39438ad12) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Fire/TorchIgniteMat.mat using Guid(81683c46324d36b4cbbeb0f39438ad12) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'c6c6f6a8794d700b4530fa6e51789696') in 0.026702 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 423.972633 seconds.
-  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofMat.mat
-  artifactKey: Guid(0fbad52a50c42314d9d1ba266b444683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgePoofMat.mat using Guid(0fbad52a50c42314d9d1ba266b444683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7182c35a1358c6b8a2b4a5842d45eeef') in 0.022946 seconds 
+  Time since last request: 0.000204 seconds.
+  path: Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgeDustPoof.prefab
+  artifactKey: Guid(5f0f9e10a7d9ec943aa82716279dfecb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/SmokeEffect/DodgeEffect/DodgeDustPoof.prefab using Guid(5f0f9e10a7d9ec943aa82716279dfecb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'aff1348fee243030aaa50daf4579c73a') in 0.022949 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2543.433470 seconds.
-  path: Assets/RotE VFX/Character/Textures and Materials/SnowPuffmat.mat
-  artifactKey: Guid(beb01e77f92f85741954fa535ffd0c7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Character/Textures and Materials/SnowPuffmat.mat using Guid(beb01e77f92f85741954fa535ffd0c7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7412296fb8bc4ed5f89ec7f6c89de32e') in 0.027664 seconds 
+  Time since last request: 0.000173 seconds.
+  path: Assets/PolyToots
+  artifactKey: Guid(6cddc451410688a468fe94b67737ab95) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/PolyToots using Guid(6cddc451410688a468fe94b67737ab95) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '87b9dfb877227c608e4bc18d88c912d0') in 0.011880 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene.unity
+  artifactKey: Guid(ac67fb28a38adcc4384f70ae2a64eb29) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/VFX Testing Scene.unity using Guid(ac67fb28a38adcc4384f70ae2a64eb29) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '21a076f84c8938ab7b32b01f49159458') in 0.010760 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/RotE VFX/SmokeEffect
+  artifactKey: Guid(98b4c0863ae8aaf40b2080cd6d07974c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/SmokeEffect using Guid(98b4c0863ae8aaf40b2080cd6d07974c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'eaef6ffe078372fb54ca1b4b2f8187dd') in 0.034811 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/RotE VFX/Fire/TorchExtinguishAnim.anim
+  artifactKey: Guid(f79c5a5f318d97e4ba78abf1d24c23e9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Fire/TorchExtinguishAnim.anim using Guid(f79c5a5f318d97e4ba78abf1d24c23e9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'f42b801eb01fd106484cfb66645bab4d') in 0.015669 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/PolyToots/ZeldaBotW_Explosion/Textures
+  artifactKey: Guid(615c0aa6c63f87a4d8e823d9a2ba07bb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/PolyToots/ZeldaBotW_Explosion/Textures using Guid(615c0aa6c63f87a4d8e823d9a2ba07bb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '0c65c628aa2a2cf04f4987c7693a2e5e') in 0.029208 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.817686 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Previews/IndirectSpecularPreview.exr
+  artifactKey: Guid(ef7513b54a0670140b9b967af7620563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Previews/IndirectSpecularPreview.exr using Guid(ef7513b54a0670140b9b967af7620563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9811bbb8d2f747dec65dde59cfa4f70e') in 0.284081 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/ShaderFunctions/Procedural Sample.asset
+  artifactKey: Guid(f5379ff72769e2b4495e5ce2f004d8d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/ShaderFunctions/Procedural Sample.asset using Guid(f5379ff72769e2b4495e5ce2f004d8d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '011a9ce75475700ae71fb5426ccde040') in 0.014636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/ShaderFunctions/Reconstruct World Position From Depth.asset
+  artifactKey: Guid(e7094bcbcc80eb140b2a3dbe6a861de8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/ShaderFunctions/Reconstruct World Position From Depth.asset using Guid(e7094bcbcc80eb140b2a3dbe6a861de8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '497ffeec55bed1de31507b38c0fd1f64') in 0.009350 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/ShaderFunctions/Bicubic Precompute.asset
+  artifactKey: Guid(818835145cc522e4da1f9915d8b8a984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/ShaderFunctions/Bicubic Precompute.asset using Guid(818835145cc522e4da1f9915d8b8a984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd516c94a8a6d89e20cbfd8521c15c5bb') in 0.009374 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.298160 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpAddIconNormal.png
+  artifactKey: Guid(7eb057fdbf020504fb6c9c3c78031e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpAddIconNormal.png using Guid(7eb057fdbf020504fb6c9c3c78031e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38d31693cefbbebb999f8396b6832cd2') in 0.015355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000159 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpRemoveIconNormal.png
+  artifactKey: Guid(839cb1530f95ad14ab58762161a9cb06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpRemoveIconNormal.png using Guid(839cb1530f95ad14ab58762161a9cb06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da3a4ddba04812a19e6fe6582691d68d') in 0.017242 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.648217 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/PopupPicker.png
+  artifactKey: Guid(d2384a227b4ac4943b73c8151393e502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/PopupPicker.png using Guid(d2384a227b4ac4943b73c8151393e502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c413f95a91ed09a12f8161c2aadffae') in 0.017392 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.525296 seconds.
+  path: Assets/RotE Textures/Fur/Fur Colour Variations/Fur2_basecolor.png
+  artifactKey: Guid(c66084231225d8542948db35d66b9a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur Colour Variations/Fur2_basecolor.png using Guid(c66084231225d8542948db35d66b9a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08af0eded88242d243c5abc0e9cb3eef') in 0.024176 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/RotE Textures/Fur/Fur Colour Variations/Fur3_basecolor.png
+  artifactKey: Guid(0f5c8d72989c3b247a02f18ef9bfba55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur Colour Variations/Fur3_basecolor.png using Guid(0f5c8d72989c3b247a02f18ef9bfba55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10002b1957472b75d8231439bed38cd7') in 0.020325 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/RotE Textures/Fur/Fur Colour Variations/Fur4_basecolor.png
+  artifactKey: Guid(9905f714dcbf4b141b7281cba85ab615) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur Colour Variations/Fur4_basecolor.png using Guid(9905f714dcbf4b141b7281cba85ab615) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c83178b230ad0693f03869c43a06cdc7') in 0.018456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.044177 seconds.
+  path: Assets/RotE Textures/Fur/Fur Colour Variations/Fur5_basecolor.png
+  artifactKey: Guid(617cce11a4eee434facb7b199b2ad378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur Colour Variations/Fur5_basecolor.png using Guid(617cce11a4eee434facb7b199b2ad378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92567c1d9dadf886efa292bf21f9b009') in 0.018318 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/RotE Textures/Fur/Fur_roughness.png
+  artifactKey: Guid(f7027d5a3d2d00148b14df03b54d6c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_roughness.png using Guid(f7027d5a3d2d00148b14df03b54d6c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f66eb5981fd579ea00ba06a172b558e') in 0.021823 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/RotE Textures/Fur/Fur_basecolor.png
+  artifactKey: Guid(fc1b2cd420f40fe47bfe05e8fdd03908) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_basecolor.png using Guid(fc1b2cd420f40fe47bfe05e8fdd03908) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07e778b6e382acd22bb854655885a5dc') in 0.018526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/RotE Textures/Fur/Fur_height.png
+  artifactKey: Guid(e0ef555a71e0301428be1070e71bddb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_height.png using Guid(e0ef555a71e0301428be1070e71bddb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ce67ab01152fe95e57d7e2d0d281d08') in 0.019755 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/RotE Textures/Fur/Fur_metallic.png
+  artifactKey: Guid(4195848f7d656d04bb8027bde78d15d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_metallic.png using Guid(4195848f7d656d04bb8027bde78d15d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2d98cbe7e71eff27fd3be6d27289df4') in 0.016790 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/RotE Textures/Fur/Fur_normal.png
+  artifactKey: Guid(c5bf8925ba8616748a98d35250e69e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_normal.png using Guid(c5bf8925ba8616748a98d35250e69e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dca3b75094d6c654460fbde7d032f135') in 0.019618 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/RotE Textures/Fur/Fur Colour Variations/Fur_basecolor.png
+  artifactKey: Guid(cf0eba5dddd887647b6f556f06a9aa1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur Colour Variations/Fur_basecolor.png using Guid(cf0eba5dddd887647b6f556f06a9aa1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e1f46bad3b63f01d44c3309c4078a9b') in 0.018789 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.431401 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_BaseColor.tga
+  artifactKey: Guid(6bd607ee7c0c8fc40a0d78e8c275a7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_BaseColor.tga using Guid(6bd607ee7c0c8fc40a0d78e8c275a7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '771ba7520f8d89fbdeac23d09d6d9c05') in 0.193617 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_RenderDoc@2x.png
+  artifactKey: Guid(9c63b51755ec8c845b857cc73a35d606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_RenderDoc@2x.png using Guid(9c63b51755ec8c845b857cc73a35d606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1169e973a89040a7ab3a9e9a729bc79') in 0.056746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/renderdoc.png
+  artifactKey: Guid(cf13fb90f91d2a545a00591d75b43bd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/renderdoc.png using Guid(cf13fb90f91d2a545a00591d75b43bd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0a0a4014994ddc585054f8b4bcebe39') in 0.020185 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_renderdoc.png
+  artifactKey: Guid(cbe929948d88af7409a05054bc8187c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_renderdoc.png using Guid(cbe929948d88af7409a05054bc8187c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '127b6305c81d9d2eb20bd7068f327395') in 0.018209 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/RenderDoc@2x.png
+  artifactKey: Guid(89608b060fc7279479398a62e245a409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/RenderDoc@2x.png using Guid(89608b060fc7279479398a62e245a409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85003b79b8229f6ccdd619255014ff14') in 0.059592 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 683.677285 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '9563d5744b50402a523f79cbb9e9ee74') in 0.010749 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1011.040049 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'f00fdc49de26c79ea16e086e27e668b2') in 0.010005 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 194.035293 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '2beef064e3729f202c08db579de21f3c') in 0.011076 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.945280 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '188fef93dd7abbc2faf6f86cdf791ee6') in 0.008735 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.253020 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'e1a09c4870f0a4003ac026044f6ecb42') in 0.008717 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.286543 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'eb066ac3407c6f73c8278355fb7eaf8a') in 0.008880 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 227.067359 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '1258f11b6bd9eb98ff93d45c3ace8121') in 0.011537 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 286.320751 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'd5440a6ad6b18a9bbdd50285bb566e48') in 0.011039 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.908761 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '56c3b3ee112df98a3a59d7590800b6fa') in 0.009021 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.824479 seconds.
+  path: Assets/RotE VFX/Shaders/ustomToonTestmat.mat
+  artifactKey: Guid(9ba37aa87dcb4484bb2e80a5b54b9e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/ustomToonTestmat.mat using Guid(9ba37aa87dcb4484bb2e80a5b54b9e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73da81f6c6e0a1db2f1aef7fe24fe37b') in 0.262443 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.705367 seconds.
+  path: Assets/RotE VFX/Shaders/ustomToonTestmat.mat
+  artifactKey: Guid(9ba37aa87dcb4484bb2e80a5b54b9e53) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/ustomToonTestmat.mat using Guid(9ba37aa87dcb4484bb2e80a5b54b9e53) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'f2953c344050aecc3a5400403e7704ae') in 0.013425 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/NPC Characters/NPC-Rancher-Mat.mat
+  artifactKey: Guid(31ab6d406a9cba44886ba131a7b12273) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/NPC Characters/NPC-Rancher-Mat.mat using Guid(31ab6d406a9cba44886ba131a7b12273) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '6b0f226fe78af8e493a42bc18e5d3ce3') in 0.010353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1053.286566 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8679614474589769f5e1012ef2c5a717') in 0.009790 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 80.044224 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'e741b3b0be7481e607d72507e089f18e') in 0.009959 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.313876 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'e1010a8631b08490a3e81df85c192640') in 0.011399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 159.976654 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'd3f70e01d39aeea5ab9bfdd23ff8e1cf') in 0.009723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 232.451617 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'bd9c11ce9db74eae54d4892ad74a5216') in 0.008884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 384.188029 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ebe13744db63b70bf6d202834026dd9f') in 0.012343 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.014824 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '6da18c4b169af598a4155b345524adc5') in 0.009668 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 118.285022 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'fdd12736d11a87a705069483aa465467') in 0.015355 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.574678 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8d09bdbcaf58abf486b15c233c858d46') in 0.008745 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 197.647467 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'f5cc4a16124114a6d31f5f59273f1992') in 0.011382 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 355.299145 seconds.
+  path: Assets/RotE VFX/Shaders/ustomToonTestmat.mat
+  artifactKey: Guid(9ba37aa87dcb4484bb2e80a5b54b9e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/ustomToonTestmat.mat using Guid(9ba37aa87dcb4484bb2e80a5b54b9e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a1161cd64eb4425257df2fc04cd649e') in 0.021538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.650808 seconds.
+  path: Assets/RotE VFX/Shaders/ustomToonTestmat.mat
+  artifactKey: Guid(9ba37aa87dcb4484bb2e80a5b54b9e53) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/ustomToonTestmat.mat using Guid(9ba37aa87dcb4484bb2e80a5b54b9e53) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'e3ccead15c5b62d0e63e7d3c990ca04e') in 0.009620 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene/LightingData.asset
+  artifactKey: Guid(ebcf1ff79088e5f4abce91d72d26141c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/VFX Testing Scene/LightingData.asset using Guid(ebcf1ff79088e5f4abce91d72d26141c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'dfc686d179ef18e1b291d5d65e623aab') in 0.012133 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene/ReflectionProbe-0.exr
+  artifactKey: Guid(acab2eb6ea017f64fb36454a18877fcb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/VFX Testing Scene/ReflectionProbe-0.exr using Guid(acab2eb6ea017f64fb36454a18877fcb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '455958c47c58b0e2d78427365c056fa3') in 0.038731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 437.780010 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '1854703ff4cb62f2cdcf6d8e8d41fcf3') in 0.010891 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.635828 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '301e30484a31d7251db740d9ff7d50ac') in 0.017781 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 107.207275 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'a4edde72c105b65169e9bc2f69ab4afa') in 0.011017 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 220.417536 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ef130c75237f7b6a20ad76c6790e05e6') in 0.009909 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.112140 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'dffe00fc2a3349430fdffe76f271d418') in 0.015963 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 210.294570 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '9a23896fba2b94c4f4cf3f9e8a2ba882') in 0.012008 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 76.187342 seconds.
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(7cb797ac4c8ee114383f457c6a058c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(7cb797ac4c8ee114383f457c6a058c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffab92bd8db8a60a77dd3c5de0ea2f76') in 0.093487 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 161.641739 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c52b432582d0bf818a08112e021c1f8') in 0.005231 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.590071 seconds.
+  path: Assets/NPC Characters/NPC-Rancher-Mat.mat
+  artifactKey: Guid(31ab6d406a9cba44886ba131a7b12273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC Characters/NPC-Rancher-Mat.mat using Guid(31ab6d406a9cba44886ba131a7b12273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90be21a93cc3ddccae2b4b5ddd054379') in 0.031806 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.018092 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.147 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2147ms)
+		BeginReloadAssembly (258ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (59ms)
+		EndReloadAssembly (1765ms)
+			LoadAssemblies (188ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (476ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (94ms)
+			SetupLoadedEditorAssemblies (527ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (142ms)
+				ProcessInitializeOnLoadAttributes (330ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (37ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (53ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.08 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3610 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 216.9 MB.
+System memory in use after: 217.1 MB.
+
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4770.
+Total: 5.044600 ms (FindLiveObjects: 0.580800 ms CreateObjectMapping: 0.412700 ms MarkObjects: 3.957800 ms  DeleteObjects: 0.091700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 9218.165335 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CleanupONNew.png
+  artifactKey: Guid(e86ba70d2363b9443beac28a6a370b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CleanupONNew.png using Guid(e86ba70d2363b9443beac28a6a370b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0e76698c750df133b0e143f1b76ea12') in 0.175698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_metallic.png
+  artifactKey: Guid(4d69476f821d5af408498a7fcd5be6c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_metallic.png using Guid(4d69476f821d5af408498a7fcd5be6c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc338783288aa50d8604986a8ab3e821') in 0.143524 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_height.png
+  artifactKey: Guid(3553a598b383cdb4385efa85f8a2d208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_height.png using Guid(3553a598b383cdb4385efa85f8a2d208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30a025680029a9c69662e31265833598') in 0.098154 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_ambientocclusion.png
+  artifactKey: Guid(57de42e1adb6b4f40812d59f9e006a66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_ambientocclusion.png using Guid(57de42e1adb6b4f40812d59f9e006a66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0b050229f05a4503b242804eeec3f90') in 0.054664 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_normal.png
+  artifactKey: Guid(81db96815ae88314296686b88cbad1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_normal.png using Guid(81db96815ae88314296686b88cbad1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '380a7db8f8f5af784090094280481746') in 0.112883 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_basecolor.png
+  artifactKey: Guid(dd3056641039b3148a0e5b4bf4d61319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_basecolor.png using Guid(dd3056641039b3148a0e5b4bf4d61319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8e8818342d78e8ee14292c02aeb3a17') in 0.097486 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_roughness.png
+  artifactKey: Guid(37dd28d3a040b39468989bf0fe9b0dde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_roughness.png using Guid(37dd28d3a040b39468989bf0fe9b0dde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '912e4417219a1bedeb500232004c7691') in 0.051597 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_ambientocclusion.png
+  artifactKey: Guid(c8e00dafe78c9df45810491cbf13517e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_ambientocclusion.png using Guid(c8e00dafe78c9df45810491cbf13517e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b752a6b926f81ab63c14cfe527dbe38') in 0.092543 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.725429 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_basecolor.png
+  artifactKey: Guid(7430a4cdfd680664e97a66790f9bffd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_basecolor.png using Guid(7430a4cdfd680664e97a66790f9bffd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d61f9396736fb9bef373764b447d5a1') in 0.082650 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/CommentaryResizeIconInv.png
+  artifactKey: Guid(b52bc320a2ff91446978a893ec738134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/CommentaryResizeIconInv.png using Guid(b52bc320a2ff91446978a893ec738134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa660e346c6464184bea0a9efee806bf') in 0.017282 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_metallic.png
+  artifactKey: Guid(6037e26a63b26e84aba0ea7124495b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_metallic.png using Guid(6037e26a63b26e84aba0ea7124495b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfaa96a74389f3e3bfc8d2eac546d390') in 0.144562 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_roughness.png
+  artifactKey: Guid(e9cefe33816c5fb419211b7802901b8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_roughness.png using Guid(e9cefe33816c5fb419211b7802901b8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53919b8fbedd40a5e15a91aa757b4ae4') in 0.182309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/CommentaryResizeIcon.png
+  artifactKey: Guid(5321bd2b79632764286f28503db80815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/CommentaryResizeIcon.png using Guid(5321bd2b79632764286f28503db80815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41e7376709627d96632009a5d7c24d77') in 0.015248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_basecolor.png
+  artifactKey: Guid(2b4bf023f9f77ea42b247c189d7db91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_basecolor.png using Guid(2b4bf023f9f77ea42b247c189d7db91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd46016896668dd0f6daaa6cbefe7951d') in 0.086687 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_normal.png
+  artifactKey: Guid(85a44e9dcba5fb94d8c17dd151a4fa59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_normal.png using Guid(85a44e9dcba5fb94d8c17dd151a4fa59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '619f0517a96bb5b729dfa5a52c352c87') in 0.049632 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_metallic.png
+  artifactKey: Guid(8bef51b2b1b41904094c9fe032ae62a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_metallic.png using Guid(8bef51b2b1b41904094c9fe032ae62a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eabd2b41e2345e3c7fdac7badbbf2204') in 0.052025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000445 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_ambientocclusion.png
+  artifactKey: Guid(e1ea381dd81486c45a8f78013f247d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_ambientocclusion.png using Guid(e1ea381dd81486c45a8f78013f247d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9abd22ea4a53816ee23e8be7511d6f38') in 0.049349 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_height.png
+  artifactKey: Guid(0bf60dd9e10c7ea4f8ff9b8acff75b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_height.png using Guid(0bf60dd9e10c7ea4f8ff9b8acff75b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0cf2f12ec0a33d2ebc1c8f76dc9a01d') in 0.095311 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_height.png
+  artifactKey: Guid(6aed5d9781ffe1e459aed7a7b7adf840) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_height.png using Guid(6aed5d9781ffe1e459aed7a7b7adf840) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52a2ce0aa7ad5ee5182adeea26b9faa3') in 0.054706 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.077656 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_normal.png
+  artifactKey: Guid(0b34a30678da763498ea9fccfab22af2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_normal.png using Guid(0b34a30678da763498ea9fccfab22af2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05f84b05dd9039716bf011a0c10aea50') in 0.126169 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/RotE Textures/Fence/Fence_basecolor.png
+  artifactKey: Guid(0814322d264f3b4478c7dae397d17317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_basecolor.png using Guid(0814322d264f3b4478c7dae397d17317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee1495a11609226e56558a0d52bb2f72') in 0.095168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Rhino Character/Textures/earth-rhino-CLR.png
+  artifactKey: Guid(3abd0ce992d01b748846d96367ee3c14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rhino Character/Textures/earth-rhino-CLR.png using Guid(3abd0ce992d01b748846d96367ee3c14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0110a25215bc30b9ab598ae1c4c1ace8') in 0.098769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/RotE Textures/Fence/Fence_ambientocclusion.png
+  artifactKey: Guid(92839119bea212644b7d3e8976da376d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_ambientocclusion.png using Guid(92839119bea212644b7d3e8976da376d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c5e040fcf528204ab7d49bc7734c44a') in 0.130687 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/RotE Textures/Fence/Fence_roughness.png
+  artifactKey: Guid(d9a34f30c5e36254ba87207e2aaccf86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_roughness.png using Guid(d9a34f30c5e36254ba87207e2aaccf86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87e2dee9992e18ab73f88715188a9589') in 0.103559 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Rhino Character/Textures/earth-rhino-NRM.png
+  artifactKey: Guid(0b1016166be85ac4f9325287a1e9334f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rhino Character/Textures/earth-rhino-NRM.png using Guid(0b1016166be85ac4f9325287a1e9334f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e279f9c51aacecda400f31829cc0e5e') in 0.053500 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Rhino Character/Textures/earth-rhino-SSS.png
+  artifactKey: Guid(a6199c3f4c2edeb4d93c769726792a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rhino Character/Textures/earth-rhino-SSS.png using Guid(a6199c3f4c2edeb4d93c769726792a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e0948b8566a2fd6b3a36d9435bfabf2') in 0.093520 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000328 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/FitView.png
+  artifactKey: Guid(1def740f2314c6b4691529cadeee2e9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/FitView.png using Guid(1def740f2314c6b4691529cadeee2e9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0baec255a6354e986280ab69fa75b252') in 0.014916 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_roughness.png
+  artifactKey: Guid(88ada1014bb5a6f449c3bffcbfa8b757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_roughness.png using Guid(88ada1014bb5a6f449c3bffcbfa8b757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb60db8731b5c55b1b07bba4b9282dbd') in 0.109045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000375 seconds.
+  path: Assets/RotE Textures/Fence/Fence_Opacity.png
+  artifactKey: Guid(dc50ea1092194cb48bc7b466a21a7148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_Opacity.png using Guid(dc50ea1092194cb48bc7b466a21a7148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c605452bc5028d0d128114f873ba4c65') in 0.098230 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/RotE Textures/Fence/Fence_height.png
+  artifactKey: Guid(0e0739c91794562419cb446768f4812f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_height.png using Guid(0e0739c91794562419cb446768f4812f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e7a3a5f23b230c85b4d9048450923da') in 0.078931 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/RotE Textures/Fence/Fence_normal.png
+  artifactKey: Guid(9da2873447bfe4d418dd6eafa86b4911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_normal.png using Guid(9da2873447bfe4d418dd6eafa86b4911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '430c0ef4dd81e4a94c0178e0160a4cce') in 0.051894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/RotE Textures/Fence/Fence_metallic.png
+  artifactKey: Guid(2f373e3bfbaea084c9254b574a2231d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_metallic.png using Guid(2f373e3bfbaea084c9254b574a2231d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae51ec27d0cbafa998b83c30b6f944e7') in 0.052223 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/flat.png
+  artifactKey: Guid(194a51ad3c0179644abea3f196c5ebe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/flat.png using Guid(194a51ad3c0179644abea3f196c5ebe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8df1966a32f3ce86f1e4dd7b62805f90') in 0.037314 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.121168 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphButton.png
+  artifactKey: Guid(2b3b7485f95e8a44dab3fa9610f56cbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphButton.png using Guid(2b3b7485f95e8a44dab3fa9610f56cbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36cc6f28807fbd8abe3716db2d6edb61') in 0.099756 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/green.png
+  artifactKey: Guid(352167e52fa3b0c43ac690f5e2debc2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/green.png using Guid(352167e52fa3b0c43ac690f5e2debc2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deaac59a5f28bff79b3dd46d72c4f2b8') in 0.015162 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/RotE Textures/Grass/Grass_ambientocclusion.png
+  artifactKey: Guid(1e4b5cf7c58ca7647863acd9f9442fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass/Grass_ambientocclusion.png using Guid(1e4b5cf7c58ca7647863acd9f9442fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a24902d92feeba3920a77ef46f0e3dbf') in 0.102743 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/RotE Textures/Grass/Grass_normal.png
+  artifactKey: Guid(c7fa25bbaadfffe46a02d7a98dbd8a9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass/Grass_normal.png using Guid(c7fa25bbaadfffe46a02d7a98dbd8a9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcb458c26107dfe23b3867ad01fca4ea') in 0.146767 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/RotE Textures/Grass/Grass_roughness.png
+  artifactKey: Guid(8922e6d2e0307de4e914e17ce1afcfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass/Grass_roughness.png using Guid(8922e6d2e0307de4e914e17ce1afcfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2320d365c0110536a61aef0acb1d47c8') in 0.119678 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/RotE Textures/Ground/Ground_normal.png
+  artifactKey: Guid(dfff1d13aa4530a4fbca704fd676c65f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Ground/Ground_normal.png using Guid(dfff1d13aa4530a4fbca704fd676c65f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9d2cdce7b21275a4d321d07f5baf974') in 0.101293 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/RotE Textures/Stone Wall/StoneWall_normal.png
+  artifactKey: Guid(f82bdf02e28ae6c4cb423fe2c92f13f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Wall/StoneWall_normal.png using Guid(f82bdf02e28ae6c4cb423fe2c92f13f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0a2b5e65a475abf65b301f774d19cf0') in 0.141263 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_Normal.tga
+  artifactKey: Guid(0555270713d08ca4ab01a3ea61a7f094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_Normal.tga using Guid(0555270713d08ca4ab01a3ea61a7f094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36e135b94683ad76d1eb7907e3ced061') in 0.126989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/RotE Textures/Stone Floor/StoneFloor_normal.png
+  artifactKey: Guid(a2d0609617e546d45b369509f1588656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Floor/StoneFloor_normal.png using Guid(a2d0609617e546d45b369509f1588656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2015cfde9349e1cd52e89414145b4a0b') in 0.108550 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/RotE Textures/Water/Water_normal.png
+  artifactKey: Guid(01f45256194d23346aa5ec85ad7abb08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Water/Water_normal.png using Guid(01f45256194d23346aa5ec85ad7abb08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a2521ba701013eed742de08f04c1069') in 0.095662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/RotE Textures/Rocks/Rocks_normal.png
+  artifactKey: Guid(01e129815329a014f80189ca4c57343c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Rocks/Rocks_normal.png using Guid(01e129815329a014f80189ca4c57343c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac6b709f130c474e299c438897abd627') in 0.111785 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/RotE Textures/Sand/Sand_normal.png
+  artifactKey: Guid(f4eef5681719ffe47ab7bac91037ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Sand/Sand_normal.png using Guid(f4eef5681719ffe47ab7bac91037ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b697a20bba8f80668c0b4a224bd290c') in 0.035689 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/RotE Textures/TreeBark/TreeBark_normal.png
+  artifactKey: Guid(6a070b5640a9b5e489275de118b816b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/TreeBark/TreeBark_normal.png using Guid(6a070b5640a9b5e489275de118b816b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '106345f5234c041b5654535b2bb508e5') in 0.017659 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthStaff_T_Normal.tga
+  artifactKey: Guid(8bc14a4b38c6cb4468970388e3b4a491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthStaff_T_Normal.tga using Guid(8bc14a4b38c6cb4468970388e3b4a491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29e74c8682185e48fa833c3afce01a93') in 0.054376 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/NoPreview.png
+  artifactKey: Guid(750b1bd7ba8bd28489650de6d0a95cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/NoPreview.png using Guid(750b1bd7ba8bd28489650de6d0a95cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a187632ece96835cf6bc9a18d21de5d2') in 0.015159 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4147.291924 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene/ReflectionProbe-0.exr
+  artifactKey: Guid(acab2eb6ea017f64fb36454a18877fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/VFX Testing Scene/ReflectionProbe-0.exr using Guid(acab2eb6ea017f64fb36454a18877fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e34b002a2b2e14681ae6cf4fe97457c2') in 0.059215 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1662.685005 seconds.
+  path: Assets/NPC Characters/NPC-Rancher-Mat.mat
+  artifactKey: Guid(31ab6d406a9cba44886ba131a7b12273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC Characters/NPC-Rancher-Mat.mat using Guid(31ab6d406a9cba44886ba131a7b12273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f405078d34a6ab6dc249ae4082c38de8') in 0.183550 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

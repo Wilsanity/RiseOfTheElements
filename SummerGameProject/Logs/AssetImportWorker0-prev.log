@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.11f1 (4d8c25f7477e) revision 5082149'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19042.1415; Version 2009; 64bit' Language: 'en' Physical Memory: 16332 MB
+OS: 'Windows 10 Home; OS build 19042.1466; Version 2009; 64bit' Language: 'en' Physical Memory: 16332 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,11 +15,11 @@ D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63531
+53706
 Successfully changed project path to: D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 99.06 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 96.02 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.11f1 (4d8c25f7477e)
 [Subsystems] Discovering subsystems at path D:/Unity/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,90 +36,90 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2021.1.11f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56412
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56764
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007878 seconds.
+Registered in 0.002441 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.22 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 87.96 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.163 seconds
+- Completed reload, in  2.028 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2163ms)
-		BeginReloadAssembly (114ms)
+	ReloadAssembly (2028ms)
+		BeginReloadAssembly (104ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (562ms)
-			LoadAssemblies (105ms)
+		EndReloadAssembly (564ms)
+			LoadAssemblies (104ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (212ms)
+			SetupTypeCache (214ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (33ms)
-			SetupLoadedEditorAssemblies (242ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (260ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (83ms)
+				RefreshPlugins (88ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (115ms)
-				ProcessInitializeOnLoadMethodAttributes (34ms)
+				ProcessInitializeOnLoadAttributes (125ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.015958 seconds.
+Registered in 0.009077 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 87.12 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 94.63 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.817 seconds
+- Completed reload, in  1.754 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1818ms)
-		BeginReloadAssembly (210ms)
+	ReloadAssembly (1755ms)
+		BeginReloadAssembly (215ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (22ms)
-		EndReloadAssembly (1501ms)
-			LoadAssemblies (169ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (1472ms)
+			LoadAssemblies (161ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (411ms)
+			SetupTypeCache (452ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (89ms)
-			SetupLoadedEditorAssemblies (726ms)
+			RebuildScriptCaches (97ms)
+			SetupLoadedEditorAssemblies (679ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (87ms)
-				BeforeProcessingInitializeOnLoad (138ms)
-				ProcessInitializeOnLoadAttributes (463ms)
+				RefreshPlugins (95ms)
+				BeforeProcessingInitializeOnLoad (92ms)
+				ProcessInitializeOnLoadAttributes (476ms)
 				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (25ms)
+				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
-Refreshing native plugins compatible for Editor in 0.84 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.77 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3939 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 203.9 MB.
-System memory in use after: 204.0 MB.
+Unloading 4061 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 218.0 MB.
+System memory in use after: 218.2 MB.
 
-Unloading 108 unused Assets to reduce memory usage. Loaded Objects now: 4378.
-Total: 4.039500 ms (FindLiveObjects: 0.426100 ms CreateObjectMapping: 0.465400 ms MarkObjects: 2.960100 ms  DeleteObjects: 0.186900 ms)
+Unloading 113 unused Assets to reduce memory usage. Loaded Objects now: 4499.
+Total: 5.328600 ms (FindLiveObjects: 0.834300 ms CreateObjectMapping: 0.540700 ms MarkObjects: 3.651600 ms  DeleteObjects: 0.300400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,546 +133,229 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/RotE VFX/Fire/TorchFlameExtinguish.prefab
-  artifactKey: Guid(ef673a4540fd90b4ba3b1bd5169f4d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchFlameExtinguish.prefab using Guid(ef673a4540fd90b4ba3b1bd5169f4d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41ae30cf4284c8e8a045e0123d034882') in 0.142700 seconds 
+  path: Assets/RotE VFX/Fire/FireShader.shader
+  artifactKey: Guid(19f29137d2bfc644e94c707c7931ad47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/FireShader.shader using Guid(19f29137d2bfc644e94c707c7931ad47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dc843bc8c06fa381d97230aad6c2b52') in 0.044574 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 19.996349 seconds.
-  path: Assets/RotE VFX/Fire/New Animation.anim
-  artifactKey: Guid(7cb3bffbbf4ed0344a03f40ae9a6ff19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/New Animation.anim using Guid(7cb3bffbbf4ed0344a03f40ae9a6ff19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '500072a76ae4aa8ad970a6213bcfd075') in 0.013338 seconds 
+  Time since last request: 0.000332 seconds.
+  path: Assets/RotE VFX/Shaders/GrassGround_Mat.mat
+  artifactKey: Guid(c04fc63beb1a83942b53245e58d72ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/GrassGround_Mat.mat using Guid(c04fc63beb1a83942b53245e58d72ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d307a87bfbdc2e27f1d0b9938fef2bc') in 0.985070 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 97.607884 seconds.
-  path: Assets/RotE VFX/Fire/TorchFlameParticles.controller
-  artifactKey: Guid(84a42733918080e409859e7b148c370e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchFlameParticles.controller using Guid(84a42733918080e409859e7b148c370e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ab7ca627ea75843a5169aa94a51e210') in 0.059064 seconds 
+  Time since last request: 0.000223 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9833ef91f3b2b7fd8c61f72d957da49d') in 0.012568 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 197.726897 seconds.
-  path: Assets/RotE VFX/Fire/TorchFlameExtinguish.controller
-  artifactKey: Guid(4d0fabdef398cd64caf9eb5f19869852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchFlameExtinguish.controller using Guid(4d0fabdef398cd64caf9eb5f19869852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68f58f022834be9f66479b62be567fad') in 0.004781 seconds 
+  Time since last request: 28.960071 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03a9b85a49a4cd346fc84ca15fb107b4') in 0.007821 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 698.482129 seconds.
-  path: Assets/RotE VFX/Fire/TorchExtinguishAnim.anim
-  artifactKey: Guid(f79c5a5f318d97e4ba78abf1d24c23e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchExtinguishAnim.anim using Guid(f79c5a5f318d97e4ba78abf1d24c23e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72373ee0dc505a9c896c6d751434cabc') in 0.008316 seconds 
+  Time since last request: 17.095620 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '314239a2f313edc512dd731da1131dc9') in 0.004461 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 136.163048 seconds.
-  path: Assets/RotE VFX/Fire/TorchEffects.prefab
-  artifactKey: Guid(9f449e0c92f3e1444afaae69a6294cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchEffects.prefab using Guid(9f449e0c92f3e1444afaae69a6294cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7900765b82782263be1ac8217cc76e8b') in 0.013348 seconds 
+  Time since last request: 810.919834 seconds.
+  path: Assets/RotE VFX/Fire/TorchLight.prefab
+  artifactKey: Guid(a40a40a4897c6004ca37cca28f1aa258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/TorchLight.prefab using Guid(a40a40a4897c6004ca37cca28f1aa258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b46545dd54a80e611a1077ecab65f20') in 0.019879 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 567.735714 seconds.
-  path: Assets/RotE VFX/Fire/TorchEffectsAnim.anim
-  artifactKey: Guid(9d8734eccd006c44c9b16d42548a3929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchEffectsAnim.anim using Guid(9d8734eccd006c44c9b16d42548a3929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa49501790efb45cbb72aebeb9084cbe') in 0.008631 seconds 
+  Time since last request: 4574.449645 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '1d3508d84516d3dec9c9f2ebba7cf346') in 0.072017 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 12.574382 seconds.
-  path: Assets/RotE VFX/Fire/TorchLightAnim.anim
-  artifactKey: Guid(9d8734eccd006c44c9b16d42548a3929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchLightAnim.anim using Guid(9d8734eccd006c44c9b16d42548a3929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c7670fdaeb52a6e8fe7da7d4244cbf9') in 0.009044 seconds 
+  Time since last request: 0.000247 seconds.
+  path: Assets/RotE VFX/Shaders/GrassGround_Mat.mat
+  artifactKey: Guid(c04fc63beb1a83942b53245e58d72ffd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/GrassGround_Mat.mat using Guid(c04fc63beb1a83942b53245e58d72ffd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'cdbe78e5535e42d0cfc9feb2c67ba4ef') in 0.013106 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 507.039970 seconds.
-  path: Assets/RotE VFX/Fire/TorchEffects.controller
-  artifactKey: Guid(d37c17777301d464f8966582b43b85e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchEffects.controller using Guid(d37c17777301d464f8966582b43b85e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '916d73e87879af283d9957fcde17a7f7') in 0.007789 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.014537 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.76 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.512 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1513ms)
-		BeginReloadAssembly (180ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (42ms)
-		EndReloadAssembly (1229ms)
-			LoadAssemblies (157ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (395ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (82ms)
-			SetupLoadedEditorAssemblies (465ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (138ms)
-				ProcessInitializeOnLoadAttributes (286ms)
-				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (26ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (14ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.81 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3589 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.2 MB.
-System memory in use after: 173.4 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4382.
-Total: 3.753900 ms (FindLiveObjects: 0.424100 ms CreateObjectMapping: 0.546100 ms MarkObjects: 2.708100 ms  DeleteObjects: 0.074100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  Time since last request: 0.000246 seconds.
+  path: Assets/Main Character/Textures/wolf1_mat.mat
+  artifactKey: Guid(2f8be3708ca3a234a88e3c55c6bc5e93) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Main Character/Textures/wolf1_mat.mat using Guid(2f8be3708ca3a234a88e3c55c6bc5e93) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ef1cc376f42e3a2a734374c971fb6db8') in 0.009562 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 583.826249 seconds.
-  path: Assets/RotE VFX/Fire/TorchEffects.prefab
-  artifactKey: Guid(9f449e0c92f3e1444afaae69a6294cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchEffects.prefab using Guid(9f449e0c92f3e1444afaae69a6294cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82f67ca154cf05e9d6a5ea586b6b9efe') in 0.070946 seconds 
+  Time since last request: 0.000224 seconds.
+  path: Assets/NPC Characters/NPC-Rancher-Mat.mat
+  artifactKey: Guid(31ab6d406a9cba44886ba131a7b12273) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/NPC Characters/NPC-Rancher-Mat.mat using Guid(31ab6d406a9cba44886ba131a7b12273) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '450fd0de75a2a99e7967f13a4dce6271') in 0.009389 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.690294 seconds.
-  path: Assets/RotE VFX/Fire/TorchFlameExtinguish.controller
-  artifactKey: Guid(4d0fabdef398cd64caf9eb5f19869852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchFlameExtinguish.controller using Guid(4d0fabdef398cd64caf9eb5f19869852) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f932965e37eb5e02b3ad487d5cff1fab') in 0.010641 seconds 
+  Time since last request: 0.000188 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene.unity
+  artifactKey: Guid(ac67fb28a38adcc4384f70ae2a64eb29) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/VFX Testing Scene.unity using Guid(ac67fb28a38adcc4384f70ae2a64eb29) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'bc1a5bae9b93c3e53438126ce6b5b5aa') in 0.014353 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.048197 seconds.
-  path: Assets/RotE VFX/Fire/TorchFlameExtinguish 1.controller
-  artifactKey: Guid(8696ab30222d5f647bb76c9c73d1570d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchFlameExtinguish 1.controller using Guid(8696ab30222d5f647bb76c9c73d1570d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb59a93a61578082d790e4742be6d06f') in 0.009697 seconds 
+  Time since last request: 0.000197 seconds.
+  path: Assets/RotE VFX/Fire/TorchLight.prefab
+  artifactKey: Guid(a40a40a4897c6004ca37cca28f1aa258) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Fire/TorchLight.prefab using Guid(a40a40a4897c6004ca37cca28f1aa258) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '0a97974bf84c243d1d964d531bccbf52') in 0.008564 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.862799 seconds.
-  path: Assets/RotE VFX/Fire/TorchEffects.controller
-  artifactKey: Guid(d37c17777301d464f8966582b43b85e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchEffects.controller using Guid(d37c17777301d464f8966582b43b85e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94ca74bc6ca89bc5377eb30616e078d3') in 0.006115 seconds 
+  Time since last request: 274.279325 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '34414d6666e50d8bdf6e71ccd135c953') in 0.010003 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 141.911289 seconds.
-  path: Assets/RotE VFX/Fire/TorchExtinguishAnim.anim
-  artifactKey: Guid(f79c5a5f318d97e4ba78abf1d24c23e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/Fire/TorchExtinguishAnim.anim using Guid(f79c5a5f318d97e4ba78abf1d24c23e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '039753a36e23eeb50cc6c841b2d80bd8') in 0.004307 seconds 
+  Time since last request: 38.116515 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'fd4b72b05711b175e6203752ee70ca6c') in 0.011421 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.014335 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.84 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.549 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1550ms)
-		BeginReloadAssembly (190ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (43ms)
-		EndReloadAssembly (1256ms)
-			LoadAssemblies (157ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (403ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (96ms)
-			SetupLoadedEditorAssemblies (458ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (129ms)
-				ProcessInitializeOnLoadAttributes (286ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
-				AfterProcessingInitializeOnLoad (26ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (14ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.80 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3589 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.3 MB.
-System memory in use after: 173.5 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4385.
-Total: 3.017900 ms (FindLiveObjects: 0.291000 ms CreateObjectMapping: 0.162600 ms MarkObjects: 2.497600 ms  DeleteObjects: 0.065500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 68.392170 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '4755b0201edddb79789a4ea9057a5138') in 0.009008 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.014601 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.604 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1604ms)
-		BeginReloadAssembly (193ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (50ms)
-		EndReloadAssembly (1306ms)
-			LoadAssemblies (169ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (400ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (88ms)
-			SetupLoadedEditorAssemblies (503ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (134ms)
-				ProcessInitializeOnLoadAttributes (324ms)
-				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (28ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (14ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3589 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.3 MB.
-System memory in use after: 173.5 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4388.
-Total: 3.941200 ms (FindLiveObjects: 0.309100 ms CreateObjectMapping: 0.168500 ms MarkObjects: 3.391000 ms  DeleteObjects: 0.070900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 12.603318 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '7331f3003355d99ec63e3b530a15e408') in 0.008581 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.022602 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.616 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1617ms)
-		BeginReloadAssembly (190ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (38ms)
-		EndReloadAssembly (1316ms)
-			LoadAssemblies (167ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (410ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (92ms)
-			SetupLoadedEditorAssemblies (508ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (143ms)
-				ProcessInitializeOnLoadAttributes (318ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
-				AfterProcessingInitializeOnLoad (29ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.85 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3589 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.4 MB.
-System memory in use after: 173.6 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4391.
-Total: 4.229100 ms (FindLiveObjects: 0.298900 ms CreateObjectMapping: 0.174200 ms MarkObjects: 3.679200 ms  DeleteObjects: 0.074900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 20.223580 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'da887bf9715fa17ccfbd34c3decd1ff1') in 0.008367 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.015205 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.85 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.545 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1545ms)
-		BeginReloadAssembly (202ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (1242ms)
-			LoadAssemblies (167ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (386ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (84ms)
-			SetupLoadedEditorAssemblies (477ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (136ms)
-				ProcessInitializeOnLoadAttributes (293ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (31ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (17ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.81 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3589 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.4 MB.
-System memory in use after: 173.6 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4394.
-Total: 4.218300 ms (FindLiveObjects: 0.411800 ms CreateObjectMapping: 0.362300 ms MarkObjects: 3.370100 ms  DeleteObjects: 0.073000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 500.402725 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene/ReflectionProbe-0.exr
+  artifactKey: Guid(acab2eb6ea017f64fb36454a18877fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/VFX Testing Scene/ReflectionProbe-0.exr using Guid(acab2eb6ea017f64fb36454a18877fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbc457378dc37d61cfbb61540dcc7e53') in 0.055789 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.015165 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.98 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.556 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1556ms)
-		BeginReloadAssembly (176ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (1272ms)
-			LoadAssemblies (152ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (391ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (86ms)
-			SetupLoadedEditorAssemblies (501ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (154ms)
-				ProcessInitializeOnLoadAttributes (298ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (29ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3589 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.4 MB.
-System memory in use after: 173.6 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4397.
-Total: 3.718400 ms (FindLiveObjects: 0.307500 ms CreateObjectMapping: 0.186600 ms MarkObjects: 3.147000 ms  DeleteObjects: 0.075800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 600.618189 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8bc55a3b2cf2ba1e784ad1a42c24d3b3') in 0.009856 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.014230 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.609 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1609ms)
-		BeginReloadAssembly (193ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (1306ms)
-			LoadAssemblies (168ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (407ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (96ms)
-			SetupLoadedEditorAssemblies (496ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (140ms)
-				ProcessInitializeOnLoadAttributes (309ms)
-				ProcessInitializeOnLoadMethodAttributes (7ms)
-				AfterProcessingInitializeOnLoad (28ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (14ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.76 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3589 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 173.4 MB.
-System memory in use after: 173.6 MB.
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4400.
-Total: 4.290000 ms (FindLiveObjects: 0.412900 ms CreateObjectMapping: 0.266700 ms MarkObjects: 3.412600 ms  DeleteObjects: 0.196000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 90.719745 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '9fec836147a098177df49ef41f9b24ab') in 0.010205 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.731555 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '1082bf64bbf1a7d2fcb7883174a96a09') in 0.011219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 52.398656 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'c7e8dc5f8152c1d597358044e8419431') in 0.015394 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.961295 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'f8b0cc90db42e87b9abf8397912bba99') in 0.008574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.315928 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '3d0f5935c8d54e7cd1130df9656608b0') in 0.011151 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 33.604453 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '5daba0715ff37ce3fa604c7643164cad') in 0.011690 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 374.905536 seconds.
+  path: Assets/Main Character/Textures/wolf1_mat.mat
+  artifactKey: Guid(2f8be3708ca3a234a88e3c55c6bc5e93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Main Character/Textures/wolf1_mat.mat using Guid(2f8be3708ca3a234a88e3c55c6bc5e93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70adb32f2b38f975177238d8ec49daa0') in 0.023743 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.916640 seconds.
+  path: Assets/NPC Characters/NPC-Rancher-Mat.mat
+  artifactKey: Guid(31ab6d406a9cba44886ba131a7b12273) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/NPC Characters/NPC-Rancher-Mat.mat using Guid(31ab6d406a9cba44886ba131a7b12273) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '3b6188c8509be73d72311fb5c1b47789') in 0.011526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/RotE VFX/Shaders/GrassGround_Mat.mat
+  artifactKey: Guid(c04fc63beb1a83942b53245e58d72ffd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/GrassGround_Mat.mat using Guid(c04fc63beb1a83942b53245e58d72ffd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'e8f255e3ef51acbd5d6d0e624a243b43') in 0.011276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000315 seconds.
+  path: Assets/Main Character/Textures/wolf1_mat.mat
+  artifactKey: Guid(2f8be3708ca3a234a88e3c55c6bc5e93) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/Main Character/Textures/wolf1_mat.mat using Guid(2f8be3708ca3a234a88e3c55c6bc5e93) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '7184e662be0fcbbad3d7b5443483fee0') in 0.013120 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/RotE VFX/Shaders/TreeBark_Mat.mat
+  artifactKey: Guid(476d679bf0fdaa74db6dcc7475883840) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/TreeBark_Mat.mat using Guid(476d679bf0fdaa74db6dcc7475883840) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '6e05093ae7ac035a17ac242a01f04922') in 0.012469 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene.unity
+  artifactKey: Guid(ac67fb28a38adcc4384f70ae2a64eb29) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/VFX Testing Scene.unity using Guid(ac67fb28a38adcc4384f70ae2a64eb29) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '9b6c8348334329c09686d94b4bd7071c') in 0.008915 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 162.340421 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'd2c7fc0a0748d69c651111ba22a5f0e9') in 0.009873 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.746416 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8be17b2d3da4008d91164c33818e74a8') in 0.008450 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.262055 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8e81634145fa9ef2436ae9e1a8b70605') in 0.029435 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.721588 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'bf66f84bcf60e0f748bdbec29856ce53') in 0.008790 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 89.857853 seconds.
+  path: Assets/NPC Characters/NPC-Rancher-Mat.mat
+  artifactKey: Guid(31ab6d406a9cba44886ba131a7b12273) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/NPC Characters/NPC-Rancher-Mat.mat using Guid(31ab6d406a9cba44886ba131a7b12273) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'a291c942c90ded59451c8acd4f55c443') in 0.010039 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/RotE VFX/Shaders/GrassGround_Mat.mat
+  artifactKey: Guid(c04fc63beb1a83942b53245e58d72ffd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Shaders/GrassGround_Mat.mat using Guid(c04fc63beb1a83942b53245e58d72ffd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '4fb8c44e5164eb23f6e18e19774a88bc') in 0.009706 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene.unity
+  artifactKey: Guid(ac67fb28a38adcc4384f70ae2a64eb29) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/VFX Testing Scene.unity using Guid(ac67fb28a38adcc4384f70ae2a64eb29) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'd1428d0a64bf6f0c9e07095159eb7e4b') in 0.008159 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

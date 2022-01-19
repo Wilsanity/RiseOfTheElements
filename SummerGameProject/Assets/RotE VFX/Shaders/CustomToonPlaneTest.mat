@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CustomToonPlaneTest
-  m_Shader: {fileID: 4800000, guid: ce565275257480747b00d4dc2fc01dcd, type: 3}
+  m_Shader: {fileID: 4800000, guid: 9490305a04dae92458e82ade21af59ea, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,8 +20,8 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: e402771dcbf089e428f7b9093631afaa, type: 3}
-        m_Scale: {x: 50, y: 50}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
@@ -56,8 +56,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: c7fa25bbaadfffe46a02d7a98dbd8a9e, type: 3}
-        m_Scale: {x: 50, y: 50}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
@@ -93,10 +93,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-<<<<<<< Updated upstream
-=======
-    - _AdditionalSpecGloss: 1.08
->>>>>>> Stashed changes
+    - _AdditionalSpecGloss: 1
     - _AlphaClip: 0
     - _AlphaCutoff: 0.5
     - _Blend: 0
@@ -117,15 +114,15 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimLightOffset: 0.61
-    - _RimLightPower: 0.11
+    - _RimLightOffset: 0.79
+    - _RimLightPower: 1.04
     - _ShadowOffset: 0.5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularGlossiness: 0
     - _SpecularHighlights: 1
-    - _SpecularIntensity: -0
-    - _SpecularTransition: 0
+    - _SpecularIntensity: 0.21
+    - _SpecularTransition: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
@@ -134,10 +131,10 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimLightColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimLightColor: {r: 2, g: 2, b: 2, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SpecularColor: {r: 0.68256223, g: 0.7830189, b: 0.411208, a: 0}
-    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 0.5024316, g: 0.6886792, b: 0.40714365, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5920757994649902286
 MonoBehaviour:

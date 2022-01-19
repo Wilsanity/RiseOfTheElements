@@ -503,8 +503,14 @@ Shader "CustomToon"
 				float3 tanNormal157 = NormalMap115;
 				float3 bakedGI157 = ASEIndirectDiffuse( IN.lightmapUVOrVertexSH.xy, float3(dot(tanToWorld0,tanNormal157), dot(tanToWorld1,tanNormal157), dot(tanToWorld2,tanNormal157)));
 				MixRealtimeAndBakedGI(ase_mainLight, float3(dot(tanToWorld0,tanNormal157), dot(tanToWorld1,tanNormal157), dot(tanToWorld2,tanNormal157)), bakedGI157, half4(0,0,0,0));
+<<<<<<< HEAD
 				float3 temp_output_25_0 = ( _MainLightColor.rgb * ( ase_lightAtten + bakedGI157 ) );
 				float4 Lighting147 = ( Shadow122 * float4( temp_output_25_0 , 0.0 ) );
+=======
+				float3 break236 = ( _MainLightColor.rgb * ( ase_lightAtten + bakedGI157 ) );
+				float GrayscaleLight239 = max( max( break236.x , break236.y ) , break236.z );
+				float4 Lighting147 = ( Shadow122 * float4( ( AdditionalLight260 + GrayscaleLight239 ) , 0.0 ) );
+>>>>>>> parent of 55c436a (updated toon shader)
 				float3 ase_worldViewDir = ( _WorldSpaceCameraPos.xyz - WorldPosition );
 				ase_worldViewDir = SafeNormalize( ase_worldViewDir );
 				float3 temp_output_179_0 = ( ase_worldViewDir + _MainLightPosition.xyz );
@@ -515,6 +521,7 @@ Shader "CustomToon"
 				float2 uv_SpecularMap = IN.ase_texcoord3.xy * _SpecularMap_ST.xy + _SpecularMap_ST.zw;
 				float4 lerpResult215 = lerp( float4( _MainLightColor.rgb , 0.0 ) , _SpecularColor , _SpecularTransition);
 				float4 Specular127 = ( ( ( smoothstepResult185 * ( tex2D( _SpecularMap, uv_SpecularMap ) * lerpResult215 ) ) * _SpecularIntensity ) * ase_lightAtten );
+<<<<<<< HEAD
 				float3 temp_cast_2 = (0.5).xxx;
 				float3 temp_cast_3 = (0.6).xxx;
 				float3 worldPosValue44_g6 = WorldPosition;
@@ -539,11 +546,38 @@ Shader "CustomToon"
 				float3 specularResult61_g6 = localAdditionalLightsSpecular13_g6;
 				float3 temp_cast_6 = (_AdditionalSpecGloss).xxx;
 				float3 smoothstepResult283 = smoothstep( temp_cast_2 , temp_cast_3 , pow( specularResult61_g6 , temp_cast_6 ));
+=======
+				float3 temp_cast_3 = (0.5).xxx;
+				float3 temp_cast_4 = (0.6).xxx;
+				float3 worldPosValue44_g3 = WorldPosition;
+				float3 WorldPosition13_g3 = worldPosValue44_g3;
+				float3 worldNormalValue50_g3 = worldNormal180;
+				float3 WorldNormal13_g3 = worldNormalValue50_g3;
+				float3 temp_output_15_0_g3 = temp_output_179_0;
+				float3 WorldView13_g3 = temp_output_15_0_g3;
+				float3 worldPosValue44_g5 = WorldPosition;
+				float3 WorldPosition37_g5 = worldPosValue44_g5;
+				float3 tanNormal12_g5 = NormalMap115;
+				float3 worldNormal12_g5 = float3(dot(tanToWorld0,tanNormal12_g5), dot(tanToWorld1,tanNormal12_g5), dot(tanToWorld2,tanNormal12_g5));
+				float3 worldNormalValue50_g5 = worldNormal12_g5;
+				float3 WorldNormal37_g5 = worldNormalValue50_g5;
+				float3 localAdditionalLightsLambert37_g5 = AdditionalLightsLambert( WorldPosition37_g5 , WorldNormal37_g5 );
+				float3 lambertResult38_g5 = localAdditionalLightsLambert37_g5;
+				float3 temp_output_14_0_g3 = ( lerpResult215 * float4( lambertResult38_g5 , 0.0 ) ).rgb;
+				float3 SpecColor13_g3 = temp_output_14_0_g3;
+				float temp_output_18_0_g3 = 1.0;
+				float Smoothness13_g3 = temp_output_18_0_g3;
+				float3 localAdditionalLightsSpecular13_g3 = AdditionalLightsSpecular( WorldPosition13_g3 , WorldNormal13_g3 , WorldView13_g3 , SpecColor13_g3 , Smoothness13_g3 );
+				float3 specularResult61_g3 = localAdditionalLightsSpecular13_g3;
+				float3 temp_cast_7 = (_AdditionalSpecGloss).xxx;
+				float3 smoothstepResult283 = smoothstep( temp_cast_3 , temp_cast_4 , pow( specularResult61_g3 , temp_cast_7 ));
+>>>>>>> parent of 55c436a (updated toon shader)
 				float3 AdditionalSpecular268 = smoothstepResult283;
 				float3 tanNormal75 = NormalMap115;
 				float3 worldNormal75 = normalize( float3(dot(tanToWorld0,tanNormal75), dot(tanToWorld1,tanNormal75), dot(tanToWorld2,tanNormal75)) );
 				float dotResult76 = dot( worldNormal75 , ase_worldViewDir );
 				float ViewDirection78 = dotResult76;
+<<<<<<< HEAD
 				float3 worldPosValue44_g8 = WorldPosition;
 				float3 WorldPosition37_g8 = worldPosValue44_g8;
 				float3 tanNormal12_g8 = float3(0,0,1);
@@ -554,6 +588,8 @@ Shader "CustomToon"
 				float3 lambertResult38_g8 = localAdditionalLightsLambert37_g8;
 				float3 temp_output_235_0 = lambertResult38_g8;
 				float3 AdditionalLight260 = temp_output_235_0;
+=======
+>>>>>>> parent of 55c436a (updated toon shader)
 				float4 RimLight169 = ( float4( ( pow( ( 1.0 - saturate( ( _RimLightOffset + ViewDirection78 ) ) ) , _RimLightPower ) * ( ( LightDirection79 * ase_lightAtten ) + AdditionalLight260 ) ) , 0.0 ) * ( float4( _MainLightColor.rgb , 0.0 ) * _RimLightColor ) );
 				
 				float3 BakedAlbedo = 0;
@@ -1099,7 +1135,11 @@ Shader "CustomToon"
 }
 /*ASEBEGIN
 Version=18930
+<<<<<<< HEAD
 196;72.66667;780;335;3840.259;1793.778;4.679481;True;False
+=======
+-51.33334;360;1266.667;1634.333;3210.192;2093.652;2.173766;True;False
+>>>>>>> parent of 55c436a (updated toon shader)
 Node;AmplifyShaderEditor.CommentaryNode;266;-4652.177,-2020.594;Inherit;False;1202.418;529.6771;;7;247;248;257;246;260;235;249;Additional Lights;1,1,1,1;0;0
 Node;AmplifyShaderEditor.CommentaryNode;124;-3234.317,-1236.495;Inherit;False;656.3197;280;;2;114;115;Normal Map;1,1,1,1;0;0
 Node;AmplifyShaderEditor.CommentaryNode;162;-3370.508,-144.9553;Inherit;False;1592.914;948.8771;;15;161;147;159;239;238;237;25;160;18;157;158;35;236;296;297;Lighting;1,1,1,1;0;0
@@ -1110,7 +1150,10 @@ Node;AmplifyShaderEditor.CommentaryNode;66;-3295.253,-2530.647;Inherit;False;271
 Node;AmplifyShaderEditor.CommentaryNode;143;-1470.344,-818.5701;Inherit;False;2378.515;635.9149;;17;173;169;172;170;171;165;164;163;139;128;174;175;176;168;219;211;307;Rim Light;1,1,1,1;0;0
 Node;AmplifyShaderEditor.CommentaryNode;77;-1561.427,209.2727;Inherit;False;1151.477;437.0105;;5;78;45;135;75;76;View Direction;1,1,1,1;0;0
 Node;AmplifyShaderEditor.CommentaryNode;55;-3008.319,-818.8668;Inherit;False;1471.724;612.3828;Comment;7;20;79;117;21;22;245;262;Light Direction;1,1,1,1;0;0
+<<<<<<< HEAD
 Node;AmplifyShaderEditor.RangedFloatNode;168;-918.022,-616.2311;Inherit;False;Property;_RimLightPower;Rim Light Power;11;0;Create;True;0;0;0;False;0;False;1;0;0;0;0;1;FLOAT;0
+=======
+>>>>>>> parent of 55c436a (updated toon shader)
 Node;AmplifyShaderEditor.GetLocalVarNode;193;956.961,-645.6166;Inherit;False;169;RimLight;1;0;OBJECT;;False;1;COLOR;0
 Node;AmplifyShaderEditor.SamplerNode;144;940.9642,-1200.986;Inherit;True;Property;_Albedo;Albedo;0;0;Create;True;0;0;0;False;0;False;-1;None;1ddb8e48976159d4d8b6e36072ace9f2;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.GetLocalVarNode;135;-1522.914,352.0735;Inherit;False;115;NormalMap;1;0;OBJECT;;False;1;FLOAT3;0
@@ -1328,6 +1371,7 @@ WireConnection;146;0;150;0
 WireConnection;146;1;144;0
 WireConnection;239;0;238;0
 WireConnection;127;0;191;0
+<<<<<<< HEAD
 WireConnection;195;0;185;0
 WireConnection;195;1;218;0
 WireConnection;215;0;214;1
@@ -1335,10 +1379,21 @@ WireConnection;215;1;217;0
 WireConnection;215;2;216;0
 WireConnection;191;0;188;0
 WireConnection;191;1;190;0
+=======
+WireConnection;191;0;188;0
+WireConnection;191;1;190;0
+WireConnection;215;0;214;1
+WireConnection;215;1;217;0
+WireConnection;215;2;216;0
+>>>>>>> parent of 55c436a (updated toon shader)
 WireConnection;299;0;215;0
 WireConnection;299;1;298;0
 WireConnection;231;2;192;0
 WireConnection;231;3;144;4
 WireConnection;231;4;156;0
 ASEEND*/
+<<<<<<< HEAD
 //CHKSM=40B01142A40F9D0986E46FC0E04A378E0AE10A2A
+=======
+//CHKSM=99AFB10FE3507C67955C27412F1DD893B83D0DBC
+>>>>>>> parent of 55c436a (updated toon shader)

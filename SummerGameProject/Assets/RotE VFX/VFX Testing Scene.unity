@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 1, g: 0.9210326, b: 0.6949685, a: 1}
   m_AmbientGroundColor: {r: 0.2911516, g: 0.3301887, b: 0.09552627, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 1
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 558f2b542e7b85f4a8300d7e57a32075, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1554128399}
-  m_IndirectSpecularColor: {r: 0.4476418, g: 0.49761492, b: 0.57537144, a: 1}
+  m_IndirectSpecularColor: {r: 0.14825964, g: 0.2567096, b: 0.420039, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -422,7 +422,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 0d02758aea667e042b416b29499ed9a4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0d02758aea667e042b416b29499ed9a4, type: 3}
       propertyPath: m_LocalScale.x
@@ -1460,7 +1460,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 431.7, y: -171.94, z: 0}
 --- !u!114 &1554128401
 MonoBehaviour:
@@ -1695,7 +1695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1120931711454612078, guid: 51673f732b1032146b946a958a5145b0, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1120931711454612078, guid: 51673f732b1032146b946a958a5145b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1752,7 +1752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1748065367065361061, guid: 80d82418a25d37c4a968b847b7ac8987, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1748065367065361061, guid: 80d82418a25d37c4a968b847b7ac8987, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1913,7 +1913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3500263827259980712, guid: 9f449e0c92f3e1444afaae69a6294cd3, type: 3}
       propertyPath: LightsModule.intensityCurve.scalar
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3500263827500468173, guid: 9f449e0c92f3e1444afaae69a6294cd3, type: 3}
       propertyPath: m_IsActive
@@ -1977,11 +1977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3758052655590470658, guid: 9f449e0c92f3e1444afaae69a6294cd3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.35
+      value: 4.29
       objectReference: {fileID: 0}
     - target: {fileID: 3758052655590470658, guid: 9f449e0c92f3e1444afaae69a6294cd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 3758052655590470658, guid: 9f449e0c92f3e1444afaae69a6294cd3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2058,7 +2058,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3867155556123532028, guid: 3e0d19e5a6ceda2489f1a455f5cd2c11, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3867155556123532028, guid: 3e0d19e5a6ceda2489f1a455f5cd2c11, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2115,7 +2115,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3851438046087753243, guid: e8d86259c6e2b5445833bf9db4eb52e8, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3851438046087753243, guid: e8d86259c6e2b5445833bf9db4eb52e8, type: 3}
       propertyPath: m_LocalPosition.x

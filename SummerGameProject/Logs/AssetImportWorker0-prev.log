@@ -1,0 +1,1975 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.11f1 (4d8c25f7477e) revision 5082149'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.1466; Version 2009; 64bit' Language: 'en' Physical Memory: 16332 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\Unity\2021.1.11f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+56931
+Successfully changed project path to: D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
+D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 130.78 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.11f1 (4d8c25f7477e)
+[Subsystems] Discovering subsystems at path D:/Unity/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 980 Ti (ID=0x17c8)
+    Vendor:   NVIDIA
+    VRAM:     6097 MB
+    Driver:   30.0.15.1123
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = 'D:/Unity/2021.1.11f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56020
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003125 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 105.69 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.333 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2333ms)
+		BeginReloadAssembly (119ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (676ms)
+			LoadAssemblies (121ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (261ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (45ms)
+			SetupLoadedEditorAssemblies (305ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (106ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (143ms)
+				ProcessInitializeOnLoadMethodAttributes (45ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.009902 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 93.60 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.830 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1830ms)
+		BeginReloadAssembly (239ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (1500ms)
+			LoadAssemblies (181ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (481ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (103ms)
+			SetupLoadedEditorAssemblies (660ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (94ms)
+				BeforeProcessingInitializeOnLoad (99ms)
+				ProcessInitializeOnLoadAttributes (451ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.93 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4152 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 212.7 MB.
+System memory in use after: 212.9 MB.
+
+Unloading 115 unused Assets to reduce memory usage. Loaded Objects now: 4588.
+Total: 7.373300 ms (FindLiveObjects: 0.581600 ms CreateObjectMapping: 0.503200 ms MarkObjects: 6.005400 ms  DeleteObjects: 0.281300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/RotE VFX/Shaders/CustomToonPlaneTest.mat
+  artifactKey: Guid(219440754aabcfb41b27214dd0edbdd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToonPlaneTest.mat using Guid(219440754aabcfb41b27214dd0edbdd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd8dcc4cefaca2c82f9c1ea1f959a9a3') in 1.385637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/RotE VFX/Shaders/StoneWall_Mat.mat
+  artifactKey: Guid(a3d7e1dbf5347f74fa22284bceafdc9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/StoneWall_Mat.mat using Guid(a3d7e1dbf5347f74fa22284bceafdc9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e16808ecf2568b134bc2b4668e0cfac') in 0.881115 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/RotE VFX/Shaders/TreeBark_Mat.mat
+  artifactKey: Guid(476d679bf0fdaa74db6dcc7475883840) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/TreeBark_Mat.mat using Guid(476d679bf0fdaa74db6dcc7475883840) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e5b55c97534d3fe35bb9be3578827db') in 0.023469 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToonTestmat.mat
+  artifactKey: Guid(9ba37aa87dcb4484bb2e80a5b54b9e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToonTestmat.mat using Guid(9ba37aa87dcb4484bb2e80a5b54b9e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61ee2aab96fd429cb3b11f9bd4c67ad7') in 0.021848 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 123.035089 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81892de11aa93dd9399366a19f7582a6') in 0.008311 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 57.344085 seconds.
+  path: Assets/RotE Textures/Stone Wall/StoneWall_basecolor.png
+  artifactKey: Guid(57e5d386080dab645a607ab1ad9b4337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Wall/StoneWall_basecolor.png using Guid(57e5d386080dab645a607ab1ad9b4337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83e9fa5870152b93715839b173dcd961') in 0.067708 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/RotE Textures/Stone Wall/StoneWall_normal.png
+  artifactKey: Guid(f82bdf02e28ae6c4cb423fe2c92f13f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Wall/StoneWall_normal.png using Guid(f82bdf02e28ae6c4cb423fe2c92f13f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcd044c540d5b776031e1777b4d46452') in 0.016969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/RotE Textures/Stone Wall/StoneWall_metallic.png
+  artifactKey: Guid(fab972ab84d110b43b7ac2bfce1daa15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Wall/StoneWall_metallic.png using Guid(fab972ab84d110b43b7ac2bfce1daa15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2da3bb78cfbad59e9250d7e49fbc913c') in 0.018651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 216.465214 seconds.
+  path: Assets/RotE Textures/Ground/Ground_basecolor.png
+  artifactKey: Guid(8202b3f1738c48c46b3a129594a73824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Ground/Ground_basecolor.png using Guid(8202b3f1738c48c46b3a129594a73824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c5137ac0b9d110ebda5bd75bae0b00c') in 0.021854 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/RotE Textures/Ground/Ground_normal.png
+  artifactKey: Guid(dfff1d13aa4530a4fbca704fd676c65f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Ground/Ground_normal.png using Guid(dfff1d13aa4530a4fbca704fd676c65f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4a118eb9f862857ce4a7c3771781f76') in 0.018734 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/RotE Textures/Ground/Ground_metallic.png
+  artifactKey: Guid(192cbb9f7a32b284894af594ccd3052c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Ground/Ground_metallic.png using Guid(192cbb9f7a32b284894af594ccd3052c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04ae344b207728f479ff06f346529833') in 0.021299 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.508435 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26de4da753917108e23c5de644781e01') in 0.004339 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.273177 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a088ea42656167a351b3a088d0e155a8') in 0.004064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 277.408139 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac15fbb900d0c52bdc1b0d56fc786e3b') in 0.007631 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 261.322829 seconds.
+  path: Assets/RotE VFX/Shaders/CustomToon.shader
+  artifactKey: Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/CustomToon.shader using Guid(ce565275257480747b00d4dc2fc01dcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b468c1977ae406d4ecc2f980dea1868') in 0.003673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.104377 seconds.
+  path: Assets/NPC Characters/npcrancher-albedo.png
+  artifactKey: Guid(1ddb8e48976159d4d8b6e36072ace9f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC Characters/npcrancher-albedo.png using Guid(1ddb8e48976159d4d8b6e36072ace9f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8b7888ecca5d4fe5f8a727a16eb5b7d') in 0.024971 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000319 seconds.
+  path: Assets/NPC Characters/npcrancher-normal.png
+  artifactKey: Guid(2601e4237a4f3764992faa972ab2572f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC Characters/npcrancher-normal.png using Guid(2601e4237a4f3764992faa972ab2572f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58aae9887fe243bed714d9aafe2bd6a9') in 0.023030 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 70.087665 seconds.
+  path: Assets/RotE VFX/Shaders/GrassGround_Mat.mat
+  artifactKey: Guid(c04fc63beb1a83942b53245e58d72ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/GrassGround_Mat.mat using Guid(c04fc63beb1a83942b53245e58d72ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9238208a247a4864c533e8dbb1dec6a') in 0.014917 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/RotE VFX/Shaders/StoneWall_Mat.mat
+  artifactKey: Guid(a3d7e1dbf5347f74fa22284bceafdc9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Shaders/StoneWall_Mat.mat using Guid(a3d7e1dbf5347f74fa22284bceafdc9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c01f0383a10225bdd7dc7411a9ea240') in 0.021184 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 47.006798 seconds.
+  path: Assets/AllSkyFree/Cartoon Base BlueSky
+  artifactKey: Guid(9f633969e0c5e4bfeba8bb43b5348d81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base BlueSky using Guid(9f633969e0c5e4bfeba8bb43b5348d81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5df2671415faffe7fa9fe45dcd0eeaea') in 0.008427 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.757620 seconds.
+  path: Assets/AllSkyFree/Cartoon Base NightSky
+  artifactKey: Guid(edfd7568a47754e23b20068c1847c5fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base NightSky using Guid(edfd7568a47754e23b20068c1847c5fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd21264c06e29e30226bdb63db21d62d2') in 0.007488 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.043548 seconds.
+  path: Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky Equirect.mat
+  artifactKey: Guid(3a6db933fef1d4c759bf21220420505f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky Equirect.mat using Guid(3a6db933fef1d4c759bf21220420505f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f126c7816783ec8c36b4cdfcca96ce9') in 0.053912 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky Equirect.png
+  artifactKey: Guid(7659947706e294d97a22faa1d4011724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky Equirect.png using Guid(7659947706e294d97a22faa1d4011724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f63d0cbb97c1fc77c2d5c5a1dcc04f68') in 0.478678 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_4_Up+Y.png
+  artifactKey: Guid(d8144633fec3342d9b7d9388377fb2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_4_Up+Y.png using Guid(d8144633fec3342d9b7d9388377fb2a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2164130029ca6ef0377b4594a1000f80') in 0.020664 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_3_Right-X.png
+  artifactKey: Guid(69090bcf98b624e77a2f519630debe54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_3_Right-X.png using Guid(69090bcf98b624e77a2f519630debe54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2db266fee0f3dd3bbc4c092e559e2e6') in 0.021022 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky.mat
+  artifactKey: Guid(aa78c8d403a8547fe86d1f74239e6b03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky.mat using Guid(aa78c8d403a8547fe86d1f74239e6b03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3351642ef6d7ea3f5caa80298cd3255c') in 0.199874 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_2_Left+X.png
+  artifactKey: Guid(30795c4c7d28549fc98ea24071c47626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_2_Left+X.png using Guid(30795c4c7d28549fc98ea24071c47626) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c0ec9d4bce1b60c013a1240209f3e9b') in 0.020742 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_1_Back-Z.png
+  artifactKey: Guid(baee46fd4fc8d4898864f4963bb39f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_1_Back-Z.png using Guid(baee46fd4fc8d4898864f4963bb39f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c48765a221ebe624892a5ea6737f06c') in 0.019866 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000297 seconds.
+  path: Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_0_Front+Z.png
+  artifactKey: Guid(5cd44424375bd4ad69191a50c41ec04d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_0_Front+Z.png using Guid(5cd44424375bd4ad69191a50c41ec04d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86570920e7d368db31ab583ad11c8264') in 0.019469 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_5_Down-Y.png
+  artifactKey: Guid(e23c4e30896d34af5beb066fcf2790c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky_Cam_5_Down-Y.png using Guid(e23c4e30896d34af5beb066fcf2790c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89fbcc39e8a6f737ae38d0c2a1b9c940') in 0.020048 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 63.574091 seconds.
+  path: Assets/RotE VFX/Fire/FlameCenterMat.mat
+  artifactKey: Guid(e4f327aaa06cac64c92171f7b22432c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/FlameCenterMat.mat using Guid(e4f327aaa06cac64c92171f7b22432c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1635db5de777488551a57b8db732476b') in 0.019744 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 34.359648 seconds.
+  path: Assets/RotE VFX/Fire/TorchSparkmat.mat
+  artifactKey: Guid(8cb4f393840bd8c4b8741b83be5bafd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/TorchSparkmat.mat using Guid(8cb4f393840bd8c4b8741b83be5bafd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fff19d92f6258baef80f1e6e849b0d2d') in 0.417107 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.504786 seconds.
+  path: Assets/RotE VFX/Fire/TorchFireMat.mat
+  artifactKey: Guid(1f93c476575d4aa478d6bf297b68dfa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/TorchFireMat.mat using Guid(1f93c476575d4aa478d6bf297b68dfa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fa8eccd486eb5bcc7fd8ffe09acb520') in 0.549041 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 89.608587 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene_Profiles/Main Camera Profile.asset
+  artifactKey: Guid(c0aeb3ecff8ebd74ab42c8f156fec79a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/VFX Testing Scene_Profiles/Main Camera Profile.asset using Guid(c0aeb3ecff8ebd74ab42c8f156fec79a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03dd6fa6a4d7128b237c45a80cf31575') in 0.019694 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.513506 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene/LightingData.asset
+  artifactKey: Guid(ebcf1ff79088e5f4abce91d72d26141c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/VFX Testing Scene/LightingData.asset using Guid(ebcf1ff79088e5f4abce91d72d26141c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de252ea24bd648531de4d7d1e823b103') in 0.008455 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/RotE VFX/VFX Testing Scene/ReflectionProbe-0.exr
+  artifactKey: Guid(acab2eb6ea017f64fb36454a18877fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/VFX Testing Scene/ReflectionProbe-0.exr using Guid(acab2eb6ea017f64fb36454a18877fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83db4d8bf489255ebbb732e3b98e3283') in 0.025938 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.842789 seconds.
+  path: Assets/RotE VFX/Fire/FlamePlane.prefab
+  artifactKey: Guid(b5eaccdc3338ac3499af66671d225a11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/FlamePlane.prefab using Guid(b5eaccdc3338ac3499af66671d225a11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48445174c623af18752a5309fc164980') in 0.032556 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/RotE VFX/Fire/FlamesExtinguishMat.mat
+  artifactKey: Guid(0e8575aa87062d943ae80464a49a7144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/FlamesExtinguishMat.mat using Guid(0e8575aa87062d943ae80464a49a7144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24c2fdb0bd67a39a6fee3aba5e9e36b9') in 0.016871 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/RotE VFX/Fire/SteadyLight.prefab
+  artifactKey: Guid(8e5b751cfce9dae40acb839e85eecb9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/SteadyLight.prefab using Guid(8e5b751cfce9dae40acb839e85eecb9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '432103317ad0d17bf95a8dcd29115f67') in 0.011354 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/RotE VFX/Fire/TorchIgniteMat.mat
+  artifactKey: Guid(81683c46324d36b4cbbeb0f39438ad12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/TorchIgniteMat.mat using Guid(81683c46324d36b4cbbeb0f39438ad12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bed7414b9b95da9296095c88ceb21ede') in 0.014483 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/RotE VFX/Fire/TorchEffects.prefab
+  artifactKey: Guid(9f449e0c92f3e1444afaae69a6294cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/TorchEffects.prefab using Guid(9f449e0c92f3e1444afaae69a6294cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ce164d7ea9e2d6b8f3db1a7f2a0dd44') in 0.014560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/RotE VFX/Fire/TorchFlameExtinguish.prefab
+  artifactKey: Guid(ef673a4540fd90b4ba3b1bd5169f4d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/TorchFlameExtinguish.prefab using Guid(ef673a4540fd90b4ba3b1bd5169f4d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95ab2d05f2754729e163891d8f50e941') in 0.010347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/RotE VFX/Fire/TorchLight.prefab
+  artifactKey: Guid(a40a40a4897c6004ca37cca28f1aa258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/TorchLight.prefab using Guid(a40a40a4897c6004ca37cca28f1aa258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac01bb639782a38b4679ede47d632b0a') in 0.008533 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000181 seconds.
+  path: Assets/RotE VFX/Fire/TorchFireTexture.png
+  artifactKey: Guid(6c9d5d523dd9fe24f8e6d2d8fbba9a7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/TorchFireTexture.png using Guid(6c9d5d523dd9fe24f8e6d2d8fbba9a7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07cdaec6e5ea007b347cdb2a0ad90290') in 0.016144 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/RotE VFX/Fire/TorchFlameParticles.prefab
+  artifactKey: Guid(3bb60ff3ce5741742922d9364f345306) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/TorchFlameParticles.prefab using Guid(3bb60ff3ce5741742922d9364f345306) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96ada443ec900b9774b1084e192f87c8') in 0.010291 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8851.329796 seconds.
+  path: Assets/RotE VFX/Fire/FlameCenterMat.mat
+  artifactKey: Guid(e4f327aaa06cac64c92171f7b22432c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/FlameCenterMat.mat using Guid(e4f327aaa06cac64c92171f7b22432c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25a78f002590028d6c6c24d87463a6bd') in 0.040181 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/RotE VFX/Fire/TorchSparkmat.mat
+  artifactKey: Guid(8cb4f393840bd8c4b8741b83be5bafd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Fire/TorchSparkmat.mat using Guid(8cb4f393840bd8c4b8741b83be5bafd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '722f0548e822e43876df88d47cd456df') in 0.009778 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 231.762184 seconds.
+  path: Assets/RotE Textures/TreeBark/TreeBark_basecolor.png
+  artifactKey: Guid(e28252b5014b03f4eaa1e18f78a26501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/TreeBark/TreeBark_basecolor.png using Guid(e28252b5014b03f4eaa1e18f78a26501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23ce3667eab10fdaeaa29f0501c06bc3') in 0.018884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/RotE Textures/TreeBark/TreeBark_metallic.png
+  artifactKey: Guid(b8168d3c7a453ce4f9e081204a1fb85d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/TreeBark/TreeBark_metallic.png using Guid(b8168d3c7a453ce4f9e081204a1fb85d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53c60e8dc87abf6da4abdc667a15b2ed') in 0.016067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/RotE Textures/TreeBark/TreeBark_normal.png
+  artifactKey: Guid(6a070b5640a9b5e489275de118b816b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/TreeBark/TreeBark_normal.png using Guid(6a070b5640a9b5e489275de118b816b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a2076929632fa8a45de7917e808c750') in 0.016965 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.475368 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotMidOn.png
+  artifactKey: Guid(133e79bed45185d408f4c5410f89dded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotMidOn.png using Guid(133e79bed45185d408f4c5410f89dded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd354d06b9df72f5ae43794d631a8583b') in 0.012637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/PreviewOff.png
+  artifactKey: Guid(1f3a46793c375864ab816c0d78061e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/PreviewOff.png using Guid(1f3a46793c375864ab816c0d78061e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '574dae3f56b3d3f0080606d8a00b8bcb') in 0.013582 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/red.png
+  artifactKey: Guid(af5ab63a69b074347be0e4c17fb9dc1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/red.png using Guid(af5ab63a69b074347be0e4c17fb9dc1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2c098328767c9b3228042448dc24deb') in 0.012280 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/NodeSelectedSquare.png
+  artifactKey: Guid(080a030f87555fe419ecc1fb9f509118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/NodeSelectedSquare.png using Guid(080a030f87555fe419ecc1fb9f509118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '562aa1126a1a7523b02b10fee4859136') in 0.015236 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/OpenSourceCodeOFF.PNG
+  artifactKey: Guid(f7e8834b42791124095a8b7f2d4daac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/OpenSourceCodeOFF.PNG using Guid(f7e8834b42791124095a8b7f2d4daac2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d59139b9d12ecf032eb826d6c362045') in 0.015961 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Options.png
+  artifactKey: Guid(36aa64354f0ba4844af761a937eea4df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Options.png using Guid(36aa64354f0ba4844af761a937eea4df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d6645308daf93096a0c09be0c9b6cf6') in 0.013994 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/PreviewOn.png
+  artifactKey: Guid(dae54b5aa457b474e8a1599de1073d26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/PreviewOn.png using Guid(dae54b5aa457b474e8a1599de1073d26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd95eb369854524dd0341e7fdaaadf5a1') in 0.011711 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Scenes/EarthTutorial/ReflectionProbe-0.exr
+  artifactKey: Guid(12d7425a17c5bf54c8a810b239447bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/EarthTutorial/ReflectionProbe-0.exr using Guid(12d7425a17c5bf54c8a810b239447bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '777dc089692e82fe647a7b79f7ae993c') in 0.015985 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/New.png
+  artifactKey: Guid(1bd93c39ca74ac041b79ae289e9b9f08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/New.png using Guid(1bd93c39ca74ac041b79ae289e9b9f08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '297552493b72e393cfee7a45ce01d16a') in 0.013025 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotMidOnHover.png
+  artifactKey: Guid(542d7546736ddd244a145ef7103678fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotMidOnHover.png using Guid(542d7546736ddd244a145ef7103678fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af35d99a01e8466055f4cfe6ca1768c9') in 0.015267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ResetInspectorIcon.png
+  artifactKey: Guid(a51794475a883744db8d524cee84e5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ResetInspectorIcon.png using Guid(a51794475a883744db8d524cee84e5fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34f656bce3b5eee4feb7e52cc305b9ae') in 0.012747 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/OpenSourceCodeON.PNG
+  artifactKey: Guid(8b114792ff84f6546880c031eda42bc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/OpenSourceCodeON.PNG using Guid(8b114792ff84f6546880c031eda42bc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a49934423948c37931e93a4551935ba') in 0.012622 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/NodeSelected.png
+  artifactKey: Guid(24fb767323009c143a4e744a2025a27e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/NodeSelected.png using Guid(24fb767323009c143a4e744a2025a27e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a492abb176aeff558b41116774422b4') in 0.013086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/ObjectPickerBackgroundOutline.png
+  artifactKey: Guid(c1912a55d2f211d468ddeb7b1386dd41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/ObjectPickerBackgroundOutline.png using Guid(c1912a55d2f211d468ddeb7b1386dd41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bea3479cc972464dbc672d2bd9f6c3e') in 0.013093 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/NPC Characters/farmer_textures/npc-farmer-sss.png
+  artifactKey: Guid(4eaeb21e92c97bb4696f6e2cdce23167) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC Characters/farmer_textures/npc-farmer-sss.png using Guid(4eaeb21e92c97bb4696f6e2cdce23167) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87cf3612664c145fdf371d0530cd4811') in 0.065421 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotRightOnHover.png
+  artifactKey: Guid(d3098ebd60a35494e9977bd96b923298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotRightOnHover.png using Guid(d3098ebd60a35494e9977bd96b923298) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd123194e3609192c11d541aed3dd9ba1') in 0.012170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/OpenListedShader.png
+  artifactKey: Guid(a66917730dccde947a01140dc04b9e59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/OpenListedShader.png using Guid(a66917730dccde947a01140dc04b9e59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f17afa3206ff0156c0b370ad8725930a') in 0.012083 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Open.png
+  artifactKey: Guid(d8b538796c7980843b59d62dbcdebef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Open.png using Guid(d8b538796c7980843b59d62dbcdebef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f1408beabeabb7d82b14a282288de38') in 0.012157 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/RemoveFromList.png
+  artifactKey: Guid(75f68506ba820564ea85b2620d78c097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/RemoveFromList.png using Guid(75f68506ba820564ea85b2620d78c097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bfe168a2e285f2710d474cbc447719a') in 0.012892 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Resources/Sprites/Inventory/UI/panel_blue.png
+  artifactKey: Guid(dc16ce6d4b704de469318207467c7b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprites/Inventory/UI/panel_blue.png using Guid(dc16ce6d4b704de469318207467c7b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20b1497c10f3a501f223ce5ff0314b4d') in 0.028475 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotRightOffHover.png
+  artifactKey: Guid(df6fb8448a382c743bd124cc0da55113) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotRightOffHover.png using Guid(df6fb8448a382c743bd124cc0da55113) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cc6437e3ebbe2723a9376c9cef7810d') in 0.013276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/PopupPicker.png
+  artifactKey: Guid(d2384a227b4ac4943b73c8151393e502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/PopupPicker.png using Guid(d2384a227b4ac4943b73c8151393e502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '187d9c52c718a69fa70023618d695088') in 0.012837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/PropertyPicker.png
+  artifactKey: Guid(94816692c85001f4dab01ec3666943c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/PropertyPicker.png using Guid(94816692c85001f4dab01ec3666943c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81209cc04f1d34130b9d8f65a07579a5') in 0.012565 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotRightOn.png
+  artifactKey: Guid(3821e905373e9fb4aac56ad254ba5769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotRightOn.png using Guid(3821e905373e9fb4aac56ad254ba5769) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57200b0cd0b07034cbb483049fe01988') in 0.012434 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/RotE Textures/Rocks/Rocks_ambientocclusion.png
+  artifactKey: Guid(8f62447327d9a204280bb9031dbc0d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Rocks/Rocks_ambientocclusion.png using Guid(8f62447327d9a204280bb9031dbc0d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '086ca2a97552cf5e92d8666d6722ab02') in 0.017333 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotRightOff.png
+  artifactKey: Guid(bfcecef29876cc54db85363cf2feebb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotRightOff.png using Guid(bfcecef29876cc54db85363cf2feebb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a64f0fe587ef5dc61864f80d76306bc') in 0.013749 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MinimizeWindow.png
+  artifactKey: Guid(2aae9a02747d74d46bf98a15ac5c9b21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MinimizeWindow.png using Guid(2aae9a02747d74d46bf98a15ac5c9b21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '525f4e7fd8d46bd8d06b4ec0308749b5') in 0.012908 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/NPC Characters/npcrancher-sss.png
+  artifactKey: Guid(2cd8161b1e4de6f4a86a3cddc0aaccae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC Characters/npcrancher-sss.png using Guid(2cd8161b1e4de6f4a86a3cddc0aaccae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9511c65ea772a9b475861e88702b03a8') in 0.014365 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000414 seconds.
+  path: Assets/NPC Characters/farmer_textures/npc-farmer-albedo.png
+  artifactKey: Guid(309859203edb4714f909f126f80d7c24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC Characters/farmer_textures/npc-farmer-albedo.png using Guid(309859203edb4714f909f126f80d7c24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2ca0efdf513b7c6344dd51e4b210dc1') in 0.015955 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/NoPreview.png
+  artifactKey: Guid(750b1bd7ba8bd28489650de6d0a95cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/NoPreview.png using Guid(750b1bd7ba8bd28489650de6d0a95cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e46b0b3dbec9f10971b45e3bb50e95d1') in 0.013285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.191924 seconds.
+  path: Assets/RotE Textures/Water/Water_height.png
+  artifactKey: Guid(4eb5ec0daea69f54db07a13551b5a17f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Water/Water_height.png using Guid(4eb5ec0daea69f54db07a13551b5a17f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63b602c508fe9329179a66ca90f14909') in 0.019177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/WhitePortOutline.png
+  artifactKey: Guid(56277f370fb77a448a152bcd2e3a9077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/WhitePortOutline.png using Guid(56277f370fb77a448a152bcd2e3a9077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '975cd4e2d4ab3aa8c154a80e6fc49840') in 0.014485 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/WhitePortSolid.png
+  artifactKey: Guid(8113366f9f7cec647878e3af2fb98922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/WhitePortSolid.png using Guid(8113366f9f7cec647878e3af2fb98922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1b8781ab9969b6765170beb397c7fa2') in 0.013225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/RotE Textures/Wood Plank/Wood_Planks_ambientocclusion.png
+  artifactKey: Guid(919422e9733d23a4a89b0562244513c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Wood Plank/Wood_Planks_ambientocclusion.png using Guid(919422e9733d23a4a89b0562244513c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1847ab05efd6f3831c80b100f1284c54') in 0.015738 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/WireNodeSelection.png
+  artifactKey: Guid(bfe0b03d5d60cea4f9d4b2d1d121e592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/WireNodeSelection.png using Guid(bfe0b03d5d60cea4f9d4b2d1d121e592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3d42cced59391af3275b795076f2258') in 0.012692 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/RotE Textures/Wood Plank/Wood_Planks_height.png
+  artifactKey: Guid(7a1b36201bf0dc24b8c94e70aac63c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Wood Plank/Wood_Planks_height.png using Guid(7a1b36201bf0dc24b8c94e70aac63c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9eac037de1ffaab01254a1aad582ce02') in 0.014595 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Main Character/Textures/wolf1_normal.png
+  artifactKey: Guid(55465886dc76ed740874e35bd4b7c386) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Main Character/Textures/wolf1_normal.png using Guid(55465886dc76ed740874e35bd4b7c386) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6646b3a684f50b35f5f88bdcacbc4e1') in 0.014875 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/RotE Textures/Water/Water_normal.png
+  artifactKey: Guid(01f45256194d23346aa5ec85ad7abb08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Water/Water_normal.png using Guid(01f45256194d23346aa5ec85ad7abb08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed0f88982d5551a5d5cfa8add83c45f0') in 0.016221 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/Main Character/Textures/wolf1_basecolor.png
+  artifactKey: Guid(fa34dd8e913bec545b31413f401a5a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Main Character/Textures/wolf1_basecolor.png using Guid(fa34dd8e913bec545b31413f401a5a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98f6127569f39ca022ecbcd4b06c41fe') in 0.015932 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Main Character/Textures/wolf1_roughness.png
+  artifactKey: Guid(cde8efeba19b1444e852c74d3fb8f35a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Main Character/Textures/wolf1_roughness.png using Guid(cde8efeba19b1444e852c74d3fb8f35a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2740df9ca73d56ac105bc11cca89dfcb') in 0.014529 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/RotE Textures/Wood Plank/Wood_Planks_roughness.png
+  artifactKey: Guid(89eb305fc47c9e241ab0dbe82db31f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Wood Plank/Wood_Planks_roughness.png using Guid(89eb305fc47c9e241ab0dbe82db31f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f34fdcb3423486cb56310f4a2650cdd') in 0.020872 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/RotE Textures/Wood Plank/Wood_Planks_basecolor.png
+  artifactKey: Guid(2aadfca9b5f16b742ae290ebfd45fe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Wood Plank/Wood_Planks_basecolor.png using Guid(2aadfca9b5f16b742ae290ebfd45fe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6e140e61c7049f224a57cc587f90f73') in 0.015193 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/RotE Textures/Wood Plank/Wood_Planks_metallic.png
+  artifactKey: Guid(1330c39257711054fa1f0996effb4227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Wood Plank/Wood_Planks_metallic.png using Guid(1330c39257711054fa1f0996effb4227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ec04323b89cbf2a7b5f31c0f9020eb9') in 0.013961 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/RotE Textures/Water/Water_roughness.png
+  artifactKey: Guid(0d96973bfadaee740b2acfea0312c96f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Water/Water_roughness.png using Guid(0d96973bfadaee740b2acfea0312c96f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8887f8c5aae7b5efde6cc6609f9a2bd0') in 0.014767 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/RotE Textures/Water/Water_metallic.png
+  artifactKey: Guid(7a84324a5b1e44c4fb4607206f9de679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Water/Water_metallic.png using Guid(7a84324a5b1e44c4fb4607206f9de679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd593b539b9229d5c6981fff6b62b3cf8') in 0.016551 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/RotE Textures/Wood Plank/Wood_Planks_normal.png
+  artifactKey: Guid(bd26779b278485b459f7403de3be2875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Wood Plank/Wood_Planks_normal.png using Guid(bd26779b278485b459f7403de3be2875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8207cf9935966aafb0088d7bb61eea3') in 0.035668 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/white.png
+  artifactKey: Guid(37e6f91f3efb0954cbdce254638862ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/white.png using Guid(37e6f91f3efb0954cbdce254638862ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b14a68089a88273d6dc8211da8aab3db') in 0.012560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 114.837099 seconds.
+  path: Assets/NPC Characters/blacksmith-clr.png
+  artifactKey: Guid(f8fae18b08c3bc742a0c4a21c415f4a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC Characters/blacksmith-clr.png using Guid(f8fae18b08c3bc742a0c4a21c415f4a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c48837f396c3fac069f28707edc1df2f') in 0.017117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.813195 seconds.
+  path: Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_4_Up+Y.png
+  artifactKey: Guid(5cf2d5ca2357a4d4fb98ebc5b6034e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_4_Up+Y.png using Guid(5cf2d5ca2357a4d4fb98ebc5b6034e72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c20ab7894d137e6acf327114de606611') in 0.017353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/RotE Textures/Water/Water_ambientocclusion.png
+  artifactKey: Guid(553f49349467143409d01846cda4962d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Water/Water_ambientocclusion.png using Guid(553f49349467143409d01846cda4962d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14ad416bb097d20b2622ab99b018d22c') in 0.016530 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/RotE Textures/Stone Wall/StoneWall_ambientocclusion.png
+  artifactKey: Guid(0fdbdbd560dd0e241a757ca1a693cdeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Wall/StoneWall_ambientocclusion.png using Guid(0fdbdbd560dd0e241a757ca1a693cdeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f79fdf6b98cb14c75002dc1de13f325b') in 0.017501 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/RotE Textures/Water/Water_basecolor.png
+  artifactKey: Guid(d390595910c2c8d44ba61bf67e0a4c73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Water/Water_basecolor.png using Guid(d390595910c2c8d44ba61bf67e0a4c73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad1298bd757b90b1932ed742f7498f01') in 0.015441 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_BaseColor.tga
+  artifactKey: Guid(6bd607ee7c0c8fc40a0d78e8c275a7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_BaseColor.tga using Guid(6bd607ee7c0c8fc40a0d78e8c275a7f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3890c2a579b143dcc8794a682e8e81f6') in 0.019327 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/RotE Textures/TreeBark/TreeBark_height.png
+  artifactKey: Guid(15fa9003c0fae0c479c7e96c2c2e289d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/TreeBark/TreeBark_height.png using Guid(15fa9003c0fae0c479c7e96c2c2e289d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '052637aeef5411b6192c764938fab19e') in 0.015385 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_5_Down-Y.png
+  artifactKey: Guid(4c119b81b42684c39873d7738564bcdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_5_Down-Y.png using Guid(4c119b81b42684c39873d7738564bcdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '264dd46ef5f37f08ef109134ea7a50d4') in 0.015670 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/RotE Textures/Stone Floor/StoneFloor_ambient_occlusion.png
+  artifactKey: Guid(1eff349e5409a054096e51b2b3b11f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Floor/StoneFloor_ambient_occlusion.png using Guid(1eff349e5409a054096e51b2b3b11f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abfe2bfb1ae0f21c16fba3b8351cc38a') in 0.016948 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthStaff_T_BaseColor.tga
+  artifactKey: Guid(ae0b7adafae07ad4f867839d71a765d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthStaff_T_BaseColor.tga using Guid(ae0b7adafae07ad4f867839d71a765d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23a4e7d91df9fdb7fa6cc7153b528e36') in 0.016059 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/RotE Textures/Stone Floor/StoneFloor_basecolor.png
+  artifactKey: Guid(0517f74aaba47f14182a57244faf94ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Floor/StoneFloor_basecolor.png using Guid(0517f74aaba47f14182a57244faf94ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e35fc8abcd10a4aef39190d60950a1c') in 0.016216 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/TextureReferenceBg.png
+  artifactKey: Guid(f9bd85ea2601b824c87556c13e852933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/TextureReferenceBg.png using Guid(f9bd85ea2601b824c87556c13e852933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e8056e555b77448656d31a982d91d74') in 0.014620 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/SliderButton.png
+  artifactKey: Guid(dd563e33152bb6443b099b4139ceecb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/SliderButton.png using Guid(dd563e33152bb6443b099b4139ceecb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bf1d0d343d40a15a83b94ae7cd33041') in 0.012269 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/RotE Textures/TreeBark/TreeBark_roughness.png
+  artifactKey: Guid(a59915449573e7b4287d4fe3c6b62887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/TreeBark/TreeBark_roughness.png using Guid(a59915449573e7b4287d4fe3c6b62887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f63b9b984fbbef1ec1cd9f814c5a013') in 0.016670 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/RotE Textures/TreeBark/TreeBark_ambientocclusion.png
+  artifactKey: Guid(5508467493c3a6c45aa94dbf5b4980c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/TreeBark/TreeBark_ambientocclusion.png using Guid(5508467493c3a6c45aa94dbf5b4980c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a285a123ced2e230065ab5320065a28a') in 0.016838 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.463515 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/MaterialModeIconOFF.png
+  artifactKey: Guid(7040748e1c49b9648aeeefef41c8a3d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/MaterialModeIconOFF.png using Guid(7040748e1c49b9648aeeefef41c8a3d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eceb6b8ad9d9eb401cbc32692b964a47') in 0.015660 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotLeftOffHover.png
+  artifactKey: Guid(6f3901bfd2342774ba74e117e43d6db7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotLeftOffHover.png using Guid(6f3901bfd2342774ba74e117e43d6db7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd41c22c658ad475bef81fda04f56a2a5') in 0.013945 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotMidOff.png
+  artifactKey: Guid(eaf512a569994074b9b268ff098b0f03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotMidOff.png using Guid(eaf512a569994074b9b268ff098b0f03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a26a43a8b152fffd99198092bfd3896a') in 0.013337 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ItemCleanupOFF.png
+  artifactKey: Guid(8b6b4ff52c49a2a43a602895465e107c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ItemCleanupOFF.png using Guid(8b6b4ff52c49a2a43a602895465e107c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '099d4f9d6870af2faa3502370192c744') in 0.015905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/MainCanvasTitleBg.png
+  artifactKey: Guid(bdb42c87b8801e94e886c5c0d60b3014) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/MainCanvasTitleBg.png using Guid(bdb42c87b8801e94e886c5c0d60b3014) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f020953b332937d7675ea3a433aa8df') in 0.013367 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/Material.png
+  artifactKey: Guid(157b94751c138d84bbe1768c672b5168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/Material.png using Guid(157b94751c138d84bbe1768c672b5168) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '862d219e9859d456c9dece5d90660bad') in 0.015831 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/LineTex 2.png
+  artifactKey: Guid(03a7d169469c1af41bb03241a7b7e23d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/LineTex 2.png using Guid(03a7d169469c1af41bb03241a7b7e23d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1769f7af411629f3be545d666dc60563') in 0.012556 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/LineTex 4.png
+  artifactKey: Guid(e0f922c44762291498cc62e0917609be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/LineTex 4.png using Guid(e0f922c44762291498cc62e0917609be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bdc127ac7234ab8312d50bc82fb8c13') in 0.012380 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ItemCleanupON.png
+  artifactKey: Guid(f4d31aa109c919d4595094f627510932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ItemCleanupON.png using Guid(f4d31aa109c919d4595094f627510932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '325ba77a4f222894bc433096e0f094aa') in 0.013824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/LivePending.png
+  artifactKey: Guid(e3182200efb67114eb5050f8955e1746) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/LivePending.png using Guid(e3182200efb67114eb5050f8955e1746) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c250391352930a69526fb7ff0449f459') in 0.014375 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Library.png
+  artifactKey: Guid(9a81d7df8e62c044a9d1cada0c8a2131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Library.png using Guid(9a81d7df8e62c044a9d1cada0c8a2131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e66ed36892e3a5a9344a731a6e6b56b') in 0.012180 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotLeftOn.png
+  artifactKey: Guid(4c872bb553406fe44a9d0046a0ef9bc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotLeftOn.png using Guid(4c872bb553406fe44a9d0046a0ef9bc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1b5900f7093b14ae58df5554c2e96ea') in 0.012102 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/MasterNodeIconOFF.png
+  artifactKey: Guid(712aee08d999c16438e2d694f42428e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/MasterNodeIconOFF.png using Guid(712aee08d999c16438e2d694f42428e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '249eaa680b271a97302e2910ea924399') in 0.014872 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MaximizeWindow.png
+  artifactKey: Guid(7a1fd3f5fef75b64385591e1890d1842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MaximizeWindow.png using Guid(7a1fd3f5fef75b64385591e1890d1842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b034eaa1c2f5ad0fd8183fe8a0e88d9b') in 0.012590 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/MasterNodeIconON.png
+  artifactKey: Guid(26c64fcee91024a49980ea2ee9d1a2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/MasterNodeIconON.png using Guid(26c64fcee91024a49980ea2ee9d1a2fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36e3a9ef7b32a024bc688545d0ad9945') in 0.012177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/LinkIcon.png
+  artifactKey: Guid(7cabe27e9427ef346a6b6557106353fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/LinkIcon.png using Guid(7cabe27e9427ef346a6b6557106353fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93dc21943ed824b3ec321a336f2250ff') in 0.013049 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/LiveON.png
+  artifactKey: Guid(6a0ae1d7892333142aeb09585572202c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/LiveON.png using Guid(6a0ae1d7892333142aeb09585572202c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35a0306958907fc0a8b0de255a6e22cb') in 0.013291 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/Icon64.png
+  artifactKey: Guid(2c6536772776dd84f872779990273bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/Icon64.png using Guid(2c6536772776dd84f872779990273bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c0a86fd91365611a8670abf3b927b83') in 0.013452 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/RotE Textures/Ground/Ground_ambient_occlusion.png
+  artifactKey: Guid(090d2465da0c0704e8ebec70e0d13a1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Ground/Ground_ambient_occlusion.png using Guid(090d2465da0c0704e8ebec70e0d13a1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a066c76fd5d5f617801c164b71a77812') in 0.015148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphButton.png
+  artifactKey: Guid(2b3b7485f95e8a44dab3fa9610f56cbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphButton.png using Guid(2b3b7485f95e8a44dab3fa9610f56cbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a4129250e09a7dca6a9746548b747c6') in 0.012182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GrayNormalHeaderSquare.png
+  artifactKey: Guid(b16188b8a3dee8146bd9cb0bde234a24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GrayNormalHeaderSquare.png using Guid(b16188b8a3dee8146bd9cb0bde234a24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40649b9a98836064b59749b6cbe96d7a') in 0.014441 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/RotE Textures/Grass Ground/Grass_Ground_height.png
+  artifactKey: Guid(bd78572fadfbfe4478f6973d2e8d2da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass Ground/Grass_Ground_height.png using Guid(bd78572fadfbfe4478f6973d2e8d2da7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9a4ff35b51e91ba69bcab3c91659ca4') in 0.018272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/RotE Textures/Grass Ground/Grass_Ground_metallic.png
+  artifactKey: Guid(7b22307f905e01e408b772190743a459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass Ground/Grass_Ground_metallic.png using Guid(7b22307f905e01e408b772190743a459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bf0ae0c9af34ead9de2f23267c4b50d') in 0.016042 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/RotE Textures/Grass/Grass_ambientocclusion.png
+  artifactKey: Guid(1e4b5cf7c58ca7647863acd9f9442fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass/Grass_ambientocclusion.png using Guid(1e4b5cf7c58ca7647863acd9f9442fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1a0ff2aae43baad87277deedf8c1fe8') in 0.014764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/RotE Textures/Grass/Grass_normal.png
+  artifactKey: Guid(c7fa25bbaadfffe46a02d7a98dbd8a9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass/Grass_normal.png using Guid(c7fa25bbaadfffe46a02d7a98dbd8a9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e317aadb105c0adbf143e2d689cb6700') in 0.018412 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/RotE Textures/Grass Ground/Grass_Ground_normal.png
+  artifactKey: Guid(513ff0613d999b2428b5d652e537c6e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass Ground/Grass_Ground_normal.png using Guid(513ff0613d999b2428b5d652e537c6e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbf3f5838485e4b1d556082d8f22cc15') in 0.015632 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Help.png
+  artifactKey: Guid(066674048bbb1e64e8cdcc6c3b4abbeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Help.png using Guid(066674048bbb1e64e8cdcc6c3b4abbeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f6e6d5254593b540196b52e88150e82') in 0.015558 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/RotE Textures/Grass/Grass_roughness.png
+  artifactKey: Guid(8922e6d2e0307de4e914e17ce1afcfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass/Grass_roughness.png using Guid(8922e6d2e0307de4e914e17ce1afcfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8949ae1871532e2e6dbb44c94014696') in 0.017695 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Help2.png
+  artifactKey: Guid(77af20044e9766840a6be568806dc22e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Help2.png using Guid(77af20044e9766840a6be568806dc22e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4aad1f13af8e233ab7ac90e2f975d913') in 0.012757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Resources/Sprites/Inventory/Items/iron-sword.png
+  artifactKey: Guid(80a007b3c11cc6c47b1d9b5963eb1818) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprites/Inventory/Items/iron-sword.png using Guid(80a007b3c11cc6c47b1d9b5963eb1818) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0220d18034a2b91d29f0b7d523ceabb3') in 0.015849 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GrayNormalHeader.png
+  artifactKey: Guid(9e88b336bd16b1e4b99de75f486126c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GrayNormalHeader.png using Guid(9e88b336bd16b1e4b99de75f486126c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a9d07f1afbaf138052245c7c53a7d4d') in 0.012417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/RotE Textures/Ground/Ground_roughness.png
+  artifactKey: Guid(3cdc5b17d3bff7e45a5f8bff9b930467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Ground/Ground_roughness.png using Guid(3cdc5b17d3bff7e45a5f8bff9b930467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '996ee04e0a4cc8c1605a8f0d5f669c53') in 0.015280 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.020746 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotLeftOff.png
+  artifactKey: Guid(9f2d5e61dd9821b44a410f36519781d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotLeftOff.png using Guid(9f2d5e61dd9821b44a410f36519781d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67cf0ac57f1957899d9b956e48287ea6') in 0.012544 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/flat.png
+  artifactKey: Guid(194a51ad3c0179644abea3f196c5ebe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/flat.png using Guid(194a51ad3c0179644abea3f196c5ebe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'add7c6314b48eef0a6d598881bc727b7') in 0.013858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_metallic.png
+  artifactKey: Guid(8bef51b2b1b41904094c9fe032ae62a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_metallic.png using Guid(8bef51b2b1b41904094c9fe032ae62a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53bc34c6fd727b157d368b5db1b4bd92') in 0.015677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpRemoveIconActive.png
+  artifactKey: Guid(1ba096552f9cbbb418ee2286856bb352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpRemoveIconActive.png using Guid(1ba096552f9cbbb418ee2286856bb352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec81ca54c27e2f0b78f9277b9ea7e0d5') in 0.012477 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000173 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/CommentNodeBase.png
+  artifactKey: Guid(b2be9c55e7e7ba447967677c82b2cb23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/CommentNodeBase.png using Guid(b2be9c55e7e7ba447967677c82b2cb23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de298c2024e14d8db4eb121366fb1127') in 0.015199 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/FocusNode.png
+  artifactKey: Guid(da673e6179c67d346abb220a6935e359) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/FocusNode.png using Guid(da673e6179c67d346abb220a6935e359) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce71059634ccdc899f8411a2bf6fbec0') in 0.014319 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Rhino Character/Textures/earth-rhino-CLR.png
+  artifactKey: Guid(3abd0ce992d01b748846d96367ee3c14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rhino Character/Textures/earth-rhino-CLR.png using Guid(3abd0ce992d01b748846d96367ee3c14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f1e59364eb0a435888de7ebc19c66eb') in 0.016141 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/RotE Textures/Fence/Fence_ambientocclusion.png
+  artifactKey: Guid(92839119bea212644b7d3e8976da376d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_ambientocclusion.png using Guid(92839119bea212644b7d3e8976da376d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4619f5944f0252a8352260e87225d571') in 0.014677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/RotE Textures/Fence/Fence_roughness.png
+  artifactKey: Guid(d9a34f30c5e36254ba87207e2aaccf86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_roughness.png using Guid(d9a34f30c5e36254ba87207e2aaccf86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d8b69baeb83115bd7c5f8d333e64a3b') in 0.015183 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Rhino Character/Textures/earth-rhino-NRM.png
+  artifactKey: Guid(0b1016166be85ac4f9325287a1e9334f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rhino Character/Textures/earth-rhino-NRM.png using Guid(0b1016166be85ac4f9325287a1e9334f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5212d253716cc126b3e0a1452166aff') in 0.019416 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Rhino Character/Textures/earth-rhino-SSS.png
+  artifactKey: Guid(a6199c3f4c2edeb4d93c769726792a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Rhino Character/Textures/earth-rhino-SSS.png using Guid(a6199c3f4c2edeb4d93c769726792a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c92be8d0a5fbba5402091551cf6ca2a1') in 0.018190 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/RotE Textures/Fur/Fur_basecolor.png
+  artifactKey: Guid(fc1b2cd420f40fe47bfe05e8fdd03908) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_basecolor.png using Guid(fc1b2cd420f40fe47bfe05e8fdd03908) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a3b37dcce7f830b5557417b739bdeb9') in 0.016682 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/RotE Textures/Fur/Fur_height.png
+  artifactKey: Guid(e0ef555a71e0301428be1070e71bddb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_height.png using Guid(e0ef555a71e0301428be1070e71bddb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3946c4ca3f70bdbc417e12c4ae24d8a5') in 0.016251 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000344 seconds.
+  path: Assets/RotE Textures/Fence/Fence_Opacity.png
+  artifactKey: Guid(dc50ea1092194cb48bc7b466a21a7148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_Opacity.png using Guid(dc50ea1092194cb48bc7b466a21a7148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b73bddb0906477e3da944752df500c92') in 0.019105 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/RotE Textures/Fence/Fence_height.png
+  artifactKey: Guid(0e0739c91794562419cb446768f4812f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_height.png using Guid(0e0739c91794562419cb446768f4812f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8db0f565ec06716c1e7195291e462807') in 0.015502 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/CommentaryResizeIconInv.png
+  artifactKey: Guid(b52bc320a2ff91446978a893ec738134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/CommentaryResizeIconInv.png using Guid(b52bc320a2ff91446978a893ec738134) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb7f5dc5a124870a1eac7bcffaa9b29f') in 0.012651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_ambientocclusion.png
+  artifactKey: Guid(c8e00dafe78c9df45810491cbf13517e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_ambientocclusion.png using Guid(c8e00dafe78c9df45810491cbf13517e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55b8b6ea792bc2512f81ec47f50d6b26') in 0.016200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Resources/Sprites/Inventory/UI/buttonSquare_blue.png
+  artifactKey: Guid(b49c7da08d022bb409f3b04b86703efc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprites/Inventory/UI/buttonSquare_blue.png using Guid(b49c7da08d022bb409f3b04b86703efc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7fa2cf93abb1b24bde04af7398bc3fb') in 0.020855 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_metallic.png
+  artifactKey: Guid(6037e26a63b26e84aba0ea7124495b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_metallic.png using Guid(6037e26a63b26e84aba0ea7124495b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cae089e64ff52f5dbd87a477ccc50ce') in 0.015537 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_roughness.png
+  artifactKey: Guid(e9cefe33816c5fb419211b7802901b8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_roughness.png using Guid(e9cefe33816c5fb419211b7802901b8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75cddbbedac2e1556bd5746a21347381') in 0.014872 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CleanupON.png
+  artifactKey: Guid(615d853995cf2344d8641fd19cb09b5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CleanupON.png using Guid(615d853995cf2344d8641fd19cb09b5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16b3c2168e955cfe8b6601600015e66d') in 0.012404 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpAddIconActive.png
+  artifactKey: Guid(52bbe770f45f531419e44a69be67ccba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpAddIconActive.png using Guid(52bbe770f45f531419e44a69be67ccba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99c32c28eb73c7e16d9fe08dff715f72') in 0.013555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_normal.png
+  artifactKey: Guid(81db96815ae88314296686b88cbad1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_normal.png using Guid(81db96815ae88314296686b88cbad1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ddf0fd0ee141422ecaafdf30c6bdec1') in 0.016374 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpAddIconNormal.png
+  artifactKey: Guid(7eb057fdbf020504fb6c9c3c78031e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpAddIconNormal.png using Guid(7eb057fdbf020504fb6c9c3c78031e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '546af12bd14dbcd24b1c2d810fbe88d3') in 0.014353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpRemoveIconNormal.png
+  artifactKey: Guid(839cb1530f95ad14ab58762161a9cb06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CustomExpRemoveIconNormal.png using Guid(839cb1530f95ad14ab58762161a9cb06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c9fc1aa8ed5ddfb4bbec139992b73ca') in 0.012552 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000407 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_normal.png
+  artifactKey: Guid(85a44e9dcba5fb94d8c17dd151a4fa59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_normal.png using Guid(85a44e9dcba5fb94d8c17dd151a4fa59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bd7bcca9b19dcb85b5b66a10b5f9ec6') in 0.018383 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/CircleBackground.png
+  artifactKey: Guid(c560c5d8ca4c353409caf2ec204f3a19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/CircleBackground.png using Guid(c560c5d8ca4c353409caf2ec204f3a19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bd0aa677265deefa6cb746798017ad2') in 0.012387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_basecolor.png
+  artifactKey: Guid(dd3056641039b3148a0e5b4bf4d61319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_basecolor.png using Guid(dd3056641039b3148a0e5b4bf4d61319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67afbe69ea286959d539cd3c96f233e4') in 0.016456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_roughness.png
+  artifactKey: Guid(37dd28d3a040b39468989bf0fe9b0dde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_roughness.png using Guid(37dd28d3a040b39468989bf0fe9b0dde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69c0258115ed3bada01e8b9f93bd0bd1') in 0.016077 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalHeader.png
+  artifactKey: Guid(bd910a1d744309b499b59062db7891ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalHeader.png using Guid(bd910a1d744309b499b59062db7891ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ed54833569f108ed0c93aacda05f5a0') in 0.012775 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/RotE Textures/Beast Fur/BeastFur_metallic.png
+  artifactKey: Guid(903a81ba67f56824a8d765a9d17c2939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/BeastFur_metallic.png using Guid(903a81ba67f56824a8d765a9d17c2939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3ab7554884657dfe730aafee7937712') in 0.015978 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000082 seconds.
+  path: Assets/RotE Textures/Beast Fur/BeastFur_height.png
+  artifactKey: Guid(4a0e5bcaace2d044082d69d6eb52f34d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/BeastFur_height.png using Guid(4a0e5bcaace2d044082d69d6eb52f34d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebda6b70479ce70ddd1ec45bed6e7e67') in 0.018033 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000302 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/About.png
+  artifactKey: Guid(8aba6bb20faf8824d9d81946542f1ce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/About.png using Guid(8aba6bb20faf8824d9d81946542f1ce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a9cb52701a31bb674e1ada06c3b8f75') in 0.014925 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CleanupOFF.png
+  artifactKey: Guid(f62c0c3a5ddcd844e905fb2632fdcb15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CleanupOFF.png using Guid(f62c0c3a5ddcd844e905fb2632fdcb15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ce0979d6333c6da32f7c8ad7ff6319c') in 0.012545 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Resources/Sprites/Inventory/UI/buttonLong_blue.png
+  artifactKey: Guid(e6f79cab4ece24c42828ecfa4b23837e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprites/Inventory/UI/buttonLong_blue.png using Guid(e6f79cab4ece24c42828ecfa4b23837e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fbe2cfef339cd0293771f60fd7e8b8f') in 0.017675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_ambientocclusion.png
+  artifactKey: Guid(57de42e1adb6b4f40812d59f9e006a66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_ambientocclusion.png using Guid(57de42e1adb6b4f40812d59f9e006a66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dc3f75136050adacdcff3fcf3808977') in 0.514485 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_basecolor.png
+  artifactKey: Guid(7430a4cdfd680664e97a66790f9bffd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_basecolor.png using Guid(7430a4cdfd680664e97a66790f9bffd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe5b5aeb808efa2327c716bb38a9ba70') in 0.015559 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_normal.png
+  artifactKey: Guid(0b34a30678da763498ea9fccfab22af2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_normal.png using Guid(0b34a30678da763498ea9fccfab22af2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64e6c43b65400e3e76910722bc511ac3') in 0.017160 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/Bezier1X2AA.png
+  artifactKey: Guid(06e687f68dd96f0448c6d8217bbcf608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/Bezier1X2AA.png using Guid(06e687f68dd96f0448c6d8217bbcf608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8e81aef14a6403fb1f01c10e32b6465') in 0.014701 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/RotE Textures/Fur/Fur Colour Variations/Fur2_basecolor.png
+  artifactKey: Guid(c66084231225d8542948db35d66b9a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur Colour Variations/Fur2_basecolor.png using Guid(c66084231225d8542948db35d66b9a36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d6c2c7ee96e5a2c6d4cf3cc13ad4beb') in 0.016088 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/green.png
+  artifactKey: Guid(352167e52fa3b0c43ac690f5e2debc2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/green.png using Guid(352167e52fa3b0c43ac690f5e2debc2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '366c8fcfbe708c9ee47dc4ea3e4c8bd7') in 0.015564 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/Resources/Sprites/Inventory/Items/golden-sword.png
+  artifactKey: Guid(d928b4658c3354a4ab7738321dd14470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprites/Inventory/Items/golden-sword.png using Guid(d928b4658c3354a4ab7738321dd14470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74351c1a65c8eb060d6908d210d774d5') in 0.015450 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/RotE Textures/Beast Fur/Beast Fur Colour Variations/BeastFur4_basecolor.png
+  artifactKey: Guid(a5e7af1ada1c07b4f8ceb05dfac0af10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/Beast Fur Colour Variations/BeastFur4_basecolor.png using Guid(a5e7af1ada1c07b4f8ceb05dfac0af10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd310d322d45bb09d2942e08e0a5ff48e') in 0.017001 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/RotE Textures/Beast Fur/Beast Fur Colour Variations/BeastFur5_basecolor.png
+  artifactKey: Guid(64b2a6c4872a2804baf3f09eadf45018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/Beast Fur Colour Variations/BeastFur5_basecolor.png using Guid(64b2a6c4872a2804baf3f09eadf45018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef61a3eec9348ff20e15c3e5f0a9e82d') in 0.015570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/RotE Textures/Fur/Fur_roughness.png
+  artifactKey: Guid(f7027d5a3d2d00148b14df03b54d6c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_roughness.png using Guid(f7027d5a3d2d00148b14df03b54d6c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d8e9487a491b72314ac44174d7fda00') in 0.013753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Checkmark.png
+  artifactKey: Guid(e9c4642eaa083a54ab91406d8449e6ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/Checkmark.png using Guid(e9c4642eaa083a54ab91406d8449e6ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0cd57b9080b93286d60fd418e08e282') in 0.012813 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/CommentaryResizeIcon.png
+  artifactKey: Guid(5321bd2b79632764286f28503db80815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/CommentaryResizeIcon.png using Guid(5321bd2b79632764286f28503db80815) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2eb5951a7e5e3e881cd8179207e1b86') in 0.013043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_roughness.png
+  artifactKey: Guid(88ada1014bb5a6f449c3bffcbfa8b757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_roughness.png using Guid(88ada1014bb5a6f449c3bffcbfa8b757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbc5b65aff5926edc78277ba2217ad1e') in 0.014823 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/RotE Textures/Grass/Grass_height.png
+  artifactKey: Guid(00cee942e81e31f49a3966706de5cb2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass/Grass_height.png using Guid(00cee942e81e31f49a3966706de5cb2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f7a496782c7b4fa63135eea78202875') in 0.016160 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/RotE Textures/Beast Fur/BeastFur_basecolor.png
+  artifactKey: Guid(200f8d6ace6e25c4dbbb6f29d7aff517) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/BeastFur_basecolor.png using Guid(200f8d6ace6e25c4dbbb6f29d7aff517) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c6876124ee45b6a14b770de7566e0ef') in 0.017562 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/RotE Textures/Grass Ground/Grass_Ground_ambientocclusion.png
+  artifactKey: Guid(a38ad3e16c22634438f976361262ac55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass Ground/Grass_Ground_ambientocclusion.png using Guid(a38ad3e16c22634438f976361262ac55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39dfd9768500bd25f57cba3e71beb4f7') in 0.016990 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/grey.png
+  artifactKey: Guid(31d5a2d79390ab542a81a6699a999758) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/grey.png using Guid(31d5a2d79390ab542a81a6699a999758) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '758b5e9079ddd6e2eef4196c77cb806f') in 0.013251 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Previews/IndirectSpecularPreview.exr
+  artifactKey: Guid(ef7513b54a0670140b9b967af7620563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Previews/IndirectSpecularPreview.exr using Guid(ef7513b54a0670140b9b967af7620563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca96247e7b6644abb52e6bddd871b7a5') in 0.019280 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000171 seconds.
+  path: Assets/RotE Textures/Ground/Ground_height.png
+  artifactKey: Guid(5411390e0e1b4be43a0f6d92bcb34375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Ground/Ground_height.png using Guid(5411390e0e1b4be43a0f6d92bcb34375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '189c6bbcbd9c6ba74c20364fdbf4a7d0') in 0.016566 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CircularToggle_OFF_Dark.png
+  artifactKey: Guid(1aaca50d084b0bb43854f075ce2f302b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CircularToggle_OFF_Dark.png using Guid(1aaca50d084b0bb43854f075ce2f302b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7d4a70f006d701d5f85c90e4b235259') in 0.012553 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalBase.png
+  artifactKey: Guid(60c283ffa9a758646ab70a2fe7ff5f71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalBase.png using Guid(60c283ffa9a758646ab70a2fe7ff5f71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f44973b90ec2475a0ed0a088c9460d31') in 0.011815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/LineTex 3.png
+  artifactKey: Guid(c3512c25766a40245ac94c6b1722d76e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/LineTex 3.png using Guid(c3512c25766a40245ac94c6b1722d76e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c461b1a33f4b89a8597164176af6fe42') in 0.012976 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotMidOffHover.png
+  artifactKey: Guid(c86cb249299fb7249b5ee7fb27ef1951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotMidOffHover.png using Guid(c86cb249299fb7249b5ee7fb27ef1951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e55148f222dccf539d57a609b0cc338d') in 0.013159 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Resources/Sprites/Inventory/Items/bronze-sword.png
+  artifactKey: Guid(ea3bc518e9a0ced469b16ea336a36ea3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Sprites/Inventory/Items/bronze-sword.png using Guid(ea3bc518e9a0ced469b16ea336a36ea3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '573a0acb75492feb1da2fcaf2a9a1c0c') in 0.016012 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/RotE Textures/Cloth/Cloth_height.png
+  artifactKey: Guid(0bf60dd9e10c7ea4f8ff9b8acff75b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cloth/Cloth_height.png using Guid(0bf60dd9e10c7ea4f8ff9b8acff75b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95f326a5c769d245e20075a03e7a885b') in 0.014927 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/RotE Textures/Grass/Grass_basecolor.png
+  artifactKey: Guid(e402771dcbf089e428f7b9093631afaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass/Grass_basecolor.png using Guid(e402771dcbf089e428f7b9093631afaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1636f6d33341f9727d0dfdf6ed85cd39') in 0.016976 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_height.png
+  artifactKey: Guid(3553a598b383cdb4385efa85f8a2d208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_height.png using Guid(3553a598b383cdb4385efa85f8a2d208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a0b653467981bbee20c7c5270664296') in 0.016604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/AddToList.png
+  artifactKey: Guid(cccc116a6334dc1428687697c5a11d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/AddToList.png using Guid(cccc116a6334dc1428687697c5a11d58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3d44b113a801c1961143e94433bfdb3') in 0.012830 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/RotE Textures/Beast Fur/BeastFur_normal.png
+  artifactKey: Guid(b0219af1665f5e14cb5bedd2703c8b5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/BeastFur_normal.png using Guid(b0219af1665f5e14cb5bedd2703c8b5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31211aedbb07fa95d28eaf310cd02574') in 0.017286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CleanupOFFNew.png
+  artifactKey: Guid(df0f2e2030492c14d9237317aef419cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CleanupOFFNew.png using Guid(df0f2e2030492c14d9237317aef419cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '758c0d9977c436b9dac4e9af11f9e8bd') in 0.015639 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/RotE Textures/Beast Fur/Beast Fur Colour Variations/BeastFur_basecolor.png
+  artifactKey: Guid(bbed80b7d968d7247aed6a70af36b27e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/Beast Fur Colour Variations/BeastFur_basecolor.png using Guid(bbed80b7d968d7247aed6a70af36b27e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f93d40498d1acd4a2093a7409a8bda4') in 0.017631 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/ButtonBackground.png
+  artifactKey: Guid(b57dd36838fb19c449fd4559efe3f800) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/ButtonBackground.png using Guid(b57dd36838fb19c449fd4559efe3f800) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22f4aefc16b2f2494d02c65208c72f97') in 0.014230 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/black.png
+  artifactKey: Guid(7a170cdb7cc88024cb628cfcdbb6705c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/black.png using Guid(7a170cdb7cc88024cb628cfcdbb6705c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28cad8aecef7b161a343bc6cbe6946b0') in 0.012322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalBaseLeft.png
+  artifactKey: Guid(330fd0c8f074a3c4f8042114a61a73d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalBaseLeft.png using Guid(330fd0c8f074a3c4f8042114a61a73d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '968f5c4e60dfd7ac94802421b59eb7ed') in 0.037196 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/RotE Textures/Fence/Fence_normal.png
+  artifactKey: Guid(9da2873447bfe4d418dd6eafa86b4911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_normal.png using Guid(9da2873447bfe4d418dd6eafa86b4911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '427cc0df53f1e746a35b604901ec20f4') in 0.017034 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/FlatBackground.png
+  artifactKey: Guid(44efd0011d6a9bc4fb0b3a82753dac4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/FlatBackground.png using Guid(44efd0011d6a9bc4fb0b3a82753dac4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f95f84a620bc0e83427ab4feaedf6625') in 0.011816 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/RotE Textures/Fur/Fur_normal.png
+  artifactKey: Guid(c5bf8925ba8616748a98d35250e69e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_normal.png using Guid(c5bf8925ba8616748a98d35250e69e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfc2acc78fd76196de1906ec8f6abb39') in 0.016265 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_basecolor.png
+  artifactKey: Guid(2b4bf023f9f77ea42b247c189d7db91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_basecolor.png using Guid(2b4bf023f9f77ea42b247c189d7db91f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a9f8d56ad3fad25c81e03ca202d3d31') in 0.018971 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/RotE Textures/Beast Fur/Beast Fur Colour Variations/BeastFur3_basecolor.png
+  artifactKey: Guid(a0b3b53e08b192e4f936ebb17e4f8052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/Beast Fur Colour Variations/BeastFur3_basecolor.png using Guid(a0b3b53e08b192e4f936ebb17e4f8052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bc4570ca2e4524e01e015dbd12ba934') in 0.016380 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CleanupONNew.png
+  artifactKey: Guid(e86ba70d2363b9443beac28a6a370b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CleanupONNew.png using Guid(e86ba70d2363b9443beac28a6a370b87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34ee0f4a06b794e118b2a60f68cdfbf1') in 0.014816 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/RotE Textures/Fence/Fence_metallic.png
+  artifactKey: Guid(2f373e3bfbaea084c9254b574a2231d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_metallic.png using Guid(2f373e3bfbaea084c9254b574a2231d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75991763bbc4bc203c5b6693362e73af') in 0.017754 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/RotE VFX/FruitSplat/CenterSplat.png
+  artifactKey: Guid(4f1621753c4331f46b056dfbde753de1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/FruitSplat/CenterSplat.png using Guid(4f1621753c4331f46b056dfbde753de1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36014215392763afd99c4fb4d71a1030') in 0.018603 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/RotE Textures/Fur/Fur Colour Variations/Fur_basecolor.png
+  artifactKey: Guid(cf0eba5dddd887647b6f556f06a9aa1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur Colour Variations/Fur_basecolor.png using Guid(cf0eba5dddd887647b6f556f06a9aa1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69b1b4162c72516c32becb9d2561b448') in 0.016675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/LiveOFF.png
+  artifactKey: Guid(bb16faf366bcc6c4fbf0d7666b105354) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/LiveOFF.png using Guid(bb16faf366bcc6c4fbf0d7666b105354) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c49ef47b2771090395c0c8e68734244') in 0.012405 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000092 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_height.png
+  artifactKey: Guid(6aed5d9781ffe1e459aed7a7b7adf840) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_height.png using Guid(6aed5d9781ffe1e459aed7a7b7adf840) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9338991245efe31cca50ab1283f16a3a') in 0.016284 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/RotE Textures/Cliff/Cliff_metallic.png
+  artifactKey: Guid(4d69476f821d5af408498a7fcd5be6c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Cliff/Cliff_metallic.png using Guid(4d69476f821d5af408498a7fcd5be6c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1974d33de077c710c51f6a9da8c3bff0') in 0.017131 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/RotE Textures/Fence/Fence_basecolor.png
+  artifactKey: Guid(0814322d264f3b4478c7dae397d17317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fence/Fence_basecolor.png using Guid(0814322d264f3b4478c7dae397d17317) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39923444905797243d8781f25619360f') in 0.016808 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/RotE Textures/Beast Fur/Beast Fur Colour Variations/BeastFur2_basecolor.png
+  artifactKey: Guid(d0651bfcb8de34e4b88927d72334cbf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/Beast Fur Colour Variations/BeastFur2_basecolor.png using Guid(d0651bfcb8de34e4b88927d72334cbf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ff40be2838595869904540042ea4ce4') in 0.019700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/RotE Textures/Beast Fur/BeastFur_ambientocclusion.png
+  artifactKey: Guid(b9faf0c9d51a79648a63edd459b7937a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/BeastFur_ambientocclusion.png using Guid(b9faf0c9d51a79648a63edd459b7937a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95c6aff72c7d365b8a74edf77dea2b46') in 0.021440 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphButtonActive.png
+  artifactKey: Guid(dd3411e8d9927d3429d5872dbdbd752b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphButtonActive.png using Guid(dd3411e8d9927d3429d5872dbdbd752b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b37d5bbabd54328a0ad04833eeb0e30f') in 0.014512 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/GPUInstancingIconOFF.png
+  artifactKey: Guid(486c7766baaf21b46afb63c1121ef03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/GPUInstancingIconOFF.png using Guid(486c7766baaf21b46afb63c1121ef03e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51123ae9abe004dcbd4ce964cb0ab6a0') in 0.013092 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000365 seconds.
+  path: Assets/RotE Textures/Fur/Fur Colour Variations/Fur5_basecolor.png
+  artifactKey: Guid(617cce11a4eee434facb7b199b2ad378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur Colour Variations/Fur5_basecolor.png using Guid(617cce11a4eee434facb7b199b2ad378) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '348b6472b2c8147a097c26b6441f97bd') in 0.016921 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/RotE Textures/Grass Ground/Grass_Ground_basecolor.png
+  artifactKey: Guid(c8c152a68b000d14cb633d33b1cc87ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass Ground/Grass_Ground_basecolor.png using Guid(c8c152a68b000d14cb633d33b1cc87ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b13067c96cc50060381a7d5f5b59fb57') in 0.016447 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/blue.png
+  artifactKey: Guid(826f80ee0ad07444c8558af826a4df2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Textures/blue.png using Guid(826f80ee0ad07444c8558af826a4df2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef2b5acdc62c7222dcc2dc1b3cf0021e') in 0.012384 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000193 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalBaseSquare.png
+  artifactKey: Guid(d179c8744f837da49ab92aae04d1ae1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/BlueNormalBaseSquare.png using Guid(d179c8744f837da49ab92aae04d1ae1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e02fc750fb3eb6b24a9deda92886b1b1') in 0.014462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/RotE Textures/Fur/Fur Colour Variations/Fur3_basecolor.png
+  artifactKey: Guid(0f5c8d72989c3b247a02f18ef9bfba55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur Colour Variations/Fur3_basecolor.png using Guid(0f5c8d72989c3b247a02f18ef9bfba55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61c1624dc16b25c87d2918c9f72ba4d5') in 0.016682 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/FitView.png
+  artifactKey: Guid(1def740f2314c6b4691529cadeee2e9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/FitView.png using Guid(1def740f2314c6b4691529cadeee2e9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4416a06f326be4512d6b64af74b44b57') in 0.014413 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/RotE Textures/Beast Fur/BeastFur_roughness.png
+  artifactKey: Guid(01a8afc15d1fdcc4fadb7a2cc2527ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Beast Fur/BeastFur_roughness.png using Guid(01a8afc15d1fdcc4fadb7a2cc2527ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e00f2dd75d83a9d4a8e1b39499fdbcc') in 0.043201 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/RotE Textures/Grass/Grass_metallic.png
+  artifactKey: Guid(85a83dded6d900147866a139cbee1d61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass/Grass_metallic.png using Guid(85a83dded6d900147866a139cbee1d61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f650002224bcd586426c15fb1f1d926') in 0.045801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000320 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/Grid128.png
+  artifactKey: Guid(881c304491028ea48b5027ac6c62cf73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/Grid128.png using Guid(881c304491028ea48b5027ac6c62cf73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f7c0e038bf58e7d43fab9d2be02d03a') in 0.014605 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/RotE Textures/Fur/Fur_metallic.png
+  artifactKey: Guid(4195848f7d656d04bb8027bde78d15d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_metallic.png using Guid(4195848f7d656d04bb8027bde78d15d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2008e357dcbab842616c31c02730800d') in 0.017132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphPopup.png
+  artifactKey: Guid(2ae607812d722ec46b48647c2a800779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Nodes/GraphPopup.png using Guid(2ae607812d722ec46b48647c2a800779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '271f0c6e745bbfd7d0fcd3afb83c7549') in 0.013836 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/RotE Textures/Fur/Fur_ambientocclusion.png
+  artifactKey: Guid(3ee258866ad561a45ad564e5f7f57db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur_ambientocclusion.png using Guid(3ee258866ad561a45ad564e5f7f57db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65eeba18c560026024e9c45b78088071') in 0.016362 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/RotE VFX/FruitSplat/fruitsplash.png
+  artifactKey: Guid(741bfd57196e76443917606cfd93cf89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/FruitSplat/fruitsplash.png using Guid(741bfd57196e76443917606cfd93cf89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4fc0f3e861708528879402074df4e99') in 0.018654 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/RotE Textures/Fur/Fur Colour Variations/Fur4_basecolor.png
+  artifactKey: Guid(9905f714dcbf4b141b7281cba85ab615) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Fur/Fur Colour Variations/Fur4_basecolor.png using Guid(9905f714dcbf4b141b7281cba85ab615) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b5acc701d2bd32ee314938a8c2e01fe') in 0.015651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/LineTex.png
+  artifactKey: Guid(02f71419854c0d845a930c9e0a0bf775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/LineTex.png using Guid(02f71419854c0d845a930c9e0a0bf775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1796fb20ad10310eb6adb3fe922f680') in 0.013130 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotLeftOnHover.png
+  artifactKey: Guid(7ef06ce40d713d34790e78278ee82dea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/MiniBotLeftOnHover.png using Guid(7ef06ce40d713d34790e78278ee82dea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa0143739a6a41b1d0be6a68bd664def') in 0.011410 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CircularToggle_ON_Dark.png
+  artifactKey: Guid(ac0860a6a77e29d4091ba790a17daa0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/CircularToggle_ON_Dark.png using Guid(ac0860a6a77e29d4091ba790a17daa0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c790f49621f0debfa9616a1111e2f53') in 0.013541 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/RotE Textures/Grass Ground/Grass_Ground_roughness.png
+  artifactKey: Guid(d1468c00d37b82b4ba0928c7a0173342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Grass Ground/Grass_Ground_roughness.png using Guid(d1468c00d37b82b4ba0928c7a0173342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a16efb8a9a6916c23a08469510f21ba7') in 0.015584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/RotE Textures/Dirt/Dirt_ambientocclusion.png
+  artifactKey: Guid(e1ea381dd81486c45a8f78013f247d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Dirt/Dirt_ambientocclusion.png using Guid(e1ea381dd81486c45a8f78013f247d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee8e02a3dea57fa42f6ab667457fe45c') in 0.017870 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/MaterialModeIcon.PNG
+  artifactKey: Guid(5725fa8ee04e1be449af059f5735cd81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/MaterialModeIcon.PNG using Guid(5725fa8ee04e1be449af059f5735cd81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b37b031d9612495951180c1027008423') in 0.012894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/RotE VFX/PolyToots/ZeldaBotW_Explosion/Textures/DistortNormalTile.png
+  artifactKey: Guid(73ad01cf98af75f46880d7d88b3ce234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PolyToots/ZeldaBotW_Explosion/Textures/DistortNormalTile.png using Guid(73ad01cf98af75f46880d7d88b3ce234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d03bcf2ec4bf4a81b9d447988c668f3') in 0.013947 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000157 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/GPUInstancingIconON.png
+  artifactKey: Guid(4b0c2926cc71c5846ae2a29652d54fb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/Nodes/GPUInstancingIconON.png using Guid(4b0c2926cc71c5846ae2a29652d54fb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4c05957830e817cc8e1e37255fb0106') in 0.010672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.225489 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_Normal.tga
+  artifactKey: Guid(0555270713d08ca4ab01a3ea61a7f094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_Normal.tga using Guid(0555270713d08ca4ab01a3ea61a7f094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99ea9ee25a031590421c0343e89e6b04') in 0.016272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_Metallic.tga
+  artifactKey: Guid(a759047a390b6c54a8fc2ad4670e5653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_Metallic.tga using Guid(a759047a390b6c54a8fc2ad4670e5653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2d8451b18b65da58e680bb74e1c1d34') in 0.013751 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.628901 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/TakeScreenshotOFF.png
+  artifactKey: Guid(7587de2e3bec8bf4d973109524ccc6b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/TakeScreenshotOFF.png using Guid(7587de2e3bec8bf4d973109524ccc6b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2302297fb955a9f1789ac51ff6fa5978') in 0.016811 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/TransparentPixel.png
+  artifactKey: Guid(1004d06b4b28f5943abdf2313a22790a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/TransparentPixel.png using Guid(1004d06b4b28f5943abdf2313a22790a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec68ebe1e80ce696d430bf30697a0928') in 0.014626 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/TransparentOverlay.png
+  artifactKey: Guid(8c4a7fca2884fab419769ccc0355c0c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/TransparentOverlay.png using Guid(8c4a7fca2884fab419769ccc0355c0c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84eefb3bf48f67dbc943989efcedcd7a') in 0.014639 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/RotE VFX/PolyToots/ZeldaBotW_Explosion/Textures/ZeldaSmoke.png
+  artifactKey: Guid(46dcd935af2aac24ba76a82cd0a132e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PolyToots/ZeldaBotW_Explosion/Textures/ZeldaSmoke.png using Guid(46dcd935af2aac24ba76a82cd0a132e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca0447bafc76b4d060ade41b270ec0f7') in 0.020193 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.144933 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthStaff_T_Normal.tga
+  artifactKey: Guid(8bc14a4b38c6cb4468970388e3b4a491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthStaff_T_Normal.tga using Guid(8bc14a4b38c6cb4468970388e3b4a491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c95ce30bf6ecc77b178cc90f1be7235b') in 0.014659 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 102.136566 seconds.
+  path: Assets/RotE Textures/Rocks/Rocks_basecolor.png
+  artifactKey: Guid(7d31828cc026a7c48955b8bafc1b03c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Rocks/Rocks_basecolor.png using Guid(7d31828cc026a7c48955b8bafc1b03c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03b5609f811bf99d48b21f7244518bd0') in 0.023189 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_1_Back-Z.png
+  artifactKey: Guid(33cbefefe2c7f4e77ac959c74eef5d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_1_Back-Z.png using Guid(33cbefefe2c7f4e77ac959c74eef5d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e29c0afd5a2ce1b851b55ca3843de607') in 0.258009 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000376 seconds.
+  path: Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_0_Front+Z.png
+  artifactKey: Guid(d731d71c2b8e94c18b5ef8be277e6773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_0_Front+Z.png using Guid(d731d71c2b8e94c18b5ef8be277e6773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93b9272ce753c876c0529ae3141f7359') in 0.017268 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/RotE Textures/Sand/Sand_ambientocclusion.png
+  artifactKey: Guid(c7275b8583e313640ac450a36252ec14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Sand/Sand_ambientocclusion.png using Guid(c7275b8583e313640ac450a36252ec14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf1b8cd621cc75f6ce1967275d94ed67') in 0.020719 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Equirect.png
+  artifactKey: Guid(d4c8dc343ae5d4673b7720ffdb1ddf00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Equirect.png using Guid(d4c8dc343ae5d4673b7720ffdb1ddf00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4c2630ff6cdb043984077c4e3002ca4') in 0.446551 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/SelectionBox.png
+  artifactKey: Guid(a702c1245d15ddb48b8fba73bf951a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/SelectionBox.png using Guid(a702c1245d15ddb48b8fba73bf951a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24a62733c335c2d1b95abcc66eb4513c') in 0.013431 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/RotE Textures/Sand/Sand_basecolor.png
+  artifactKey: Guid(98cd1251b4532cd499c236afb1ca341c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Sand/Sand_basecolor.png using Guid(98cd1251b4532cd499c236afb1ca341c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93564907d5629b73a2e6921d82bf42ec') in 0.017511 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_3_Right-X.png
+  artifactKey: Guid(d3b809c8b33ff46faa4245f0bca7e6fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_3_Right-X.png using Guid(d3b809c8b33ff46faa4245f0bca7e6fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6c4bd3d145ea94e7fc63be1a265ca39') in 0.016091 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000212 seconds.
+  path: Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_2_Left+X.png
+  artifactKey: Guid(6b8f010ba933d4f01bdedec2c1a8a025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Cartoon Base BlueSky/Sky_Day_BlueSky_Nothing_Cam_2_Left+X.png using Guid(6b8f010ba933d4f01bdedec2c1a8a025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6909c9de900ab67b06f4285f74211a2') in 0.014029 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2356.328193 seconds.
+  path: Assets/RotE Textures/Stone Floor/StoneFloor_height.png
+  artifactKey: Guid(6a97f9bc9045c0b43b885f9e4d0fc946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Floor/StoneFloor_height.png using Guid(6a97f9bc9045c0b43b885f9e4d0fc946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '132a6bd91ff1849b0c8f6273e2bcc1ab') in 0.022753 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/RotE Textures/Stone Floor/StoneFloor_metallic.png
+  artifactKey: Guid(93c88a358f78500448461c2de5d536fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Floor/StoneFloor_metallic.png using Guid(93c88a358f78500448461c2de5d536fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '478f9ce0d30496eb71f82544d25eba14') in 0.016604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/RotE Textures/Stone Floor/StoneFloor_roughness.png
+  artifactKey: Guid(177ebc5f857559442801f2f1b3a8bd5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Floor/StoneFloor_roughness.png using Guid(177ebc5f857559442801f2f1b3a8bd5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '368889827f7b43df79a1d8983defd67b') in 0.015235 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/RotE Textures/Stone Wall/StoneWall_roughness.png
+  artifactKey: Guid(619829fc9165e8d46a87abb0d004aff2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Wall/StoneWall_roughness.png using Guid(619829fc9165e8d46a87abb0d004aff2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03ab4978f9553bdc97d295dbc5e6585b') in 0.015388 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/UpdateOutdated.png
+  artifactKey: Guid(cce638be049286c41bcbd0a26c356b18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/UpdateOutdated.png using Guid(cce638be049286c41bcbd0a26c356b18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1a13487d50287f49bce169d1a5e53cf') in 0.015743 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/UpdateOFF.png
+  artifactKey: Guid(99d70ac09b4db9742b404c3f92d8564b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/UpdateOFF.png using Guid(99d70ac09b4db9742b404c3f92d8564b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1938a81338834a0af4d25937c26e190a') in 0.013718 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/RotE Textures/Stone Floor/StoneFloor_normal.png
+  artifactKey: Guid(a2d0609617e546d45b369509f1588656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Floor/StoneFloor_normal.png using Guid(a2d0609617e546d45b369509f1588656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c6b593ea51b1a4afc48d7515b76e800') in 0.014279 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/UpdateUpToDated.png
+  artifactKey: Guid(ce30b12fbb3223746bcfef9ea82effe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/UpdateUpToDated.png using Guid(ce30b12fbb3223746bcfef9ea82effe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '784edb45bbf7276b5a185c9d359e004b') in 0.012572 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/RotE Textures/Stone Wall/StoneWall_height.png
+  artifactKey: Guid(86855ad456a5a914a9cd01bfc8d4db30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Stone Wall/StoneWall_height.png using Guid(86855ad456a5a914a9cd01bfc8d4db30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b95ed1295f6eb8667b096597cc76601') in 0.017968 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.772643 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_Roughness.tga
+  artifactKey: Guid(6753782d54cdfb44dbf58ac56d279a68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_Roughness.tga using Guid(6753782d54cdfb44dbf58ac56d279a68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '823df6e6149a80ee241274018dfad40e') in 0.016338 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthStaff_T_AO.tga
+  artifactKey: Guid(1752632168908fc43b09ceade2fbfb97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthStaff_T_AO.tga using Guid(1752632168908fc43b09ceade2fbfb97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec9cca784adf5edbc5e102808e8efd8a') in 0.016866 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthStaff_T_Height.tga
+  artifactKey: Guid(109696a06d0debd468d9f1a50c5ea336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthStaff_T_Height.tga using Guid(109696a06d0debd468d9f1a50c5ea336) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d3626940634db1b2fe823dcd0fd43e4') in 0.013430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ShaderSelectON.png
+  artifactKey: Guid(e737e4bfd0859a946b0c5feddb61d29f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ShaderSelectON.png using Guid(e737e4bfd0859a946b0c5feddb61d29f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afe6666ee7493fa37abd514879fba8c0') in 0.012124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ShareOFF.png
+  artifactKey: Guid(bc5bd469748466a459badfab23915cb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ShareOFF.png using Guid(bc5bd469748466a459badfab23915cb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f404b0e983e5062e811618ad482d7b86') in 0.015586 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_AO.tga
+  artifactKey: Guid(a099d6181a39b894793b91b97a604592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_AO.tga using Guid(a099d6181a39b894793b91b97a604592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2747a1bda7a8861794b8fbf78a20067') in 0.018672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000197 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_Height.tga
+  artifactKey: Guid(88d41d3dc98e8274a8e1bc77d2c1800e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthHammer_initialShadingGroup_Height.tga using Guid(88d41d3dc98e8274a8e1bc77d2c1800e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd88fc51060afa4f19470caa119f08dd1') in 0.013529 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000430 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthStaff_T_Metallic.tga
+  artifactKey: Guid(47473264d37b7774da8eb5fb65add47f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthStaff_T_Metallic.tga using Guid(47473264d37b7774da8eb5fb65add47f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a10a8bb9fb39e1125d94dd310369b9b') in 0.014704 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/SliderHoriz.png
+  artifactKey: Guid(4cabb2d6785b8aa4db0c0a34e1e00f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/SliderHoriz.png using Guid(4cabb2d6785b8aa4db0c0a34e1e00f04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d63c85a54404ff921dd51b53b99c07a') in 0.012885 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000095 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ShaderSelectOFF.png
+  artifactKey: Guid(ce7d95fa4e635f943a73ce1b19312cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/ShaderSelectOFF.png using Guid(ce7d95fa4e635f943a73ce1b19312cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '125c42f59d6c1a9aacbdf480846068a4') in 0.011353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/RoE_EarthStaff/SM_EarthStaff_T_Roughness.tga
+  artifactKey: Guid(1a4b17d809faf9f4f9564854977d3515) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RoE_EarthStaff/SM_EarthStaff_T_Roughness.tga using Guid(1a4b17d809faf9f4f9564854977d3515) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b2786d9dca99375bdb12e6cbd19e540') in 0.017672 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.091463 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/Shader.png
+  artifactKey: Guid(555b6a287b4121b479d412e6ea92bb2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/Shader.png using Guid(555b6a287b4121b479d412e6ea92bb2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b730bf3d7c9b459894a396d081ff728a') in 0.013518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/SaveON.png
+  artifactKey: Guid(2c938a89586d41f4081284e4b25243c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/SaveON.png using Guid(2c938a89586d41f4081284e4b25243c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '148dcb90f20381789723e02813240e50') in 0.013572 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/RotE Textures/Sand/Sand_height.png
+  artifactKey: Guid(df09d412ed3edeb4d988855a1b9ecce2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Sand/Sand_height.png using Guid(df09d412ed3edeb4d988855a1b9ecce2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e2efb53e9eb88062770ae75d49d09bb') in 0.017102 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderFunctionIcon.png
+  artifactKey: Guid(50be8291f9514914aa55c66c49da67cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderFunctionIcon.png using Guid(50be8291f9514914aa55c66c49da67cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1df79c0e60551a477e3451bfda0dce63') in 0.014312 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/RotE Textures/Sand/Sand_metallic.png
+  artifactKey: Guid(e6d2649ac820c2346a15d2cf2442dce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Sand/Sand_metallic.png using Guid(e6d2649ac820c2346a15d2cf2442dce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf6c86d371f8601bf9f5719f46395802') in 0.017821 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderModeIconOFF.png
+  artifactKey: Guid(df81b9531d8ef704f96072ce6910db68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderModeIconOFF.png using Guid(df81b9531d8ef704f96072ce6910db68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35c1db93df5060f15fef9758b56f087e') in 0.014500 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/RotE Textures/Rocks/Rocks_height.png
+  artifactKey: Guid(1088f1cd42547a242ad26a36a93329a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Rocks/Rocks_height.png using Guid(1088f1cd42547a242ad26a36a93329a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d3a3ef8e6dcdb89c74dd2bdfe5e761c') in 0.014421 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/SaveOFF.png
+  artifactKey: Guid(4e4a13447ac514c4ca21e7232bac5486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/SaveOFF.png using Guid(4e4a13447ac514c4ca21e7232bac5486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '910556cdc8df35001d01b7a894fa3b53') in 0.013402 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderFunction.png
+  artifactKey: Guid(94cd628d3d8e07d40a85d82b3fdad15d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderFunction.png using Guid(94cd628d3d8e07d40a85d82b3fdad15d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17a69b73b39aae5cb52481e659145b65') in 0.012308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/RotE Textures/Rocks/Rocks_normal.png
+  artifactKey: Guid(01e129815329a014f80189ca4c57343c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Rocks/Rocks_normal.png using Guid(01e129815329a014f80189ca4c57343c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e07d7319fcad1bfc65608a63de26bc57') in 0.015890 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderFunctionModeIconOFF.png
+  artifactKey: Guid(ff637d399b504ac4999b770f24ef4d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderFunctionModeIconOFF.png using Guid(ff637d399b504ac4999b770f24ef4d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e606d51ca1ae757165042616f0295168') in 0.013729 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Assets/RotE Textures/Sand/Sand_roughness.png
+  artifactKey: Guid(30c20b47c1dec5c4ba1348160e9e39eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Sand/Sand_roughness.png using Guid(30c20b47c1dec5c4ba1348160e9e39eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ab54b6746317eadb93f22df86f1638f') in 0.023689 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/SelectionAsTemplate.png
+  artifactKey: Guid(8148796947da07d49906f1201f417a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Buttons/SelectionAsTemplate.png using Guid(8148796947da07d49906f1201f417a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e58d786a720e9c173fb3d95e6ac1a53e') in 0.014125 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderFunctionModeIcon.png
+  artifactKey: Guid(68897d376b60748438e0ae3474ebe558) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderFunctionModeIcon.png using Guid(68897d376b60748438e0ae3474ebe558) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b2f5d7b12f1af5e1bd47dc167b04760') in 0.012516 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/RotE Textures/Rocks/Rocks_metallic.png
+  artifactKey: Guid(12f1dc41dba882d42978a17e51ef4b8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Rocks/Rocks_metallic.png using Guid(12f1dc41dba882d42978a17e51ef4b8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58b8929f949091f58d368963f967811d') in 0.022516 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000214 seconds.
+  path: Assets/RotE Textures/Rocks/Rocks_roughness.png
+  artifactKey: Guid(423ebe9616794c74e83c05ab7b8a9670) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Rocks/Rocks_roughness.png using Guid(423ebe9616794c74e83c05ab7b8a9670) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4b81088ba254bb7567059c0b20c1cbe') in 0.016410 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/RotE Textures/Sand/Sand_normal.png
+  artifactKey: Guid(f4eef5681719ffe47ab7bac91037ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE Textures/Sand/Sand_normal.png using Guid(f4eef5681719ffe47ab7bac91037ff94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '291df498e4a65c471fc1b5692a8c2af1') in 0.017831 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderModeIcon.PNG
+  artifactKey: Guid(f4ca92d9e50d06049b7ccec2c438754d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderModeIcon.PNG using Guid(f4ca92d9e50d06049b7ccec2c438754d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25aea1f9490a4ad6a2f06f50f7c68e6e') in 0.015015 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderModeMatIcon.png
+  artifactKey: Guid(6f410c15ce9be2741bae77a30a336748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AmplifyShaderEditor/Plugins/EditorResources/UI/Canvas/ShaderModeMatIcon.png using Guid(6f410c15ce9be2741bae77a30a336748) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd5c5cf2878e6ba22c1e64856c23c5fe') in 0.016736 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

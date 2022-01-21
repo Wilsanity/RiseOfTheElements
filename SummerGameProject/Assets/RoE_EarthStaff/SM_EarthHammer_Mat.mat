@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TreeBark_Mat
+  m_Name: SM_EarthHammer_Mat
   m_Shader: {fileID: 4800000, guid: ce565275257480747b00d4dc2fc01dcd, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: e28252b5014b03f4eaa1e18f78a26501, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6bd607ee7c0c8fc40a0d78e8c275a7f4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 2800000, guid: 6a070b5640a9b5e489275de118b816b7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0555270713d08ca4ab01a3ea61a7f094, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -95,8 +95,8 @@ Material:
     m_Floats:
     - _AdditionalRimLightOffset: 0.6
     - _AdditionalRimlightPower: 0.1
-    - _AdditionalSpecGloss: 0
-    - _AdditionalSpecularIntensity: 0
+    - _AdditionalSpecGloss: 4.92
+    - _AdditionalSpecularIntensity: 0.9
     - _AlphaClip: 0
     - _AlphaCutoff: 0.5
     - _Blend: 0
@@ -109,46 +109,40 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Float0: 1.1
-    - _Float1: 1.12
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _MaxGloss: 1.12
     - _Metallic: 0
-    - _MinGloss: 1.1
     - _NormalStrength: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimLightOffset: 0.6
-    - _RimLightOffset1: 0.6
-    - _RimLightPower: 0.1
-    - _RimLightPower1: 0.1
-    - _ShadowOffset: 0.05
+    - _RimLightOffset: 0.72
+    - _RimLightPower: 0.32
+    - _ShadowOffset: 0.5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecularGlossiness: 0
+    - _SpecularGlossiness: 0.22
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0
+    - _SpecularIntensity: 0.549
     - _SpecularTransition: 0
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _AdditionalRimLightColor: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 0}
-    - _AdditionalSpecularColor: {r: 2, g: 2, b: 2, a: 0}
+    - _AdditionalRimLightColor: {r: 1, g: 1, b: 1, a: 0}
+    - _AdditionalSpecularColor: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimLightColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+    - _RimLightColor: {r: 3.5648696, g: 3.5648696, b: 3.5648696, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &1276343407914173295
+--- !u!114 &7545831143140364890
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

@@ -24,9 +24,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 73ad01cf98af75f46880d7d88b3ce234, type: 3}
+        m_Scale: {x: 4, y: 4}
+        m_Offset: {x: 1.7, y: 0.73}
     - _SpecularMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -37,19 +37,29 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AdditionalSpecGloss: 3
+    - _AdditionalRimLightOffset: 0.07
+    - _AdditionalRimlightPower: 0.85
+    - _AdditionalSpecGloss: 8.66
+    - _AdditionalSpecularIntensity: 0.01
     - _AlphaCutoff: 0.5
-    - _RimLightOffset: 0.1
+    - _Float0: 0.6
+    - _Float1: 0.1
+    - _NormalStrength: 1
+    - _RimLightOffset: 0.91
+    - _RimLightOffset1: 0.6
     - _RimLightPower: 0.6
+    - _RimLightPower1: 0.1
     - _ShadowOffset: 0.5
-    - _SpecularGlossiness: 0
-    - _SpecularIntensity: 0
+    - _SpecularGlossiness: 0.22
+    - _SpecularIntensity: 0.088
     - _SpecularTransition: 0
     m_Colors:
+    - _AdditionalRimLightColor: {r: 1, g: 1, b: 1, a: 0}
+    - _AdditionalSpecularColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimLightColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecularColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Tint: {r: 0.22014134, g: 0.2264151, b: 0.18725525, a: 1}
+    - _RimLightColor: {r: 0.5251869, g: 0.54620284, b: 0.5943396, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Tint: {r: 0.41509432, g: 0.39044705, b: 0.33938527, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6774172637990673760
 MonoBehaviour:

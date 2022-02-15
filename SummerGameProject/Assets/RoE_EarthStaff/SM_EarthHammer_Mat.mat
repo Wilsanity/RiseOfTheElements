@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPC_Blacksmith_Mat
+  m_Name: SM_EarthHammer_Mat
   m_Shader: {fileID: 4800000, guid: ce565275257480747b00d4dc2fc01dcd, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: f8fae18b08c3bc742a0c4a21c415f4a8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6bd607ee7c0c8fc40a0d78e8c275a7f4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0555270713d08ca4ab01a3ea61a7f094, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -93,7 +93,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AdditionalSpecGloss: 3
+    - _AdditionalRimLightOffset: 0.6
+    - _AdditionalRimlightPower: 0.1
+    - _AdditionalSpecGloss: 4.92
+    - _AdditionalSpecularIntensity: 0.9
     - _AlphaClip: 0
     - _AlphaCutoff: 0.5
     - _Blend: 0
@@ -110,26 +113,27 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _Mode: 0
+    - _NormalStrength: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimLightOffset: 0.6
-    - _RimLightPower: 0.1
+    - _RimLightOffset: 0.72
+    - _RimLightPower: 0.32
     - _ShadowOffset: 0.5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecularGlossiness: 5
+    - _SpecularGlossiness: 0.22
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.11
-    - _SpecularTransition: 0.55
+    - _SpecularIntensity: 0.549
+    - _SpecularTransition: 0
     - _SrcBlend: 1
     - _Surface: 0
-    - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - _AdditionalRimLightColor: {r: 1, g: 1, b: 1, a: 0}
+    - _AdditionalSpecularColor: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
@@ -138,7 +142,7 @@ Material:
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &6139543199067263170
+--- !u!114 &7545831143140364890
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

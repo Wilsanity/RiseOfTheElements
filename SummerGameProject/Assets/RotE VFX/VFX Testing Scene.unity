@@ -841,7 +841,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -2101,6 +2101,10 @@ PrefabInstance:
     - target: {fileID: 3500263827259980712, guid: 9f449e0c92f3e1444afaae69a6294cd3, type: 3}
       propertyPath: LightsModule.range
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3500263827259980712, guid: 9f449e0c92f3e1444afaae69a6294cd3, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3500263827259980712, guid: 9f449e0c92f3e1444afaae69a6294cd3, type: 3}
       propertyPath: LightsModule.maxLights

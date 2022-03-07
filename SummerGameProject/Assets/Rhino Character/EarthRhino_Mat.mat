@@ -94,8 +94,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _AdditionalLightSpecSmoothness: 0.5
-    - _AdditionalSpecGloss: 0.77
+    - _AdditionalRimLightOffset: 0.6
+    - _AdditionalRimlightPower: 0.1
+    - _AdditionalSpecGloss: 5.68
     - _AdditionalSpecIntensity: 1
+    - _AdditionalSpecularIntensity: 2.17
     - _AlphaClip: 0
     - _AlphaCutoff: 0.5
     - _Blend: 0
@@ -114,30 +117,33 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _NormalStrength: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimLightOffset: 0.76
-    - _RimLightPower: 0.83
+    - _RimLightOffset: 0.85
+    - _RimLightPower: 0.1
     - _ShadowOffset: 0.5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecularGlossiness: 0.46
+    - _SpecularGlossiness: 0.21
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 0.146
-    - _SpecularTransition: 0
+    - _SpecularIntensity: 0.195
+    - _SpecularTransition: 0.762
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - _AdditionalRimLightColor: {r: 1, g: 1, b: 1, a: 0}
+    - _AdditionalSpecularColor: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimLightColor: {r: 3.4527667, g: 3.5173109, b: 3.5648696, a: 1}
+    - _RimLightColor: {r: 0.42138356, g: 0.9067717, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _SpecularColor: {r: 1, g: 0.98742133, b: 0.98742133, a: 0}
+    - _SpecularColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1369221309630607129

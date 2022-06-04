@@ -110,7 +110,7 @@ MonoBehaviour:
     m_Bits: 4294967159
   m_TransparentLayerMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 509
   m_DefaultStencilState:
     overrideStencilState: 0
     stencilReference: 0
@@ -145,11 +145,11 @@ MonoBehaviour:
       PassNames: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
-    overrideDepthState: 0
-    depthCompareFunction: 1
-    enableWrite: 1
+    overrideDepthState: 1
+    depthCompareFunction: 2
+    enableWrite: 0
     stencilSettings:
-      overrideStencilState: 1
+      overrideStencilState: 0
       stencilReference: 1
       stencilCompareFunction: 6
       passOperation: 2

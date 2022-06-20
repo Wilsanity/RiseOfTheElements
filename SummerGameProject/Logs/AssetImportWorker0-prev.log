@@ -15,11 +15,11 @@ D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58868
+60437
 Successfully changed project path to: D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 112.04 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 136.34 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.11f1 (4d8c25f7477e)
 [Subsystems] Discovering subsystems at path D:/Unity/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,73 +36,73 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2021.1.11f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56156
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56636
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002115 seconds.
+Registered in 0.002058 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 100.04 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 120.62 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.142 seconds
+- Completed reload, in  2.241 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2142ms)
-		BeginReloadAssembly (109ms)
+	ReloadAssembly (2242ms)
+		BeginReloadAssembly (112ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (581ms)
-			LoadAssemblies (109ms)
+		EndReloadAssembly (700ms)
+			LoadAssemblies (112ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (226ms)
+			SetupTypeCache (231ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (266ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (356ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (100ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (120ms)
-				ProcessInitializeOnLoadMethodAttributes (36ms)
+				RefreshPlugins (121ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (174ms)
+				ProcessInitializeOnLoadMethodAttributes (49ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008932 seconds.
+Registered in 0.010260 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 103.74 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 111.08 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.876 seconds
+- Completed reload, in  2.335 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1877ms)
-		BeginReloadAssembly (210ms)
+	ReloadAssembly (2336ms)
+		BeginReloadAssembly (272ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (24ms)
-		EndReloadAssembly (1599ms)
-			LoadAssemblies (163ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (1980ms)
+			LoadAssemblies (202ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (458ms)
+			SetupTypeCache (655ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (124ms)
-			SetupLoadedEditorAssemblies (772ms)
+			RebuildScriptCaches (142ms)
+			SetupLoadedEditorAssemblies (902ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (104ms)
-				BeforeProcessingInitializeOnLoad (110ms)
-				ProcessInitializeOnLoadAttributes (539ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
+				RefreshPlugins (111ms)
+				BeforeProcessingInitializeOnLoad (132ms)
+				ProcessInitializeOnLoadAttributes (640ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -111,15 +111,15 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.93 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.12 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4682 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 233.7 MB.
-System memory in use after: 233.9 MB.
+System memory in use before: 234.3 MB.
+System memory in use after: 234.4 MB.
 
-Unloading 117 unused Assets to reduce memory usage. Loaded Objects now: 5123.
-Total: 4.588900 ms (FindLiveObjects: 0.382200 ms CreateObjectMapping: 0.491200 ms MarkObjects: 3.521600 ms  DeleteObjects: 0.192600 ms)
+Unloading 117 unused Assets to reduce memory usage. Loaded Objects now: 5125.
+Total: 6.357500 ms (FindLiveObjects: 1.061700 ms CreateObjectMapping: 0.523700 ms MarkObjects: 4.551300 ms  DeleteObjects: 0.219400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -135,11 +135,1403 @@ AssetImportParameters requested are different than current active one (requested
 Received Import Request.
   path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
   artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ceadbd94591762184809192727de3e88') in 0.050487 seconds 
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb8cce7108e4d9f72c85d7459edf4cda') in 0.064186 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 123.757286 seconds.
+  Time since last request: 195.942771 seconds.
   path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
-  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '24861559842c6a9ef5306748e0d23785') in 0.927380 seconds 
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dd321737d4d52481582f34831acc028') in 0.007408 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 233.469293 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79918baa8d0f5bbc44779b621eb8c642') in 0.013713 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.575963 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be60396b7753a3cd63b12bcd4ed288ff') in 0.014986 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.319084 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bf6efb8e8006c11a3ec40e01e80a062') in 0.010212 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.281873 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15908a2f1e6ca7aff7ddf6d087d63513') in 0.009773 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 228.183900 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f50c834ab2497498af2882b72a1ee8f') in 0.012793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.171933 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58babc61ecd299efca4cd44b45678df9') in 0.011876 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 94.258001 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c82f009e87449c4eab11afab067e28fc') in 0.007616 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 48.102072 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89e4ef48dbb16f8b7159e7867e1e910e') in 0.011528 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.077968 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8d0ba5f139c90aa5dd4a40672974d45') in 0.013856 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42.971676 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baed3509e2af805db60586d06ba6cd40') in 0.016543 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.209827 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e46fc74680ed985834d7e2f9523d75f2') in 0.007329 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.166466 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd34a8f88f17043bd57a9e228643bbde6') in 0.007174 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.351879 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ec46464529d95c9260e0d3bf80b439c') in 0.014029 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.467024 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97b5589b6acf034518bf8b7d3752060d') in 0.012043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.365796 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a126055aaa4b0fe56c0a3e03058fb5ca') in 0.012269 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 52.760699 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76a3b02256e6f017a73eb39b93b73913') in 0.011324 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 97.483105 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e359655879b7a88d2e22fc83f273f4a') in 0.012287 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.489884 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50e610e480dc811894fd255b3b10bbdc') in 0.008132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.498593 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cd0733b88b06a4360dde7e92390e1d7') in 0.007217 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 55.215049 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e929c651356dc0fc65c483c2631315ea') in 0.011456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.322204 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f88e39309c89f468537b3b2494aa2479') in 0.010800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.704071 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33d832a2705dbe9bdccb1a6e0ab93223') in 0.009647 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.830863 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6bacd6083acd5737b34f9e042a52c06') in 0.006783 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.104641 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6270eece625c3b4bdf93179811c0431') in 0.007774 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.985501 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4d30aae665269d0dba750e80967f9b7') in 0.007448 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.235148 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd1214a14bcdb8e232dc7edb864c9b79') in 0.007702 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 68.704963 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '922b3a16f14b2335bde789b9c3db2a0a') in 0.008642 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 75.220360 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e71dcea4c065aa6ba75187e203a21ea') in 0.010801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.768953 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cac2d69d515a8889f43107a7f2346153') in 0.009946 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.905505 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4d845abc59eed7f7decc32c85c7f335') in 0.012333 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.053486 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd211db0dffa97c881ad97ff7e4e80cbc') in 0.012552 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.788761 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd15136a82e25b77063bef2b6e4a4bc56') in 0.007747 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.162871 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69814b9ad35843824c760721c102b3ce') in 0.008367 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.677736 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f6d6d761c76186814eaae2cbd99e3d1') in 0.010488 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.216258 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b60c0d121f86a9449ffffd9532c7f25') in 0.008062 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.878404 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '332467a588a99c693a7451fa61552080') in 0.008142 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 183.058211 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '660c11435daf65afd01d5c709b0780e4') in 0.016579 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.844963 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6300fc977ff869fba53f4dc4bb84876') in 0.009800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 489.086976 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '801efa4ba5eaa5b30a3b3b3bf195b741') in 0.008940 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.446562 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6642d74ff1c1177b60d8f5189e26124') in 0.007750 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42.046893 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f327fd9214389c76afd484f7cc7e3d00') in 0.007134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.133744 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '634858053269c73fd19a20ab60f737bc') in 0.007316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 159.869348 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ce87f96dae401eb264448def43bc9d1') in 0.007363 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.210959 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd233b66e31ad9e5a6fd57830d7e9dbd8') in 0.007676 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.714759 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d3b4f4ac93d3d09bced47f1dbf47fb0') in 0.007857 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.917168 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82879470bdc8457e26c8019323c5df3a') in 0.007650 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 59.413010 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7eccb0d65dea301b28d0e19e73fb740b') in 0.012205 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.636448 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4616f956427c7c83e50d7b940dad0a54') in 0.008442 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 37.573289 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74b5a623d2a332b3ce8936c67626d17c') in 0.007640 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 238.286200 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51d850f52ba6e0b249aae92d37387a8e') in 0.007012 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 64.250972 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80ffe8532dc69e33c08fbb8939a79ab2') in 0.006841 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.932435 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4756b1bc8b652d662c93bdb712b6e919') in 0.006773 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.339522 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd09e00eb2f985b3f43c9aac4bc44bbc6') in 0.013966 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.136216 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59d984a60c8839025eb73b13954cbaab') in 0.013067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.578949 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee67a88339a36bc6e2d6d331a5fc7d70') in 0.011369 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.906443 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65b496befa93c97e994f6b7323ae9749') in 0.011480 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.617876 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3116f532257be51815a751b7dc999bc2') in 0.010584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.055782 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce796dc8bd3e4adb218189a0fa1bb5f2') in 0.010634 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.893544 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe814884c43714e7b3eb25fd0e2858b2') in 0.088957 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.207309 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a297a41c313441bd6e617862b1186b1c') in 0.011116 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.583109 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e23454825f7c5629b9a950626b75ff43') in 0.007050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.592461 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cb2270e2173fff10e5f53374fa7d97b') in 0.006689 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.427399 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f847a529a9e26b04e17685824db9e32') in 0.006546 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.446247 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '625ef1c1da8ad9768380b2f5a01099ed') in 0.033202 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.340524 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a16eeea2588da646cf53ec35b9572e8e') in 0.007024 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 104.771443 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63f765d63732f3b3413146e45f74d5ac') in 0.007420 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.165119 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dee8a8798b7b74728c895f1d46984496') in 0.006831 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.593173 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9230e4b4fab92e6957ced0b66e75bdae') in 0.007170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 369.765024 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c7a82b98e36cd962d4a3d67b9dc3e3e') in 0.028449 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1777.541816 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5a48a6b29f7ba552f043c8c95cc3908') in 0.115722 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.653177 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22c0ea4faa2803b05360f04e29abf248') in 0.008437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.380726 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c735f0b7f3a662a46f87e7b9ea67ff09') in 0.012841 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.285596 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c89646e03f17ab55e91f75b247b29a00') in 0.014912 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 102.015140 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c4f1fe0d314cdc70621163498fb300e') in 0.008840 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.368641 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5afc1f73438a1d8422996e2c3623699') in 0.010730 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 72.409811 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f0ae49fa91f57755e27fcae4de13597') in 0.050885 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.567610 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e96d0c6ca4939bc4bfc3a06c2d43ed9a') in 0.012555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.200637 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2481d2e4ea601a9d60848aa12d3560c8') in 0.014691 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.590193 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f41fb0b872b617cf2ac99e28011a1325') in 0.008093 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.498398 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1678d87d6bd21197e84c77601068b433') in 0.010536 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 65.162100 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52365bbebb1547279629540881775c7d') in 0.012978 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 331.479498 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1cd0d2011ac2a953e9f13c3eb8735d3') in 0.012654 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.467458 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '079d69e10861763ec0ca842e68a32bf7') in 0.010862 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.542355 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66cb49e11096c059edbf633b93964813') in 0.011734 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 69.387879 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '470209ef1b5be0944c958dd3c36d04d6') in 0.007018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 46.157664 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcb32842d239126863a20c4aeb3f030c') in 0.006699 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 267.516822 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ca6c853612db00b3e66b03dc6a2348c') in 0.007631 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 307.727752 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '156b545fd452688d7c0e5e901f389d13') in 0.050469 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.952430 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f50c6a40963851e0e6814b2fa62747f') in 0.015968 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.986882 seconds.
+  path: Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_FaceNormals.png
+  artifactKey: Guid(452fce3d684314606b2da9b5dbf4eb8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_FaceNormals.png using Guid(452fce3d684314606b2da9b5dbf4eb8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88c16722fc50ffdde07c2bf31947cdec') in 0.203269 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Packages/com.unity.probuilder/Content/Resources/Textures/GridBox_Default.png
+  artifactKey: Guid(6344bf96fbda94141a525046d088fb23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.probuilder/Content/Resources/Textures/GridBox_Default.png using Guid(6344bf96fbda94141a525046d088fb23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a0553b1e59572220e01c592b1fcb972') in 0.068631 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_Individual_disabled.png
+  artifactKey: Guid(d0945ff31532a4cc2adacd46c6abfc91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_Individual_disabled.png using Guid(d0945ff31532a4cc2adacd46c6abfc91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d5409ec67c7238b7fda1879a07430a7') in 0.096514 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_FaceNormals_disabled.png
+  artifactKey: Guid(504f22e2501944c509a1de50190e680e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_FaceNormals_disabled.png using Guid(504f22e2501944c509a1de50190e680e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b148ae6176721d3aea73a3b54d5537c9') in 0.105864 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000198 seconds.
+  path: Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_Individual.png
+  artifactKey: Guid(ea438799abcec451b801b70c7299438b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_Individual.png using Guid(ea438799abcec451b801b70c7299438b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a355599185af6ad7a4b57789775b5a95') in 0.128874 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_VertexNormals_disabled.png
+  artifactKey: Guid(73806305a4e494c60aabf8cb0b4bf5e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_VertexNormals_disabled.png using Guid(73806305a4e494c60aabf8cb0b4bf5e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9e7267d1ec48c77443873aeee6ede48') in 0.113728 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_VertexNormals.png
+  artifactKey: Guid(43ec922af57f445fab34eb16c76ee135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.probuilder/Content/Icons/Toolbar/ExtrudeFace_VertexNormals.png using Guid(43ec922af57f445fab34eb16c76ee135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec92101ac7a748c0b8bb5a54a3237810') in 0.136936 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 44.462724 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04a786dde3468ee924e84fa5f316d824') in 0.008555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.195997 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a42ae73a1dcbc3ccf9733bb7493da7c1') in 0.030399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.385058 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfb8aa5d7ee925feca17e1c11be8141c') in 0.147508 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.931702 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24e1aef38864309676781733d7e15ef1') in 0.019751 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.265085 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3b6029b5fa8d39baeb1b9c16d64cd94') in 0.008997 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.496715 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0f067f73c21b67c5517c40d7cfbed2e') in 0.014973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 99.408212 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cd46c8c1cafe752216d66c159b8d364') in 0.034282 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.359265 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f00e3f16eb7d1565b9d712ffba192095') in 0.010122 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.109446 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66609428f21630b2e524a40f454370eb') in 0.012148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.855695 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65978f28f5fa10596804be806ac29fca') in 0.009170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 111.489216 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6e74dad1a8ca0754ddcd5c970571bef') in 0.009419 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 196.002795 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aba3cf66d74de7186ef95043f3a53b8c') in 0.017178 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.374692 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ff9e8123c39074b16b6a8ae3ac91db1') in 0.009776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 44.728703 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc6dc658b5185dc52efc2631fcec3134') in 0.013254 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 50.107059 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1996e877a08a91feb421b38e5f6ba7c4') in 0.011092 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.138898 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e8db280393238042d69c8235bf1c872') in 0.012398 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.628568 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bda1b02c744f7fe08889f23f506cd19') in 0.010937 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 127.016173 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d042679cd7eef605fdd9283c53d4f27') in 0.015334 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 118.224344 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a03e7a2430ea8e419e38d7664ff4a7fd') in 0.012857 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.916089 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2142575b6a3a779f0da55fc5034973a0') in 0.013380 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.533138 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26661ac159fc1547cfb1507f98f8f1d4') in 0.008912 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.413054 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fc58a857f588ae66c4115530a87652b') in 0.010051 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.607216 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ea02beca8d622c3b9f77de44d875623') in 0.012534 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 34.620239 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c9c1dee701bfa564c6b43345a439f1e') in 0.009480 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 132.519265 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89d7d6099ebe556054944d9f1f3e6c18') in 0.017728 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.431793 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dac4bed3bf2f495bc010d36371bc8863') in 0.008731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.298365 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0892bfb846297ae27d3d990677ba800d') in 0.009263 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 33.253221 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e713b6d87325f732921a529a5a660e9') in 0.008287 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.722554 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1f029dff1a8d4495671b08b5d278d31') in 0.008663 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.398702 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d1a3d2b1ba222902c951ff7bd0d03ea') in 0.012571 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.390125 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd5359b53ed9fe1d212e64de36d2f63d') in 0.008911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.569087 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cdcae1d079ae68cceffe8af4b1a867c') in 0.010920 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.733590 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2522238ad89a42acdbcce76894083b2') in 0.011271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 290.676995 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bc75e443b725f43e1ab879ae17e50ab') in 0.008837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 90.934272 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cd6c6351e69ed4a0f64c17f3a6e5acb') in 0.014586 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 268.366947 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bac82f4fb6a25ca42cfdb62049c82c45') in 0.011931 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 76.462012 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '736004b6cf458304cbab72967971069c') in 0.009065 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 129.237788 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e318a2cab33a0ec066d6c0b4c890d0b5') in 0.011072 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.298462 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1703e8d8bd453982aeaefe432215da9') in 0.010705 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 109.229765 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '632c113dd055dbd0f3576953c415817f') in 0.077365 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.183109 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8da2a22f933819d1e3ce8164dfcff666') in 0.007941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 76.846408 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f71c305915f359f13a1ad5ccee132fe8') in 0.009598 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42.611874 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92afa295a7c514339b6d47d9d0f29ad7') in 0.014301 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 55.215053 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cd9e7b577b4109d2302241d37a23e55') in 0.017499 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 44.085080 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ea4356eef0c33132fe510ee1d0641cb') in 0.015768 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.286558 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7906582e7bb9b5e7c9e7560311ba923d') in 0.017484 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.267291 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91c7a19ecd321805b0555ba1dd69794f') in 0.020750 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.285391 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '034e36a4fc7fef431cb1e8e96d88e4e5') in 0.022877 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.408855 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8109501881d27342109180e725e486c') in 0.022462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.679483 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '431521f32c75897d1f84f1fe82f26416') in 0.016568 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.241660 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c1d867e9d2fc8f83b75cac9fbe9b367') in 0.014783 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.630590 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c22430c647c4077621abd598a6d0bc8d') in 0.014884 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.035291 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a202afcc0fe1b1a15146ef886affa15a') in 0.014493 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.084989 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd983087283c0f419481a12f0670ca1f4') in 0.014829 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.039800 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc74ec69a2207383b94be2d8b5b2da0c') in 0.015182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.941051 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53f46cf038656ced9327c13197f89c9a') in 0.016004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.898743 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8b17cdc49790ec19ac02260dde5afc0') in 0.013544 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 80.700547 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae91deb4953233a76fc40bebeab979a4') in 0.009201 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.069130 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '725e0e372dbbe34f4dfd706cfb8b5fb3') in 0.011561 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 180.835977 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e39235fb8768fc73e68f3e7fdd94309') in 0.009705 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.103541 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4b3fc9c54a1265d45981e88100aeada') in 0.008887 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.847038 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59447e30bfcc027a74e479b59494a833') in 0.013434 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 49.627715 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d0a91f1b22d7387a4f00f1c659806f9') in 0.012431 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.247774 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39699bd7c7189c44f171bb03c35d30d3') in 0.011532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.974827 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a722449a74c7be69d078b1289e49ef07') in 0.012202 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 256.635705 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72c6a705de3c837afa8a58d3bef7ad72') in 0.011570 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.093485 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78c84e2a20d72e34b9da55717cf633aa') in 0.011673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.599363 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c14f46b76f7e276cf56fd0e92ed262e') in 0.350363 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.844129 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a20aace383d8796921eb3bb9a7bb64ee') in 0.012063 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.466611 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd30c2da09b91029db7c004ae232484b5') in 0.012273 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.105253 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89d89fbfbdf3d72f977736abdadc39c4') in 0.012374 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.234654 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74d2d3e64abeb5c9da0a8d4d0dd393d2') in 0.010859 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.292679 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a866875d0eb3126f27ff3b7da9d0bb37') in 0.010860 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.563339 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d69b121340bef76586023b903c8eb0c') in 0.008996 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.385271 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89bbb4de6642e107de72c1af1bf27251') in 0.009106 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.219442 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76988162fa1937cfefa6ddc6b18c343a') in 0.008144 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 168.811676 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0b9ff5e63349e7a48793880a80e61d4') in 0.016003 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.274841 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7369f7c09dadcc6de360096f691b98fa') in 0.011551 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 68.564879 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a82a53ca4ec61c131b3f98d77d75006') in 0.015390 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.357286 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0edfd0ec087032545b2e744f5c8d9d3c') in 0.008460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.360003 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b2a7c48d8eb9f641d6d09cb8569e9cc') in 0.010420 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.163374 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25f8a690075eb05a1c2bf090cc6e6419') in 0.010965 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.086820 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43675aca13d3a7374115f18a0fe15de9') in 0.010840 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.578749 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b23f7cca7d61dc12dd05138abb194767') in 0.010577 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.812757 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1717d8de3413d11cdb9f3aecd4afd625') in 0.013754 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 82.362076 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1806d4880ba45f49ad03a85e6ff203a') in 0.010365 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.330378 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22bcc1f6b92e09b271b2dcdf80e88b64') in 0.009133 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 55.612356 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d5a03789b6025d33865567371fdbd6e') in 0.011069 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.111128 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdab7d8099b451e65e4a01ac297ca3a0') in 0.008793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 88.036376 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6775bdfed9d2c886d6eea00923079f8e') in 0.008979 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 72.459271 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ea2f9420f6fe5d0a5a746de41f184c2') in 0.009771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.837219 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1c8bb6173ad7a8d63d033e8229cade0') in 0.387103 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.868448 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a850f8d6f5fd6d0a659e624d67a85e6') in 0.008351 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 53.323649 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4a58dbf1366117dac69c2aba7670805') in 0.007030 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.363123 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '042f73982ad664738f0f54e475d7872f') in 0.013306 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.626883 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b85bed59735436bea33d610bec833db8') in 0.007731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.044560 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d2b2769d1a2fcdf05a82548169d9fa1') in 0.009885 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 229.291148 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82097fc922d8980b1bf8b120d698be66') in 0.009317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 45.085238 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ff7668a75b473f3bf9f9bf8b3431f3b') in 0.007793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 270.006172 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26bbc026a6f6760fdf6893bd3792856f') in 0.007845 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 39.631265 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a491d0e887d447872934902feb2015a2') in 0.007216 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 53.109510 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8408b715e9ba75e7adf6f845422ef785') in 0.007391 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1072.883186 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed4f878b5657c7390bddbc5de21bd3da') in 0.009071 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.417550 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd700e21923ec0d121b76e96a4d93c19e') in 0.007485 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.205689 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '857de784b1e850a746ba1350f7b07fa6') in 0.008089 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 65.225300 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd978cad80910cb528c66dbe6c5b80799') in 0.007638 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.275679 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff3fdd67fc06765747236a1ecaec1722') in 0.007425 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 97.993015 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '176f83fa22264ce806f02e16ebd01234') in 0.011465 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.450573 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc6fad81e14f1b5c3b9a12a28bd2cff8') in 0.013918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 194.238521 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a947069c6226fd1095d8d78ea7b69a6b') in 0.008835 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.774045 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41612f9bb0aeed2e080e66da9cd28f9f') in 0.012434 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009998 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.94 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.545 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1545ms)
+		BeginReloadAssembly (189ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (45ms)
+		EndReloadAssembly (1289ms)
+			LoadAssemblies (167ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (445ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (105ms)
+			SetupLoadedEditorAssemblies (465ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (81ms)
+				ProcessInitializeOnLoadAttributes (359ms)
+				ProcessInitializeOnLoadMethodAttributes (12ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (23ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4298 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 202.5 MB.
+System memory in use after: 202.7 MB.
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 5236.
+Total: 4.959100 ms (FindLiveObjects: 0.562800 ms CreateObjectMapping: 0.523000 ms MarkObjects: 3.733700 ms  DeleteObjects: 0.138100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 354.181719 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b477bbd06b7613ab9e8d277b86b22c29') in 0.175734 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 486.953223 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '674dd0dda0a7a1399cd3b33ee9b239d7') in 0.008435 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 284.961948 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a98315b5d4b3834975d42b54d8a45297') in 0.009680 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.281842 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c9b5b6ecff2dffda7aa310161891b20') in 0.015157 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 47.009284 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fc5a84d676ed877a85de3c487f0608e') in 0.009262 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 165.853950 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dd55c384d40303a2ed83f8cc906bc96') in 0.035399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 36.355228 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '803987530d081bb40b1e4696355d8c25') in 0.014544 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 38.735794 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7fad25658224abfa20218f85214dd15') in 0.021694 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 166.015000 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e197a85456bf6b077662be9be79867c4') in 0.019303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.018337 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bb2a967e0d0fc089f836043b5c9293c') in 0.012140 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.067537 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '593f3db5c25adeee017dd597e73f1f7b') in 0.007716 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 428.952503 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b00b0ba2ea1498ab3095f6bd8ba4e195') in 0.010937 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 240.230868 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41f7a2fa3274ff08143e76229629e072') in 0.009004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 116.067630 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
+  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d56f14e338c00e759dbe91e6fc27a13') in 0.038800 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.11f1 (4d8c25f7477e) revision 5082149'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19044.1766; Version 2009; 64bit' Language: 'en' Physical Memory: 16332 MB
+OS: 'Windows 10 Home; OS build 19044.1826; Version 2009; 64bit' Language: 'en' Physical Memory: 16332 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,11 +15,11 @@ D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50943
+56114
 Successfully changed project path to: D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 112.37 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 112.84 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.11f1 (4d8c25f7477e)
 [Subsystems] Discovering subsystems at path D:/Unity/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
@@ -30,96 +30,96 @@ Direct3D:
     Renderer: NVIDIA GeForce GTX 980 Ti (ID=0x17c8)
     Vendor:   NVIDIA
     VRAM:     6097 MB
-    Driver:   30.0.15.1277
+    Driver:   31.0.15.1659
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
 Mono path[0] = 'D:/Unity/2021.1.11f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56964
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56560
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002253 seconds.
+Registered in 0.001912 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 104.28 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 98.06 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.112 seconds
+- Completed reload, in  2.623 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2112ms)
-		BeginReloadAssembly (122ms)
+	ReloadAssembly (2623ms)
+		BeginReloadAssembly (103ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (570ms)
-			LoadAssemblies (122ms)
+		EndReloadAssembly (1021ms)
+			LoadAssemblies (102ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (216ms)
+			SetupTypeCache (193ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (272ms)
+			RebuildScriptCaches (32ms)
+			SetupLoadedEditorAssemblies (750ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (104ms)
+				RefreshPlugins (98ms)
 				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (122ms)
-				ProcessInitializeOnLoadMethodAttributes (37ms)
+				ProcessInitializeOnLoadAttributes (608ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008360 seconds.
+Registered in 0.009053 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 104.94 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 111.27 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.973 seconds
+- Completed reload, in  2.127 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1973ms)
-		BeginReloadAssembly (246ms)
+	ReloadAssembly (2127ms)
+		BeginReloadAssembly (238ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (43ms)
-		EndReloadAssembly (1654ms)
-			LoadAssemblies (175ms)
+			CreateAndSetChildDomain (32ms)
+		EndReloadAssembly (1814ms)
+			LoadAssemblies (177ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (501ms)
+			SetupTypeCache (438ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (126ms)
-			SetupLoadedEditorAssemblies (772ms)
+			RebuildScriptCaches (132ms)
+			SetupLoadedEditorAssemblies (989ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (105ms)
-				BeforeProcessingInitializeOnLoad (114ms)
-				ProcessInitializeOnLoadAttributes (533ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
+				RefreshPlugins (111ms)
+				BeforeProcessingInitializeOnLoad (179ms)
+				ProcessInitializeOnLoadAttributes (681ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 1.10 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 1.29 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4682 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 234.3 MB.
-System memory in use after: 234.5 MB.
+Unloading 4685 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 235.9 MB.
+System memory in use after: 236.1 MB.
 
-Unloading 117 unused Assets to reduce memory usage. Loaded Objects now: 5127.
-Total: 5.426900 ms (FindLiveObjects: 0.651000 ms CreateObjectMapping: 0.553700 ms MarkObjects: 3.970400 ms  DeleteObjects: 0.249600 ms)
+Unloading 117 unused Assets to reduce memory usage. Loaded Objects now: 5130.
+Total: 4.018500 ms (FindLiveObjects: 0.387200 ms CreateObjectMapping: 0.203900 ms MarkObjects: 3.075000 ms  DeleteObjects: 0.351000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,19 +133,49 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
-  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af0595c5c2ea078d3df5411cbe03315a') in 0.052404 seconds 
+  path: Assets/RotE VFX/Hit Effects/VFX_PunchMat.mat
+  artifactKey: Guid(2875157d21fc9324e8ad3f18b89f9d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/VFX_PunchMat.mat using Guid(2875157d21fc9324e8ad3f18b89f9d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26486c35c7d589e4a995ce78285ee0c0') in 0.307562 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 179.755368 seconds.
-  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
-  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91f3f104f35f91c5e5cd2a9eac2c83b7') in 0.007780 seconds 
+  Time since last request: 0.000265 seconds.
+  path: Assets/RotE VFX/Hit Effects/VFX_PunchMatAB.mat
+  artifactKey: Guid(51762841ffe0c9741bc87eb8941970d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/VFX_PunchMatAB.mat using Guid(51762841ffe0c9741bc87eb8941970d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '484c9e37fbe014c6bc70746612006f3f') in 0.132542 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 7.287973 seconds.
-  path: Assets/RotE VFX/PortalEffects/PortalVFX.vfx
-  artifactKey: Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RotE VFX/PortalEffects/PortalVFX.vfx using Guid(bb58d47a7543d85489ce516cba5324bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '672e4e0c817a587b77a264cefd4b4a4d') in 0.006819 seconds 
+  Time since last request: 1762.254489 seconds.
+  path: Assets/RotE VFX/Hit Effects/vfx_punch_swoosh.prefab
+  artifactKey: Guid(dc45fa83f517e3b46b387e17ad1a3c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/vfx_punch_swoosh.prefab using Guid(dc45fa83f517e3b46b387e17ad1a3c21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8290b1b9d8f8c8a82e12c013644036e5') in 0.036476 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3060.587339 seconds.
+  path: Assets/RotE VFX/Hit Effects/VFX_PunchSwoosh_AddScroll.shadergraph
+  artifactKey: Guid(6ed1ca9d087bc9a46a48860d87f9b382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/VFX_PunchSwoosh_AddScroll.shadergraph using Guid(6ed1ca9d087bc9a46a48860d87f9b382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfe240f6b91f9340cfd84bdb205e056a') in 0.010049 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1112.434629 seconds.
+  path: Assets/RotE VFX/Hit Effects/VFX_Punchmask.png
+  artifactKey: Guid(3e198efe70b024a4e9ce45dda047b7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/VFX_Punchmask.png using Guid(3e198efe70b024a4e9ce45dda047b7e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6f23471c5cd18df6b221ddb34d724e5') in 0.164638 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1391.321542 seconds.
+  path: Assets/RotE VFX/Hit Effects/VFX_PunchSwoosh_AB.shadergraph
+  artifactKey: Guid(df4f6123d7ec7d54898bc82ebbec5dec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/VFX_PunchSwoosh_AB.shadergraph using Guid(df4f6123d7ec7d54898bc82ebbec5dec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1ba0d682460823e6854cad0922eb990') in 0.015148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 72.344954 seconds.
+  path: Assets/RotE VFX/Hit Effects/VFX_PunchSwoosh_AddScroll.shadergraph
+  artifactKey: Guid(6ed1ca9d087bc9a46a48860d87f9b382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/VFX_PunchSwoosh_AddScroll.shadergraph using Guid(6ed1ca9d087bc9a46a48860d87f9b382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a2247f485a2934882049dfee5b5e5ea') in 0.006100 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 49.116687 seconds.
+  path: Assets/RotE VFX/Hit Effects/VFX_PunchSwoosh_AddScroll.shadergraph
+  artifactKey: Guid(6ed1ca9d087bc9a46a48860d87f9b382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/VFX_PunchSwoosh_AddScroll.shadergraph using Guid(6ed1ca9d087bc9a46a48860d87f9b382) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '039ffe50f86072d4367d39a4dcc764ee') in 0.003342 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

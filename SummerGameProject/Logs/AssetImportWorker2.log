@@ -1,0 +1,481 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.11f1 (4d8c25f7477e) revision 5082149'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19044.2006; Version 2009; 64bit' Language: 'en' Physical Memory: 16332 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\Unity\2021.1.11f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+59244
+Successfully changed project path to: D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
+D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 96.57 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.11f1 (4d8c25f7477e)
+[Subsystems] Discovering subsystems at path D:/Unity/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Audrey/Audrey PC/SummerGameProject/SummerGameProject/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 980 Ti (ID=0x17c8)
+    Vendor:   NVIDIA
+    VRAM:     6097 MB
+    Driver:   31.0.15.1694
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = 'D:/Unity/2021.1.11f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56536
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001862 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 89.75 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.952 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1952ms)
+		BeginReloadAssembly (96ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (529ms)
+			LoadAssemblies (96ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (196ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (245ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (90ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (114ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007706 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 102.00 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  8.452 seconds
+Domain Reload Profiling:
+	ReloadAssembly (8453ms)
+		BeginReloadAssembly (208ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (23ms)
+		EndReloadAssembly (8179ms)
+			LoadAssemblies (5071ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1650ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (124ms)
+			SetupLoadedEditorAssemblies (1251ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (102ms)
+				BeforeProcessingInitializeOnLoad (102ms)
+				ProcessInitializeOnLoadAttributes (1028ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.21 seconds
+Refreshing native plugins compatible for Editor in 0.96 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4686 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 244.0 MB.
+System memory in use after: 244.2 MB.
+
+Unloading 117 unused Assets to reduce memory usage. Loaded Objects now: 5137.
+Total: 3.636400 ms (FindLiveObjects: 0.343300 ms CreateObjectMapping: 0.208700 ms MarkObjects: 2.863800 ms  DeleteObjects: 0.219300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/RotE VFX/Hit Effects/PunchingBagMat.mat
+  artifactKey: Guid(f2b4efabbf20dad458a48deda3440035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/PunchingBagMat.mat using Guid(f2b4efabbf20dad458a48deda3440035) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e52db3c9f6ed9a68413db7bf72c12ac7') in 0.310688 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/RotE VFX/Hit Effects/PunchingBagMat.mat
+  artifactKey: Guid(f2b4efabbf20dad458a48deda3440035) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Hit Effects/PunchingBagMat.mat using Guid(f2b4efabbf20dad458a48deda3440035) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'a7fb2eef422b17331048e63f778f14b8') in 0.090671 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000323 seconds.
+  path: Assets/URP Settings/UniversalRenderPipelineAsset.asset
+  artifactKey: Guid(09ca6022f4fa6a54081a0b3c5877ca55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/URP Settings/UniversalRenderPipelineAsset.asset using Guid(09ca6022f4fa6a54081a0b3c5877ca55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2f67a78c379285491d18125609d7ed7') in 0.012247 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/URP Settings/UniversalRenderPipelineAsset_Renderer.asset
+  artifactKey: Guid(0086ba564e9bc6e4ba9b97a70439c36d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/URP Settings/UniversalRenderPipelineAsset_Renderer.asset using Guid(0086ba564e9bc6e4ba9b97a70439c36d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2073ff5cf60e215c1377388ca8a4a1a') in 0.010026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/RotE VFX/Hit Effects/HitTestScene.unity
+  artifactKey: Guid(c278b56feef4bc94fb18821dc6fa851b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Hit Effects/HitTestScene.unity using Guid(c278b56feef4bc94fb18821dc6fa851b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '53a9111e9c5bb129bc5c336cbad1e091') in 0.011306 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/RotE VFX/Hit Effects/YBot_ToonJointsMat.mat
+  artifactKey: Guid(0626983d47812ee4ea3949eb5025c0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/YBot_ToonJointsMat.mat using Guid(0626983d47812ee4ea3949eb5025c0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efa7f7d83dfd300c665d5423d6b72356') in 0.018495 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/RotE VFX/Hit Effects/YBot_ToonMat.mat
+  artifactKey: Guid(46d84086a8a145840baf861f425e6210) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Hit Effects/YBot_ToonMat.mat using Guid(46d84086a8a145840baf861f425e6210) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8321ebc475881836c70ddc8e26300c6f') in 0.011989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_renderdoc.png
+  artifactKey: Guid(cbe929948d88af7409a05054bc8187c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_renderdoc.png using Guid(cbe929948d88af7409a05054bc8187c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48a95c3b5725158ddacedaa58a44c182') in 0.090373 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/RotE VFX/Hit Effects/YBot_ToonMat.mat
+  artifactKey: Guid(46d84086a8a145840baf861f425e6210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/YBot_ToonMat.mat using Guid(46d84086a8a145840baf861f425e6210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a028dcdf6fe3f17c3d398a086816e75') in 0.020793 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/RotE VFX/Hit Effects/YBot_ToonJointsMat.mat
+  artifactKey: Guid(0626983d47812ee4ea3949eb5025c0ed) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Hit Effects/YBot_ToonJointsMat.mat using Guid(0626983d47812ee4ea3949eb5025c0ed) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: '8739a104a44ae10b1dab866c199b16f2') in 0.010577 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.075067 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_RenderDoc@2x.png
+  artifactKey: Guid(9c63b51755ec8c845b857cc73a35d606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/d_RenderDoc@2x.png using Guid(9c63b51755ec8c845b857cc73a35d606) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f76fa555d893f52c5bedfcf957eb3251') in 0.025303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/renderdoc.png
+  artifactKey: Guid(cf13fb90f91d2a545a00591d75b43bd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/renderdoc.png using Guid(cf13fb90f91d2a545a00591d75b43bd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1a61b10f07246cdd60e721df1557b9c') in 0.015824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/RenderDoc@2x.png
+  artifactKey: Guid(89608b060fc7279479398a62e245a409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/RenderDoc@2x.png using Guid(89608b060fc7279479398a62e245a409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '286f46dd1320fc19063996398285a411') in 0.037984 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/Unity.RenderPipelines.Core.Editor.asmdef
+  artifactKey: Guid(3eae0364be2026648bf74846acb8a731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/Unity.RenderPipelines.Core.Editor.asmdef using Guid(3eae0364be2026648bf74846acb8a731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '757cc29fb3f3e830e1e56694f7e446e1') in 0.007526 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.299710 seconds.
+  path: Packages/com.unity.render-pipelines.core/Runtime/Unity.RenderPipelines.Core.Runtime.asmdef
+  artifactKey: Guid(df380645f10b7bc4b97d4f5eb6303d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Runtime/Unity.RenderPipelines.Core.Runtime.asmdef using Guid(df380645f10b7bc4b97d4f5eb6303d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c86963bd3c1d369dca3f5e8c19adb739') in 0.016894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Packages/com.unity.render-pipelines.core/Tests/Editor/Unity.RenderPipelines.Core.Editor.Tests.asmdef
+  artifactKey: Guid(6e5480588ffa37d4f82fe96c45e8ce9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Tests/Editor/Unity.RenderPipelines.Core.Editor.Tests.asmdef using Guid(6e5480588ffa37d4f82fe96c45e8ce9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bc4afbfefdb71ff0b67e0ee196433f4') in 0.012034 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Packages/com.unity.render-pipelines.universal/Editor/Unity.RenderPipelines.Universal.Editor.asmdef
+  artifactKey: Guid(c579267770062bf448e75eb160330b7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Editor/Unity.RenderPipelines.Universal.Editor.asmdef using Guid(c579267770062bf448e75eb160330b7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8eebb0dbf02538609caf0df26a0fd42b') in 0.006185 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Packages/com.unity.render-pipelines.core/Tests/Runtime/Unity.RenderPipelines.Core.Runtime.Tests.asmdef
+  artifactKey: Guid(bf043f86dbf1bda4398ec83eebe40b8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Tests/Runtime/Unity.RenderPipelines.Core.Runtime.Tests.asmdef using Guid(bf043f86dbf1bda4398ec83eebe40b8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9fb6463313c2f25ddd5162a33a104e9') in 0.007454 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Packages/com.unity.render-pipelines.core/ShaderLibrary/Unity.RenderPipelines.Core.ShaderLibrary.asmdef
+  artifactKey: Guid(46a67ded66a63de48b9329c593fc08de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/ShaderLibrary/Unity.RenderPipelines.Core.ShaderLibrary.asmdef using Guid(46a67ded66a63de48b9329c593fc08de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a135d8f1e73aaaf959e31e3f83b53b') in 0.006153 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.025965 seconds.
+  path: Packages/com.unity.render-pipelines.universal/Runtime/Data/ForwardRendererData.asset
+  artifactKey: Guid(618d298269e66c542b306de85db1faea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/Data/ForwardRendererData.asset using Guid(618d298269e66c542b306de85db1faea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '382638f3279e78c3c2767ac72c411a12') in 0.013057 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Packages/com.unity.render-pipelines.universal/Runtime/Data/UniversalRenderPipelineEditorResources.asset
+  artifactKey: Guid(a3d8d823eedde654bb4c11a1cfaf1abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/Data/UniversalRenderPipelineEditorResources.asset using Guid(a3d8d823eedde654bb4c11a1cfaf1abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8092dc7eb01ad04151f9337a42a7d720') in 0.017529 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1243.417847 seconds.
+  path: Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVORender.compute
+  artifactKey: Guid(34a460e8a2e66c243a9c12024e5a798d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/MultiScaleVORender.compute using Guid(34a460e8a2e66c243a9c12024e5a798d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63e60f5d08f3bbbdbe3e25d2025e24e3') in 0.031679 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008178 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.08 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.736 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1737ms)
+		BeginReloadAssembly (222ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (55ms)
+		EndReloadAssembly (1441ms)
+			LoadAssemblies (174ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (499ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (145ms)
+			SetupLoadedEditorAssemblies (468ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (97ms)
+				ProcessInitializeOnLoadAttributes (348ms)
+				ProcessInitializeOnLoadMethodAttributes (10ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (21ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.13 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4298 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 216.8 MB.
+System memory in use after: 217.0 MB.
+
+Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 5284.
+Total: 5.122000 ms (FindLiveObjects: 0.360600 ms CreateObjectMapping: 0.288200 ms MarkObjects: 3.982500 ms  DeleteObjects: 0.489000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 92.535702 seconds.
+  path: Assets/RotE VFX/Hit Effects/Uppercut Jab.fbx
+  artifactKey: Guid(0138b96285130144fb2a3742ba059ba2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Hit Effects/Uppercut Jab.fbx using Guid(0138b96285130144fb2a3742ba059ba2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'ddc43748cf5dc0da5c819929524b3eb4') in 0.153788 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/RotE VFX/Hit Effects/Uppercut Jab.fbx
+  artifactKey: Guid(0138b96285130144fb2a3742ba059ba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/Uppercut Jab.fbx using Guid(0138b96285130144fb2a3742ba059ba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6df10be5d20eab28b6833e52f5a89d1f') in 0.407683 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.432617 seconds.
+  path: Assets/RotE VFX/Hit Effects/Uppercut Jab.fbx
+  artifactKey: Guid(0138b96285130144fb2a3742ba059ba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/Uppercut Jab.fbx using Guid(0138b96285130144fb2a3742ba059ba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13f72aa4e18b51ebdc03a8133d83236a') in 0.060725 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.891661 seconds.
+  path: Assets/RotE VFX/Hit Effects/Uppercut Jab.fbx
+  artifactKey: Guid(0138b96285130144fb2a3742ba059ba2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
+Start importing Assets/RotE VFX/Hit Effects/Uppercut Jab.fbx using Guid(0138b96285130144fb2a3742ba059ba2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)  -> (artifact id: 'd3ee4d7307e1126d5dc4e3479c6bfdca') in 0.035747 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008066 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.533 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1534ms)
+		BeginReloadAssembly (181ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (54ms)
+		EndReloadAssembly (1285ms)
+			LoadAssemblies (160ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (423ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (120ms)
+			SetupLoadedEditorAssemblies (449ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (91ms)
+				ProcessInitializeOnLoadAttributes (338ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (29ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4292 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 230.7 MB.
+System memory in use after: 230.9 MB.
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 5327.
+Total: 4.231600 ms (FindLiveObjects: 0.504400 ms CreateObjectMapping: 0.423900 ms MarkObjects: 3.201400 ms  DeleteObjects: 0.101100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 878.072832 seconds.
+  path: Assets/RotE VFX/Hit Effects/Animations
+  artifactKey: Guid(e37c138f23a5f7a42831a2482bfa2bb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/Animations using Guid(e37c138f23a5f7a42831a2482bfa2bb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb9aee068645be3c8d8a4b8641ccd6df') in 0.013285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 56.984912 seconds.
+  path: Assets/RotE VFX/Hit Effects/HIt FX Animations
+  artifactKey: Guid(e37c138f23a5f7a42831a2482bfa2bb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/HIt FX Animations using Guid(e37c138f23a5f7a42831a2482bfa2bb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb23ece330389cc0adbcc79904a136df') in 0.007807 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.166139 seconds.
+  path: Assets/RotE VFX/Hit Effects/vfx_small_hit.prefab
+  artifactKey: Guid(0ed82a04f12a9c54d8f55ef0971c6948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/vfx_small_hit.prefab using Guid(0ed82a04f12a9c54d8f55ef0971c6948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '035092bbd096618ffe4a1bb8b6649f1f') in 0.062050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.274827 seconds.
+  path: Assets/RotE VFX/Hit Effects/vfx_small_hit.prefab
+  artifactKey: Guid(0ed82a04f12a9c54d8f55ef0971c6948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/vfx_small_hit.prefab using Guid(0ed82a04f12a9c54d8f55ef0971c6948) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15b9a4ecfaa0c2407904887c22092387') in 0.007656 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.572871 seconds.
+  path: Assets/RotE VFX/Hit Effects/vfx_big_hit.prefab
+  artifactKey: Guid(d8a3ff6d053874a40a5542c662797648) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/Hit Effects/vfx_big_hit.prefab using Guid(d8a3ff6d053874a40a5542c662797648) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaa06d37c88da89d30b42307cadf927e') in 0.012306 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 33.792865 seconds.
+  path: Assets/RotE VFX/PortalEffects/FireRingGeo.fbx
+  artifactKey: Guid(4dbeec1e6da9a624a8cb1ddac1b7709b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/FireRingGeo.fbx using Guid(4dbeec1e6da9a624a8cb1ddac1b7709b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd362c30ee38018945454b671ae4de237') in 0.190709 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.007881 seconds.
+  path: Assets/RotE VFX/PortalEffects/PortalStart.shadergraph
+  artifactKey: Guid(5d8c14d6f4d3cbc4593737813dfbdf1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/PortalStart.shadergraph using Guid(5d8c14d6f4d3cbc4593737813dfbdf1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34c12c004204b2d4163f0a9ce611842b') in 0.033014 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/RotE VFX/PortalEffects/VFX_GroundPortal.prefab
+  artifactKey: Guid(80532afdf1c7f9d4e9dab33df76d43f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/PortalEffects/VFX_GroundPortal.prefab using Guid(80532afdf1c7f9d4e9dab33df76d43f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9ac608b367024166ad33b30bb359c0f') in 0.556958 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.817845 seconds.
+  path: Assets/RotE VFX/RotEffects/Orc Idle.fbx
+  artifactKey: Guid(542d0536979d22a4a9e0dfa8ab506925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/RotEffects/Orc Idle.fbx using Guid(542d0536979d22a4a9e0dfa8ab506925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d55b82a1a5781181c3c48932fcc30a2') in 0.440695 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/RotE VFX/RotEffects/OrcIdleRotFX.prefab
+  artifactKey: Guid(505b8685378c5a246b182a43d954016f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RotE VFX/RotEffects/OrcIdleRotFX.prefab using Guid(505b8685378c5a246b182a43d954016f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29ed7c6ef693d206b1b54f2c1204d668') in 0.155031 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -246,6 +246,8 @@ Shader /*ase_name*/ "Hidden/Universal/PBR" /*end*/
 				On:SetDefine:_ASE_BAKEDGI 1
 			Port:Forward:Alpha Clip Threshold
 				On:SetDefine:_ALPHATEST_ON 1
+			Port:Forward:Alpha Clip Threshold Shadow
+				On:SetDefine:_ALPHATEST_ON 1
 			Port:Forward:Normal
 				On:SetDefine:_NORMALMAP 1
 		*/

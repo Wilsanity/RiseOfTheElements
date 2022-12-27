@@ -1,109 +1,109 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.11f1 (4d8c25f7477e) revision 5082149'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19045.2311; Version 2009; 64bit' Language: 'en' Physical Memory: 16309 MB
+OS: 'Windows 10 Home; OS build 19045.2364; Version 2009; 64bit' Language: 'en' Physical Memory: 15775 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\Unity\2021.1.11f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2021.1.11f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Code/SummerGameProject/SummerGameProject
+C:/Users/Daniel Fiuk/Documents/Unity/Projects/RiseOfTheElements/SummerGameProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58963
-Successfully changed project path to: D:/Code/SummerGameProject/SummerGameProject
-D:/Code/SummerGameProject/SummerGameProject
+52801
+Successfully changed project path to: C:/Users/Daniel Fiuk/Documents/Unity/Projects/RiseOfTheElements/SummerGameProject
+C:/Users/Daniel Fiuk/Documents/Unity/Projects/RiseOfTheElements/SummerGameProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 74.90 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 71.50 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.11f1 (4d8c25f7477e)
-[Subsystems] Discovering subsystems at path D:/Unity/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Code/SummerGameProject/SummerGameProject/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Daniel Fiuk/Documents/Unity/Projects/RiseOfTheElements/SummerGameProject/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
+    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2520)
     Vendor:   NVIDIA
-    VRAM:     5980 MB
-    Driver:   31.0.15.2698
+    VRAM:     6009 MB
+    Driver:   31.0.15.2756
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
-Mono path[0] = 'D:/Unity/2021.1.11f1/Editor/Data/Managed'
-Mono path[1] = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/Unity/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56032
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56160
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001226 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002475 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 81.40 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 64.12 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.107 seconds
+- Completed reload, in  1.234 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1107ms)
+	ReloadAssembly (1234ms)
 		BeginReloadAssembly (54ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (440ms)
-			LoadAssemblies (54ms)
+		EndReloadAssembly (387ms)
+			LoadAssemblies (51ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (139ms)
+			SetupTypeCache (129ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (236ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (184ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (81ms)
+				RefreshPlugins (64ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (100ms)
-				ProcessInitializeOnLoadMethodAttributes (48ms)
+				ProcessInitializeOnLoadAttributes (86ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004972 seconds.
+Registered in 0.007103 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 75.03 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 73.07 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.208 seconds
+- Completed reload, in  1.256 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1208ms)
-		BeginReloadAssembly (141ms)
+	ReloadAssembly (1256ms)
+		BeginReloadAssembly (120ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (1017ms)
-			LoadAssemblies (91ms)
+		EndReloadAssembly (1080ms)
+			LoadAssemblies (89ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (295ms)
+			SetupTypeCache (276ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (71ms)
-			SetupLoadedEditorAssemblies (487ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (554ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (75ms)
-				BeforeProcessingInitializeOnLoad (72ms)
-				ProcessInitializeOnLoadAttributes (329ms)
+				RefreshPlugins (73ms)
+				BeforeProcessingInitializeOnLoad (93ms)
+				ProcessInitializeOnLoadAttributes (370ms)
 				ProcessInitializeOnLoadMethodAttributes (5ms)
-				AfterProcessingInitializeOnLoad (2ms)
+				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (5ms)
@@ -111,15 +111,15 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.81 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 2.22 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4156 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 214.2 MB.
-System memory in use after: 214.4 MB.
+Unloading 4312 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.9 MB.
+System memory in use after: 221.1 MB.
 
-Unloading 115 unused Assets to reduce memory usage. Loaded Objects now: 4595.
-Total: 3.722000 ms (FindLiveObjects: 0.403200 ms CreateObjectMapping: 0.240800 ms MarkObjects: 2.880000 ms  DeleteObjects: 0.197000 ms)
+Unloading 152 unused Assets to reduce memory usage. Loaded Objects now: 4746.
+Total: 7.128800 ms (FindLiveObjects: 0.787100 ms CreateObjectMapping: 0.415300 ms MarkObjects: 5.485200 ms  DeleteObjects: 0.439100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -134,300 +134,308 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/EarthBossArena/EarthBossArena.unity
-  artifactKey: Guid(3ac94436262a6bc43882e2a9ab102454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/EarthBossArena.unity using Guid(3ac94436262a6bc43882e2a9ab102454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6b78ba63b7bfdf70007deaf0e5f6859') in 0.011472 seconds 
+  path: Assets/[Scripts]/Controllers
+  artifactKey: Guid(2b88ddfabd2e49942b9204d098369434) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Controllers using Guid(2b88ddfabd2e49942b9204d098369434) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6aa2841a2ecaa6b0248a0581867f321') in 0.012412 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000167 seconds.
-  path: Assets/EarthBossArena
-  artifactKey: Guid(e753f65de4f7ee84ebc38237f9181d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena using Guid(e753f65de4f7ee84ebc38237f9181d67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a286ae24556ad7ef33c801d493c80516') in 0.005141 seconds 
+  Time since last request: 0.000623 seconds.
+  path: Assets/[Scripts]/Dialogue System
+  artifactKey: Guid(f7226efa0d32e6e4f8e75f78ab4f591f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Dialogue System using Guid(f7226efa0d32e6e4f8e75f78ab4f591f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ded2fd561ab7133df7692f2b503ac653') in 0.003691 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 15.661518 seconds.
-  path: Assets/EarthBossArena/Textures
-  artifactKey: Guid(c9224545e7417ca48b6f990ec6755234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures using Guid(c9224545e7417ca48b6f990ec6755234) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23fb9c890b7ed7092e84448a9596f3f4') in 0.005034 seconds 
+  Time since last request: 0.000674 seconds.
+  path: Assets/[Scripts]/[Player]
+  artifactKey: Guid(dfce5ee7d2587e246a87c0e2a69e6e5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/[Player] using Guid(dfce5ee7d2587e246a87c0e2a69e6e5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13b488b8aa354a4bcbe1a6d73376f398') in 0.003779 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.812697 seconds.
-  path: Assets/EarthBossArena/Textures/Bonsai_Low_Bonsai_Low_default_Normal.png
-  artifactKey: Guid(0275fb92a0d07204191cec13dc69398e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures/Bonsai_Low_Bonsai_Low_default_Normal.png using Guid(0275fb92a0d07204191cec13dc69398e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32c8fcfc5aeacac494771b01daa3ca8c') in 0.046715 seconds 
+  Time since last request: 0.000820 seconds.
+  path: Assets/[Scenes]/Script Testing.unity
+  artifactKey: Guid(cad1542e754eb7547a56158cd466ce2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scenes]/Script Testing.unity using Guid(cad1542e754eb7547a56158cd466ce2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '921ce972ecd41210a15c4e7a9e7da02b') in 0.005118 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000126 seconds.
-  path: Assets/EarthBossArena/Textures/T_Vines01_BC 1.png
-  artifactKey: Guid(69a08b615c4fd754ca47542fe16e2fb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures/T_Vines01_BC 1.png using Guid(69a08b615c4fd754ca47542fe16e2fb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0193be7a8a61878c69c4a14db7cc25f2') in 0.018047 seconds 
+  Time since last request: 0.000742 seconds.
+  path: Assets/[Scenes]
+  artifactKey: Guid(f88600297a9f9bd418546917a575555f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scenes] using Guid(f88600297a9f9bd418546917a575555f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7869eaf3c10b40f10ed99f08d6365151') in 0.003611 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000167 seconds.
-  path: Assets/EarthBossArena/Textures/Pillar01_Low_Pillar01_Low_default_Normal.png
-  artifactKey: Guid(724dbd70c0d237741ae143a5524e03c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures/Pillar01_Low_Pillar01_Low_default_Normal.png using Guid(724dbd70c0d237741ae143a5524e03c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a1c9a77b652679cadbe9e9c1c4ea2c') in 0.009644 seconds 
+  Time since last request: 10.929063 seconds.
+  path: Assets/[Scenes]/EarthTutorial
+  artifactKey: Guid(8fb55397d57a5104c835f60f40f8c220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scenes]/EarthTutorial using Guid(8fb55397d57a5104c835f60f40f8c220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a3268c4a27fda23c880fc49f0233540') in 0.002867 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000154 seconds.
-  path: Assets/EarthBossArena/Textures/T_Vines02_BC.png
-  artifactKey: Guid(38596eee64a2b4a4795595e3ac71551c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures/T_Vines02_BC.png using Guid(38596eee64a2b4a4795595e3ac71551c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '483d836714ef6fbc00b9397d7e27ba55') in 0.013038 seconds 
+  Time since last request: 0.043261 seconds.
+  path: Assets/[Scenes]/EarthTutorial/LightingData.asset
+  artifactKey: Guid(31cd0f3370ab1464e8fa22b222547939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scenes]/EarthTutorial/LightingData.asset using Guid(31cd0f3370ab1464e8fa22b222547939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ee7062a235eeaee14f3748c36adc4b3') in 0.025088 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000118 seconds.
-  path: Assets/EarthBossArena/Textures/Rock02_Low_Rock02_Low_default_Normal.png
-  artifactKey: Guid(9b02a75fedfecc5488eb080f7fc274c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures/Rock02_Low_Rock02_Low_default_Normal.png using Guid(9b02a75fedfecc5488eb080f7fc274c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6e3a6b1ec3fcd8343d7a3d1c1aaf2a5') in 0.010899 seconds 
+  Time since last request: 0.000585 seconds.
+  path: Assets/[Scenes]/EarthTutorial/ReflectionProbe-0.exr
+  artifactKey: Guid(12d7425a17c5bf54c8a810b239447bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scenes]/EarthTutorial/ReflectionProbe-0.exr using Guid(12d7425a17c5bf54c8a810b239447bcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42d889318cb8e3d51250edbcab0fa478') in 0.070902 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000134 seconds.
-  path: Assets/EarthBossArena/Textures/T_TreeLeafBushel.png
-  artifactKey: Guid(e5bcf39952b21464ab4cc958a64f6ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures/T_TreeLeafBushel.png using Guid(e5bcf39952b21464ab4cc958a64f6ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa52abd07f3e908498df5e5dffaaf7e1') in 0.012090 seconds 
+  Time since last request: 0.797578 seconds.
+  path: Assets/[Scenes]/EarthTutorial/EarthTutorial.unity
+  artifactKey: Guid(877d21143d6e6e4438542ae892274b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scenes]/EarthTutorial/EarthTutorial.unity using Guid(877d21143d6e6e4438542ae892274b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fc7bfa47e73c07800433e6de81c0b23') in 0.003233 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000127 seconds.
-  path: Assets/EarthBossArena/Textures/Rock03_Low_Rock03_Low_default_Normal.png
-  artifactKey: Guid(656133e5a407c8442a8685675935b8f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures/Rock03_Low_Rock03_Low_default_Normal.png using Guid(656133e5a407c8442a8685675935b8f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '771c030cc14368dfd63e176fc13c47c5') in 0.015482 seconds 
+  Time since last request: 12.480709 seconds.
+  path: Assets/[Scenes]/Camera Test Scene.unity
+  artifactKey: Guid(46bac618c47a9734cbe8352ad8712b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scenes]/Camera Test Scene.unity using Guid(46bac618c47a9734cbe8352ad8712b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b8f3312aab549ae90678061d27af268') in 0.003575 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000165 seconds.
-  path: Assets/EarthBossArena/Textures/T_Vira_StylizedHDRI.png
-  artifactKey: Guid(c79865b28094b8a43a9ddcc1ae526f92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures/T_Vira_StylizedHDRI.png using Guid(c79865b28094b8a43a9ddcc1ae526f92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a815571935dd35c041a9d1b52d2a795e') in 0.366225 seconds 
+  Time since last request: 59.669773 seconds.
+  path: Assets/[Scripts]/Controllers/CameraController.cs
+  artifactKey: Guid(f558dcd0fd162964b96093f192d611a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Controllers/CameraController.cs using Guid(f558dcd0fd162964b96093f192d611a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abb3ad3ec5104eb6d745cc7ac6164cb2') in 0.008390 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000133 seconds.
-  path: Assets/EarthBossArena/Textures/Rock01_Low_Rock01_Low_default_Normal.png
-  artifactKey: Guid(8fe11b2794d007044a38027847615179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures/Rock01_Low_Rock01_Low_default_Normal.png using Guid(8fe11b2794d007044a38027847615179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eec92ee744dd6c5bf873a0b55b4f2ab7') in 0.011494 seconds 
+  Time since last request: 0.839144 seconds.
+  path: Assets/[Scripts]/Controllers/CameraMovement.cs
+  artifactKey: Guid(44b048bef0eb16c4892099b84c234094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Controllers/CameraMovement.cs using Guid(44b048bef0eb16c4892099b84c234094) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '695fd1cf11aadcfb06f69f55e405ecf2') in 0.002819 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000164 seconds.
-  path: Assets/EarthBossArena/Textures/Pillar02_Low_Pillar02_Low_default_Normal.png
-  artifactKey: Guid(2d423cb9dd01ccb4fa7ff7def82908a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Textures/Pillar02_Low_Pillar02_Low_default_Normal.png using Guid(2d423cb9dd01ccb4fa7ff7def82908a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4e15c64cd324b47b7169630a499a432') in 0.010753 seconds 
+  Time since last request: 2.545058 seconds.
+  path: Assets/[Scripts]/Controllers/PickUpController.cs
+  artifactKey: Guid(3acee92519880a045a6c7820a826d330) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Controllers/PickUpController.cs using Guid(3acee92519880a045a6c7820a826d330) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bb1f2d6701c2963b079525320d14a0d') in 0.003050 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.232738 seconds.
-  path: Assets/EarthBossArena/StaticMeshes
-  artifactKey: Guid(e870aa117a7217a4e8ff2ebde77fe16d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes using Guid(e870aa117a7217a4e8ff2ebde77fe16d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '313eb6b6483082f4c53083ade59d0f96') in 0.005842 seconds 
+  Time since last request: 0.313249 seconds.
+  path: Assets/[Scripts]/Controllers/ThirdPersonMovement.cs
+  artifactKey: Guid(ad81d1804b2e1664bb344da8b45ba1f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Controllers/ThirdPersonMovement.cs using Guid(ad81d1804b2e1664bb344da8b45ba1f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '342877a50d334aa9f9ad8262b2c14ebc') in 0.002581 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.048554 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/IvyPillar01.fbx
-  artifactKey: Guid(2094278e951892843a066ddd6751562c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/IvyPillar01.fbx using Guid(2094278e951892843a066ddd6751562c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9015e9dd531597b9168a398d460465d2') in 0.212888 seconds 
+  Time since last request: 16.958994 seconds.
+  path: Assets/[Scripts]/Controllers/Cinemachine Camera
+  artifactKey: Guid(1afecef80bc1a194896c1352dcb46a44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Controllers/Cinemachine Camera using Guid(1afecef80bc1a194896c1352dcb46a44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be130a9df4a63c089d4b53477e8256d2') in 0.002714 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000126 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/SM_Vines04.fbx
-  artifactKey: Guid(e390e0ef35122124fa01e3aaf60ea524) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/SM_Vines04.fbx using Guid(e390e0ef35122124fa01e3aaf60ea524) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '081e51f62d4af15f061a9943914ad75b') in 0.575323 seconds 
+  Time since last request: 18.130053 seconds.
+  path: Assets/[Scripts]/Controllers/Cinemachine Camera/FollowTarget.cs
+  artifactKey: Guid(764c7e0bcd623644287be069ce987f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Controllers/Cinemachine Camera/FollowTarget.cs using Guid(764c7e0bcd623644287be069ce987f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '106a1b4f2a82412c0681d120d36cd913') in 0.002696 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000141 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/SM_Pagoda.fbx
-  artifactKey: Guid(57e77a3c3184a9146bed6abdac449f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/SM_Pagoda.fbx using Guid(57e77a3c3184a9146bed6abdac449f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fa9c9f4a0d7cefb4133e5291762f9bf') in 0.027263 seconds 
+  Time since last request: 46.882810 seconds.
+  path: Assets/[Scripts]/Controllers/Cinemachine Camera/FollowTarget.cs
+  artifactKey: Guid(764c7e0bcd623644287be069ce987f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Controllers/Cinemachine Camera/FollowTarget.cs using Guid(764c7e0bcd623644287be069ce987f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3f47681ec8e6ab069d20b1781d526c0') in 0.002295 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000137 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/Pillar02_Low.fbx
-  artifactKey: Guid(c723696e1cd74a64090019b2ecf5a703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/Pillar02_Low.fbx using Guid(c723696e1cd74a64090019b2ecf5a703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8709471be7cda1719e018a368647e0bc') in 0.013258 seconds 
+  Time since last request: 9.670396 seconds.
+  path: Assets/[Scripts]/Controllers/Cinemachine Camera/FollowTarget.cs
+  artifactKey: Guid(764c7e0bcd623644287be069ce987f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Controllers/Cinemachine Camera/FollowTarget.cs using Guid(764c7e0bcd623644287be069ce987f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afbd418dcd4db8d52efbacb867d49046') in 0.002384 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000132 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/Rock03_Low.fbx
-  artifactKey: Guid(93caa725e965aa448b5c75ab598819ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/Rock03_Low.fbx using Guid(93caa725e965aa448b5c75ab598819ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a2f09ae073c7b3302da2a364b5f8c0b') in 0.015991 seconds 
+  Time since last request: 68.324730 seconds.
+  path: Assets/[Scripts]/Controllers/Cinemachine Camera/FollowTarget.cs
+  artifactKey: Guid(764c7e0bcd623644287be069ce987f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Controllers/Cinemachine Camera/FollowTarget.cs using Guid(764c7e0bcd623644287be069ce987f58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2fdfcf54d87525b8dcc8d09420a052b') in 0.003624 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.012466 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.101 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1101ms)
+		BeginReloadAssembly (109ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (938ms)
+			LoadAssemblies (84ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (253ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (82ms)
+			SetupLoadedEditorAssemblies (408ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (88ms)
+				ProcessInitializeOnLoadAttributes (298ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.91 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3926 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 190.8 MB.
+System memory in use after: 191.0 MB.
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 4797.
+Total: 3.570900 ms (FindLiveObjects: 0.346600 ms CreateObjectMapping: 0.227200 ms MarkObjects: 2.926500 ms  DeleteObjects: 0.069600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000145 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/SM_Bonsai.fbx
-  artifactKey: Guid(a4018e61f70f2d940a5af54913440faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/SM_Bonsai.fbx using Guid(a4018e61f70f2d940a5af54913440faa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71200f233e8f4ece3c820ef72d99e193') in 0.022755 seconds 
+  Time since last request: 118.621955 seconds.
+  path: Assets/Other/AmplifyShaderEditor/Plugins/EditorResources/Previews/Preview_ViewDirInputsCoordNode.shader
+  artifactKey: Guid(07b57d9823df4bd4d8fe6dcb29fca36a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Other/AmplifyShaderEditor/Plugins/EditorResources/Previews/Preview_ViewDirInputsCoordNode.shader using Guid(07b57d9823df4bd4d8fe6dcb29fca36a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65ec5c33b2f9c7443f44b89992327dc9') in 0.024184 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000134 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/Rock02_Low.fbx
-  artifactKey: Guid(af72fe466b2cdbf43b3482d524940f53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/Rock02_Low.fbx using Guid(af72fe466b2cdbf43b3482d524940f53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e857964017f308e664f9d598d1ccd46') in 0.016151 seconds 
+  Time since last request: 10.913943 seconds.
+  path: Assets/[Scripts]/Inventory
+  artifactKey: Guid(fccb44b2b2b47ba439efdc8eff64229d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Inventory using Guid(fccb44b2b2b47ba439efdc8eff64229d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9111486d3ad9c9c9632057dab2fd20eb') in 0.002262 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000121 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/SM_Vines03.fbx
-  artifactKey: Guid(fa0d0018213e32942bc5eb3ea97deec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/SM_Vines03.fbx using Guid(fa0d0018213e32942bc5eb3ea97deec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a69ea8330ee5d675943279e4c399f4c') in 0.014976 seconds 
+  Time since last request: 0.366639 seconds.
+  path: Assets/[Scripts]/Misc
+  artifactKey: Guid(f4111a595e80aac4da07ce88e2598edc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/Misc using Guid(f4111a595e80aac4da07ce88e2598edc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '106a08df4f4e84e2e4e6426bf8cc4443') in 0.002662 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000149 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/Rock01_Low.fbx
-  artifactKey: Guid(4f426020d5946fd479710169be040374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/Rock01_Low.fbx using Guid(4f426020d5946fd479710169be040374) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5e8c54e54781f07f9d4d3e460168658') in 0.013737 seconds 
+  Time since last request: 7.362019 seconds.
+  path: Assets/Dialougue
+  artifactKey: Guid(f91869e264d6714458f48fcb84fa8c76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Dialougue using Guid(f91869e264d6714458f48fcb84fa8c76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d77f99fd1e66cabe3afa7047a59f038') in 0.002498 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000124 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/SM_Vines02.fbx
-  artifactKey: Guid(9149474b7702dc5438e9169248821eed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/SM_Vines02.fbx using Guid(9149474b7702dc5438e9169248821eed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18f40f3674c29796c13ba46e2fd1db97') in 0.018908 seconds 
+  Time since last request: 0.323477 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(48c5b7d9cd04bed4d9174782cf5298e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(48c5b7d9cd04bed4d9174782cf5298e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0befbee3683ffa72f8c083f8f108d438') in 0.002344 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000145 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/SM_Vines01.fbx
-  artifactKey: Guid(82c162eb092a51f4f80b7f36d82e2b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/SM_Vines01.fbx using Guid(82c162eb092a51f4f80b7f36d82e2b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2faa22b3fd7b271efa253eac4e4fa4c') in 0.017358 seconds 
+  Time since last request: 0.577691 seconds.
+  path: Assets/Other
+  artifactKey: Guid(f0dbe8881ab58544186916206a94fd2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Other using Guid(f0dbe8881ab58544186916206a94fd2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc688d4e277f34ba81246dfde3eaa32d') in 0.003223 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000128 seconds.
-  path: Assets/EarthBossArena/StaticMeshes/Pillar01_Low.fbx
-  artifactKey: Guid(92b924a05c417084bab6c57d5b06eb6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/StaticMeshes/Pillar01_Low.fbx using Guid(92b924a05c417084bab6c57d5b06eb6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a589d4ce9f2b93d779c050d3a52948b') in 0.013325 seconds 
+  Time since last request: 0.320471 seconds.
+  path: Assets/Sounds
+  artifactKey: Guid(96455eaaee34c0e4d8e2cec952ccf794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds using Guid(96455eaaee34c0e4d8e2cec952ccf794) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd484fa0c3dc1638f17fff91f95a6a2a2') in 0.002547 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.040373 seconds.
-  path: Assets/EarthBossArena/Materials
-  artifactKey: Guid(0372bae06ede4844d9d59fc8d80c1939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials using Guid(0372bae06ede4844d9d59fc8d80c1939) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbd40e814de7c243f8e597797ed8f9eb') in 0.005879 seconds 
+  Time since last request: 0.321520 seconds.
+  path: Assets/UI
+  artifactKey: Guid(21b9d574e9b9121428006e62ee1b8507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI using Guid(21b9d574e9b9121428006e62ee1b8507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac264181212bff2179357545e2bfe82d') in 0.002922 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006929 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.021 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1022ms)
+		BeginReloadAssembly (116ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (850ms)
+			LoadAssemblies (83ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (252ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (78ms)
+			SetupLoadedEditorAssemblies (339ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (81ms)
+				ProcessInitializeOnLoadAttributes (236ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3925 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 190.9 MB.
+System memory in use after: 191.1 MB.
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 4800.
+Total: 3.612100 ms (FindLiveObjects: 0.336600 ms CreateObjectMapping: 0.234000 ms MarkObjects: 2.966100 ms  DeleteObjects: 0.074700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.061510 seconds.
-  path: Assets/EarthBossArena/Materials/Bonsai.mat
-  artifactKey: Guid(100d19c7bc050ca4792cf76a0ec2142f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Bonsai.mat using Guid(100d19c7bc050ca4792cf76a0ec2142f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6456cd399c59e93d98e9881cb2cb053d') in 0.018074 seconds 
+  Time since last request: 163.901014 seconds.
+  path: Assets/[Scripts]/[Player]/Camera.prefab
+  artifactKey: Guid(b3472b8bb2de19149a941b107f18cc39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/[Player]/Camera.prefab using Guid(b3472b8bb2de19149a941b107f18cc39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5790857cda3989d6f49161de2aebd5ce') in 0.041320 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000138 seconds.
-  path: Assets/EarthBossArena/Materials/Ground 2.mat
-  artifactKey: Guid(d89b830a71bd8a643827a5fc0272480a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Ground 2.mat using Guid(d89b830a71bd8a643827a5fc0272480a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f10d649960af67eb3800f60c61c82b59') in 0.010373 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000141 seconds.
-  path: Assets/EarthBossArena/Materials/CustomToonPlaneTest 1.mat
-  artifactKey: Guid(ed2b980afe552a74b89c2ed4d72ec3e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/CustomToonPlaneTest 1.mat using Guid(ed2b980afe552a74b89c2ed4d72ec3e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52412a7598f2d804b544ab030dc9f7eb') in 0.013230 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000161 seconds.
-  path: Assets/EarthBossArena/Materials/GrassGround_Mat 1.mat
-  artifactKey: Guid(1ce717d1f8c681b49bea496cedf55d1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/GrassGround_Mat 1.mat using Guid(1ce717d1f8c681b49bea496cedf55d1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0402297458336512b62599b53706d88') in 0.011028 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/EarthBossArena/Materials/Stylized_Sky.mat
-  artifactKey: Guid(cae7013b6fe4c1c47994114e532bf60e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Stylized_Sky.mat using Guid(cae7013b6fe4c1c47994114e532bf60e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '333d211d596c6fc8638deb1e205fde49') in 0.022530 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000135 seconds.
-  path: Assets/EarthBossArena/Materials/Earth_Pillar01 1.mat
-  artifactKey: Guid(88dc023712713d3429a0aeac4b7e1f05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Earth_Pillar01 1.mat using Guid(88dc023712713d3429a0aeac4b7e1f05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29ba39131086bda325b6e64e37042665') in 0.010424 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000156 seconds.
-  path: Assets/EarthBossArena/Materials/Ground.mat
-  artifactKey: Guid(53ec2359f8c59ab45bbc6207f0fd0b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Ground.mat using Guid(53ec2359f8c59ab45bbc6207f0fd0b63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c82f28627f35f442fc5eafbc09425d07') in 0.009728 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000173 seconds.
-  path: Assets/EarthBossArena/Materials/Mountain.mat
-  artifactKey: Guid(08d874de8e4542a43b925b76f67c6af0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Mountain.mat using Guid(08d874de8e4542a43b925b76f67c6af0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea9d11ab72cc8e268f60560679c4f188') in 0.010581 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000118 seconds.
-  path: Assets/EarthBossArena/Materials/TreeBark_Mat 1.mat
-  artifactKey: Guid(f2d18df90caf829478c4a499bace023f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/TreeBark_Mat 1.mat using Guid(f2d18df90caf829478c4a499bace023f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da83f26e95404d311af24ad4fff52e1c') in 0.140321 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000149 seconds.
-  path: Assets/EarthBossArena/Materials/Pagoda01.mat
-  artifactKey: Guid(6f71b195dd2628949976df6d77587c0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Pagoda01.mat using Guid(6f71b195dd2628949976df6d77587c0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '396a0655265dc939619ebd29a74bd5e9') in 0.009942 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000169 seconds.
-  path: Assets/EarthBossArena/Materials/Pagoda02.mat
-  artifactKey: Guid(fb2ab475121aec942960026deba0ecd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Pagoda02.mat using Guid(fb2ab475121aec942960026deba0ecd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ddef2b787a0055e34407f3ff33a3870') in 0.009934 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000176 seconds.
-  path: Assets/EarthBossArena/Materials/Earth_Rock03_Mat 1.mat
-  artifactKey: Guid(615c6c99c68d22b47a562e3cba455774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Earth_Rock03_Mat 1.mat using Guid(615c6c99c68d22b47a562e3cba455774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6f87d9304ce8332b51120b484fbc21e') in 0.011016 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000145 seconds.
-  path: Assets/EarthBossArena/Materials/Pagoda04.mat
-  artifactKey: Guid(7c3a6d3fcd9cb2f4eb6037365684649c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Pagoda04.mat using Guid(7c3a6d3fcd9cb2f4eb6037365684649c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6808a68864fd4593914b4d0e52abeb2') in 0.010045 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000151 seconds.
-  path: Assets/EarthBossArena/Materials/Vines02.mat
-  artifactKey: Guid(c89b495d589666b4d8eb6c2cd0983f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Vines02.mat using Guid(c89b495d589666b4d8eb6c2cd0983f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfec6bd26317f427868d7fd5b5098585') in 0.172812 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000153 seconds.
-  path: Assets/EarthBossArena/Materials/Earth_Pillar02.mat
-  artifactKey: Guid(17cf7b817a2958f46b005a57059deadd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Earth_Pillar02.mat using Guid(17cf7b817a2958f46b005a57059deadd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac3122347d1cd5242084d8b38db9393e') in 0.010604 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000166 seconds.
-  path: Assets/EarthBossArena/Materials/StoneWall_Mat 1.mat
-  artifactKey: Guid(c2ac40fedeccfee4881dbf63bc721398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/StoneWall_Mat 1.mat using Guid(c2ac40fedeccfee4881dbf63bc721398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c46bc9dc705c03eb86d6ac86f8263a2') in 0.121167 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000156 seconds.
-  path: Assets/EarthBossArena/Materials/Vines01.mat
-  artifactKey: Guid(e3796a6223d161c44b3f7456b176aa6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Vines01.mat using Guid(e3796a6223d161c44b3f7456b176aa6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45ce460925a7156ba852b4c8b934f94f') in 0.210099 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000183 seconds.
-  path: Assets/EarthBossArena/Materials/Earth_Rock02_Mat 1.mat
-  artifactKey: Guid(d539d639e028e5e45801f0eebedf4d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Earth_Rock02_Mat 1.mat using Guid(d539d639e028e5e45801f0eebedf4d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b5535907ed59d33103fa457fc3a2cf') in 0.010470 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000164 seconds.
-  path: Assets/EarthBossArena/Materials/Earth_Rock01_Mat 1.mat
-  artifactKey: Guid(e185acb36fbd5014d891a59f017e81b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Earth_Rock01_Mat 1.mat using Guid(e185acb36fbd5014d891a59f017e81b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baa723c1850cd0c30ae7b7cbb32455f1') in 0.011391 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000178 seconds.
-  path: Assets/EarthBossArena/Materials/Pagoda03.mat
-  artifactKey: Guid(9aa7e9c1b0e2c7043a34ceff4acc4c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Pagoda03.mat using Guid(9aa7e9c1b0e2c7043a34ceff4acc4c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a260134dc1a52a9bf20fabe7d3f6b71') in 0.010359 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000164 seconds.
-  path: Assets/EarthBossArena/Materials/CustomToonTestmat 1.mat
-  artifactKey: Guid(03c2bf4dcefe9cf4e93a6f8068aff2be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/CustomToonTestmat 1.mat using Guid(03c2bf4dcefe9cf4e93a6f8068aff2be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddb015b9047b73fc0f794a1a9cee6b1a') in 0.009229 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000173 seconds.
-  path: Assets/EarthBossArena/Materials/TreeLeaves 1.mat
-  artifactKey: Guid(0ee4ada29a555bc4c9210efa4e7c4fbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/TreeLeaves 1.mat using Guid(0ee4ada29a555bc4c9210efa4e7c4fbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '019479af5075d8fcaa7412a3ffda3df0') in 0.010453 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000158 seconds.
-  path: Assets/EarthBossArena/Materials/Ground 1.mat
-  artifactKey: Guid(f312541b15b962c4db9b461baf03d36b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/EarthBossArena/Materials/Ground 1.mat using Guid(f312541b15b962c4db9b461baf03d36b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66459b6e8bfc943777c7f952ca44d193') in 0.010527 seconds 
+  Time since last request: 425.708995 seconds.
+  path: Assets/[Scripts]/[Player]/Camera.prefab
+  artifactKey: Guid(b3472b8bb2de19149a941b107f18cc39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/[Scripts]/[Player]/Camera.prefab using Guid(b3472b8bb2de19149a941b107f18cc39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46c342db0f51d62a72f90e8734659284') in 0.004231 seconds 

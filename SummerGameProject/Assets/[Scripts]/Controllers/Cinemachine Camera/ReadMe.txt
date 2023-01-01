@@ -1,3 +1,5 @@
+Daniel Fiuk
+
 Remember to add an empty game object as a child to the player object.
 Add the Follow Target script to it.
 In the "CM vcam1" object's inspector, set the Follow Target to the aforementioned game object.

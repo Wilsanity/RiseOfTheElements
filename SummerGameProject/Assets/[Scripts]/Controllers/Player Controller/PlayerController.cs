@@ -117,7 +117,10 @@ public class PlayerController : MonoBehaviour
         //Reads player input as a vector2
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
         bool sprintInput = sprintAction.ReadValue<float>() != 0;
-        if (sprintInput) moveInput *= sprintPower;
+        if (sprintInput)
+        {
+            moveInput *= sprintPower;
+        }
 
         bool jumpInput = jumpAction.ReadValue<float>() != 0;
         /*
@@ -127,7 +130,15 @@ public class PlayerController : MonoBehaviour
         */
         //Rotate the player to face forward
         Quaternion targetRotation = Quaternion.Euler(0, cameraFollowTargetTransform.eulerAngles.y, 0);
-        if (moveInput.magnitude >= 0.3) transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        if (moveInput.magnitude >= 0.3)
+        {
+            PlayerAnimationMachine.playerAnimationInstance.UpdatePlayerAnim(sprintInput ? PlayerAnimState.Running : PlayerAnimState.Walking);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        }
+        else
+        {
+            PlayerAnimationMachine.playerAnimationInstance.UpdatePlayerAnim(PlayerAnimState.Idle);
+        }
         //If raycast detects a surface...
 
 
@@ -154,8 +165,8 @@ public class PlayerController : MonoBehaviour
         Vector3 vertical = new Vector3(0.0f, body.velocity.y, 0.0f);
         Vector3 horizontal = new Vector3(body.velocity.x, 0.0f, body.velocity.z);
         body.velocity = (horizontal + (vertical * 0.1f));
-        body.AddForce(horizontal * 10, ForceMode.Force);//Jumping while moving gives a slight boost in your current direction.
-        body.AddForce(GroundedNormal * jumpPower * 75, ForceMode.Force);//Pushes off the ground, using the normal of the collision surface.
+        body.AddForce(horizontal * 10, ForceMode.Force); //Jumping while moving gives a slight boost in your current direction.
+        body.AddForce(GroundedNormal * jumpPower * 75, ForceMode.Force); //Pushes off the ground, using the normal of the collision surface.
         body.AddForce(Vector3.up * jumpPower * 25, ForceMode.Force);
     }
 }

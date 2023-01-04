@@ -1466,7 +1466,6 @@ GameObject:
   m_Component:
   - component: {fileID: 543450653225312972}
   - component: {fileID: 718253774}
-  - component: {fileID: 919132149502883959}
   m_Layer: 0
   m_Name: FoxPlayer
   m_TagString: Untagged
@@ -1474,19 +1473,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &919132149502883959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149502883958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13809ee9647f1f643baf570ad2b8fbea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 0}
 --- !u!4 &945561964204368649
 Transform:
   m_ObjectHideFlags: 0
@@ -5397,13 +5383,29 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 7042601458309158937, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
+      propertyPath: m_UpdateMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042601458309158937, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
+      propertyPath: m_BlendUpdateMethod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042601458309158937, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
+      propertyPath: m_DefaultBlend.m_Time
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7042601458390469442, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1306297148}
     - target: {fileID: 7042601458390469442, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
+      propertyPath: m_StandbyUpdate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042601458390469442, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 2.7593584
+      value: 1.7777778
       objectReference: {fileID: 0}
     - target: {fileID: 7042601458390469443, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalPosition.x

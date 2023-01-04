@@ -2,68 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimationMachine : MonoBehaviour
+public static class PlayerAnimationMachine
 {
-    public Animator playerAnimator;
-
-    public static PlayerAnimationMachine playerAnimationInstance;
-    // Start is called before the first frame update
-    void Start()
-    {
-        playerAnimationInstance = this;
-        playerAnimator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    public void UpdatePlayerAnim(PlayerAnimState state)
+    //update trigger anim states
+    public static void UpdatePlayerAnim(PlayerAnimState state, Animator anim)
     {
         switch (state)
         {
-            case PlayerAnimState.Idle:
-                if (CheckAnim(PlayerAnimState.Idle)) return;
-                playerAnimator.SetTrigger("isIdle");
-
-                return;
-            case PlayerAnimState.Walking:
-                if (CheckAnim(PlayerAnimState.Walking)) return;
-                playerAnimator.SetTrigger("isWalking");
-
-                return;
-            case PlayerAnimState.Running:
-                if (CheckAnim(PlayerAnimState.Running)) return;
-                playerAnimator.SetTrigger("isRunning");
-
+            default:
+                Debug.LogError("PlayerAnimationMachine: Invalid PlayerAnimState");
                 return;
         }
     }
 
-    public bool CheckAnim(PlayerAnimState state)
+    //update bool anim states
+    public static void UpdatePlayerAnim(PlayerAnimState state, bool boolean, Animator anim)
     {
         switch (state)
         {
-            case PlayerAnimState.Idle:
-                
-                return playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle");
-               
-               
-            case PlayerAnimState.Walking:
-                return playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Walk");
+            case PlayerAnimState.IsMoving:
+                anim.SetBool("IsMoving", boolean);
+                return;
 
-
-            case PlayerAnimState.Running:
-                return playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Run");
+            case PlayerAnimState.IsSprinting:
+                anim.SetBool("IsSprinting", boolean);
+                return;
 
             default:
-                Debug.LogError("Animation problem");
-                return false;
+                Debug.LogError("PlayerAnimationMachine: Invalid PlayerAnimState");
+                return;
         }
-
     }
-
 }
+
 public enum PlayerAnimState
 {
-    Idle,
-    Walking,
-    Running
+    IsMoving,
+    IsSprinting,
 }

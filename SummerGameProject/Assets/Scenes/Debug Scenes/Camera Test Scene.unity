@@ -427,6 +427,7 @@ GameObject:
   - component: {fileID: 270220264}
   - component: {fileID: 270220263}
   - component: {fileID: 270220262}
+  - component: {fileID: 270220267}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -525,6 +526,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &270220267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270220261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da13fff046546874cb6978432eae9101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dodgeForce: 10
+  dodgeCooldown: 1
+  physicsBody: {fileID: 270220265}
+  inputActions: {fileID: 270220263}
+  playerAnimator: {fileID: 718253774}
 --- !u!1 &311675145
 GameObject:
   m_ObjectHideFlags: 0

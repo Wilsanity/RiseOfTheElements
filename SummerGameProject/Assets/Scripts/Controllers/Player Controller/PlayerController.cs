@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = forward * -moveInput.y + right * moveInput.x;
 
         //Rotate the player to face forward
-        Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+        Quaternion targetRotation = moveDirection != Vector3.zero ? Quaternion.LookRotation(moveDirection, Vector3.up) : transform.rotation;
         
         if (moveInput.magnitude >= 0.3)
         {

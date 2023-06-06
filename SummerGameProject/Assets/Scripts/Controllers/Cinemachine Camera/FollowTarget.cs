@@ -7,5 +7,6 @@ public class FollowTarget : MonoBehaviour
     private void LateUpdate()
     {
         transform.rotation = Camera.main.transform.rotation;
+        transform.rotation = Camera.main.transform.rotation;
     }
 }

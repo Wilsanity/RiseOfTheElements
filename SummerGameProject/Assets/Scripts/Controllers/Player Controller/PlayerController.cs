@@ -57,6 +57,19 @@ public class PlayerController : MonoBehaviour
         body = GetComponent<Rigidbody>();
 
         cameraFollowTargetTransform = transform.GetChild(0).transform;
+
+        //if a portal was used to telleport
+        if (PlayerPrefs.GetInt("isPortalUsed", 0) == 1)
+        {
+            //Find the name of the portal that was used
+            string currentPortal = PlayerPrefs.GetString("currentPortal");
+            if (currentPortal != null)
+            {
+                //move the player to the portal's spawn position
+                transform.position = GameObject.Find(currentPortal).transform.GetChild(0).position;
+                PlayerPrefs.SetInt("isPortalUsed", 0);
+            }
+        }
     }
 
     private void OnEnable()

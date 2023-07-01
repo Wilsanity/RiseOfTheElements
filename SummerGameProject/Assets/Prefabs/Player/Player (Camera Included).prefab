@@ -54,6 +54,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4106133732319899715}
     m_Modifications:
+    - target: {fileID: 5795770301225366228, guid: 2140e0cbcfb025249a86229e9160288c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5795770302118775296, guid: 2140e0cbcfb025249a86229e9160288c, type: 3}
       propertyPath: m_Height
       value: 1.85
@@ -202,12 +206,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7042601458290271464, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
+      propertyPath: Damping.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042601458290271464, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: IgnoreTag
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7042601458290271464, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: CameraRadius
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042601458290271464, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
+      propertyPath: ShoulderOffset.y
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7042601458290271464, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: CameraCollisionFilter.m_Bits
@@ -227,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7042601458309158919, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 2.15
       objectReference: {fileID: 0}
     - target: {fileID: 7042601458309158919, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalPosition.z
@@ -247,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 7289687459191809318}
     - target: {fileID: 7042601458390469442, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.778086
+      value: 1.3333334
       objectReference: {fileID: 0}
     - target: {fileID: 7042601458390469443, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7042601458390469443, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 2.15
       objectReference: {fileID: 0}
     - target: {fileID: 7042601458390469443, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalPosition.z

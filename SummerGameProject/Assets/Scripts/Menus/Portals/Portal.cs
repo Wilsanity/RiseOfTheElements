@@ -8,6 +8,8 @@ using System.Linq;
 
 public class Portal : Interactable
 {
+    bool portalActive;
+    
     private void Start()
     {
         InitPortal();
@@ -15,6 +17,9 @@ public class Portal : Interactable
 
     public void InitPortal()
     {
+        if (portalActive) return;
+        portalActive = true;
+        
         string filePath = Application.dataPath + "/test.txt";
         List<string> portals = File.ReadAllLines(filePath).ToList();
 

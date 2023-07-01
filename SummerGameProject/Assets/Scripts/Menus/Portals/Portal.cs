@@ -5,43 +5,92 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System;
 using System.Linq;
+using System.ComponentModel;
 
 public class Portal : Interactable
 {
-    bool portalActive;
-    
-    private void Start()
+    public string SaveDataPath
     {
-        InitPortal();
+        // will return the file directory of the protal save data text file
+        get { return Application.dataPath + "/Save Data/Portal Data.txt"; }
     }
+
+    public string PortalID
+    {
+        // will return the portal ID
+        get { return worldType.ToString() + "_" + SceneManager.GetActiveScene().name + "_" + gameObject.name; }
+    }
+    
+    public WorldType worldType;
 
     public void InitPortal()
     {
-        if (portalActive) return;
-        portalActive = true;
-        
-        string filePath = Application.dataPath + "/test.txt";
-        List<string> portals = File.ReadAllLines(filePath).ToList();
+        UnlockPortal();
+        // open Portal UI
+    }
 
-        string currentPortalID = SceneManager.GetActiveScene().name + "_" + gameObject.name;
+    public void UnlockPortal()
+    {
+        // will create a list from the portal data text file
+        List<string> portals = File.ReadAllLines(SaveDataPath).ToList();
 
-        if (!portals.Contains(currentPortalID))
+        if (!portals.Contains(PortalID))
         {
-            portals.Add(currentPortalID);
-            File.WriteAllLines(filePath, portals.ToArray());
+            // if the portal ID is not in the list, add it to the list and write the new list to the portal data text file
+            portals.Add(PortalID);
+            File.WriteAllLines(SaveDataPath, portals.ToArray());
+            Debug.Log("Portal has been unlocked!");
         }
+        else
+        {
+            Debug.Log("Portal is already unlocked!");
+        }
+    }
 
-        //Enable UI to choose a portal to telleport to TODO:
+    public void LockPortal()
+    {
+        // will create a list from the portal data text file
+        List<string> portals = File.ReadAllLines(SaveDataPath).ToList();
+
+        if (portals.Contains(PortalID))
+        {
+            // if the portal ID is in the list, remove it from the list and write the new list to the portal data text file
+            portals.Remove(PortalID);
+            File.WriteAllLines(SaveDataPath, portals.ToArray());
+            Debug.Log("Portal has been locked!");
+        }
+        else
+        {
+            Debug.Log("Portal is already locked!");
+        }
+    }
+
+    public void ClearPortalData()
+    {
+        // will clear the portal data text file
+        File.WriteAllLines(SaveDataPath, new string[0]);
+        Debug.Log("Portal has been Cleared!");
     }
 
     public void ActivatePortal(string portalID)
     {
-        string sceneName = portalID.Split('_')[0];
-        string portalName = portalID.Split('_')[1];
+        // will read the selected portal ID adn identify the scene name and portal name
+        string sceneName = portalID.Split('_')[1];
+        string portalName = portalID.Split('_')[2];
 
+        // will inform upon scene loading to spawn the player at a portal
         PlayerPrefs.SetInt("isPortalUsed", 1);
         PlayerPrefs.SetString("currentPortal", portalName);
 
         SceneManager.LoadScene(sceneName);
     }
+}
+
+public enum WorldType
+{
+    Earth,
+    Water,
+    Fire,
+    Air,
+    Debug
 }

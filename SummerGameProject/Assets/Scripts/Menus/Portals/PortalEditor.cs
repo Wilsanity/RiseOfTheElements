@@ -9,6 +9,11 @@ using UnityEngine.SceneManagement;
 [CustomEditor(typeof(Portal))]
 [CanEditMultipleObjects]
 
+/*
+    This script changes how the 'Portal' Component apears in the inspector.
+    It adds functioning buttons to test the portal functionality while using the editor.
+*/
+
 public class PortalEditor : Editor
 {
     public override void OnInspectorGUI()

@@ -12,7 +12,7 @@ public class RhinoController : MonoBehaviour
 
         [SerializeField] public float radius;
         [HideInInspector] public bool ready;
-        
+
         [SerializeField] public float coolDown;
         [HideInInspector] public bool isOnCoolDown;
 
@@ -54,11 +54,16 @@ public class RhinoController : MonoBehaviour
         //If the player is in the agro range, perform the agro state actions
         if (rhinoActions[0].ready) AgroState();
 
+        animator.SetBool("Agro", rhinoActions[0].ready);
+
         //If the Body Slam attack is not in cooldown and the player is in range, Body Slam them
         if (!rhinoActions[1].isOnCoolDown && rhinoActions[1].ready) StartCoroutine(BodySlam());
 
         //If the Body Slam is out of range of the player, but the charge attack is ready and not on cooldown, CHARGE!
         if (!rhinoActions[2].isOnCoolDown && rhinoActions[2].ready && !rhinoActions[1].ready) StartCoroutine(ChargeAttack());
+
+        //If charge attack is finished after the player reaches a certain border, then there's a horn sweep attack!
+        if (!rhinoActions[3].isOnCoolDown && rhinoActions[3].ready && !rhinoActions[2].ready) StartCoroutine(HornSweep());
     }
 
     private void AgroState()
@@ -71,7 +76,7 @@ public class RhinoController : MonoBehaviour
 
         //Check if the Rhino is too close to the player, and if not, move them towards the player
         bool isTooCloseToPlayer = Vector3.Distance(transform.position, player.position) <= rhinoActions[1].radius / 1.5f;
-        if (!isTooCloseToPlayer) body.velocity = -transform.forward * movementSpeed + new Vector3 (0, body.velocity.y, 0);
+        if (!isTooCloseToPlayer) body.velocity = -transform.forward * movementSpeed + new Vector3(0, body.velocity.y, 0);
     }
 
     private IEnumerator BodySlam()
@@ -82,6 +87,8 @@ public class RhinoController : MonoBehaviour
         //Set animation
         animator.SetTrigger("BodySlam");
         Debug.Log("Body Slam!");
+
+        movementSpeed = 10;
 
         //Count Down seconds until the action can be used again
         yield return new WaitForSeconds(rhinoActions[1].coolDown);
@@ -94,7 +101,7 @@ public class RhinoController : MonoBehaviour
     {
         //Set cooldown
         rhinoActions[2].isOnCoolDown = true;
-        
+
         //Set animation
         animator.SetTrigger("ChargeAttack");
         Debug.Log("Charge Attack!");
@@ -104,6 +111,22 @@ public class RhinoController : MonoBehaviour
 
         //Reset the action
         rhinoActions[2].isOnCoolDown = false;
+    }
+
+    private IEnumerator HornSweep()
+    {
+        //Set cooldown
+        rhinoActions[3].isOnCoolDown = true;
+
+        //Set animation
+        animator.SetTrigger("HornSweep");
+        Debug.Log("Horn Sweep!");
+
+        //Count down seconds until the action can be used again
+        yield return new WaitForSeconds(rhinoActions[3].coolDown);
+
+        //Reset the action
+        rhinoActions[3].isOnCoolDown = false;
     }
 
     private void OnCollisionStay(Collision collision)

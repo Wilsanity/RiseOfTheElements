@@ -41,7 +41,7 @@ public class RhinoController : MonoBehaviour
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody>();
 
-        player = FindObjectOfType<gameManager>().sceneObjects.player.transform;
+        player = FindObjectOfType<GameManager>().sceneObjects.player.transform;
     }
 
     private void Update()
@@ -143,5 +143,17 @@ public class RhinoController : MonoBehaviour
             Gizmos.color = action.color;
             Gizmos.DrawWireSphere(transform.position, action.radius);
         }
+
+        //Draw the cardinal directions of the enemy
+        //This is for those who can't see the rhino model at times...
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + -transform.right * 5);
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + transform.up * 5);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawLine(transform.position, transform.position + -transform.forward * 5);
+
     }
 }

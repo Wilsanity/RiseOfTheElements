@@ -41,7 +41,7 @@ public class RhinoController : MonoBehaviour
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody>();
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = FindObjectOfType<gameManager>().sceneObjects.player.transform;
     }
 
     private void Update()

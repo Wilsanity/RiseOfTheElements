@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
     [SerializeField] float sprintPower;
+    [SerializeField] float health = 10;
 
     #endregion
 
@@ -94,6 +96,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
+    }
+
+    //This is for when the player gets attacked and killed.
+    void OnCollisionEnter(Collision collision)//If the player collides with tagged enemy weapon to the point of death...
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            health -= 1;
+            if (health == 0 || health < 0)
+            {
+                health = 0;//Health is now depleted
+                PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsDead, true, anim);//Play death animation
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//Restart the scene
+            }
+        }
     }
 
     void OnCollisionStay(Collision collision)

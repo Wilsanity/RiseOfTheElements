@@ -15,6 +15,13 @@ public class creditsManager_Script : MonoBehaviour
     public bool skipEnable;
     private void Awake()
     {
+        IEnumerator EnableSkipTimer()
+        {
+            skipEnable = false;
+            yield return new WaitForSeconds(5);
+            skipEnable = true;
+        }
+        StartCoroutine(EnableSkipTimer());
         skipCredits = playerInput.actions["Pause"];
     }
     private void OnEnable()
@@ -27,7 +34,7 @@ public class creditsManager_Script : MonoBehaviour
         if (skipEnable)
         {
             Debug.Log(skipEnable);
-            SceneManager.LoadScene(mainMenuScene.name);
+            SceneManager.LoadScene(mainMenuScene.name, LoadSceneMode.Single);
         }
     }
 

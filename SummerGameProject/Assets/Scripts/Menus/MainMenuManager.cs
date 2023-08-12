@@ -64,6 +64,7 @@ public class MainMenuManager : MonoBehaviour
         //disable start screen
         startMenu.alpha = 0;
         startMenu.interactable = false;
+        startMenu.blocksRaycasts = false;
 
         ///call fill function from load manager
 
@@ -71,6 +72,7 @@ public class MainMenuManager : MonoBehaviour
         //enable load game menu
         loadGameMenu.alpha = 1;
         loadGameMenu.interactable = true;
+        loadGameMenu.blocksRaycasts = true;
     }
     public void load_Game(PlayerSaveFileData saveData)
     {
@@ -90,12 +92,14 @@ public class MainMenuManager : MonoBehaviour
     {
         startMenu.alpha = 0;
         startMenu.interactable = false;
+        startMenu.blocksRaycasts = false;
 
         //play book animation
         //wait for book animaton to enable options *hide transition*
 
         optionsMenu.alpha = 1;
         optionsMenu.interactable = true;
+        optionsMenu.blocksRaycasts = true;
     }
 
     public void backToStartMenu()
@@ -104,14 +108,17 @@ public class MainMenuManager : MonoBehaviour
         {
             loadGameMenu.alpha = 0;
             loadGameMenu.interactable = false;
+            loadGameMenu.blocksRaycasts = false;
         }
         else if (optionsMenu != null && optionsMenu.alpha > 0)
         {
             optionsMenu.alpha = 0;
             optionsMenu.interactable = false;
+            optionsMenu.blocksRaycasts = false;
         }
         startMenu.alpha = 1;
         startMenu.interactable = true;
+        startMenu.blocksRaycasts = true;
     }
 
     public void play_Credits ()
@@ -120,7 +127,7 @@ public class MainMenuManager : MonoBehaviour
 
         if (creditsScene != null)
         {
-            SceneManager.LoadScene(creditsScene.name);
+            SceneManager.LoadScene(creditsScene.name, LoadSceneMode.Single);
         }
         else
         {

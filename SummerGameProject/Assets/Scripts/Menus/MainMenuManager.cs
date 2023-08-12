@@ -14,6 +14,12 @@ public class MainMenuManager : MonoBehaviour
     private Object levelOneScene;
     #endregion
 
+    [SerializeField] CanvasGroup startMenu;
+    [SerializeField] CanvasGroup loadGameMenu;
+    [SerializeField] CanvasGroup optionsMenu;
+
+    [SerializeField] LoadMenuManager loadManager;
+
     #region
     public void start_New_Game()
     {
@@ -56,11 +62,17 @@ public class MainMenuManager : MonoBehaviour
         //play book animation *flip to load page*
 
         //disable start screen
-        //read save data array and compile data into the save data form
-        //add completed forms to the safe file scroll box
+        startMenu.alpha = 0;
+        startMenu.interactable = false;
+
+        ///call fill function from load manager
+
+
         //enable load game menu
+        loadGameMenu.alpha = 1;
+        loadGameMenu.interactable = true;
     }
-    public void load_Game(Object saveData)
+    public void load_Game(PlayerSaveFileData saveData)
     {
         Object lastLocation = null;
 
@@ -76,8 +88,32 @@ public class MainMenuManager : MonoBehaviour
     }
     public void open_Options_Menu()
     {
+        startMenu.alpha = 0;
+        startMenu.interactable = false;
 
+        //play book animation
+        //wait for book animaton to enable options *hide transition*
+
+        optionsMenu.alpha = 1;
+        optionsMenu.interactable = true;
     }
+
+    public void backToStartMenu()
+    {
+        if (loadGameMenu != null && loadGameMenu.alpha > 0)
+        {
+            loadGameMenu.alpha = 0;
+            loadGameMenu.interactable = false;
+        }
+        else if (optionsMenu != null && optionsMenu.alpha > 0)
+        {
+            optionsMenu.alpha = 0;
+            optionsMenu.interactable = false;
+        }
+        startMenu.alpha = 1;
+        startMenu.interactable = true;
+    }
+
     public void play_Credits ()
     {
         // play credits animation...

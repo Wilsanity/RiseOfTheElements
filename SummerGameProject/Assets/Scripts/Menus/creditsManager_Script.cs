@@ -13,41 +13,40 @@ public class creditsManager_Script : MonoBehaviour
     PlayerInput playerInput;
 
     public bool skipEnable;
-    private void Awake()
+    private void Start()
     {
         IEnumerator EnableSkipTimer()
         {
-            skipEnable = false;
+            SkipEnabled(false);
             yield return new WaitForSeconds(5);
-            skipEnable = true;
+            SkipEnabled(true);
         }
         StartCoroutine(EnableSkipTimer());
+
         skipCredits = playerInput.actions["Pause"];
+        skipCredits.performed += load_MainMenu;
     }
-    private void OnEnable()
-    {
-        skipCredits.performed += ctx => load_MainMenu();
-    }
-    void load_MainMenu ()
+
+    void load_MainMenu(InputAction.CallbackContext ctx)
     {
         Debug.Log(skipEnable);
         if (skipEnable)
         {
-            Debug.Log(skipEnable);
+            Debug.Log("Loading Main Menu");
+            skipCredits.performed -= load_MainMenu;
             SceneManager.LoadScene(mainMenuScene.name, LoadSceneMode.Single);
         }
     }
-
-    void enableSkip()
+    
+    void load_MainMenuFromAnimation()
     {
-        Debug.Log(skipEnable);
-        skipEnable = true;
-        Debug.Log(skipEnable);
+        skipCredits.performed -= load_MainMenu;
+        SceneManager.LoadScene(mainMenuScene.name, LoadSceneMode.Single);
     }
-    void disableSkip()
+
+    void SkipEnabled(bool enable)
     {
-        Debug.Log(skipEnable);
-        skipEnable = false;
+        skipEnable = enable;
         Debug.Log(skipEnable);
     }
 }

@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.11f1 (4d8c25f7477e) revision 5082149'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 22621.2134; Version 2009; 64bit' Language: 'en' Physical Memory: 15775 MB
+OS: 'Windows 10 Home; OS build 22621.2215; Version 2009; 64bit' Language: 'en' Physical Memory: 15775 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,11 +15,11 @@ C:/Users/Daniel Fiuk/Documents/Unity/RiseOfTheElements/SummerGameProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64465
+54436
 Successfully changed project path to: C:/Users/Daniel Fiuk/Documents/Unity/RiseOfTheElements/SummerGameProject
 C:/Users/Daniel Fiuk/Documents/Unity/RiseOfTheElements/SummerGameProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 120.85 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 77.79 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.11f1 (4d8c25f7477e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,74 +36,74 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56428
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56220
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001738 seconds.
+Registered in 0.001585 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 94.35 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 81.15 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.429 seconds
+- Completed reload, in  1.147 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1429ms)
-		BeginReloadAssembly (64ms)
+	ReloadAssembly (1148ms)
+		BeginReloadAssembly (45ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (482ms)
-			LoadAssemblies (61ms)
+		EndReloadAssembly (401ms)
+			LoadAssemblies (43ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (164ms)
+			SetupTypeCache (133ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (236ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (201ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (94ms)
+				RefreshPlugins (81ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (102ms)
-				ProcessInitializeOnLoadMethodAttributes (30ms)
+				ProcessInitializeOnLoadAttributes (88ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007851 seconds.
+Registered in 0.006174 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 98.75 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 74.30 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.573 seconds
+- Completed reload, in  1.221 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1573ms)
-		BeginReloadAssembly (131ms)
+	ReloadAssembly (1222ms)
+		BeginReloadAssembly (113ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (22ms)
-		EndReloadAssembly (1376ms)
-			LoadAssemblies (96ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1060ms)
+			LoadAssemblies (83ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (337ms)
+			SetupTypeCache (264ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (103ms)
-			SetupLoadedEditorAssemblies (746ms)
+			RebuildScriptCaches (80ms)
+			SetupLoadedEditorAssemblies (560ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (99ms)
-				BeforeProcessingInitializeOnLoad (110ms)
-				ProcessInitializeOnLoadAttributes (520ms)
+				RefreshPlugins (74ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (381ms)
 				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
@@ -111,15 +111,15 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.14 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.97 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4689 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 238.0 MB.
-System memory in use after: 238.2 MB.
+System memory in use before: 259.0 MB.
+System memory in use after: 259.2 MB.
 
-Unloading 157 unused Assets to reduce memory usage. Loaded Objects now: 5126.
-Total: 4.908700 ms (FindLiveObjects: 0.524500 ms CreateObjectMapping: 0.353800 ms MarkObjects: 3.749700 ms  DeleteObjects: 0.279200 ms)
+Unloading 156 unused Assets to reduce memory usage. Loaded Objects now: 5151.
+Total: 4.199900 ms (FindLiveObjects: 0.448700 ms CreateObjectMapping: 0.289000 ms MarkObjects: 3.232100 ms  DeleteObjects: 0.229300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -134,152 +134,67 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes/Menus/New Custom Render Texture.asset
-  artifactKey: Guid(48db540f1328aa047931b52e6cd4599a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Menus/New Custom Render Texture.asset using Guid(48db540f1328aa047931b52e6cd4599a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89419225d2c23cb2ddaa127a665a6844') in 0.089276 seconds 
+  path: Assets/Materials/Enviroment/World 1 [Earth]/Terrain Material.mat
+  artifactKey: Guid(aac968cafdc30d14bb7e59946a768fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/World 1 [Earth]/Terrain Material.mat using Guid(aac968cafdc30d14bb7e59946a768fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a53a64f09913e8e1eed64ca9b80fdb06') in 0.187434 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1541.437621 seconds.
-  path: Assets/Prefabs/Player/Player (Camera Included).prefab
-  artifactKey: Guid(658d44f7746edc74daaab7bc922fe295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player/Player (Camera Included).prefab using Guid(658d44f7746edc74daaab7bc922fe295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0cd7ab96b22b1fa8ce12bc6c21fdd82') in 0.317086 seconds 
+  Time since last request: 637.642307 seconds.
+  path: Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_ambientocclusion.png
+  artifactKey: Guid(919422e9733d23a4a89b0562244513c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_ambientocclusion.png using Guid(919422e9733d23a4a89b0562244513c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1847ab05efd6f3831c80b100f1284c54') in 0.044670 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000549 seconds.
-  path: Assets/Prefabs/Player/Player.prefab
-  artifactKey: Guid(2140e0cbcfb025249a86229e9160288c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player/Player.prefab using Guid(2140e0cbcfb025249a86229e9160288c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '094f38ef0ff8899ccd15d4c8a2f2b64f') in 0.039823 seconds 
+  Time since last request: 0.000583 seconds.
+  path: Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_height.png
+  artifactKey: Guid(7a1b36201bf0dc24b8c94e70aac63c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_height.png using Guid(7a1b36201bf0dc24b8c94e70aac63c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9eac037de1ffaab01254a1aad582ce02') in 0.010817 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006309 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.13 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.236 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1237ms)
-		BeginReloadAssembly (178ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (78ms)
-		EndReloadAssembly (996ms)
-			LoadAssemblies (95ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (314ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (81ms)
-			SetupLoadedEditorAssemblies (376ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (77ms)
-				ProcessInitializeOnLoadAttributes (282ms)
-				ProcessInitializeOnLoadMethodAttributes (5ms)
-				AfterProcessingInitializeOnLoad (6ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (21ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.16 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4282 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 221.7 MB.
-System memory in use after: 221.9 MB.
-
-Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 5194.
-Total: 4.407200 ms (FindLiveObjects: 0.483600 ms CreateObjectMapping: 0.278900 ms MarkObjects: 3.549600 ms  DeleteObjects: 0.094200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.000615 seconds.
+  path: Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_roughness.png
+  artifactKey: Guid(89eb305fc47c9e241ab0dbe82db31f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_roughness.png using Guid(89eb305fc47c9e241ab0dbe82db31f16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f34fdcb3423486cb56310f4a2650cdd') in 0.010260 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006340 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.95 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.022 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1022ms)
-		BeginReloadAssembly (109ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (854ms)
-			LoadAssemblies (83ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (248ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (70ms)
-			SetupLoadedEditorAssemblies (345ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (77ms)
-				ProcessInitializeOnLoadAttributes (252ms)
-				ProcessInitializeOnLoadMethodAttributes (5ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (17ms)
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.17 ms, found 5 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4281 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 221.8 MB.
-System memory in use after: 222.0 MB.
-
-Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 5197.
-Total: 4.955500 ms (FindLiveObjects: 0.567300 ms CreateObjectMapping: 0.368600 ms MarkObjects: 3.855500 ms  DeleteObjects: 0.162500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.000745 seconds.
+  path: Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_basecolor.png
+  artifactKey: Guid(2aadfca9b5f16b742ae290ebfd45fe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_basecolor.png using Guid(2aadfca9b5f16b742ae290ebfd45fe4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6e140e61c7049f224a57cc587f90f73') in 0.010342 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000671 seconds.
+  path: Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_metallic.png
+  artifactKey: Guid(1330c39257711054fa1f0996effb4227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_metallic.png using Guid(1330c39257711054fa1f0996effb4227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ec04323b89cbf2a7b5f31c0f9020eb9') in 0.010614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000694 seconds.
+  path: Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_normal.png
+  artifactKey: Guid(bd26779b278485b459f7403de3be2875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Enviroment/World 1 [Earth]/Wood Plank/Wood_Planks_normal.png using Guid(bd26779b278485b459f7403de3be2875) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8207cf9935966aafb0088d7bb61eea3') in 0.015764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.646698 seconds.
+  path: Assets/Textures/Enviroment/World 1 [Earth]/TreeBark/TreeBark_ambientocclusion.png
+  artifactKey: Guid(5508467493c3a6c45aa94dbf5b4980c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Enviroment/World 1 [Earth]/TreeBark/TreeBark_ambientocclusion.png using Guid(5508467493c3a6c45aa94dbf5b4980c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a285a123ced2e230065ab5320065a28a') in 0.011514 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000547 seconds.
+  path: Assets/Textures/Enviroment/World 1 [Earth]/TreeBark/TreeBark_height.png
+  artifactKey: Guid(15fa9003c0fae0c479c7e96c2c2e289d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Enviroment/World 1 [Earth]/TreeBark/TreeBark_height.png using Guid(15fa9003c0fae0c479c7e96c2c2e289d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '052637aeef5411b6192c764938fab19e') in 0.012762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.112019 seconds.
+  path: Assets/Textures/Enviroment/World 1 [Earth]/TreeBark/TreeBark_metallic.png
+  artifactKey: Guid(b8168d3c7a453ce4f9e081204a1fb85d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Enviroment/World 1 [Earth]/TreeBark/TreeBark_metallic.png using Guid(b8168d3c7a453ce4f9e081204a1fb85d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53c60e8dc87abf6da4abdc667a15b2ed') in 0.011652 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000669 seconds.
+  path: Assets/Textures/Enviroment/World 1 [Earth]/TreeBark/TreeBark_roughness.png
+  artifactKey: Guid(a59915449573e7b4287d4fe3c6b62887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Enviroment/World 1 [Earth]/TreeBark/TreeBark_roughness.png using Guid(a59915449573e7b4287d4fe3c6b62887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f63b9b984fbbef1ec1cd9f814c5a013') in 0.011517 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

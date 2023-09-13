@@ -31,9 +31,15 @@ public class RhinoController : MonoBehaviour
 
     Transform player;
 
+    bool isFacingPlayer = true;//This is to toggle the facing player functionality depending on whether the rhino is alive or defeated.
+
     Vector3 groundedNormal;
 
     [SerializeField] float movementSpeed;
+    [SerializeField] float health = 10;
+
+    private bool isDead = false;//If the enemy is dead boolean
+    private float deathAnimationDuration = 2.0f;
 
     // Start is called before the first frame update
     void Awake()
@@ -68,15 +74,18 @@ public class RhinoController : MonoBehaviour
 
     private void AgroState()
     {
-        //Face towards the player immediately when triggered
-        Vector3 direction = transform.position - player.position;
-        direction.y = 0f; //Keep enemy's rotation level
-        Quaternion targetRot = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime);
+        if (isFacingPlayer)
+        {
+            //Face towards the player immediately when triggered
+            Vector3 direction = transform.position - player.position;
+            direction.y = 0f; //Keep enemy's rotation level
+            Quaternion targetRot = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRot, Time.deltaTime);
 
-        //Check if the Rhino is too close to the player, and if not, move them towards the player
-        bool isTooCloseToPlayer = Vector3.Distance(transform.position, player.position) <= rhinoActions[1].radius / 1.5f;
-        if (!isTooCloseToPlayer) body.velocity = -transform.forward * movementSpeed + new Vector3(0, body.velocity.y, 0);
+            //Check if the Rhino is too close to the player, and if not, move them towards the player
+            bool isTooCloseToPlayer = Vector3.Distance(transform.position, player.position) <= rhinoActions[1].radius / 1.5f;
+            if (!isTooCloseToPlayer) body.velocity = -transform.forward * movementSpeed + new Vector3(0, body.velocity.y, 0);
+        }
     }
 
     private IEnumerator BodySlam()
@@ -133,6 +142,33 @@ public class RhinoController : MonoBehaviour
     {
         //Check if the collision is with the ground, and collect the ground normal
         if (collision.collider.CompareTag("Ground")) groundedNormal = collision.contacts[0].normal;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (isDead)
+        {
+            return;
+        }
+
+        if (other.gameObject.CompareTag("Weapon"))//If the rhino is hit by the player's weapon
+        {
+            health -= 1;
+            if (health <= 0)
+            {
+                health = 0;
+                animator.SetBool("isDead", true);
+                StartCoroutine(FreezeAfterDeath());
+            }
+        }
+    }
+
+    private IEnumerator FreezeAfterDeath()
+    {
+        yield return new WaitForSeconds(deathAnimationDuration);
+        movementSpeed = 0;
+        isFacingPlayer = false;
+        isDead = true;
     }
 
     private void OnDrawGizmos()

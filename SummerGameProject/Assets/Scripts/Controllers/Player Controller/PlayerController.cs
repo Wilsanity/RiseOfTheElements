@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour
             if (health == 0 || health < 0)
             {
                 health = 0;//Health is now depleted
+                PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, false, anim);
                 PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsDead, true, anim);//Play death animation
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//Restart the scene
             }

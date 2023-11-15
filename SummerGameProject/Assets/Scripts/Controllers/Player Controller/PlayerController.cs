@@ -103,15 +103,23 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("Collided with enemy");
             health -= 1;
+            Debug.Log("health =" + health);
             if (health == 0 || health < 0)
             {
                 health = 0;//Health is now depleted
                 PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, false, anim);
                 PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsDead, true, anim);//Play death animation
+                StartCoroutine(DeathDelay());
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//Restart the scene
             }
         }
+    }
+
+    IEnumerator DeathDelay()
+    {
+        yield return new WaitForSeconds(7);
     }
 
     void OnCollisionStay(Collision collision)

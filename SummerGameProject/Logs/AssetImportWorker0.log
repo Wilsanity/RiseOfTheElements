@@ -1,10 +1,10 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.11f1 (4d8c25f7477e) revision 5082149'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19045.3324; Version 2009; 64bit' Language: 'en' Physical Memory: 32588 MB
+OS: 'Windows 10 Home; OS build 19045.3693; Version 2009; 64bit' Language: 'en' Physical Memory: 32588 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-D:\Program Files (x86)\2021.1.11f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2021.1.11f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
@@ -15,14 +15,14 @@ D:/Repos/RiseOfTheElements/SummerGameProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53353
+56286
 Successfully changed project path to: D:/Repos/RiseOfTheElements/SummerGameProject
 D:/Repos/RiseOfTheElements/SummerGameProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 139.50 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 96.50 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.11f1 (4d8c25f7477e)
-[Subsystems] Discovering subsystems at path D:/Program Files (x86)/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path D:/Repos/RiseOfTheElements/SummerGameProject/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
@@ -30,96 +30,96 @@ Direct3D:
     Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f15)
     Vendor:   NVIDIA
     VRAM:     5968 MB
-    Driver:   31.0.15.3129
+    Driver:   31.0.15.3734
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
-Mono path[0] = 'D:/Program Files (x86)/2021.1.11f1/Editor/Data/Managed'
-Mono path[1] = 'D:/Program Files (x86)/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'D:/Program Files (x86)/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56056
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56228
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/Program Files (x86)/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001643 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002110 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 137.33 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 98.42 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.877 seconds
+- Completed reload, in  1.194 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1877ms)
-		BeginReloadAssembly (95ms)
+	ReloadAssembly (1194ms)
+		BeginReloadAssembly (55ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (715ms)
-			LoadAssemblies (95ms)
+		EndReloadAssembly (492ms)
+			LoadAssemblies (53ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (254ms)
+			SetupTypeCache (185ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (348ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (229ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (137ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (153ms)
-				ProcessInitializeOnLoadMethodAttributes (46ms)
+				RefreshPlugins (99ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (93ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007467 seconds.
+Registered in 0.004630 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 147.11 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 104.21 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.360 seconds
+- Completed reload, in  1.622 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2361ms)
-		BeginReloadAssembly (243ms)
+	ReloadAssembly (1622ms)
+		BeginReloadAssembly (145ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (26ms)
-		EndReloadAssembly (2034ms)
-			LoadAssemblies (165ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1416ms)
+			LoadAssemblies (96ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (570ms)
+			SetupTypeCache (385ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (137ms)
-			SetupLoadedEditorAssemblies (1030ms)
+			RebuildScriptCaches (86ms)
+			SetupLoadedEditorAssemblies (741ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (147ms)
-				BeforeProcessingInitializeOnLoad (129ms)
-				ProcessInitializeOnLoadAttributes (734ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (3ms)
+				RefreshPlugins (104ms)
+				BeforeProcessingInitializeOnLoad (96ms)
+				ProcessInitializeOnLoadAttributes (521ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.16 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.88 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4648 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 242.8 MB.
-System memory in use after: 243.0 MB.
+Unloading 4637 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 239.8 MB.
+System memory in use after: 240.0 MB.
 
-Unloading 157 unused Assets to reduce memory usage. Loaded Objects now: 5086.
-Total: 5.513400 ms (FindLiveObjects: 0.458000 ms CreateObjectMapping: 0.426400 ms MarkObjects: 4.300000 ms  DeleteObjects: 0.327700 ms)
+Unloading 157 unused Assets to reduce memory usage. Loaded Objects now: 5079.
+Total: 3.555500 ms (FindLiveObjects: 0.352800 ms CreateObjectMapping: 0.305600 ms MarkObjects: 2.710000 ms  DeleteObjects: 0.186300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,24 +133,48 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Prefabs/World Objects/World 1 [Earth] 1/Environment/Part 2 [Cliff Side]/Cliff_2.fbx
-  artifactKey: Guid(536f13957c200cf4b9529fe64710663a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/World Objects/World 1 [Earth] 1/Environment/Part 2 [Cliff Side]/Cliff_2.fbx using Guid(536f13957c200cf4b9529fe64710663a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b23d695c78c7d9b0fa12ac6dbc5e3d7b') in 0.385589 seconds 
+  path: Assets/caveAssets
+  artifactKey: Guid(8b01a50055dd03d42960d15d0fab4612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/caveAssets using Guid(8b01a50055dd03d42960d15d0fab4612) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67a50fc9d2af02acb8a5a262f095a898') in 0.013187 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 527.951858 seconds.
-  path: Assets/Materials/CliffTree.mat
-  artifactKey: Guid(621d841a1bd0cd244bab71626b4fc339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/CliffTree.mat using Guid(621d841a1bd0cd244bab71626b4fc339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3252885465390da70becc25b8f5b4f78') in 0.085269 seconds 
+  Time since last request: 0.000231 seconds.
+  path: Assets/caveAssets/bubblesVFX.prefab
+  artifactKey: Guid(d75d7b41cb714f9469da1f217e6f90f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/caveAssets/bubblesVFX.prefab using Guid(d75d7b41cb714f9469da1f217e6f90f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bd503390dcab1fe12a714dcaa6583f2') in 0.035406 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 209.428614 seconds.
-  path: Assets/Prefabs/World Objects/World 1 [Earth] 1/Environment/Part 2 [Cliff Side]/CliffTree.fbx
-  artifactKey: Guid(84e7d8b8059c3ee4d9e796fd17ec092b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/World Objects/World 1 [Earth] 1/Environment/Part 2 [Cliff Side]/CliffTree.fbx using Guid(84e7d8b8059c3ee4d9e796fd17ec092b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f4774ca820dc1976c6d3226d94abea4') in 0.054324 seconds 
+  Time since last request: 0.000117 seconds.
+  path: Assets/caveAssets/Sunbeam.png
+  artifactKey: Guid(589169c9cedd5a74db96bfef627ebf37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/caveAssets/Sunbeam.png using Guid(589169c9cedd5a74db96bfef627ebf37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49aaaeca6c7340d55c7657b3587049b0') in 0.103977 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 696.194698 seconds.
-  path: Assets/Prefabs/World Objects/World 1 [Earth] 1/Environment/Part 2 [Cliff Side]/cliffHolder.prefab
-  artifactKey: Guid(c8c3b84377fb7e441b281ddcb44efdbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/World Objects/World 1 [Earth] 1/Environment/Part 2 [Cliff Side]/cliffHolder.prefab using Guid(c8c3b84377fb7e441b281ddcb44efdbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b04c4aa0926712c9a3363dc1d7f4a555') in 0.088973 seconds 
+  Time since last request: 0.000165 seconds.
+  path: Assets/caveAssets/Web.png
+  artifactKey: Guid(782eaea0c9037654381db7deabecf5c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/caveAssets/Web.png using Guid(782eaea0c9037654381db7deabecf5c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ed5eebddc9765b0f08cf0fa875d5097') in 0.024949 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000127 seconds.
+  path: Assets/caveAssets/webMat.mat
+  artifactKey: Guid(2882661d9a7f92640aab87d3676062af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/caveAssets/webMat.mat using Guid(2882661d9a7f92640aab87d3676062af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9de405d15720189302697159b1cc02d4') in 0.164606 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.366419 seconds.
+  path: Assets/Scenes/Cave Scene.unity
+  artifactKey: Guid(903dcb18860f3a8478f2a8ffeff4e6e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Cave Scene.unity using Guid(903dcb18860f3a8478f2a8ffeff4e6e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b6980229d17f1de8e97e193cfd01b55') in 0.009060 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 188.393442 seconds.
+  path: Assets/_External Assets/AllSkyFree/Cartoon Base NightSky
+  artifactKey: Guid(edfd7568a47754e23b20068c1847c5fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_External Assets/AllSkyFree/Cartoon Base NightSky using Guid(edfd7568a47754e23b20068c1847c5fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd21264c06e29e30226bdb63db21d62d2') in 0.010122 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.041593 seconds.
+  path: Assets/_External Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky Equirect.mat
+  artifactKey: Guid(3a6db933fef1d4c759bf21220420505f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_External Assets/AllSkyFree/Cartoon Base NightSky/Cartoon Base NightSky Equirect.mat using Guid(3a6db933fef1d4c759bf21220420505f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de7c2911c8f8ba3969573481374fb9e2') in 0.091819 seconds 

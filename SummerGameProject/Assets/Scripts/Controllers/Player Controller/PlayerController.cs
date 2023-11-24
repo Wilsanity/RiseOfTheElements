@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody body;
 
     Transform cameraFollowTargetTransform;
+
+    private NavMeshAgent nma;
 
     #endregion
 
@@ -53,6 +56,7 @@ public class PlayerController : MonoBehaviour
         #endregion
 
         anim = GetComponentInChildren<Animator>();
+        nma = GetComponent<NavMeshAgent>();
         capsule = GetComponent<CapsuleCollider>();
         body = GetComponent<Rigidbody>();
 
@@ -129,12 +133,23 @@ public class PlayerController : MonoBehaviour
         We then use the cross product to find the direction the player should move in, and we apply our input to that direction.
         */
 
+        //----------------------old non-navmesh code-------------------------------------------------------------
         //Find the new forward and right vectors
-        Vector3 forward = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.right);
-        Vector3 right = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.forward);
+        //Vector3 forward = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.right);
+        //Vector3 right = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.forward);
 
-        //Apply the input to the new forward and right vectors and use those values as the Rigidbodies velocity
-        Vector3 moveDirection = forward * -moveInput.y + right * moveInput.x;
+        ////Apply the input to the new forward and right vectors and use those values as the Rigidbodies velocity
+        //Vector3 moveDirection = forward * -moveInput.y + right * moveInput.x;
+        //----------------------old non-navmesh code--------------------------------------------------------------
+
+
+        Vector3 moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+        moveDirection = cameraFollowTargetTransform.TransformDirection(moveDirection);
+        moveDirection.y = 0f;
+
+        //Ensures that the NavMeshAgent is enabled before setting its destination.
+        //Set the NavMeshAgent destination using nma.SetDestination.
+        if (nma.enabled) nma.SetDestination(transform.position + moveDirection);
 
         //Rotate the player to face forward
         Quaternion targetRotation = moveDirection != Vector3.zero ? Quaternion.LookRotation(moveDirection, Vector3.up) : transform.rotation;
@@ -162,12 +177,24 @@ public class PlayerController : MonoBehaviour
         jumpOnCoolDown = true;
 
         isGrounded = false;
-        Vector3 vertical = new Vector3(0.0f, body.velocity.y, 0.0f);
-        Vector3 horizontal = new Vector3(body.velocity.x, 0.0f, body.velocity.z);
-        body.velocity = (horizontal + (vertical * 0.1f));
-        body.AddForce(horizontal * 10, ForceMode.Force); //Jumping while moving gives a slight boost in your current direction.
-        body.AddForce(GroundedNormal * jumpPower * 75, ForceMode.Force); //Pushes off the ground, using the normal of the collision surface.
-        body.AddForce(Vector3.up * jumpPower * 25, ForceMode.Force);
+
+        //Stop navmeshagent to ensure a controlled jump.
+        nma.velocity = Vector3.zero;
+
+        //Calculate the jump direction based on current ground normal.
+        Vector3 jumpDirection = GroundedNormal + Vector3.up;
+
+        //Set nma's velocity for a jump;
+        nma.velocity = jumpDirection * jumpPower;
+
+        //----------------------old non-navmesh code--------------------------------------------------------------
+        //Vector3 vertical = new Vector3(0.0f, body.velocity.y, 0.0f);
+        //Vector3 horizontal = new Vector3(body.velocity.x, 0.0f, body.velocity.z);
+        //body.velocity = (horizontal + (vertical * 0.1f));
+        //body.AddForce(horizontal * 10, ForceMode.Force); //Jumping while moving gives a slight boost in your current direction.
+        //body.AddForce(GroundedNormal * jumpPower * 75, ForceMode.Force); //Pushes off the ground, using the normal of the collision surface.
+        //body.AddForce(Vector3.up * jumpPower * 25, ForceMode.Force);
+        //----------------------old non-navmesh code--------------------------------------------------------------
 
         //Wait for the jump to cool down
         yield return new WaitForSeconds(0.1f);

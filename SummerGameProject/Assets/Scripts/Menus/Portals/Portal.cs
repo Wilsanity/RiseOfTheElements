@@ -6,11 +6,21 @@ using System.IO;
 using System;
 using System.Linq;
 using System.ComponentModel;
+using UnityEngine.SearchService;
+using Cinemachine;
 
 public class Portal : Interactable
 {
     bool initOnCooldown;
-    
+
+    #region FirstUseActionVariables
+    [SerializeField] public FirstUseActions firstUseActions;
+    private bool firstActionReady;
+
+    [SerializeField] public string FA_SceneName;
+    [SerializeField] public string FA_WaypointName;
+    #endregion
+
     public string SaveDataPath
     {
         // will return the file directory of the protal save data text file
@@ -29,6 +39,12 @@ public class Portal : Interactable
     public void InitPortal()
     {
         UnlockPortal();
+
+        if (firstUseActions != FirstUseActions.None && firstActionReady)
+        {
+            firstActionReady = false;
+            return;
+        }
 
         if (!initOnCooldown) StartCoroutine(PortalInitCoolDown());
 
@@ -53,6 +69,26 @@ public class Portal : Interactable
             portals.Add(PortalID);
             File.WriteAllLines(SaveDataPath, portals.ToArray());
             Debug.Log("Portal has been unlocked!");
+
+            #region
+
+            switch (firstUseActions)
+            {
+                case FirstUseActions.None: break;
+                case FirstUseActions.TeleportPlayer:
+                    PlayerPrefs.SetInt("isPortalUsed", 1);
+                    PlayerPrefs.SetString("currentPortal", FA_WaypointName);
+                    StopAllCoroutines();
+                    Time.timeScale = 1;
+                    SceneManager.LoadScene(FA_SceneName);
+                    firstActionReady = true;
+                    break;
+                default:
+                    Debug.LogError("First Use Action Not Recognized!");
+                    break;
+            }
+
+            #endregion
         }
         else
         {
@@ -93,4 +129,10 @@ public enum WorldType
     Fire,
     Air,
     Debug
+}
+
+public enum FirstUseActions
+{
+    None,
+    TeleportPlayer,
 }

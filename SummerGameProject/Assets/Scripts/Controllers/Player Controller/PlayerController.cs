@@ -64,13 +64,21 @@ public class PlayerController : MonoBehaviour
         if (PlayerPrefs.GetInt("isPortalUsed", 0) == 1)
         {
             //Find the name of the portal that was used
-            string currentPortal = PlayerPrefs.GetString("currentPortal");
+            string currentPortal = PlayerPrefs.GetString("currentPortal", null);
             if (currentPortal != null)
             {
-                //move the player to the portal's spawn position
-                transform.position = GameObject.Find(currentPortal).transform.GetChild(0).position;
-                PlayerPrefs.SetInt("isPortalUsed", 0);
+                Debug.Log(currentPortal);
+                Transform warpTrans = GameObject.Find(currentPortal).transform;
+                if (warpTrans != null)
+                {
+                    if (warpTrans.childCount >= 1) transform.position = warpTrans.GetChild(0).position;
+                    else transform.position = warpTrans.position;
+                }
+
+                PlayerPrefs.SetString("currentPortal", null);
             }
+
+            PlayerPrefs.SetInt("isPortalUsed", 0);
         }
     }
 

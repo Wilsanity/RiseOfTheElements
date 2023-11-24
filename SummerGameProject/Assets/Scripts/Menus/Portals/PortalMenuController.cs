@@ -111,6 +111,7 @@ public class PortalMenuController : MonoBehaviour
         // will inform upon scene loading to spawn the player at a portal
         PlayerPrefs.SetInt("isPortalUsed", 1);
         PlayerPrefs.SetString("currentPortal", portalName);
+        Debug.Log(portalName);
 
         SceneManager.UnloadSceneAsync("Portal UI");
 
@@ -130,6 +131,8 @@ public class PortalMenuController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        FindObjectOfType<CinemachineBrain>().enabled = false;
+
         while (t < 1)
         {
             t += Time.unscaledDeltaTime * Mathf.Pow(fadeTime, -1);
@@ -138,8 +141,6 @@ public class PortalMenuController : MonoBehaviour
             Time.timeScale = Mathf.Lerp(1, 0, t);
             yield return new WaitForEndOfFrame();
         }
-
-        FindObjectOfType<CinemachineBrain>().enabled = false;
     }
 
     void EscapeFunction(InputAction.CallbackContext ctx)

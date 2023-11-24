@@ -5,6 +5,7 @@ using UnityEditor;
 using System.IO;
 using static UnityEngine.Animations.AimConstraint;
 using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
 
 [CustomEditor(typeof(Portal))]
 [CanEditMultipleObjects]
@@ -21,9 +22,25 @@ public class PortalEditor : Editor
         Portal portal = (Portal)target;
 
         portal.worldType = (WorldType)EditorGUILayout.EnumPopup("World Type", portal.worldType);
-
         EditorGUILayout.LabelField($"Portal ID: {portal.PortalID}");
 
+        EditorGUILayout.Space();
+
+        portal.firstUseActions = (FirstUseActions)EditorGUILayout.EnumPopup("First Use Action", portal.firstUseActions);
+
+        switch (portal.firstUseActions)
+        {
+            case FirstUseActions.None: break;
+            case FirstUseActions.TeleportPlayer:
+                portal.FA_SceneName = EditorGUILayout.TextField("Scene Name", portal.FA_SceneName);
+                portal.FA_WaypointName = EditorGUILayout.TextField("Waypoint Name", portal.FA_WaypointName);
+                break;
+            default: break;
+        }
+
+        EditorGUILayout.Space();
+
+        EditorGUILayout.LabelField($"Portal Save Data");
         EditorGUILayout.BeginHorizontal();
         if (GUILayout.Button("Unlock Portal")) portal.UnlockPortal();
         if (GUILayout.Button("Lock Portal")) portal.LockPortal();
@@ -41,6 +58,13 @@ public class PortalEditor : Editor
             {
                 portal.ClearPortalData();
             }
+        }
+
+
+        if (GUI.changed && !Application.isPlaying)
+        {
+            EditorUtility.SetDirty(portal);
+            EditorSceneManager.MarkSceneDirty(portal.gameObject.scene);
         }
     }
 }

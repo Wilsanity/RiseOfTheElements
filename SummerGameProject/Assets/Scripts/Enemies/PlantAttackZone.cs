@@ -17,10 +17,10 @@ public class PlantAttackZone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isRotating)
-        {
-            RotateTowardsPlayer();
-        }
+        //if (isRotating)
+        //{
+        //    RotateTowardsPlayer();
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,15 +54,15 @@ public class PlantAttackZone : MonoBehaviour
         transform.rotation = Quaternion.identity;
     }
 
-    void RotateTowardsPlayer()
-    {
-        if (player != null)
-        {
-            Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
-            Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
+    //void RotateTowardsPlayer()
+    //{
+    //    if (player != null)
+    //    {
+    //        Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
+    //        Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
 
-            //Rotate towards player
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-        }
-    }
+    //        //Rotate towards player
+    //        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    //    }
+    //}
 }

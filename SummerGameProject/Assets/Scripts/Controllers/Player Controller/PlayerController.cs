@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody body;
 
     Transform cameraFollowTargetTransform;
+
+    public float health = 10;
 
     private NavMeshAgent nma;
 
@@ -98,6 +101,11 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     void OnCollisionStay(Collision collision)
@@ -118,6 +126,15 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground")) isGrounded = false;
+    }
+
+    public void TakeDamage()
+    {
+        health -= 1;
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
     
     private void Move()

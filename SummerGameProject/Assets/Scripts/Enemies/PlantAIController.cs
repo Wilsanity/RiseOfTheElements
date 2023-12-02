@@ -10,6 +10,7 @@ public class PlantAIController : MonoBehaviour
     public float timeToRotate = 2;
     public float speedWalk = 6;
     public float speedRun = 9;
+    public float health = 3;
 
     public float viewRadius = 15;
     public float viewAngle = 90;
@@ -100,6 +101,16 @@ public class PlantAIController : MonoBehaviour
     {
         navMeshAgent.isStopped = true;
         navMeshAgent.speed = 0;
+    }
+
+    public void TakeDamage()
+    {
+        health -= 1;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Plant Dead");
+        }
     }
 
     public void NextPatrolPoint()//Gets the enemy to move to each subsequent patrol spot

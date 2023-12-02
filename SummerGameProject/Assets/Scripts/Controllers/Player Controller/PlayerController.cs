@@ -44,8 +44,15 @@ public class PlayerController : MonoBehaviour
     bool jumpOnCoolDown;
     
     Vector3 GroundedNormal;
-    
+
+    private GameObject plantEnemy;
+
     #endregion
+
+    void Start()
+    {
+        plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy");
+    }
 
     private void Awake()
     {
@@ -136,7 +143,20 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("DamageZone"))
+        {
+            PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
+            if (plantAI != null)
+            {
+                plantAI.TakeDamage();
+                Debug.Log("Plant Damaged");
+            }
+        }
+    }
+
     private void Move()
     {
 

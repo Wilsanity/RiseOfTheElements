@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     InputAction moveAction;
     InputAction sprintAction;
     InputAction jumpAction;
+    InputAction attackAction;
     #endregion
 
     Animator anim;
@@ -45,13 +46,13 @@ public class PlayerController : MonoBehaviour
     
     Vector3 GroundedNormal;
 
-    private GameObject plantEnemy;
+    private GameObject[] plantEnemies;
 
     #endregion
 
     void Start()
     {
-        plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy");
+        plantEnemies = GameObject.FindGameObjectsWithTag("PlantEnemy");
     }
 
     private void Awake()
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour
         moveAction = playerInput.actions["Move"];
         sprintAction = playerInput.actions["Sprint"];
         jumpAction = playerInput.actions["Jump"];
+        attackAction = playerInput.actions["Attack"];
 
         #endregion
 
@@ -146,13 +148,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("DamageZone"))
+        if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
         {
-            PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
-            if (plantAI != null)
+            foreach(GameObject plantEnemy in plantEnemies)
             {
-                plantAI.TakeDamage();
-                Debug.Log("Plant Damaged");
+                PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
+                if (plantAI != null)
+                {
+                    plantAI.TakeDamage(gameObject);
+                    Debug.Log("Plant Damaged");
+                }
             }
         }
     }

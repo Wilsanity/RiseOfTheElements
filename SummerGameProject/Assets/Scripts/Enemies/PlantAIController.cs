@@ -33,6 +33,7 @@ public class PlantAIController : MonoBehaviour
     bool m_IsPatrol;
     bool m_CaughtPlayer;
 
+    private GameObject lastAttackingPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,8 @@ public class PlantAIController : MonoBehaviour
         navMeshAgent.isStopped = false;
         navMeshAgent.speed = speedWalk;
         navMeshAgent.SetDestination(patrolPoints[m_currentPatrolPointIndex].position);
+
+        lastAttackingPlayer = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -103,14 +106,19 @@ public class PlantAIController : MonoBehaviour
         navMeshAgent.speed = 0;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(GameObject attackingPlayer)//Check if the attacking player is the same as previous one.
     {
-        health -= 1;
-        if (health <= 0)
+        if (attackingPlayer == lastAttackingPlayer)
         {
-            Destroy(gameObject);
-            Debug.Log("Plant Dead");
+            health -= 1;
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+                Debug.Log("Plant Dead");
+            }
         }
+
+        lastAttackingPlayer = attackingPlayer;//Update the last attacking player.
     }
 
     public void NextPatrolPoint()//Gets the enemy to move to each subsequent patrol spot

@@ -12,13 +12,16 @@ public class PlantAIController : MonoBehaviour
     public float speedRun = 9;
     public float health = 3;
 
-    public float viewRadius = 15;
+    public float viewRadius = 30;
     public float viewAngle = 90;
     public LayerMask playerMask;
     public LayerMask obstacleMask;
     public float meshResolution = 1f;
     public int edgeIteraions = 4;
     public float edgeDistance = 0.5f;
+
+    public float launchCooldown = 10f;
+    private float launchTimer;
 
     public Transform[] patrolPoints;
     int m_currentPatrolPointIndex;
@@ -33,7 +36,9 @@ public class PlantAIController : MonoBehaviour
     bool m_IsPatrol;
     bool m_CaughtPlayer;
 
-    private GameObject lastAttackingPlayer;
+    Rigidbody rb;
+
+    //private GameObject lastAttackingPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +54,9 @@ public class PlantAIController : MonoBehaviour
         navMeshAgent.speed = speedWalk;
         navMeshAgent.SetDestination(patrolPoints[m_currentPatrolPointIndex].position);
 
-        lastAttackingPlayer = GameObject.FindGameObjectWithTag("Player");
+        launchTimer = launchCooldown;
+        rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -60,16 +67,38 @@ public class PlantAIController : MonoBehaviour
         if (!m_IsPatrol)
         {
             ChasePlayer();
+            LaunchTowardsPlayer();
         }
         else
         {
             Patroling();
+        }
+
+        if(m_CaughtPlayer)
+        {
+            LaunchTowardsPlayer();
         }
     }
 
     void CaughtPlayer()//The player is found.
     {
         m_CaughtPlayer = true;
+    }
+
+    void LaunchTowardsPlayer()
+    {
+        if (launchTimer <= 0)
+        {
+            //Launch plant enemy into the air while chasing the player.
+            if (rb != null)
+            {
+                rb.AddForce(Vector3.up * 20, ForceMode.Impulse);
+            }
+
+            launchTimer = launchCooldown;//Reset cooldown timer.
+        }
+        else
+            launchTimer -= Time.deltaTime;//Decrement the cooldown timer.
     }
 
     void LookingPlayer(Vector3 player)
@@ -106,19 +135,19 @@ public class PlantAIController : MonoBehaviour
         navMeshAgent.speed = 0;
     }
 
-    public void TakeDamage(GameObject attackingPlayer)//Check if the attacking player is the same as previous one.
+    public void TakeDamage(/*GameObject attackingPlayer*/)//Check if the attacking player is the same as previous one.
     {
-        if (attackingPlayer == lastAttackingPlayer)
-        {
+        //if (attackingPlayer == lastAttackingPlayer)
+        //{
             health -= 1;
             if (health <= 0)
             {
                 Destroy(gameObject);
                 Debug.Log("Plant Dead");
             }
-        }
+        //}
 
-        lastAttackingPlayer = attackingPlayer;//Update the last attacking player.
+        //lastAttackingPlayer = attackingPlayer;//Update the last attacking player.
     }
 
     public void NextPatrolPoint()//Gets the enemy to move to each subsequent patrol spot

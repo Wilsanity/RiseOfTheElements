@@ -46,13 +46,13 @@ public class PlayerController : MonoBehaviour
     
     Vector3 GroundedNormal;
 
-    private GameObject[] plantEnemies;
+    private GameObject plantEnemy;
 
     #endregion
 
     void Start()
     {
-        plantEnemies = GameObject.FindGameObjectsWithTag("PlantEnemy");
+        plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy");
     }
 
     private void Awake()
@@ -146,18 +146,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //This is when the player attacks the cave plant enemies. This is a temporary solution since using an array caused them collectively to die
+    //when only 1 was killed by the player.
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
         {
-            foreach(GameObject plantEnemy in plantEnemies)
+            PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
+            if (plantAI != null)
             {
-                PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
-                if (plantAI != null)
-                {
-                    plantAI.TakeDamage(gameObject);
-                    Debug.Log("Plant Damaged");
-                }
+                plantAI.TakeDamage();
+                Debug.Log("Plant1 Health: " + plantAI.health);
             }
         }
     }

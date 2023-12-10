@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded || jumpOnCoolDown) yield break;
 
         jumpOnCoolDown = true;
-
+        PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsJumping, true, anim);
         isGrounded = false;
         Vector3 vertical = new Vector3(0.0f, body.velocity.y, 0.0f);
         Vector3 horizontal = new Vector3(body.velocity.x, 0.0f, body.velocity.z);
@@ -202,10 +202,11 @@ public class PlayerController : MonoBehaviour
         body.AddForce(horizontal * 10, ForceMode.Force); //Jumping while moving gives a slight boost in your current direction.
         body.AddForce(GroundedNormal * jumpPower * 75, ForceMode.Force); //Pushes off the ground, using the normal of the collision surface.
         body.AddForce(Vector3.up * jumpPower * 25, ForceMode.Force);
+        
 
         //Wait for the jump to cool down
         yield return new WaitForSeconds(0.1f);
-
+        PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsJumping, false, anim);
         jumpOnCoolDown = false;
     }
 }

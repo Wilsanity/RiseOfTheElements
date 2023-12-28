@@ -13,6 +13,7 @@ public class Portal : Interactable
 {
     bool initOnCooldown;
 
+    // variables used in optional portal functionality
     #region FirstUseActionVariables
     [SerializeField] public FirstUseActions firstUseActions;
     private bool firstActionReady;
@@ -38,22 +39,29 @@ public class Portal : Interactable
 
     public void InitPortal()
     {
+        // unlocks the portal for use by the player at other portals
         UnlockPortal();
 
+        // if optional first use action is selected, do not open portal menu and finish actions
         if (firstUseActions != FirstUseActions.None && firstActionReady)
         {
             firstActionReady = false;
             return;
         }
 
+        // if portal is not on cooldown, start portal UI actions
         if (!initOnCooldown) StartCoroutine(PortalInitCoolDown());
 
         IEnumerator PortalInitCoolDown()
         {
+            // start cooldown on portal UI
             initOnCooldown = true;
-            SceneManager.LoadSceneAsync("Portal UI", LoadSceneMode.Additive);
-            yield return new WaitForSeconds(1);
 
+            // Load additive scene for portal UI
+            SceneManager.LoadSceneAsync("Portal UI", LoadSceneMode.Additive);
+
+            // wait 1 second and end the cooldown for use
+            yield return new WaitForSeconds(1);
             initOnCooldown = false;
         }
     }
@@ -122,6 +130,7 @@ public class Portal : Interactable
     }
 }
 
+// world types to sort portals by levels
 public enum WorldType
 {
     Earth,
@@ -131,6 +140,7 @@ public enum WorldType
     Debug
 }
 
+// stores optional function enum ids
 public enum FirstUseActions
 {
     None,

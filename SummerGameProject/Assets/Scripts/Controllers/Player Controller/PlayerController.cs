@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
     [SerializeField] float sprintPower;
+    [SerializeField] Image healthBar;
 
     #endregion
 
@@ -140,6 +142,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage()
     {
         health -= 1;
+        healthBar.fillAmount = health / 10f;
         if (health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

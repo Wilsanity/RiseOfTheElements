@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
     [SerializeField] float sprintPower;
-    //[SerializeField] Image healthBar;
+    [SerializeField] Image healthBar;
 
     #endregion
 
@@ -45,16 +45,16 @@ public class PlayerController : MonoBehaviour
 
     bool isGrounded;
     bool jumpOnCoolDown;
-
+    
     Vector3 GroundedNormal;
 
-    //private GameObject plantEnemy;
+    private GameObject plantEnemy;
 
     #endregion
 
     void Start()
     {
-        //plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy");
+        plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy");
     }
 
     private void Awake()
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(contact.point, contact.normal, Color.white);
         }
     }
-
+    
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground")) isGrounded = false;
@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage()
     {
         health -= 1;
-       // healthBar.fillAmount = health / 10f;
+        healthBar.fillAmount = health / 10f;
         if (health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -153,14 +153,14 @@ public class PlayerController : MonoBehaviour
     //when only 1 was killed by the player.
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
+        if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
         {
-            //PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
-           /* if (plantAI != null)
+            PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
+            if (plantAI != null)
             {
                 plantAI.TakeDamage();
                 Debug.Log("Plant1 Health: " + plantAI.health);
-            }*/
+            }
         }
     }
 
@@ -197,7 +197,7 @@ public class PlayerController : MonoBehaviour
 
         //Rotate the player to face forward
         Quaternion targetRotation = moveDirection != Vector3.zero ? Quaternion.LookRotation(moveDirection, Vector3.up) : transform.rotation;
-
+        
         if (moveInput.magnitude >= 0.3)
         {
             PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, true, anim);

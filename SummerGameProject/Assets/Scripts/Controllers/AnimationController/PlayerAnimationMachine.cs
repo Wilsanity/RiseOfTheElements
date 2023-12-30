@@ -28,10 +28,6 @@ public static class PlayerAnimationMachine
                 anim.SetBool("IsSprinting", boolean);
                 return;
 
-            case PlayerAnimState.IsDead:
-                anim.SetBool("IsDead", boolean);
-                return;
-
             default:
                 Debug.LogError("PlayerAnimationMachine: Invalid PlayerAnimState");
                 return;
@@ -43,5 +39,4 @@ public enum PlayerAnimState
 {
     IsMoving,
     IsSprinting,
-    IsDead,
 }

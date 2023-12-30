@@ -6,22 +6,11 @@ using System.IO;
 using System;
 using System.Linq;
 using System.ComponentModel;
-using UnityEngine.SearchService;
-using Cinemachine;
 
 public class Portal : Interactable
 {
     bool initOnCooldown;
-
-    // variables used in optional portal functionality
-    #region FirstUseActionVariables
-    [SerializeField] public FirstUseActions firstUseActions;
-    private bool firstActionReady;
-
-    [SerializeField] public string FA_SceneName;
-    [SerializeField] public string FA_WaypointName;
-    #endregion
-
+    
     public string SaveDataPath
     {
         // will return the file directory of the protal save data text file
@@ -39,29 +28,16 @@ public class Portal : Interactable
 
     public void InitPortal()
     {
-        // unlocks the portal for use by the player at other portals
         UnlockPortal();
 
-        // if optional first use action is selected, do not open portal menu and finish actions
-        if (firstUseActions != FirstUseActions.None && firstActionReady)
-        {
-            firstActionReady = false;
-            return;
-        }
-
-        // if portal is not on cooldown, start portal UI actions
         if (!initOnCooldown) StartCoroutine(PortalInitCoolDown());
 
         IEnumerator PortalInitCoolDown()
         {
-            // start cooldown on portal UI
             initOnCooldown = true;
-
-            // Load additive scene for portal UI
             SceneManager.LoadSceneAsync("Portal UI", LoadSceneMode.Additive);
-
-            // wait 1 second and end the cooldown for use
             yield return new WaitForSeconds(1);
+
             initOnCooldown = false;
         }
     }
@@ -77,26 +53,6 @@ public class Portal : Interactable
             portals.Add(PortalID);
             File.WriteAllLines(SaveDataPath, portals.ToArray());
             Debug.Log("Portal has been unlocked!");
-
-            #region
-
-            switch (firstUseActions)
-            {
-                case FirstUseActions.None: break;
-                case FirstUseActions.TeleportPlayer:
-                    PlayerPrefs.SetInt("isPortalUsed", 1);
-                    PlayerPrefs.SetString("currentPortal", FA_WaypointName);
-                    StopAllCoroutines();
-                    Time.timeScale = 1;
-                    SceneManager.LoadScene(FA_SceneName);
-                    firstActionReady = true;
-                    break;
-                default:
-                    Debug.LogError("First Use Action Not Recognized!");
-                    break;
-            }
-
-            #endregion
         }
         else
         {
@@ -130,7 +86,6 @@ public class Portal : Interactable
     }
 }
 
-// world types to sort portals by levels
 public enum WorldType
 {
     Earth,
@@ -138,11 +93,4 @@ public enum WorldType
     Fire,
     Air,
     Debug
-}
-
-// stores optional function enum ids
-public enum FirstUseActions
-{
-    None,
-    TeleportPlayer,
 }

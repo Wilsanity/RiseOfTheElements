@@ -36,16 +36,11 @@ public class PortalMenuController : MonoBehaviour
 
     private void Awake()
     {
-        // start loading sequence
         StartCoroutine(LoadMenu());
 
-        // maps escape button to the pause action
         escape = FindObjectOfType<PlayerInput>().actions["Pause"];
-
-        // if pause action is performed, close menu
         escape.performed += EscapeFunction;
 
-        // obtain portal list from saved file
         List<string> portalList = new List<string>(File.ReadAllLines(Application.dataPath + "/Save Data/Portal Data.txt"));
 
         //Fill the 2D list with portal IDs
@@ -102,13 +97,10 @@ public class PortalMenuController : MonoBehaviour
         }
     }
 
-    // on portal button selected
     public void SelectPortal(string portalID)
     {
-        // enable camera
         FindObjectOfType<CinemachineBrain>().enabled = true;
         
-        // close mouse cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -119,97 +111,69 @@ public class PortalMenuController : MonoBehaviour
         // will inform upon scene loading to spawn the player at a portal
         PlayerPrefs.SetInt("isPortalUsed", 1);
         PlayerPrefs.SetString("currentPortal", portalName);
-        Debug.Log(portalName);
 
-        // unload scene
         SceneManager.UnloadSceneAsync("Portal UI");
 
-        // stop coroutines
         StopAllCoroutines();
-
-        // reset time
         Time.timeScale = 1;
         escape.performed -= EscapeFunction;
 
-        // load selected scene
         SceneManager.LoadScene(sceneName);
     }
 
     IEnumerator LoadMenu()
     {
-        // find backdrop
         Image backdrop = transform.Find("Backdrop").GetComponent<Image>();
         backdrop.color = new Color(backdrop.color.r, backdrop.color.g, backdrop.color.b, 0.0f);
         float t = 0;
 
-        // enable mouse cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // disable camera controls
-        FindObjectOfType<CinemachineBrain>().enabled = false;
-
         while (t < 1)
         {
-            // over time...
             t += Time.unscaledDeltaTime * Mathf.Pow(fadeTime, -1);
-
-            // fade backdrop in
             float alpha = Mathf.Lerp(0, 0.5f, fadeAnimation.Evaluate(t));
             backdrop.color = new Color(backdrop.color.r, backdrop.color.g, backdrop.color.b, alpha);
-
-            // lerp time to stop smoothly
             Time.timeScale = Mathf.Lerp(1, 0, t);
             yield return new WaitForEndOfFrame();
         }
+
+        FindObjectOfType<CinemachineBrain>().enabled = false;
     }
 
     void EscapeFunction(InputAction.CallbackContext ctx)
     {
-        // when pause action performed
         StopAllCoroutines();
         StartCoroutine(UnloadMenu());
     }
 
     IEnumerator UnloadMenu()
     {
-        // remove pause listener
         escape.performed -= EscapeFunction;
-
-        // stop load menu coroutine
         StopCoroutine(LoadMenu());
 
-        // enable camera
         FindObjectOfType<CinemachineBrain>().enabled = true;
 
-        // find backdrop
         Image backdrop = transform.Find("Backdrop").GetComponent<Image>();
         float currentAlpha = backdrop.color.a;
         
         float t = 0;
 
-        // remove cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         while (t < 1)
         {
-            // over time...
             t += Time.unscaledDeltaTime * Mathf.Pow(fadeTime, -1);
-
-            // fade alpha of the backdrop
             float alpha = Mathf.Lerp(currentAlpha, 0, fadeAnimation.Evaluate(t));
             backdrop.color = new Color(backdrop.color.r, backdrop.color.g, backdrop.color.b, alpha);
-
-            // lerp time back to 1
             Time.timeScale = Mathf.Lerp(0, 1, t);
             yield return new WaitForEndOfFrame();
         }
 
-        // reset time
         Time.timeScale = 1;
 
-        // unload menu scene
         SceneManager.UnloadSceneAsync("Portal UI");
     }
 }

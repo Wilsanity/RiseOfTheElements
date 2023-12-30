@@ -28,10 +28,6 @@ public static class PlayerAnimationMachine
                 anim.SetBool("IsSprinting", boolean);
                 return;
 
-            case PlayerAnimState.IsJumping:
-                anim.SetBool("IsJumping", boolean);
-                return;
-
             case PlayerAnimState.IsDead:
                 anim.SetBool("IsDead", boolean);
                 return;
@@ -47,6 +43,5 @@ public enum PlayerAnimState
 {
     IsMoving,
     IsSprinting,
-    IsJumping,
     IsDead,
 }

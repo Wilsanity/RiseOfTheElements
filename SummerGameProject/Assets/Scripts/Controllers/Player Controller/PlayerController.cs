@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +17,7 @@ public class PlayerController : MonoBehaviour
     InputAction moveAction;
     InputAction sprintAction;
     InputAction jumpAction;
+    InputAction attackAction;
     #endregion
 
     Animator anim;
@@ -23,6 +26,10 @@ public class PlayerController : MonoBehaviour
 
     Transform cameraFollowTargetTransform;
 
+    public float health = 10;
+
+    private NavMeshAgent nma;
+
     #endregion
 
     #region inspector
@@ -30,7 +37,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
     [SerializeField] float sprintPower;
-    [SerializeField] float health = 10;
+    //[SerializeField] Image healthBar;
 
     #endregion
 
@@ -38,10 +45,17 @@ public class PlayerController : MonoBehaviour
 
     bool isGrounded;
     bool jumpOnCoolDown;
-    
+
     Vector3 GroundedNormal;
-    
+
+    //private GameObject plantEnemy;
+
     #endregion
+
+    void Start()
+    {
+        //plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy");
+    }
 
     private void Awake()
     {
@@ -51,10 +65,12 @@ public class PlayerController : MonoBehaviour
         moveAction = playerInput.actions["Move"];
         sprintAction = playerInput.actions["Sprint"];
         jumpAction = playerInput.actions["Jump"];
+        attackAction = playerInput.actions["Attack"];
 
         #endregion
 
         anim = GetComponentInChildren<Animator>();
+        nma = GetComponent<NavMeshAgent>();
         capsule = GetComponent<CapsuleCollider>();
         body = GetComponent<Rigidbody>();
 
@@ -96,20 +112,10 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
-    }
 
-    //This is for when the player gets attacked and killed.
-    void OnCollisionEnter(Collision collision)//If the player collides with tagged enemy weapon to the point of death...
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (health <= 0)
         {
-            health -= 1;
-            if (health == 0 || health < 0)
-            {
-                health = 0;//Health is now depleted
-                PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsDead, true, anim);//Play death animation
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//Restart the scene
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -127,12 +133,37 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(contact.point, contact.normal, Color.white);
         }
     }
-    
+
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground")) isGrounded = false;
     }
-    
+
+    public void TakeDamage()
+    {
+        health -= 1;
+       // healthBar.fillAmount = health / 10f;
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    //This is when the player attacks the cave plant enemies. This is a temporary solution since using an array caused them collectively to die
+    //when only 1 was killed by the player.
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
+        {
+            //PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
+           /* if (plantAI != null)
+            {
+                plantAI.TakeDamage();
+                Debug.Log("Plant1 Health: " + plantAI.health);
+            }*/
+        }
+    }
+
     private void Move()
     {
 
@@ -146,16 +177,27 @@ public class PlayerController : MonoBehaviour
         We then use the cross product to find the direction the player should move in, and we apply our input to that direction.
         */
 
+        //----------------------old non-navmesh code-------------------------------------------------------------
         //Find the new forward and right vectors
-        Vector3 forward = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.right);
-        Vector3 right = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.forward);
+        //Vector3 forward = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.right);
+        //Vector3 right = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.forward);
 
-        //Apply the input to the new forward and right vectors and use those values as the Rigidbodies velocity
-        Vector3 moveDirection = forward * -moveInput.y + right * moveInput.x;
+        ////Apply the input to the new forward and right vectors and use those values as the Rigidbodies velocity
+        //Vector3 moveDirection = forward * -moveInput.y + right * moveInput.x;
+        //----------------------old non-navmesh code--------------------------------------------------------------
+
+
+        Vector3 moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+        moveDirection = cameraFollowTargetTransform.TransformDirection(moveDirection);
+        moveDirection.y = 0f;
+
+        //Ensures that the NavMeshAgent is enabled before setting its destination.
+        //Set the NavMeshAgent destination using nma.SetDestination.
+        if (nma.enabled) nma.SetDestination(transform.position + moveDirection);
 
         //Rotate the player to face forward
         Quaternion targetRotation = moveDirection != Vector3.zero ? Quaternion.LookRotation(moveDirection, Vector3.up) : transform.rotation;
-        
+
         if (moveInput.magnitude >= 0.3)
         {
             PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, true, anim);
@@ -179,12 +221,24 @@ public class PlayerController : MonoBehaviour
         jumpOnCoolDown = true;
 
         isGrounded = false;
-        Vector3 vertical = new Vector3(0.0f, body.velocity.y, 0.0f);
-        Vector3 horizontal = new Vector3(body.velocity.x, 0.0f, body.velocity.z);
-        body.velocity = (horizontal + (vertical * 0.1f));
-        body.AddForce(horizontal * 10, ForceMode.Force); //Jumping while moving gives a slight boost in your current direction.
-        body.AddForce(GroundedNormal * jumpPower * 75, ForceMode.Force); //Pushes off the ground, using the normal of the collision surface.
-        body.AddForce(Vector3.up * jumpPower * 25, ForceMode.Force);
+
+        //Stop navmeshagent to ensure a controlled jump.
+        nma.velocity = Vector3.zero;
+
+        //Calculate the jump direction based on current ground normal.
+        Vector3 jumpDirection = GroundedNormal + Vector3.up;
+
+        //Set nma's velocity for a jump;
+        nma.velocity = jumpDirection * jumpPower;
+
+        //----------------------old non-navmesh code--------------------------------------------------------------
+        //Vector3 vertical = new Vector3(0.0f, body.velocity.y, 0.0f);
+        //Vector3 horizontal = new Vector3(body.velocity.x, 0.0f, body.velocity.z);
+        //body.velocity = (horizontal + (vertical * 0.1f));
+        //body.AddForce(horizontal * 10, ForceMode.Force); //Jumping while moving gives a slight boost in your current direction.
+        //body.AddForce(GroundedNormal * jumpPower * 75, ForceMode.Force); //Pushes off the ground, using the normal of the collision surface.
+        //body.AddForce(Vector3.up * jumpPower * 25, ForceMode.Force);
+        //----------------------old non-navmesh code--------------------------------------------------------------
 
         //Wait for the jump to cool down
         yield return new WaitForSeconds(0.1f);

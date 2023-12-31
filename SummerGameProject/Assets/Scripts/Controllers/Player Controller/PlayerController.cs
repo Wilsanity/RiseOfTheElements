@@ -6,12 +6,15 @@ using UnityEngine.InputSystem;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices.ComTypes;
 
 public class PlayerController : MonoBehaviour
 {
     #region components
 
     PlayerInput playerInput;
+    
+    
     #region input actions
 
     InputAction moveAction;
@@ -39,22 +42,32 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float sprintPower;
     //[SerializeField] Image healthBar;
 
+
+    [SerializeField] float attackDistance = 10f;
+    [SerializeField] float attackSpeed = 1f;
+    [SerializeField] int attackDamage = 5;
+    [SerializeField] LayerMask attackLayer;
+    [SerializeField] GameObject hitSpot;
+
+
     #endregion
 
     #region variables
 
     bool isGrounded;
     bool jumpOnCoolDown;
-    
     Vector3 GroundedNormal;
-
     private GameObject plantEnemy;
+
+    bool attacking = false;
+    bool readyToAttack = true;
+    
 
     #endregion
 
     void Start()
     {
-        plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy");
+       // plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy")
     }
 
     private void Awake()
@@ -67,6 +80,8 @@ public class PlayerController : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
 
+        attackAction.started += ctx => Attack();
+        jumpAction.performed += ctx => StartCoroutine(Jump());
         #endregion
 
         anim = GetComponentInChildren<Animator>();
@@ -95,7 +110,8 @@ public class PlayerController : MonoBehaviour
         //single press button input notation. 
         #region input actions
 
-        jumpAction.performed += ctx => StartCoroutine(Jump());
+        
+        
 
         #endregion
 
@@ -116,6 +132,12 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        if(attackAction.triggered)
+        {
+            Debug.Log("Pressed");
+            Attack();
         }
     }
 
@@ -153,14 +175,14 @@ public class PlayerController : MonoBehaviour
     //when only 1 was killed by the player.
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
+       if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
         {
-            PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
+           /* PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
             if (plantAI != null)
             {
                 plantAI.TakeDamage();
                 Debug.Log("Plant1 Health: " + plantAI.health);
-            }
+            }*/
         }
     }
 
@@ -244,5 +266,49 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         jumpOnCoolDown = false;
+
+       
     }
+
+    
+
+    public void Attack()
+    {
+        //if not ready to attack or is attacking, return
+        if (!readyToAttack || attacking) return;
+
+        // else set ready to attack false nad attack 
+        readyToAttack = false;
+        attacking = true;
+
+
+        //finish attacking and reset the attack with delay attackSpeed
+        Invoke(nameof(ResetAttack), attackSpeed);
+
+        AttackRayCast();
+    }
+
+    //Reset 
+    void ResetAttack()
+    {
+        attacking = false; 
+        readyToAttack = true;
+    }
+
+    //Create a raycast and give damage to the first target hit
+    void AttackRayCast()
+    {
+        //Using the a gameobject and create a raycast from there
+        if(Physics.Raycast(hitSpot.transform.position , hitSpot.transform.forward, out RaycastHit hit, attackDistance , attackLayer))
+        {
+            Debug.Log("Hit");
+          
+            //Hit barrier and deal damage
+            if (hit.transform.TryGetComponent<Barrier>(out Barrier T))
+            {
+                T.TakeDamage(attackDamage);
+            }
+        }
+    }
+   
 }

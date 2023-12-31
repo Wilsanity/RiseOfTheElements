@@ -1,27 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR.Haptics;
 
 public class Barrier : MonoBehaviour
 {
-    [SerializeField]
-    int health;
+    int currentHealth;
+    public int maxHealth = 20;
 
-    int fullHealth; 
+    [SerializeField] private GameObject movingBarrier;
 
-    private void Awake()
+    void Awake()
     {
-        health = fullHealth;
-
+        currentHealth = maxHealth;
     }
 
-
-
-    private void Die()
+    public void TakeDamage(int damage)
     {
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        currentHealth -= damage;
+
+        if(currentHealth <=0) { Die(); }
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    public void MoveBarrier()
+    {
+        GameObject.Destroy(movingBarrier);
     }
 }

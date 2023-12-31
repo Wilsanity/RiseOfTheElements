@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
     [SerializeField] float sprintPower;
-    //[SerializeField] Image healthBar;
+    [SerializeField] Image healthBar;
 
 
     [SerializeField] float attackDistance = 10f;
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-       // plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy")
+        plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy");
     }
 
     private void Awake()
@@ -141,6 +141,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "PortalFX_V2")//TEMPORARY CODE: If the player collides with the portal, the cave scene starts.
+        {
+            SceneManager.LoadScene("Cave Scene");
+        }
+    }
+
     void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -164,7 +172,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage()
     {
         health -= 1;
-        //healthBar.fillAmount = health / 10f;
+        healthBar.fillAmount = health / 10f;
         if (health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -177,12 +185,12 @@ public class PlayerController : MonoBehaviour
     {
        if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
         {
-           /* PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
+            PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
             if (plantAI != null)
             {
                 plantAI.TakeDamage();
                 Debug.Log("Plant1 Health: " + plantAI.health);
-            }*/
+            }
         }
     }
 

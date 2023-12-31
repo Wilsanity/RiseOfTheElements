@@ -139,4 +139,9 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit();
     }
     #endregion
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
 }

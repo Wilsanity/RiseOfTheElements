@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This state handles an enemy's death.
+/// </summary>
 public class DeadState : FSMState
 {
     protected Vector3 destPos;
@@ -9,14 +12,11 @@ public class DeadState : FSMState
 
     protected bool justDied = false;
 
-    private EnemyController enemyController;
-
     private Animator animator;
 
     // Constructor
-    public DeadState(Animator inAnimator, EnemyController inEnemyController)
+    public DeadState(Animator inAnimator)
     {
-        enemyController = inEnemyController;
         stateType = FSMStateType.Dead;
         animator = inAnimator;
     }

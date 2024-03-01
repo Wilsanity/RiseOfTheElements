@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 /// <summary>
 /// Basic enemy controller
 /// </summary>
+[RequireComponent(typeof(NavMeshAgent))]
 public abstract class EnemyController : AdvancedFSM
 {
     [Header("State Debug Info")]

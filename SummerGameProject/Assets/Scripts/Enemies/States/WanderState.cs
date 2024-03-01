@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// This state allows the enemy to patrol a defined radius, using random points on the Navmesh.
+/// </summary>
 public class WanderState : FSMState
 {
     protected Vector3 destPos;

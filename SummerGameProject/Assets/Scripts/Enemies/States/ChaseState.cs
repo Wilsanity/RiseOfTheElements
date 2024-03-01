@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// This state allows the enemy to chase the player.
+/// </summary>
 public class ChaseState : FSMState
 {
     protected Vector3 destPos;

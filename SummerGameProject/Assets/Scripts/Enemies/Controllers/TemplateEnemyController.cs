@@ -28,7 +28,7 @@ public class TemplateEnemyController : EnemyController
         // Create State #3
 
         // Create Dead State
-        DeadState dead = new DeadState(animator, this);
+        DeadState dead = new DeadState(animator);
 
         // Add Transitions
         //

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// This state is a script to simulate an attack.
+/// </summary>
 public class AttackState : FSMState
 {
     protected Vector3 destPos;
@@ -46,8 +49,6 @@ public class AttackState : FSMState
 
         Debug.Log("Attacking player.");
 
-        //player.GetComponent<PlayerController>().health -= 1;
         // TODO: implement cool down
-        //Debug.Log("Player Health is " + player.GetComponent<PlayerController>().health);
     }
 }

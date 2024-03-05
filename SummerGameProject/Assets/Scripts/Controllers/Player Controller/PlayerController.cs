@@ -10,6 +10,8 @@ using System.Runtime.InteropServices.ComTypes;
 
 public class PlayerController : MonoBehaviour
 {
+    public static event Action<bool> onNPCInteract;
+
     #region components
 
     PlayerInput playerInput;
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     InputAction sprintAction;
     InputAction jumpAction;
     InputAction attackAction;
+    InputAction interactAction;
     #endregion
 
     Animator anim;
@@ -61,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     bool attacking = false;
     bool readyToAttack = true;
-    
+    private bool canInteract = false;
 
     #endregion
 
@@ -79,9 +82,11 @@ public class PlayerController : MonoBehaviour
         sprintAction = playerInput.actions["Sprint"];
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
+        interactAction = playerInput.actions["Interact"];
 
         attackAction.started += ctx => Attack();
         jumpAction.performed += ctx => StartCoroutine(Jump());
+        interactAction.performed += ctx => Interact();
         #endregion
 
         anim = GetComponentInChildren<Animator>();
@@ -141,11 +146,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Interact()
+    {
+        onNPCInteract?.Invoke(canInteract);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "PortalFX_V2")//TEMPORARY CODE: If the player collides with the portal, the cave scene starts.
         {
             SceneManager.LoadScene("Cave Scene");
+        }
+        if (collision.gameObject.tag.Equals("NPC") && !canInteract)
+        {
+            canInteract = true;
         }
     }
 
@@ -167,6 +181,11 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground")) isGrounded = false;
+        if (collision.gameObject.tag.Equals("NPC"))
+        {
+            canInteract = false;
+            onNPCInteract.Invoke(canInteract);
+        }
     }
 
     public void TakeDamage()
@@ -181,6 +200,7 @@ public class PlayerController : MonoBehaviour
 
     //This is when the player attacks the cave plant enemies. This is a temporary solution since using an array caused them collectively to die
     //when only 1 was killed by the player.
+
     private void OnTriggerEnter(Collider other)
     {
        if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
@@ -192,7 +212,9 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Plant1 Health: " + plantAI.health);
             }
         }
+
     }
+
 
     private void Move()
     {

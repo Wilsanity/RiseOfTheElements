@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class DialogueManager : MonoBehaviour {
 
-	public Text nameText;
-	public Text dialogueText;
+    public static event Action OnTalkingEnd;
 
+	public TextMeshProUGUI nameText;
+	public TextMeshProUGUI dialogueText;
 	public Animator animator;
 
 	private Queue<string> sentences;
@@ -17,7 +20,7 @@ public class DialogueManager : MonoBehaviour {
 		sentences = new Queue<string>();
 	}
 
-	public void StartDialogue (Dialogue dialogue)
+    public void StartDialogue (Dialogue dialogue)
 	{
 		animator.SetBool("IsOpen", true);
 
@@ -29,11 +32,11 @@ public class DialogueManager : MonoBehaviour {
 		{
 			sentences.Enqueue(sentence);
 		}
+        DisplayNextSentence();
 
-		DisplayNextSentence();
-	}
+    }
 
-	public void DisplayNextSentence ()
+    public void DisplayNextSentence ()
 	{
 		if (sentences.Count == 0)
 		{
@@ -46,7 +49,7 @@ public class DialogueManager : MonoBehaviour {
 		StartCoroutine(TypeSentence(sentence));
 	}
 
-	IEnumerator TypeSentence (string sentence)
+	private IEnumerator TypeSentence (string sentence)
 	{
 		dialogueText.text = "";
 		foreach (char letter in sentence.ToCharArray())
@@ -56,9 +59,10 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
-	void EndDialogue()
+	public void EndDialogue()
 	{
 		animator.SetBool("IsOpen", false);
+        OnTalkingEnd?.Invoke();
 	}
 
 }

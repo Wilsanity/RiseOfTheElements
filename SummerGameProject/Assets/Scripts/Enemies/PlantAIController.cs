@@ -135,20 +135,6 @@ public class PlantAIController : MonoBehaviour
         navMeshAgent.speed = 0;
     }
 
-    public void TakeDamage(/*GameObject attackingPlayer*/)//Check if the attacking player is the same as previous one.
-    {
-        //if (attackingPlayer == lastAttackingPlayer)
-        //{
-            health -= 1;
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-                Debug.Log("Plant Dead");
-            }
-        //}
-
-        //lastAttackingPlayer = attackingPlayer;//Update the last attacking player.
-    }
 
     public void NextPatrolPoint()//Gets the enemy to move to each subsequent patrol spot
     {

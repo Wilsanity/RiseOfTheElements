@@ -6,13 +6,9 @@ public class PlantAttackZone : MonoBehaviour
 {
     public float rotationSpeed = 5.0f;
 
-    private GameObject player;
+    private bool isAttacking = false;
     private bool isRotating = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
+    private GameObject player;
 
     // Update is called once per frame
     void Update()
@@ -23,33 +19,35 @@ public class PlantAttackZone : MonoBehaviour
         //}
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(AttackPlayer());
+            player = other.gameObject;
+
+            if (!isAttacking) StartCoroutine(AttackPlayer());
+
         }
     }
 
     IEnumerator AttackPlayer()
     {
+        isAttacking = true;
+
         //This rotates with a delay 
         yield return new WaitForSeconds(1.0f);
 
+        
         isRotating = true;
-
-        if (player != null)
-        {
-            PlayerController playerController = player.GetComponent<PlayerController>();
-
-            if (playerController != null)
-            {
-                playerController.TakeDamage();
-            }
-        }
+        Debug.Log("Plant Attack");
+       
+        UnitHealth playerHealth = player.GetComponent<UnitHealth>();
+        playerHealth.DamageUnit(1);
+         
 
         yield return new WaitForSeconds(1.0f);
 
+        isAttacking = false;
         isRotating = false;
         transform.rotation = Quaternion.identity;
     }

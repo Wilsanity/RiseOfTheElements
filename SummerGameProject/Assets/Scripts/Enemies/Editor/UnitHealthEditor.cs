@@ -8,9 +8,10 @@ public class UnitHealthEditor : Editor
     SerializedProperty _currentHealth;
     SerializedProperty _currentPhase;
     SerializedProperty _unitHealthPhases;
+    SerializedProperty _healthBar;
     SerializedProperty phaseName;
     SerializedProperty phaseHealthPercent;
-
+    
     readonly Color c = Color.green;
 
     private void OnEnable()
@@ -19,7 +20,7 @@ public class UnitHealthEditor : Editor
         _currentHealth = serializedObject.FindProperty("_currentHealth");
         _currentPhase = serializedObject.FindProperty("_currentPhase");
         _unitHealthPhases = serializedObject.FindProperty("_unitHealthPhases");
-     
+        _healthBar = serializedObject.FindProperty("_healthBar");
     }
 
     public override void OnInspectorGUI()
@@ -38,6 +39,7 @@ public class UnitHealthEditor : Editor
         titleStyle.alignment = TextAnchor.MiddleCenter;
 
         EditorGUILayout.PropertyField(_maxHealth);
+        EditorGUILayout.PropertyField(_healthBar);
 
         if (!Application.isPlaying)
         {
@@ -51,11 +53,15 @@ public class UnitHealthEditor : Editor
         GUILayout.Label(_currentHealth.intValue.ToString(), GUILayout.MaxWidth(Screen.width / 1.8f));
         EditorGUILayout.EndHorizontal();
 
-        //Current Phase
-        EditorGUILayout.BeginHorizontal();
-        GUILayout.Label("Current Phase");
-        GUILayout.Label(_currentPhase.intValue.ToString(), GUILayout.MaxWidth(Screen.width / 1.8f));
-        EditorGUILayout.EndHorizontal();
+        //Current Phase. We only need to know this IF we have phases in the first place
+        if(_unitHealthPhases.arraySize > 0)
+        {
+            EditorGUILayout.BeginHorizontal();
+            GUILayout.Label("Current Phase");
+            GUILayout.Label(_currentPhase.intValue.ToString(), GUILayout.MaxWidth(Screen.width / 1.8f));
+            EditorGUILayout.EndHorizontal();
+        }
+        
 
 
 

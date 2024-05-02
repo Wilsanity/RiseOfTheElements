@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UnitHealth : MonoBehaviour
 {
@@ -9,15 +9,18 @@ public class UnitHealth : MonoBehaviour
     //Fields
     [SerializeField] private int _maxHealth;
     [SerializeField] private int _currentHealth;
-    [SerializeField] private int _currentPhase = 1;
+    [SerializeField] private int _currentPhase = 0;
 
     [SerializeField] private UnitHealthPhases[] _unitHealthPhases = new UnitHealthPhases[0];
+
+    [SerializeField] private Image _healthBar;
 
     //Properties
     public int CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
     public int MaxHealth { get => _maxHealth;}
     public UnitHealthPhases[] UnitHealthPhases { get => _unitHealthPhases; set => _unitHealthPhases = value; }
     public int CurrentPhase { get => _currentPhase;}
+    public Image HealthBar { get => _healthBar;}
 
 
 
@@ -28,16 +31,33 @@ public class UnitHealth : MonoBehaviour
 
         //reduce health and make sure we can't go into the negatives
         _currentHealth = Mathf.Clamp(_currentHealth - damageAmount, 0, _maxHealth);
+        Debug.Log($"{gameObject.name} took {damageAmount} damage");
+
 
         if (_currentHealth <= 0)
         {
-            //Destroy Unit
-            Destroy(gameObject);
+            PerformDeathLogic();
+            
         }
 
+        UpdateHealthBar();
+
+
+        //Now update the current unit's phase based on the new health
         if (_unitHealthPhases.Length != 0) _currentPhase = SetCurrentHealthPhase();
     }
 
+    //I'm going to make this changeable for all enemies and player. Maybe make a scriptable Object with certain death logic
+    private void PerformDeathLogic()
+    {
+        if(gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        //Destroy Unit
+        Destroy(gameObject);
+    }
 
     //Heal the unit this script is attached to
     public void HealUnit(int healAmount)
@@ -46,7 +66,11 @@ public class UnitHealth : MonoBehaviour
 
         //heal the unit and make sure their health can't go over their maxHealth
         _currentHealth = Mathf.Clamp(_currentHealth + healAmount, 0, _maxHealth);
+        Debug.Log($"{gameObject.name} healed {healAmount} HP");
 
+        UpdateHealthBar();
+
+        //Now update the current unit's phase based on the new health
         if (_unitHealthPhases.Length != 0) _currentPhase = SetCurrentHealthPhase();
     }
 
@@ -84,6 +108,16 @@ public class UnitHealth : MonoBehaviour
 
         return 0;
     }
+
+    private void UpdateHealthBar()
+    {
+        if (_healthBar != null)
+        {
+            _healthBar.fillAmount =  1.00f / ((float)_maxHealth / (float)_currentHealth);
+        }
+    }
+
+
 }
 
 [System.Serializable]

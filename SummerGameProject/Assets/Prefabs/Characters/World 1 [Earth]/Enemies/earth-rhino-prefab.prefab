@@ -117,10 +117,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 471820549040442106}
+  - component: {fileID: 7578988250183290882}
+  - component: {fileID: 993024916716081244}
   - component: {fileID: 993024916716081217}
   - component: {fileID: 993024916716081219}
   - component: {fileID: 993024916716081218}
-  - component: {fileID: 993024916716081244}
   m_Layer: 0
   m_Name: earth-rhino-prefab
   m_TagString: Enemy
@@ -146,6 +147,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -84.583, z: 0}
+--- !u!114 &7578988250183290882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993024916716081216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcebec06c7708c44d8d0a60e62eff1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 10
+  _currentHealth: 10
+  _currentPhase: 0
+  _unitHealthPhases: []
+  _healthBar: {fileID: 0}
+--- !u!114 &993024916716081244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993024916716081216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69486077beef7a40a9aacf6dedd40e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rhinoActions:
+  - name: Agro State
+    radius: 30
+    ready: 0
+    coolDown: 15
+    isOnCoolDown: 0
+    color: {r: 1, g: 0, b: 0, a: 1}
+  - name: Body Slam
+    radius: 10
+    ready: 0
+    coolDown: 15
+    isOnCoolDown: 0
+    color: {r: 0, g: 1, b: 0.00993371, a: 1}
+  - name: Charge Attack
+    radius: 20
+    ready: 0
+    coolDown: 20
+    isOnCoolDown: 0
+    color: {r: 1, g: 0.99695545, b: 0, a: 1}
+  - name: Horn Sweep
+    radius: 15
+    ready: 0
+    coolDown: 15
+    isOnCoolDown: 0
+    color: {r: 0, g: 0.04074526, b: 1, a: 1}
+  rhinoJumpCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  movementSpeed: 5
 --- !u!95 &993024916716081217
 Animator:
   serializedVersion: 3
@@ -194,44 +256,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.44, y: 4, z: 7.469746}
   m_Center: {x: -0.0000000046585886, y: 2.63, z: -0.48487398}
---- !u!114 &993024916716081244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993024916716081216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d69486077beef7a40a9aacf6dedd40e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rhinoActions:
-  - name: Agro State
-    radius: 30
-    ready: 0
-    coolDown: 15
-    isOnCoolDown: 0
-    color: {r: 1, g: 0, b: 0, a: 1}
-  - name: Body Slam
-    radius: 10
-    ready: 0
-    coolDown: 15
-    isOnCoolDown: 0
-    color: {r: 0, g: 1, b: 0.00993371, a: 1}
-  - name: Charge Attack
-    radius: 20
-    ready: 0
-    coolDown: 20
-    isOnCoolDown: 0
-    color: {r: 1, g: 0.99695545, b: 0, a: 1}
-  - name: Horn Sweep
-    radius: 15
-    ready: 0
-    coolDown: 15
-    isOnCoolDown: 0
-    color: {r: 0, g: 0.04074526, b: 1, a: 1}
-  movementSpeed: 5
 --- !u!1 &1109624383676567896
 GameObject:
   m_ObjectHideFlags: 0

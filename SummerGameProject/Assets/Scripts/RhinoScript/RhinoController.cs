@@ -46,12 +46,30 @@ public class RhinoController : MonoBehaviour
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody>();
 
-        player = FindObjectOfType<GameManager>().sceneObjects.player.transform;
+       
     }
 
     private void Update()
     {
         movementCooldown -= Time.deltaTime;
+
+        if(player == null)
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, 40, LayerMask.GetMask("Player"));
+
+            //Set the player if they are in the sphere
+            if (colliders.Length > 0)
+            {
+                player = colliders[colliders.Length - 1].transform;
+            }
+            else
+            {
+                //if we didn't detect any player, then return since there's no need to run extra code.
+                return;
+            }
+        }
+        
+        
 
         //For each action, check if the Rhino is in range of the player
         foreach (RhinoAction action in rhinoActions)

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -15,6 +16,8 @@ public class UnitHealth : MonoBehaviour
 
     [SerializeField] private Image _healthBar;
 
+    [SerializeField] private UnityEvent _deathEvent;
+
     //Properties
     public int CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
     public int MaxHealth { get => _maxHealth;}
@@ -22,7 +25,23 @@ public class UnitHealth : MonoBehaviour
     public int CurrentPhase { get => _currentPhase;}
     public Image HealthBar { get => _healthBar;}
 
+    private void Start()
+    {
+        //Initialize Events for the boss phases
+        for(int i = 0; i < _unitHealthPhases.Length; i++)
+        {
+            Object obj = _unitHealthPhases[i].unitPhaseEvent.GetPersistentTarget(0);
+            
+            //Check to see if the object we put in the inspector event is an SO_BaseUnitPhaseEvent
+            SO_BaseUnitPhaseEvent so = obj as SO_BaseUnitPhaseEvent;
 
+            if (so != null)
+            {
+                //Initialize the event
+                so.Initialize(gameObject);
+            }
+        }
+    }
 
     //Deal Damage to the unit this script is attached to
     public void DamageUnit(int damageAmount)
@@ -47,17 +66,29 @@ public class UnitHealth : MonoBehaviour
         if (_unitHealthPhases.Length != 0) _currentPhase = SetCurrentHealthPhase();
     }
 
-    //I'm going to make this changeable for all enemies and player. Maybe make a scriptable Object with certain death logic
+    //This code can now be universally shared with any unit we put the script on. We can code custom defeated logic in a separate
+    //scriptable object
     private void PerformDeathLogic()
     {
-        if(gameObject.CompareTag("Player"))
+        if(_deathEvent.GetPersistentEventCount() != 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            _deathEvent.Invoke();
         }
+        else
+        {
+            //Default to just destroying the unit if we haven't coded any extra defeated logic.
+            DestroyObject();
+        }
+        
+    }
 
+    //I make this public in case we want to access it through animation events
+    public void DestroyObject()
+    {
         //Destroy Unit
         Destroy(gameObject);
     }
+
 
     //Heal the unit this script is attached to
     public void HealUnit(int healAmount)
@@ -80,7 +111,7 @@ public class UnitHealth : MonoBehaviour
     {
         
         //Get percent health from max health
-        float healthPercent = (_currentHealth / _maxHealth * 100);
+        float healthPercent = ((float)_currentHealth / (float)_maxHealth * 100.00f);
 
         //loop through the phases
 
@@ -91,17 +122,17 @@ public class UnitHealth : MonoBehaviour
         {
 
             //eg. if the current health is 65%, then we want to check if <25, then <50, then <75, then <100
-
+            
             if (healthPercent > _unitHealthPhases[i].phaseHealthPercent)
                 continue;
 
-
+            //Debug.Log($"Paseed Phase {(i+1)}");
             //Play the special Health Increment event if this phase has one and it hasn't already played
-            //if (_unitHealthPhases[i].phaseEvent != null)
-            //{
-            //    if (!bossProfile.B_BossPhases[i].phaseEvent.EventPlayed)
-            //        bossProfile.B_BossPhases[i].phaseEvent.OnHealthChange();
-            //}
+            if (_unitHealthPhases[i].unitPhaseEvent != null)
+            {
+                //Debug.Log("PERFORMING EVENT");
+                _unitHealthPhases[i].unitPhaseEvent.Invoke();
+            }
 
             return i + 1;
         }
@@ -127,5 +158,7 @@ public class UnitHealthPhases
 
     [Range(0, 100)]
     public float phaseHealthPercent = 55;
+
+    public UnityEvent unitPhaseEvent = null;
 
 }

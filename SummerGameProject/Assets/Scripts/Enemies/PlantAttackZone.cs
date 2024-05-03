@@ -39,7 +39,7 @@ public class PlantAttackZone : MonoBehaviour
 
         
         isRotating = true;
-        Debug.Log("Plant Attack");
+        //Debug.Log("Plant Attack");
        
         UnitHealth playerHealth = player.GetComponent<UnitHealth>();
         playerHealth.DamageUnit(1);

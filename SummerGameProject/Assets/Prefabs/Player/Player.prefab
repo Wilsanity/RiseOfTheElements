@@ -3235,7 +3235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5795770302118775298}
-  - component: {fileID: 1469827193817700549}
+  - component: {fileID: 646634246309343235}
   - component: {fileID: 5795770302118775310}
   - component: {fileID: 5795770302118775297}
   - component: {fileID: 5795770302118775296}
@@ -3263,7 +3263,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1469827193817700549
+--- !u!114 &646634246309343235
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3275,11 +3275,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcebec06c7708c44d8d0a60e62eff1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3
-  _currentHealth: 3
-  _currentPhase: 1
-  _unitHealthPhases: []
+  _maxHealth: 10
+  _currentHealth: 10
+  _currentPhase: 0
+  _unitHealthPhases:
+  - phaseName: Phase 1
+    phaseHealthPercent: 65
+    unitPhaseEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 9522f5c27b849a443b393ab3e512f561, type: 2}
+          m_TargetAssemblyTypeName: SO_PlayerHealthPhaseEvents, Assembly-CSharp
+          m_MethodName: HealthPhase1Event
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phaseName: Phase 2
+    phaseHealthPercent: 30
+    unitPhaseEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 9522f5c27b849a443b393ab3e512f561, type: 2}
+          m_TargetAssemblyTypeName: SO_PlayerHealthPhaseEvents, Assembly-CSharp
+          m_MethodName: HealthPhase2Event
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _healthBar: {fileID: 0}
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9522f5c27b849a443b393ab3e512f561, type: 2}
+        m_TargetAssemblyTypeName: SO_PlayerHealthPhaseEvents, Assembly-CSharp
+        m_MethodName: DefeatedLogic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5795770302118775310
 MonoBehaviour:
   m_ObjectHideFlags: 0

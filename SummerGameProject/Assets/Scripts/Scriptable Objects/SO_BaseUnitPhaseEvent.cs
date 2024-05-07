@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,8 +10,8 @@ using UnityEngine.SceneManagement;
 public class SO_BaseUnitPhaseEvent : ScriptableObject
 {
     //THis variable will be set in the 'UnitHealth.cs' script so we can access scirpts in this gameObject
-    private GameObject unitAssigned;
-    private bool[] completedEvents = new bool[5];
+    protected GameObject unitAssigned;
+    protected bool[] completedEvents = new bool[5];
 
     
     public void Initialize(GameObject unit)
@@ -53,15 +51,10 @@ public class SO_BaseUnitPhaseEvent : ScriptableObject
     }
     public virtual void DefeatedLogic()
     {
-        int i = 4;
-        if(IsCompleted(i)) return;
-
         Debug.Log("Performed defeat");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Destroy(unitAssigned);
     }
 
-    private bool IsCompleted(int index)
+    protected bool IsCompleted(int index)
     {
         //If we already did the logic for an event, we shouldn't do it again. This makes sure the code doesn't
         //get executed more than once. 

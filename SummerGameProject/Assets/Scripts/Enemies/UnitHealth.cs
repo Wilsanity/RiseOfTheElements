@@ -30,8 +30,13 @@ public class UnitHealth : MonoBehaviour
         //Initialize Events for the boss phases
         for(int i = 0; i < _unitHealthPhases.Length; i++)
         {
+            //Check to see if we have an event. If we don't it'll give us an error index out of range so make sure to continue if have none.
+            bool isEventRegistered = _unitHealthPhases[i].unitPhaseEvent.GetPersistentEventCount() > 0 ? true : false;
+
+            if (!isEventRegistered) continue;
+
             Object obj = _unitHealthPhases[i].unitPhaseEvent.GetPersistentTarget(0);
-            
+
             //Check to see if the object we put in the inspector event is an SO_BaseUnitPhaseEvent
             SO_BaseUnitPhaseEvent so = obj as SO_BaseUnitPhaseEvent;
 

@@ -863,7 +863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1421535038767283040}
-  - component: {fileID: 1454935270272261361}
+  - component: {fileID: 4811104181670321634}
   - component: {fileID: 1454935270272261365}
   - component: {fileID: 1454935270272261360}
   - component: {fileID: 1454935270272261367}
@@ -895,7 +895,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1454935270272261361
+--- !u!114 &4811104181670321634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -912,6 +912,9 @@ MonoBehaviour:
   _currentPhase: 0
   _unitHealthPhases: []
   _healthBar: {fileID: 0}
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1454935270272261365
 MonoBehaviour:
   m_ObjectHideFlags: 0

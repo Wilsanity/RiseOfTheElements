@@ -93,7 +93,7 @@ public class UnitHealthEditor : Editor
 
             if(currentPhaseHealthPercent.floatValue > nextPhaseHealthPercent.floatValue)
             {
-                EditorGUILayout.HelpBox($"Phase {i+1} must be a lower value than Phase {i}", MessageType.Warning);
+                EditorGUILayout.HelpBox($"Phase {i+1} must be a lower value than Phase {i}", MessageType.Error);
             }
         }
 
@@ -119,7 +119,7 @@ public class UnitHealthEditor : Editor
         
 
 
-        GUILayout.Space(150);
+        GUILayout.Space(130);
 
 
 

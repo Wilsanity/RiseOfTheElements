@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     // components
     private Rigidbody _rigidbody;
     private NavMeshAgent _navMeshAgent;
+    private PlayerAnimationMachine _animationStateMachine;
 
     // private variables
     private float _moveSpeedMultiplier = 1;
@@ -72,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _animationStateMachine = GetComponentInChildren<PlayerAnimationMachine>();
 
         // if we handle gravity from here, disable gravity interaction from default unity physics
         _rigidbody.useGravity = !_useCustomGravity;
@@ -129,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         // set IsSprinting, if yes, then movespeed multiplier equals sprint speed modifier
         IsSprinting = isSprinting;
         _moveSpeedMultiplier = isSprinting ? _sprintMultiplier : 1f;
+        _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsSprinting, isSprinting);
     }
     // attempts a jump, will fail if not grounded
     public void Jump()
@@ -147,7 +150,9 @@ public class PlayerMovement : MonoBehaviour
         //Set the NavMeshAgent destination using nma.SetDestination.
         if (_navMeshAgent.enabled) _navMeshAgent.SetDestination(transform.position + MoveInput);
         MovePlayer();
-        Debug.DrawRay(transform.position, GroundNormal, Color.magenta);
+        bool isMoving = HasMoveInput && _rigidbody.velocity.magnitude > 0.1f;
+        _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, isMoving);
+        //Debug.DrawRay(transform.position, GroundNormal, Color.magenta);
     }
 
     private void Update()

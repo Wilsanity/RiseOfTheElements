@@ -67,7 +67,8 @@ public class PlayerController : MonoBehaviour
 
     bool attacking = false;
     bool readyToAttack = true;
-    
+    private Vector2 _moveInputRaw;
+
 
     #endregion
 
@@ -84,13 +85,16 @@ public class PlayerController : MonoBehaviour
         _attack = GetComponent<PlayerAttack>();
         #region input actions
 
-        moveAction = playerInput.actions["Move"];
+        //moveAction = playerInput.actions["Move"];
         sprintAction = playerInput.actions["Sprint"];
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
 
         attackAction.started += ctx => Attack();
-        jumpAction.performed += ctx => StartCoroutine(Jump());
+        jumpAction.performed += ctx => TryJump();
+        sprintAction.performed += ctx => SetSprint(true);
+        sprintAction.canceled += ctx => SetSprint(false);
+        //moveAction.performed += ctx => SetMoveInput(ctx);
         #endregion
 
         anim = GetComponentInChildren<Animator>();
@@ -114,6 +118,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     private void OnEnable()
     {
         //single press button input notation. 
@@ -136,7 +141,18 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        //Move();
+        // get input from the playerInput, process it to match camera forward
+        Vector3 up = Vector3.up;
+        Vector3 right = Camera.main.transform.right;
+        Vector3 forward = Vector3.Cross(right, up);
+        Vector3 moveInput = forward * _moveInputRaw.y + right * _moveInputRaw.x;
+
+        Debug.DrawRay(transform.position, moveInput, Color.yellow);
+
+        // send player input to character movement for further processing
+        _movement.SetMoveInput(moveInput);
+        _movement.SetLookDirection(moveInput);
 
         if (health <= 0)
         {
@@ -149,7 +165,18 @@ public class PlayerController : MonoBehaviour
             Attack();
         }
     }
-
+    private void OnMove(InputValue value)
+    {
+        _moveInputRaw = value.Get<Vector2>();
+    }
+    private void SetSprint(bool sprintValue)
+    {
+        _movement.SetIsSprinting(sprintValue);
+    }
+    private void TryJump()
+    {
+        _movement.Jump();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "PortalFX_V2")//TEMPORARY CODE: If the player collides with the portal, the cave scene starts.
@@ -203,54 +230,54 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Move()
-    {
+    //private void Move()
+    //{
 
-        //Reads player input as a vector2
-        Vector2 moveInput = moveAction.ReadValue<Vector2>();
-        if (sprintAction.ReadValue<float>() != 0) moveInput *= sprintPower;
+    //    //Reads player input as a vector2
+    //    Vector2 moveInput = moveAction.ReadValue<Vector2>();
+    //    if (sprintAction.ReadValue<float>() != 0) moveInput *= sprintPower;
 
-        /*
-        Because we want the player to move at a consistant speed regardless of the angle of the ground they're walking on.
-        We find the ground normal and find the cross product for the forward and right vectors.
-        We then use the cross product to find the direction the player should move in, and we apply our input to that direction.
-        */
+    //    /*
+    //    Because we want the player to move at a consistant speed regardless of the angle of the ground they're walking on.
+    //    We find the ground normal and find the cross product for the forward and right vectors.
+    //    We then use the cross product to find the direction the player should move in, and we apply our input to that direction.
+    //    */
 
-        //----------------------old non-navmesh code-------------------------------------------------------------
-        //Find the new forward and right vectors
-        //Vector3 forward = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.right);
-        //Vector3 right = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.forward);
+    //    //----------------------old non-navmesh code-------------------------------------------------------------
+    //    //Find the new forward and right vectors
+    //    //Vector3 forward = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.right);
+    //    //Vector3 right = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.forward);
 
-        ////Apply the input to the new forward and right vectors and use those values as the Rigidbodies velocity
-        //Vector3 moveDirection = forward * -moveInput.y + right * moveInput.x;
-        //----------------------old non-navmesh code--------------------------------------------------------------
+    //    ////Apply the input to the new forward and right vectors and use those values as the Rigidbodies velocity
+    //    //Vector3 moveDirection = forward * -moveInput.y + right * moveInput.x;
+    //    //----------------------old non-navmesh code--------------------------------------------------------------
 
 
-        Vector3 moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
-        moveDirection = cameraFollowTargetTransform.TransformDirection(moveDirection);
-        moveDirection.y = 0f;
+    //    Vector3 moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+    //    moveDirection = cameraFollowTargetTransform.TransformDirection(moveDirection);
+    //    moveDirection.y = 0f;
 
-        //Ensures that the NavMeshAgent is enabled before setting its destination.
-        //Set the NavMeshAgent destination using nma.SetDestination.
-        if (nma.enabled) nma.SetDestination(transform.position + moveDirection);
+    //    //Ensures that the NavMeshAgent is enabled before setting its destination.
+    //    //Set the NavMeshAgent destination using nma.SetDestination.
+    //    if (nma.enabled) nma.SetDestination(transform.position + moveDirection);
 
-        //Rotate the player to face forward
-        Quaternion targetRotation = moveDirection != Vector3.zero ? Quaternion.LookRotation(moveDirection, Vector3.up) : transform.rotation;
+    //    //Rotate the player to face forward
+    //    Quaternion targetRotation = moveDirection != Vector3.zero ? Quaternion.LookRotation(moveDirection, Vector3.up) : transform.rotation;
         
-        if (moveInput.magnitude >= 0.3)
-        {
-            _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, true, anim);
-            _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsSprinting, sprintAction.ReadValue<float>() != 0, anim);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
-        }
-        else
-        {
-            _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, false, anim);
-        }
+    //    if (moveInput.magnitude >= 0.3)
+    //    {
+    //        _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, true, anim);
+    //        _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsSprinting, sprintAction.ReadValue<float>() != 0, anim);
+    //        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+    //    }
+    //    else
+    //    {
+    //        _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, false, anim);
+    //    }
 
-        if (isGrounded) body.velocity = Vector3.Lerp(body.velocity, moveDirection * moveSpeed, Time.deltaTime * 6f);
-        else body.velocity = Vector3.Lerp(body.velocity, moveDirection * moveSpeed, Time.deltaTime * 1f);
-    }
+    //    if (isGrounded) body.velocity = Vector3.Lerp(body.velocity, moveDirection * moveSpeed, Time.deltaTime * 6f);
+    //    else body.velocity = Vector3.Lerp(body.velocity, moveDirection * moveSpeed, Time.deltaTime * 1f);
+    //}
 
     private IEnumerator Jump()
     {

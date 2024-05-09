@@ -78,12 +78,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // public methods
-    public void SetMoveInput(Vector2 moveInput)
+    public void SetMoveInput(Vector3 moveInput)
     {
         // if player cannot move, zero out the incoming movement input, thus preventing movement
         if (!CanMove)
         {
-            MoveInput = Vector2.zero;
+            MoveInput = Vector3.zero;
         }
 
         // just in case something happens with inputs, clamp the magnitue of the incoming vector
@@ -91,19 +91,19 @@ public class PlayerMovement : MonoBehaviour
 
         // set input to 0 if small incoming value (in case of slight tilt of joystick with controller)
         HasMoveInput = moveInput.magnitude > 0.1f;
-        moveInput = HasMoveInput ? moveInput : Vector2.zero;
+        moveInput = HasMoveInput ? moveInput : Vector3.zero;
 
         // change the move input to vector 3 (for easier calculations), set to XZ plane and normalize, just in case
         moveInput = moveInput.normalized;
-        MoveInput = new Vector3(moveInput.x, 0, moveInput.y);
+        MoveInput = new Vector3(moveInput.x, 0, moveInput.z);
 
         // in case we need it, create a local direction
         LocalMoveInput = transform.InverseTransformDirection(MoveInput);
 
-        if(_debugEnabled) Debug.DrawRay(transform.position, LocalMoveInput, Color.green);
+        if(_debugEnabled) Debug.DrawRay(transform.position, MoveInput, Color.green);
     }
 
-    public void SetLookDirection(Vector2 lookDirection)
+    public void SetLookDirection(Vector3 lookDirection)
     {
         // if we can't move, or input magnitude is small, return
         if (!CanMove || lookDirection.magnitude < 0.1f)
@@ -113,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
         }
         // else, register look direction as input direction
         HasTurnInput = true;
-        LookDirection = new Vector3(lookDirection.x, 0f, lookDirection.y).normalized;
+        LookDirection = new Vector3(lookDirection.x, 0f, lookDirection.z).normalized;
     }
 
     // stop player movement and zero out physics forces
@@ -130,6 +130,15 @@ public class PlayerMovement : MonoBehaviour
         IsSprinting = isSprinting;
         _moveSpeedMultiplier = isSprinting ? _sprintMultiplier : 1f;
     }
+    // attempts a jump, will fail if not grounded
+    public void Jump()
+    {
+        if (!CanMove || !IsGrounded) return;
+        // calculate jump velocity from jump height and gravity
+        float jumpVelocity = Mathf.Sqrt(2f * -_gravityValue * _jumpHeight);
+        // override current y velocity but maintain x/z velocity
+        _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, jumpVelocity, _rigidbody.velocity.z);
+    }
 
     // updates
     private void FixedUpdate()
@@ -138,6 +147,12 @@ public class PlayerMovement : MonoBehaviour
         //Set the NavMeshAgent destination using nma.SetDestination.
         if (_navMeshAgent.enabled) _navMeshAgent.SetDestination(transform.position + MoveInput);
         MovePlayer();
+        Debug.DrawRay(transform.position, GroundNormal, Color.magenta);
+    }
+
+    private void Update()
+    {
+        // rotation is on normla update for a smoother rotation
         RotatePlayer();
     }
     // private methods
@@ -173,7 +188,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotatePlayer()
     {
-        // rotates character towards movement direction
+        //rotates character towards movement direction
         if (_lookInMovementDirection && HasTurnInput && (IsGrounded || _airTurning))
         {
             Quaternion targetRotation = Quaternion.LookRotation(LookDirection);

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class PlayerAnimationMachine
+public class PlayerAnimationMachine : MonoBehaviour
 {
     //update trigger anim states
-    public static void UpdatePlayerAnim(PlayerAnimState state, Animator anim)
+    public void UpdatePlayerAnim(PlayerAnimState state, Animator anim)
     {
         switch (state)
         {
@@ -16,7 +16,7 @@ public static class PlayerAnimationMachine
     }
 
     //update bool anim states
-    public static void UpdatePlayerAnim(PlayerAnimState state, bool boolean, Animator anim)
+    public void UpdatePlayerAnim(PlayerAnimState state, bool boolean, Animator anim)
     {
         switch (state)
         {

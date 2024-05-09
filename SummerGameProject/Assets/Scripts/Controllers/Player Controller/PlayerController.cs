@@ -8,11 +8,17 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Runtime.InteropServices.ComTypes;
 
+// edit 2024-06-09: Refactored code around with the intention of better script intention. Player controller is now in charge of recieving inputs
+// and sending the corresponding action calls to the components. Player movement is now handleded by PlayerMovement. ToDo: Similarly attacks will be managed by
+// Player attack
 public class PlayerController : MonoBehaviour
 {
     #region components
 
     PlayerInput playerInput;
+    PlayerAnimationMachine _playerAnimationMachine;
+    PlayerAttack _attack;
+    PlayerMovement _movement;
     
     
     #region input actions
@@ -36,7 +42,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region inspector
-
+    [Header("")]
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
     [SerializeField] float sprintPower;
@@ -73,6 +79,9 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
+        _playerAnimationMachine = GetComponentInChildren<PlayerAnimationMachine>();
+        _movement = GetComponent<PlayerMovement>();
+        _attack = GetComponent<PlayerAttack>();
         #region input actions
 
         moveAction = playerInput.actions["Move"];
@@ -230,13 +239,13 @@ public class PlayerController : MonoBehaviour
         
         if (moveInput.magnitude >= 0.3)
         {
-            PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, true, anim);
-            PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsSprinting, sprintAction.ReadValue<float>() != 0, anim);
+            _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, true, anim);
+            _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsSprinting, sprintAction.ReadValue<float>() != 0, anim);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
         }
         else
         {
-            PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, false, anim);
+            _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, false, anim);
         }
 
         if (isGrounded) body.velocity = Vector3.Lerp(body.velocity, moveDirection * moveSpeed, Time.deltaTime * 6f);

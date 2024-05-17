@@ -1,12 +1,12 @@
-using System;
+
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Runtime.InteropServices.ComTypes;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -54,21 +54,17 @@ public class PlayerController : MonoBehaviour
 
     #region variables
 
-    bool isGrounded;
-    bool jumpOnCoolDown;
-    Vector3 GroundedNormal;
-    private GameObject plantEnemy;
+    private bool isGrounded;
+    private bool jumpOnCoolDown;
+    private Vector3 GroundedNormal;
+    private IEnumerator jumpCoroutine;
 
-    bool attacking = false;
-    bool readyToAttack = true;
+    private bool attacking = false;
+    private bool readyToAttack = true;
+    private IEnumerator attackCoroutine;
     
-
     #endregion
 
-    void Start()
-    {
-        plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy");
-    }
 
     private void Awake()
     {
@@ -80,8 +76,6 @@ public class PlayerController : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
 
-        attackAction.started += ctx => Attack();
-        jumpAction.performed += ctx => StartCoroutine(Jump());
         #endregion
 
         anim = GetComponentInChildren<Animator>();
@@ -123,6 +117,8 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+
     }
 
     private void Update()
@@ -131,14 +127,25 @@ public class PlayerController : MonoBehaviour
 
         if (health <= 0)
         {
+            Destroy(gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        if(attackAction.triggered)
+        //Performing an Attack. I need to put it in the update instead of a callback action since it was giving errors
+        if (attackAction.triggered)
         {
-            Debug.Log("Pressed");
-            Attack();
+            attackCoroutine = Attacking();
+            StartCoroutine(attackCoroutine);
         }
+
+        //Performing a Jump
+        if(jumpAction.triggered)
+        {
+            jumpCoroutine = Jump();
+            StartCoroutine(jumpCoroutine);
+        }
+        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -176,23 +183,25 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Destroy(gameObject);
         }
     }
 
     //This is when the player attacks the cave plant enemies. This is a temporary solution since using an array caused them collectively to die
     //when only 1 was killed by the player.
-    private void OnTriggerEnter(Collider other)
-    {
-       if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
-        {
-            PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
-            if (plantAI != null)
-            {
-                plantAI.TakeDamage();
-                Debug.Log("Plant1 Health: " + plantAI.health);
-            }
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+        
+    //   if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
+    //    {
+    //        PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
+    //        if (plantAI != null)
+    //        {
+    //            plantAI.TakeDamage();
+    //            Debug.Log("Plant1 Health: " + plantAI.health);
+    //        }
+    //    }
+    //}
 
     private void Move()
     {
@@ -278,22 +287,23 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    
 
-    public void Attack()
+    IEnumerator Attacking()
     {
         //if not ready to attack or is attacking, return
-        if (!readyToAttack || attacking) return;
+        if (!readyToAttack || attacking) yield break;
 
         // else set ready to attack false nad attack 
         readyToAttack = false;
         attacking = true;
 
+        AttackRayCast();
 
         //finish attacking and reset the attack with delay attackSpeed
-        Invoke(nameof(ResetAttack), attackSpeed);
-
-        AttackRayCast();
+        yield return new WaitForSeconds(attackSpeed);
+        
+        ResetAttack();
+        yield break;
     }
 
     //Reset 
@@ -306,17 +316,35 @@ public class PlayerController : MonoBehaviour
     //Create a raycast and give damage to the first target hit
     void AttackRayCast()
     {
+        //So we don't get an error if we accidentally forget to assign the hitspot
+        Transform startOfTransform = hitSpot != null ? hitSpot.transform : transform;
+        
         //Using the a gameobject and create a raycast from there
-        if(Physics.Raycast(hitSpot.transform.position , hitSpot.transform.forward, out RaycastHit hit, attackDistance , attackLayer))
+        if(Physics.Raycast(startOfTransform.position , startOfTransform.forward, out RaycastHit hit, attackDistance))
         {
-            Debug.Log("Hit");
-          
-            //Hit barrier and deal damage
-            if (hit.transform.TryGetComponent<Barrier>(out Barrier T))
+
+            UnitHealth unitHealth = hit.transform.GetComponent<UnitHealth>();
+           
+            if (unitHealth == null)
             {
-                T.TakeDamage(attackDamage);
+                //try getting their parent if the first one fails
+                unitHealth = hit.transform.parent.transform.GetComponent<UnitHealth>();
+                if (unitHealth == null) return;
             }
+
+
+            unitHealth.DamageUnit(1);
         }
     }
-   
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        if (hitSpot != null)
+        {
+            Gizmos.DrawLine(hitSpot.transform.position, hitSpot.transform.position + hitSpot.transform.forward * attackDistance);
+        }
+        
+    }
+
 }

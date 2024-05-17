@@ -2591,36 +2591,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.121702775, y: 0.42536896, z: 0.13051578}
     m_Extent: {x: 0.11559181, y: 0.32653403, z: 0.12851581}
   m_DirtyAABB: 0
---- !u!1 &4835966802478082860
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3426910223756730514}
-  m_Layer: 0
-  m_Name: Guide Orbit
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3426910223756730514
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4835966802478082860}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5795770302118775298}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4930355933261113565
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,10 +3235,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5795770302118775298}
+  - component: {fileID: 646634246309343235}
+  - component: {fileID: 5795770302118775310}
   - component: {fileID: 5795770302118775297}
   - component: {fileID: 5795770302118775296}
   - component: {fileID: 5795770302118775311}
-  - component: {fileID: 5795770302118775310}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3289,10 +3260,99 @@ Transform:
   m_Children:
   - {fileID: 5795770301225366228}
   - {fileID: 6333203591538774820}
-  - {fileID: 3426910223756730514}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &646634246309343235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5795770302118775309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcebec06c7708c44d8d0a60e62eff1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 10
+  _currentHealth: 10
+  _currentPhase: 0
+  _unitHealthPhases:
+  - phaseName: Phase 1
+    phaseHealthPercent: 65
+    unitPhaseEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 9522f5c27b849a443b393ab3e512f561, type: 2}
+          m_TargetAssemblyTypeName: SO_PlayerHealthPhaseEvents, Assembly-CSharp
+          m_MethodName: HealthPhase1Event
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - phaseName: Phase 2
+    phaseHealthPercent: 30
+    unitPhaseEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 9522f5c27b849a443b393ab3e512f561, type: 2}
+          m_TargetAssemblyTypeName: SO_PlayerHealthPhaseEvents, Assembly-CSharp
+          m_MethodName: HealthPhase2Event
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  _healthBar: {fileID: 0}
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9522f5c27b849a443b393ab3e512f561, type: 2}
+        m_TargetAssemblyTypeName: SO_PlayerHealthPhaseEvents, Assembly-CSharp
+        m_MethodName: DefeatedLogic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5795770302118775310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5795770302118775309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71916c26f4e3a184db0fb945dcd8165e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  moveSpeed: 10
+  jumpPower: 4
+  sprintPower: 1.5
+  healthBar: {fileID: 0}
+  attackDistance: 10
+  attackSpeed: 1
+  attackDamage: 5
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  hitSpot: {fileID: 0}
 --- !u!54 &5795770302118775297
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3353,30 +3413,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &5795770302118775310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5795770302118775309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71916c26f4e3a184db0fb945dcd8165e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  moveSpeed: 10
-  jumpPower: 4
-  sprintPower: 1.5
-  healthBar: {fileID: 0}
-  attackDistance: 10
-  attackSpeed: 1
-  attackDamage: 5
-  attackLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  hitSpot: {fileID: 0}
 --- !u!1 &5846590768398777972
 GameObject:
   m_ObjectHideFlags: 0

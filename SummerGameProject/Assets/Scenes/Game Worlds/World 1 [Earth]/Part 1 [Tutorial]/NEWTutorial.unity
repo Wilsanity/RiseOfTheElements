@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0674912, g: 0.07703891, b: 0.23327583, a: 1}
+  m_IndirectSpecularColor: {r: 0.067491226, g: 0.07703891, b: 0.2332758, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2773,7 +2773,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4f426020d5946fd479710169be040374, type: 3}
   m_PrefabInstance: {fileID: 296064351}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &296064357
+--- !u!114 &296064355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2782,11 +2782,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 296064352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3654a8e437e5f86468852c5bd8bdf377, type: 3}
+  m_Script: {fileID: 11500000, guid: fcebec06c7708c44d8d0a60e62eff1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  movingBarrier: {fileID: 0}
+  _maxHealth: 20
+  _currentHealth: 20
+  _currentPhase: 0
+  _unitHealthPhases: []
+  _healthBar: {fileID: 0}
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &318952370
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,7 +3279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
-  movingBarrier: {fileID: 329999147}
+  movingBarrier: {fileID: 0}
 --- !u!1 &334359587
 GameObject:
   m_ObjectHideFlags: 0
@@ -6493,11 +6499,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 662744273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3654a8e437e5f86468852c5bd8bdf377, type: 3}
+  m_Script: {fileID: 11500000, guid: fcebec06c7708c44d8d0a60e62eff1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  movingBarrier: {fileID: 0}
+  _maxHealth: 10
+  _currentHealth: 10
+  _currentPhase: 0
+  _unitHealthPhases: []
+  _healthBar: {fileID: 0}
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &664879245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7500,11 +7512,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 754946774}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3654a8e437e5f86468852c5bd8bdf377, type: 3}
+  m_Script: {fileID: 11500000, guid: fcebec06c7708c44d8d0a60e62eff1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  movingBarrier: {fileID: 0}
+  _maxHealth: 10
+  _currentHealth: 10
+  _currentPhase: 0
+  _unitHealthPhases: []
+  _healthBar: {fileID: 0}
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &755701531
 GameObject:
   m_ObjectHideFlags: 0
@@ -17817,6 +17835,90 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _currentHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[0].phaseName
+      value: Phase 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[1].phaseName
+      value: Phase 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[0].phaseHealthPercent
+      value: 63.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[1].phaseHealthPercent
+      value: 31.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[0].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[1].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[0].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[1].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[0].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: e09f0c4986466bd4caa47bed6d878fcb, type: 2}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[1].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: e09f0c4986466bd4caa47bed6d878fcb, type: 2}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[0].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[1].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[0].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HealthPhase1Event
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[1].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HealthPhase2Event
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[0].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SO_BaseUnitPhaseEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[1].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SO_BaseUnitPhaseEvent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[0].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2387323920484273975, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+      propertyPath: _unitHealthPhases.Array.data[1].unitPhaseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2774450882991871366, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
       propertyPath: XYAxis
       value: 
@@ -22341,11 +22443,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2105597652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3654a8e437e5f86468852c5bd8bdf377, type: 3}
+  m_Script: {fileID: 11500000, guid: fcebec06c7708c44d8d0a60e62eff1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  movingBarrier: {fileID: 0}
+  _maxHealth: 10
+  _currentHealth: 10
+  _currentPhase: 0
+  _unitHealthPhases: []
+  _healthBar: {fileID: 0}
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2111863746
 PrefabInstance:
   m_ObjectHideFlags: 0

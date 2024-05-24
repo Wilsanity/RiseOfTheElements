@@ -76,7 +76,7 @@ public abstract class EnemyController : AdvancedFSM
         CurrentState.Reason(player, transform);
         CurrentState.Act(player, transform);
         stateDebug = GetStringState();
-        debugStateText.text = GetStringState();
+        ///debugStateText.text = GetStringState();
     }
 
     protected abstract void ConstructFSM();

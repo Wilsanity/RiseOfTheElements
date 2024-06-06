@@ -1,24 +1,18 @@
-using System;
+
 using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Runtime.InteropServices.ComTypes;
 
-// edit 2024-06-09: Refactored code around with the intention of better script intention. Player controller is now in charge of recieving inputs
-// and sending the corresponding action calls to the components. Player movement is now handleded by PlayerMovement. ToDo: Similarly attacks will be managed by
-// Player attack
+
 public class PlayerController : MonoBehaviour
 {
     #region components
 
     PlayerInput playerInput;
-    PlayerAnimationMachine _playerAnimationMachine;
-    PlayerAttack _attack;
-    PlayerMovement _movement;
     
     
     #region input actions
@@ -42,7 +36,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region inspector
-    [Header("")]
+
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
     [SerializeField] float sprintPower;
@@ -60,41 +54,28 @@ public class PlayerController : MonoBehaviour
 
     #region variables
 
-    bool isGrounded;
-    bool jumpOnCoolDown;
-    Vector3 GroundedNormal;
-    private GameObject plantEnemy;
+    private bool isGrounded;
+    private bool jumpOnCoolDown;
+    private Vector3 GroundedNormal;
+    private IEnumerator jumpCoroutine;
 
-    bool attacking = false;
-    bool readyToAttack = true;
-    private Vector2 _moveInputRaw;
-
-
+    private bool attacking = false;
+    private bool readyToAttack = true;
+    private IEnumerator attackCoroutine;
+    
     #endregion
 
-    void Start()
-    {
-        plantEnemy = GameObject.FindGameObjectWithTag("PlantEnemy");
-    }
 
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        _playerAnimationMachine = GetComponentInChildren<PlayerAnimationMachine>();
-        _movement = GetComponent<PlayerMovement>();
-        _attack = GetComponent<PlayerAttack>();
         #region input actions
 
-        //moveAction = playerInput.actions["Move"];
+        moveAction = playerInput.actions["Move"];
         sprintAction = playerInput.actions["Sprint"];
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
 
-        attackAction.started += ctx => Attack();
-        jumpAction.performed += ctx => TryJump();
-        sprintAction.performed += ctx => SetSprint(true);
-        sprintAction.canceled += ctx => SetSprint(false);
-        //moveAction.performed += ctx => SetMoveInput(ctx);
         #endregion
 
         anim = GetComponentInChildren<Animator>();
@@ -118,7 +99,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     private void OnEnable()
     {
         //single press button input notation. 
@@ -137,46 +117,37 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+
     }
 
     private void Update()
     {
-        //Move();
-        // get input from the playerInput, process it to match camera forward
-        Vector3 up = Vector3.up;
-        Vector3 right = Camera.main.transform.right;
-        Vector3 forward = Vector3.Cross(right, up);
-        Vector3 moveInput = forward * _moveInputRaw.y + right * _moveInputRaw.x;
-
-        Debug.DrawRay(transform.position, moveInput, Color.yellow);
-
-        // send player input to character movement for further processing
-        _movement.SetMoveInput(moveInput);
-        _movement.SetLookDirection(moveInput);
+        Move();
 
         if (health <= 0)
         {
+            Destroy(gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
-        if(attackAction.triggered)
+        //Performing an Attack. I need to put it in the update instead of a callback action since it was giving errors
+        if (attackAction.triggered)
         {
-            Debug.Log("Pressed");
-            Attack();
+            attackCoroutine = Attacking();
+            StartCoroutine(attackCoroutine);
         }
+
+        //Performing a Jump
+        if(jumpAction.triggered)
+        {
+            jumpCoroutine = Jump();
+            StartCoroutine(jumpCoroutine);
+        }
+        
+
     }
-    private void OnMove(InputValue value)
-    {
-        _moveInputRaw = value.Get<Vector2>();
-    }
-    private void SetSprint(bool sprintValue)
-    {
-        _movement.SetIsSprinting(sprintValue);
-    }
-    private void TryJump()
-    {
-        _movement.Jump();
-    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "PortalFX_V2")//TEMPORARY CODE: If the player collides with the portal, the cave scene starts.
@@ -212,72 +183,74 @@ public class PlayerController : MonoBehaviour
         if (health <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Destroy(gameObject);
         }
     }
 
     //This is when the player attacks the cave plant enemies. This is a temporary solution since using an array caused them collectively to die
     //when only 1 was killed by the player.
-    private void OnTriggerEnter(Collider other)
-    {
-       if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
-        {
-            PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
-            if (plantAI != null)
-            {
-                plantAI.TakeDamage();
-                Debug.Log("Plant1 Health: " + plantAI.health);
-            }
-        }
-    }
-
-    //private void Move()
+    //private void OnTriggerEnter(Collider other)
     //{
-
-    //    //Reads player input as a vector2
-    //    Vector2 moveInput = moveAction.ReadValue<Vector2>();
-    //    if (sprintAction.ReadValue<float>() != 0) moveInput *= sprintPower;
-
-    //    /*
-    //    Because we want the player to move at a consistant speed regardless of the angle of the ground they're walking on.
-    //    We find the ground normal and find the cross product for the forward and right vectors.
-    //    We then use the cross product to find the direction the player should move in, and we apply our input to that direction.
-    //    */
-
-    //    //----------------------old non-navmesh code-------------------------------------------------------------
-    //    //Find the new forward and right vectors
-    //    //Vector3 forward = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.right);
-    //    //Vector3 right = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.forward);
-
-    //    ////Apply the input to the new forward and right vectors and use those values as the Rigidbodies velocity
-    //    //Vector3 moveDirection = forward * -moveInput.y + right * moveInput.x;
-    //    //----------------------old non-navmesh code--------------------------------------------------------------
-
-
-    //    Vector3 moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
-    //    moveDirection = cameraFollowTargetTransform.TransformDirection(moveDirection);
-    //    moveDirection.y = 0f;
-
-    //    //Ensures that the NavMeshAgent is enabled before setting its destination.
-    //    //Set the NavMeshAgent destination using nma.SetDestination.
-    //    if (nma.enabled) nma.SetDestination(transform.position + moveDirection);
-
-    //    //Rotate the player to face forward
-    //    Quaternion targetRotation = moveDirection != Vector3.zero ? Quaternion.LookRotation(moveDirection, Vector3.up) : transform.rotation;
         
-    //    if (moveInput.magnitude >= 0.3)
+    //   if(other.gameObject.CompareTag("DamageZone") && attackAction.ReadValue<float>() != 0)
     //    {
-    //        _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, true, anim);
-    //        _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsSprinting, sprintAction.ReadValue<float>() != 0, anim);
-    //        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+    //        PlantAIController plantAI = plantEnemy.GetComponent<PlantAIController>();
+    //        if (plantAI != null)
+    //        {
+    //            plantAI.TakeDamage();
+    //            Debug.Log("Plant1 Health: " + plantAI.health);
+    //        }
     //    }
-    //    else
-    //    {
-    //        _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, false, anim);
-    //    }
-
-    //    if (isGrounded) body.velocity = Vector3.Lerp(body.velocity, moveDirection * moveSpeed, Time.deltaTime * 6f);
-    //    else body.velocity = Vector3.Lerp(body.velocity, moveDirection * moveSpeed, Time.deltaTime * 1f);
     //}
+
+    private void Move()
+    {
+
+        //Reads player input as a vector2
+        Vector2 moveInput = moveAction.ReadValue<Vector2>();
+        if (sprintAction.ReadValue<float>() != 0) moveInput *= sprintPower;
+
+        /*
+        Because we want the player to move at a consistant speed regardless of the angle of the ground they're walking on.
+        We find the ground normal and find the cross product for the forward and right vectors.
+        We then use the cross product to find the direction the player should move in, and we apply our input to that direction.
+        */
+
+        //----------------------old non-navmesh code-------------------------------------------------------------
+        //Find the new forward and right vectors
+        //Vector3 forward = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.right);
+        //Vector3 right = Vector3.Cross(GroundedNormal, cameraFollowTargetTransform.forward);
+
+        ////Apply the input to the new forward and right vectors and use those values as the Rigidbodies velocity
+        //Vector3 moveDirection = forward * -moveInput.y + right * moveInput.x;
+        //----------------------old non-navmesh code--------------------------------------------------------------
+
+
+        Vector3 moveDirection = new Vector3(moveInput.x, 0f, moveInput.y);
+        moveDirection = cameraFollowTargetTransform.TransformDirection(moveDirection);
+        moveDirection.y = 0f;
+
+        //Ensures that the NavMeshAgent is enabled before setting its destination.
+        //Set the NavMeshAgent destination using nma.SetDestination.
+        if (nma.enabled) nma.SetDestination(transform.position + moveDirection);
+
+        //Rotate the player to face forward
+        Quaternion targetRotation = moveDirection != Vector3.zero ? Quaternion.LookRotation(moveDirection, Vector3.up) : transform.rotation;
+        
+        if (moveInput.magnitude >= 0.3)
+        {
+            PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, true, anim);
+            PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsSprinting, sprintAction.ReadValue<float>() != 0, anim);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        }
+        else
+        {
+            PlayerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, false, anim);
+        }
+
+        if (isGrounded) body.velocity = Vector3.Lerp(body.velocity, moveDirection * moveSpeed, Time.deltaTime * 6f);
+        else body.velocity = Vector3.Lerp(body.velocity, moveDirection * moveSpeed, Time.deltaTime * 1f);
+    }
 
     private IEnumerator Jump()
     {
@@ -314,22 +287,23 @@ public class PlayerController : MonoBehaviour
        
     }
 
-    
 
-    public void Attack()
+    IEnumerator Attacking()
     {
         //if not ready to attack or is attacking, return
-        if (!readyToAttack || attacking) return;
+        if (!readyToAttack || attacking) yield break;
 
         // else set ready to attack false nad attack 
         readyToAttack = false;
         attacking = true;
 
+        AttackRayCast();
 
         //finish attacking and reset the attack with delay attackSpeed
-        Invoke(nameof(ResetAttack), attackSpeed);
-
-        AttackRayCast();
+        yield return new WaitForSeconds(attackSpeed);
+        
+        ResetAttack();
+        yield break;
     }
 
     //Reset 
@@ -342,17 +316,35 @@ public class PlayerController : MonoBehaviour
     //Create a raycast and give damage to the first target hit
     void AttackRayCast()
     {
+        //So we don't get an error if we accidentally forget to assign the hitspot
+        Transform startOfTransform = hitSpot != null ? hitSpot.transform : transform;
+        
         //Using the a gameobject and create a raycast from there
-        if(Physics.Raycast(hitSpot.transform.position , hitSpot.transform.forward, out RaycastHit hit, attackDistance , attackLayer))
+        if(Physics.Raycast(startOfTransform.position , startOfTransform.forward, out RaycastHit hit, attackDistance))
         {
-            Debug.Log("Hit");
-          
-            //Hit barrier and deal damage
-            if (hit.transform.TryGetComponent<Barrier>(out Barrier T))
+
+            UnitHealth unitHealth = hit.transform.GetComponent<UnitHealth>();
+           
+            if (unitHealth == null)
             {
-                T.TakeDamage(attackDamage);
+                //try getting their parent if the first one fails
+                unitHealth = hit.transform.parent.transform.GetComponent<UnitHealth>();
+                if (unitHealth == null) return;
             }
+
+
+            unitHealth.DamageUnit(1);
         }
     }
-   
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        if (hitSpot != null)
+        {
+            Gizmos.DrawLine(hitSpot.transform.position, hitSpot.transform.position + hitSpot.transform.forward * attackDistance);
+        }
+        
+    }
+
 }

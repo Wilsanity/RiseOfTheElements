@@ -36,11 +36,18 @@ public class PlayerAnimationMachine : MonoBehaviour
             case PlayerAnimState.IsSprinting:
                 _animator.SetBool("IsSprinting", boolean);
                 return;
+            case PlayerAnimState.IsGrounded:
+                _animator.SetBool("IsGrounded", boolean);
+                return;
 
             default:
                 Debug.LogError("PlayerAnimationMachine: Invalid PlayerAnimState");
                 return;
         }
+    }
+    public void JumpAnimation()
+    {
+        _animator.SetTrigger("Jump");
     }
 }
 
@@ -48,4 +55,5 @@ public enum PlayerAnimState
 {
     IsMoving,
     IsSprinting,
+    IsGrounded
 }

@@ -141,12 +141,14 @@ public class PlayerMovement : MonoBehaviour
         float jumpVelocity = Mathf.Sqrt(2f * -_gravityValue * _jumpHeight);
         // override current y velocity but maintain x/z velocity
         _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, jumpVelocity, _rigidbody.velocity.z);
+        _animationStateMachine.JumpAnimation();
     }
 
     // updates
     private void FixedUpdate()
     {
         IsGrounded = CheckGrounded();
+        _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsGrounded, IsGrounded);
         //Set the NavMeshAgent destination using nma.SetDestination.
         if (_navMeshAgent.enabled) _navMeshAgent.SetDestination(transform.position + MoveInput);
         MovePlayer();

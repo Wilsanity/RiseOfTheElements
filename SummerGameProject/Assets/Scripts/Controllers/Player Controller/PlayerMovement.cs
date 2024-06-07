@@ -148,9 +148,10 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         IsGrounded = CheckGrounded();
+        Debug.Log("Grounded = " + IsGrounded);
         _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsGrounded, IsGrounded);
         //Set the NavMeshAgent destination using nma.SetDestination.
-        if (_navMeshAgent.enabled) _navMeshAgent.SetDestination(transform.position + MoveInput);
+        //if (_navMeshAgent.enabled) _navMeshAgent.SetDestination(transform.position + MoveInput);
         MovePlayer();
         bool isMoving = HasMoveInput && _rigidbody.velocity.magnitude > 0.1f;
         _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, isMoving);

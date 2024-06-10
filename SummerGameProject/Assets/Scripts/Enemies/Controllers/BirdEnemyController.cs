@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class BirdEnemyController : EnemyController
 {
+    public BirdAttackZone attackZoneGO;
+
     [Tooltip("This is the number of random path points you want to generate for this enemy.")]
     [SerializeField]
     private int pointsNum;
@@ -35,6 +37,10 @@ public class BirdEnemyController : EnemyController
     [SerializeField]
     private float coolDownInterval = 5f;
 
+    // Stored during attack state to use during cooldown calculations
+    [HideInInspector]
+    public Vector3 initialPlayerPos;
+
     protected override void Initialize()
     {
         base.Initialize();
@@ -51,13 +57,16 @@ public class BirdEnemyController : EnemyController
         AerialWanderState aerialWanderState = new AerialWanderState(center, height, radius, pointsNum, animator);
 
         // Create Swoop Attack State
-        SwoopAttackState swoopAttackState = new SwoopAttackState(attackSpeed);
+        SwoopAttackState swoopAttackState = new SwoopAttackState(attackSpeed, attackZoneGO, initialPlayerPos, animator);
 
         // Create Flee State
-        AerialMoveAwayState moveAwayState = new AerialMoveAwayState(height, moveAwaySpeed);
+        AerialMoveAwayState moveAwayState = new AerialMoveAwayState(height, moveAwaySpeed, animator);
 
         // Create Cooldown State
-        CooldownState cooldDownState = new CooldownState(coolDownInterval);
+        CooldownState cooldDownState = new CooldownState(coolDownInterval, animator);
+
+        // Create Damage State
+        TakeDamageState takeDamageState = new TakeDamageState(animator);
 
         // Create Dead State
         DeadState dead = new DeadState(animator);
@@ -69,12 +78,14 @@ public class BirdEnemyController : EnemyController
         aerialWanderState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
 
         // Transitions out of Swoop Attack State
-        swoopAttackState.AddTransition(TransitionType.OutOfRange, FSMStateType.Wandering);
+        //swoopAttackState.AddTransition(TransitionType.OutOfRange, FSMStateType.Wandering);
         swoopAttackState.AddTransition(TransitionType.AttackOver, FSMStateType.MovingAway);
+        swoopAttackState.AddTransition(TransitionType.DamageTaken, FSMStateType.TakingDamage);
         swoopAttackState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
 
         // Transitions out of Move Away State
         moveAwayState.AddTransition(TransitionType.Cooldown, FSMStateType.Cooldown);
+        moveAwayState.AddTransition(TransitionType.DamageTaken, FSMStateType.TakingDamage);
         moveAwayState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
 
         // Transitions out of Cool Down State
@@ -82,11 +93,16 @@ public class BirdEnemyController : EnemyController
         cooldDownState.AddTransition(TransitionType.InAttackRange, FSMStateType.Attacking);
         cooldDownState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
 
+        // Transition out of Damage State
+        takeDamageState.AddTransition(TransitionType.DamageTaken, FSMStateType.MovingAway);
+        takeDamageState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
+
         // Add States to List
         AddState(aerialWanderState);
         AddState(swoopAttackState);
         AddState(moveAwayState);
         AddState(cooldDownState);
+        AddState(takeDamageState);
         AddState(dead);
     }
 }

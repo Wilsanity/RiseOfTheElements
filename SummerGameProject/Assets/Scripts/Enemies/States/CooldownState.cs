@@ -9,16 +9,24 @@ public class CooldownState : FSMState
 
     private bool coolDownOver = false;
 
-    public CooldownState(float i)
+    private Animator animator;
+
+    public CooldownState(float i, Animator anim)
     {
         stateType = FSMStateType.Cooldown;
 
         // Set parameters
         interval = i;
+
+        animator = anim;
     }
 
     public override void EnterStateInit()
     {
+        animator.SetBool("Idle", true);
+        animator.SetBool("Attacking", false);
+        animator.SetBool("Hit", false);
+
         coolDownOver = false;
 
         timer = WorldData.Instance.worldTimer + interval;
@@ -28,7 +36,7 @@ public class CooldownState : FSMState
     public override void Reason(Transform player, Transform npc)
     {
         // Dead
-        if (npc.GetComponent<EnemyController>().GetHealth() == 0)
+        if (npc.GetComponent<UnitHealth>().CurrentHealth == 0)
         {
             // Dead State
             npc.GetComponent<EnemyController>().PerformTransition(TransitionType.NoHealth);

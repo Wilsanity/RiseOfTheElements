@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float attackDistance = 10f;
     [SerializeField] float attackSpeed = 1f;
-    [SerializeField] int attackDamage = 5;
+    [SerializeField] public int attackDamage = 5;
     [SerializeField] LayerMask attackLayer;
     [SerializeField] GameObject hitSpot;
 
@@ -332,9 +332,25 @@ public class PlayerController : MonoBehaviour
                 if (unitHealth == null) return;
             }
 
-
             unitHealth.DamageUnit(1);
         }
+        //else if(Physics.Raycast(startOfTransform.position, (startOfTransform.forward + startOfTransform.up), out RaycastHit hitAngled, attackDistance))
+        //{
+        //    UnitHealth unitHealth = hitAngled.transform.GetComponent<UnitHealth>();
+
+        //    if (unitHealth == null)
+        //    {
+        //        //try getting their parent if the first one fails
+        //        unitHealth = hitAngled.transform.parent.transform.GetComponent<UnitHealth>();
+        //        if (unitHealth == null) return;
+        //    }
+
+        //    unitHealth.DamageUnit(1);
+        //}
+
+        /// Uncomment this if you want to damage bird enemy by only clicking (TESTING ONLY)
+        //GameObject enemy = GameObject.Find("BirdEnemy");
+        //enemy.GetComponent<UnitHealth>().DamageUnit(1);
     }
 
     private void OnDrawGizmos()
@@ -343,8 +359,9 @@ public class PlayerController : MonoBehaviour
         if (hitSpot != null)
         {
             Gizmos.DrawLine(hitSpot.transform.position, hitSpot.transform.position + hitSpot.transform.forward * attackDistance);
+            //Gizmos.DrawLine(hitSpot.transform.position, hitSpot.transform.position + (hitSpot.transform.forward + hitSpot.transform.up) * attackDistance);
         }
-        
+
     }
 
 }

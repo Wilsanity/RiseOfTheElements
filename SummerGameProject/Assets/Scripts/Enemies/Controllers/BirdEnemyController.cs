@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -8,6 +9,26 @@ using UnityEngine;
 public class BirdEnemyController : EnemyController
 {
     public BirdAttackZone attackZoneGO;
+
+    [Space]
+    [Title("Attack Variables",TextAlignment.Left,TextColour.White,14)]
+    [Separator]
+
+    [Tooltip("The speed the enemy will attack at.")]
+    [SerializeField]
+    private float attackSpeed = 7f;
+
+    [Tooltip("The speed the enemy will move away at.")]
+    [SerializeField]
+    private float moveAwaySpeed = 5f;
+
+    [Tooltip("The length of the enemy's cooldown state.")]
+    [SerializeField]
+    private float coolDownInterval = 5f;
+
+    [Space]
+    [Title("Waypoint Variables", TextAlignment.Left, TextColour.White, 14)]
+    [Separator]
 
     [Tooltip("This is the number of random path points you want to generate for this enemy.")]
     [SerializeField]
@@ -25,21 +46,15 @@ public class BirdEnemyController : EnemyController
     [SerializeField]
     private Vector3 center;
 
-    [Tooltip("The speed the enemy will attack at.")]
-    [SerializeField]
-    private float attackSpeed = 7f;
-
-    [Tooltip("The speed the enemy will move away at.")]
-    [SerializeField]
-    private float moveAwaySpeed = 5f;
-
-    [Tooltip("The length of the enemy's cooldown state.")]
-    [SerializeField]
-    private float coolDownInterval = 5f;
+    [SerializeField] 
+    private GameObject[] waypoints;
 
     // Stored during attack state to use during cooldown calculations
     [HideInInspector]
     public Vector3 initialPlayerPos;
+
+    //Properties
+    public GameObject[] Waypoints { get => waypoints; set => waypoints = value; }
 
     protected override void Initialize()
     {
@@ -47,6 +62,8 @@ public class BirdEnemyController : EnemyController
 
         GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().isKinematic = true;
+
+        UnpackPrefab();
     }
 
     protected override void ConstructFSM()
@@ -104,5 +121,36 @@ public class BirdEnemyController : EnemyController
         AddState(cooldDownState);
         AddState(takeDamageState);
         AddState(dead);
+    }
+
+    private void UnpackPrefab()
+    {
+        bool isPrefab = PrefabUtility.IsAnyPrefabInstanceRoot(gameObject);
+
+        if (isPrefab)
+        {
+            PrefabUtility.UnpackPrefabInstance(gameObject, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);
+        }
+    }
+
+    public void GenerateWaypoints()
+    {
+        //Check to see if there's a child Object named "Waypoints"
+        waypoints = AerialWanderState.GeneratePathPoints(pointsNum,transform,waypoints,center,radius,height,destPos);
+        //if so, clear all children GameObjects and then spawn in new waypoints
+
+        //if not, then make one and spawn objects in new waypoints
+    }
+
+    private void OnDrawGizmos()
+    {
+        Vector3 centerHeight = new Vector3(center.x, height, center.z);
+        Handles.DrawWireDisc(centerHeight, Vector3.up, radius);
+
+        Gizmos.color = Color.white;
+        Gizmos.DrawLine(transform.position, centerHeight);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(centerHeight, 0.3f);
+
     }
 }

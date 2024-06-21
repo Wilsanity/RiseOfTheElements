@@ -10,15 +10,19 @@ public class SO_interactableObjectMovement : MonoBehaviour
     [SerializeField] private Vector3 endPosition;
     [SerializeField] private float desiredDuration = 3f;
     [SerializeField] private AnimationCurve curve;
+    [SerializeField] private GameObject startLever;
+    [SerializeField] private GameObject endLever;
 
     private float elapsedTime;
     private bool isLerping = false;
     private float percentageComplete;
 
+
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
+        endPosition = startPosition - new Vector3(0,10,0);
     }
 
     // Update is called once per frame
@@ -41,10 +45,12 @@ public class SO_interactableObjectMovement : MonoBehaviour
     {
         percentageComplete = elapsedTime / desiredDuration;
         transform.position = Vector3.Lerp(startPosition, endPosition, curve.Evaluate(percentageComplete));
-
+        
         if (percentageComplete >= 1f)
         {
             isLerping = false;
         }
+        startLever.SetActive(false);
+        endLever.SetActive(true);
     }
 }

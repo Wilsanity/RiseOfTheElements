@@ -179,7 +179,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.name == "PortalFX_V2")//TEMPORARY CODE: If the player collides with the portal, the cave scene starts.
         {
-            SceneManager.LoadScene("Cave Scene");
+            SceneTransitionController.Instance.LoadSpecificSceneString("Cave Scene");
+            //SceneManager.LoadScene("Cave Scene");
         }
     }
 
@@ -293,8 +294,9 @@ public class PlayerController : MonoBehaviour
         //}
 
         /// Uncomment this if you want to damage bird enemy by only clicking (TESTING ONLY)
-        //GameObject enemy = GameObject.Find("BirdEnemy");
-        //enemy.GetComponent<UnitHealth>().DamageUnit(1);
+        GameObject enemy = GameObject.Find("BirdEnemy");
+        Debug.Log(enemy);
+        if (enemy != null) enemy.GetComponent<UnitHealth>().DamageUnit(1);
     }
 
     private void OnDrawGizmos()

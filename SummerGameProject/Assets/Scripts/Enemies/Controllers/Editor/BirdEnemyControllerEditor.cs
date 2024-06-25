@@ -122,7 +122,7 @@ public class BirdEnemyControllerEditor : Editor
         
         int waypointChildCount = waypointGO.childCount;
 
-        if (CheckIfArrayElementsAreNull(waypoints.arraySize,birdController) > 0 && waypointGO.childCount != 0)
+        if (CheckIfArrayElementsAreNull(waypoints.arraySize,birdController) && waypointGO.childCount != 0)
         {
             birdController.Waypoints = new GameObject[waypointChildCount];
          
@@ -135,15 +135,16 @@ public class BirdEnemyControllerEditor : Editor
         }
     }
 
-    private int CheckIfArrayElementsAreNull(int childCount, BirdEnemyController birdController)
+    private bool CheckIfArrayElementsAreNull(int childCount, BirdEnemyController birdController)
     {
-        int allNull = 0;
 
-        for (int i = 0; i < childCount; i++)
-        {
-            if (birdController.Waypoints[i] == null) allNull++;
-        }
-        return allNull;
+        if (childCount <= 0) return false;
+
+       
+        if (birdController.Waypoints[0] == null) return true;
+
+        return false;
+        
     }
     private void GenerateWaypoints(BirdEnemyController birdController)
     {

@@ -76,7 +76,7 @@ public class AerialWanderState : FSMState
             // Move enemy along path
             for (int i = 0; i < pathPoints.Length; i++)
             {
-                if (Vector3.Distance(npc.position, pathPoints[i].transform.position) <= 0.5f)
+                if (Vector3.Distance(npc.position, pathPoints[i].transform.position) <= 0.1f)
                 {
                     if (i + 1 > pathPoints.Length - 1)
                     {

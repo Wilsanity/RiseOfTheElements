@@ -66,6 +66,9 @@ public class PlayerController : MonoBehaviour
     private IEnumerator attackCoroutine;
     private Vector2 _moveInputRaw;
 
+    private bool isJumping; // Check if the player is pressing jump
+    private bool isFalling; // Check if the player is falling
+    private Vector3 lastGroundedPosition; // Store the position when grounded
     #endregion
 
 
@@ -95,6 +98,7 @@ public class PlayerController : MonoBehaviour
         capsule = GetComponent<CapsuleCollider>();
         body = GetComponent<Rigidbody>();
 
+        
         cameraFollowTargetTransform = transform.GetChild(0).transform;
 
         //if a portal was used to telleport
@@ -160,6 +164,9 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Pressed");
             Attack();
         }
+
+        CheckFalling();
+        CheckJumping();
     }
 
     private void OnMove(InputValue value)
@@ -290,6 +297,67 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+
+
+    // Debug and Stat Check
+    public Vector3 GetMovementInput()
+    {
+        return new Vector3(_moveInputRaw.x, 0, _moveInputRaw.y);
+    }
+
+    public bool CheckForIsGrounded()
+    {
+        return isGrounded;
+    }
+
+    public bool CheckForIsFalling()
+    {
+        return isFalling;
+    }
+
+    public bool CheckForJumping()
+    {
+        return isJumping;
+    }
+
+    private void CheckFalling()
+    {
+        if (!isGrounded)
+        {
+            // Check if the player has fallen below a certain threshold from last grounded position
+            if (transform.position.y < lastGroundedPosition.y - 0.1f || transform.position.y <= _movement._jumpHeight) // Adjust the threshold as needed
+            {
+                isFalling = true;
+            }
+            else
+            {
+                isFalling = false;
+            }
+        }
+        else
+        {
+            // Update last grounded position when grounded
+            lastGroundedPosition = transform.position;
+            isFalling = false;
+        }
+    }
+
+    private void CheckJumping()
+    {
+        // Check if the jump action is triggered (pressed down)
+        if (jumpAction.triggered)
+        {
+            isJumping = true;
+        }
+
+        // Check if the jump action is no longer performed (released)
+        if (jumpAction.ReadValue<float>() <= 0)
+        {
+            isJumping = false;
+        }
+    }
+
+
 
     // legacy code
     //This is when the player attacks the cave plant enemies. This is a temporary solution since using an array caused them collectively to die

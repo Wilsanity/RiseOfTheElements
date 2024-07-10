@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask attackLayer;
     [SerializeField] GameObject hitSpot;
 
+    [SerializeField] private float _dodgeDoubleTapWindow = 0.4f;
+
 
     #endregion
 
@@ -65,6 +67,8 @@ public class PlayerController : MonoBehaviour
     private bool readyToAttack = true;
     private IEnumerator attackCoroutine;
     private Vector2 _moveInputRaw;
+
+    private Coroutine _dodgeDoubleInputWaitCoroutine;
 
     #endregion
 
@@ -173,6 +177,25 @@ public class PlayerController : MonoBehaviour
     private void TryJump()
     {
         _movement.Jump();
+    }
+    private void OnDodge()
+    {
+        if(_dodgeDoubleInputWaitCoroutine != null)
+        {
+            StopCoroutine(_dodgeDoubleInputWaitCoroutine);
+            _dodgeDoubleInputWaitCoroutine = null;
+            _movement.TryGroundDodge(false);
+        }
+        else
+        {
+            _dodgeDoubleInputWaitCoroutine = StartCoroutine(DodgeDoubleTapWait());
+        }
+    }
+    private IEnumerator DodgeDoubleTapWait()
+    {
+        yield return new WaitForSeconds(_dodgeDoubleTapWindow);
+        _movement.TryGroundDodge(true);
+        _dodgeDoubleInputWaitCoroutine = null;
     }
 
     private void OnCollisionEnter(Collision collision)

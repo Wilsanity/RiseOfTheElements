@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // serialize fields 
+    // serialized fields 
     [Header("Movement Variables")]
     [SerializeField, Tooltip("Target max speed")] 
     private float _moveSpeed = 1;
@@ -28,6 +28,13 @@ public class PlayerMovement : MonoBehaviour
     private bool _useCustomGravity = true;
     [SerializeField, Tooltip("Custom gravity acceleration")]
     private float _gravityValue = -15f;
+
+    [Header("Dodge")]
+    [SerializeField] private float _shortDodgeDistance = 1;
+    [SerializeField] private float _shortDodgeTime = 0.5f;
+    [SerializeField] private float _longDodgeDistance = 2;
+    [SerializeField] private float _longDodgeTime = 0.5f;
+    [SerializeField] private float _dodgeCooldown = 0.5f;
 
     [Header("Movement Settings")]
     [SerializeField, Tooltip("Force character to look in move direction")] 
@@ -55,6 +62,10 @@ public class PlayerMovement : MonoBehaviour
 
     // private variables
     private float _moveSpeedMultiplier = 1;
+    private bool _isDodging = false;
+    private float _lastDodgeTime = 0;
+    private float _dodgeSpeed;
+    private Vector3 _dodgeLockedDirection;
 
     // properties
     public bool CanMove { get; set; } = true;
@@ -68,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 GroundNormal { get; private set; } = Vector3.up;
     public float LastGroundedTime { get; private set; }
     public Vector3 LastGroundedPosition { get; private set; }
+    public bool CanGroundDodge { get { return IsGrounded && !_isDodging && _lastDodgeTime + _dodgeCooldown <= Time.time; } }
 
     private void Start()
     {
@@ -173,7 +185,10 @@ public class PlayerMovement : MonoBehaviour
         // calculates target velocity based on max speed and multiliers. If we cannot move, target velocity becomes zero
         Vector3 targetVelocity = forward * (_moveSpeed * _moveSpeedMultiplier);
         if (!CanMove) targetVelocity = Vector3.zero;
-
+        if(_isDodging)
+        {
+            targetVelocity = _dodgeLockedDirection * (_dodgeSpeed);
+        }
         // calculates acceleration required to reach desired velocity and applies air control if not grounded
         Vector3 velocityDiff = targetVelocity - _rigidbody.velocity;
         velocityDiff.y = 0f;
@@ -196,7 +211,7 @@ public class PlayerMovement : MonoBehaviour
     private void RotatePlayer()
     {
         //rotates character towards movement direction
-        if (_lookInMovementDirection && HasTurnInput && (IsGrounded || _airTurning))
+        if (_lookInMovementDirection && HasTurnInput && !_isDodging && (IsGrounded || _airTurning))
         {
             Quaternion targetRotation = Quaternion.LookRotation(LookDirection);
             Quaternion rotation = Quaternion.Slerp(transform.rotation, targetRotation, _turnSpeed * Time.deltaTime);
@@ -204,7 +219,51 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.MoveRotation(rotation);
         }
     }
+    public void TryGroundDodge(bool shortDodge)
+    {
+        if(CanGroundDodge)
+        {
+            _lastDodgeTime = Time.time;
+            float dodgeDistance = shortDodge ? _shortDodgeDistance : _longDodgeDistance;
+            float dodgeTime = shortDodge ? _shortDodgeTime : _longDodgeTime;
 
+            if(HasMoveInput)
+            {
+                Vector3 input = MoveInput;
+                Vector3 right = Vector3.Cross(transform.up, input);
+                _dodgeLockedDirection = Vector3.Cross(right, GroundNormal);
+            }
+            else
+            {
+                _dodgeLockedDirection = LookDirection * -1;
+            }
+
+            if (shortDodge)
+            {
+                Debug.Log("Doing short dodge");
+                _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.ShortDodge, true);
+            }
+            else
+            {
+                Debug.Log("Doing long dodge");
+                _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.LongDodge, true);
+            }
+            StartCoroutine(GroundDodge(dodgeDistance, dodgeTime));
+        }
+    }
+    private IEnumerator GroundDodge(float dodgeDistance, float dodgeTime)
+    {
+        _isDodging = true;
+        _dodgeSpeed = dodgeDistance / dodgeTime;
+        float elapsed = 0;
+        while (elapsed < dodgeTime)
+        {
+            elapsed += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        Debug.Log("dodging done");
+        _isDodging = false;
+    }
     private bool CheckGrounded()
     {
         // raycast downwards, looking for ground layer

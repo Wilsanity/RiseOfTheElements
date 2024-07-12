@@ -13,7 +13,7 @@ public class BirdAttackZone : MonoBehaviour
         {
             isCollidingPlayer = true;
             isCollidingGround = false;
-            Debug.Log("Collided with player...");
+            //Debug.Log("Collided with player...");
         }
         else if (other.CompareTag("Ground"))
         {

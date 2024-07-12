@@ -42,7 +42,7 @@ public class AerialWanderState : FSMState
         animator.SetBool("Hit", false);
 
         // Initialize when state is entered
-        Debug.Log("Aerial Wander State Entered...");
+        //Debug.Log("Aerial Wander State Entered...");
     }
 
     public override void Reason(Transform player, Transform npc)

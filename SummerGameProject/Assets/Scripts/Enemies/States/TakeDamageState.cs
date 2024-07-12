@@ -8,8 +8,6 @@ public class TakeDamageState : FSMState
 
     private float hitAnimTimer = 0f;
 
-    //private bool appliedDamage = false;
-
     // Constructor
     public TakeDamageState(Animator anim)
     {
@@ -24,9 +22,9 @@ public class TakeDamageState : FSMState
         animator.SetBool("Attacking", false);
         animator.SetBool("Hit", true);
 
-        hitAnimTimer = WorldData.Instance.worldTimer + 1.5f/*animator.GetCurrentAnimatorStateInfo(0).length*/;
+        hitAnimTimer = WorldData.Instance.worldTimer + 1.5f;
 
-        Debug.Log("Taking damage...");
+        //Debug.Log("Taking damage...");
     }
 
     public override void Reason(Transform player, Transform npc)

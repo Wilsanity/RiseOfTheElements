@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class BirdEnemyController : EnemyController
 {
-    public BirdAttackZone attackZoneGO;
+    public GameObject attackZoneGO;
 
     [Space]
     [Title("Attack Variables",TextAlignment.Left,TextColour.White,14)]

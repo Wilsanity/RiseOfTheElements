@@ -42,7 +42,7 @@ public class AerialMoveAwayState : FSMState
 
         health = 0;
 
-        Debug.Log("Aerial Move Away State Entered...");
+        //Debug.Log("Aerial Move Away State Entered...");
     }
 
     public override void Reason(Transform player, Transform npc)

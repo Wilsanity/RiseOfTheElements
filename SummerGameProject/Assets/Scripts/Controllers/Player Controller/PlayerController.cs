@@ -180,22 +180,24 @@ public class PlayerController : MonoBehaviour
     }
     private void OnDodge()
     {
-        if(_dodgeDoubleInputWaitCoroutine != null)
+        if (_movement.IsGrounded)
         {
-            StopCoroutine(_dodgeDoubleInputWaitCoroutine);
-            _dodgeDoubleInputWaitCoroutine = null;
-            _movement.TryGroundDodge(false);
+            //try normal dodge
+            // if the player has not begin the pre-dodge coroutine, start it
+            if (_movement.CanStartGroundDodge)
+            {
+                _movement.TryGroundDodge(_dodgeDoubleTapWindow);
+            }
+            // else, send the toggle to turn the dodge into a long dodge
+            else if(_movement.IsDodging)
+            {
+                _movement.QueueLongDodge();
+            }
         }
         else
         {
-            _dodgeDoubleInputWaitCoroutine = StartCoroutine(DodgeDoubleTapWait());
+            //try air dodge
         }
-    }
-    private IEnumerator DodgeDoubleTapWait()
-    {
-        yield return new WaitForSeconds(_dodgeDoubleTapWindow);
-        _movement.TryGroundDodge(true);
-        _dodgeDoubleInputWaitCoroutine = null;
     }
 
     private void OnCollisionEnter(Collision collision)

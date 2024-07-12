@@ -2,10 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class PlayerAnimationMachine
+public class PlayerAnimationMachine : MonoBehaviour
 {
+
+    private PlayerMovement _movement;
+    private PlayerController _controller;
+    private Animator _animator;
     //update trigger anim states
-    public static void UpdatePlayerAnim(PlayerAnimState state, Animator anim)
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();   
+    }
+    public void UpdatePlayerAnim(PlayerAnimState state, Animator anim)
     {
         switch (state)
         {
@@ -16,16 +25,19 @@ public static class PlayerAnimationMachine
     }
 
     //update bool anim states
-    public static void UpdatePlayerAnim(PlayerAnimState state, bool boolean, Animator anim)
+    public void UpdatePlayerAnim(PlayerAnimState state, bool boolean)
     {
         switch (state)
         {
             case PlayerAnimState.IsMoving:
-                anim.SetBool("IsMoving", boolean);
+                _animator.SetBool("IsMoving", boolean);
                 return;
 
             case PlayerAnimState.IsSprinting:
-                anim.SetBool("IsSprinting", boolean);
+                _animator.SetBool("IsSprinting", boolean);
+                return;
+            case PlayerAnimState.IsGrounded:
+                _animator.SetBool("IsGrounded", boolean);
                 return;
 
             default:
@@ -33,10 +45,15 @@ public static class PlayerAnimationMachine
                 return;
         }
     }
+    public void JumpAnimation()
+    {
+        _animator.SetTrigger("Jump");
+    }
 }
 
 public enum PlayerAnimState
 {
     IsMoving,
     IsSprinting,
+    IsGrounded
 }

@@ -179,6 +179,8 @@ GameObject:
   - component: {fileID: 5966746648243608061}
   - component: {fileID: 5403350475875136591}
   - component: {fileID: 6595805035683273385}
+  - component: {fileID: 8602643014770231292}
+  - component: {fileID: 2447313981197691213}
   m_Layer: 9
   m_Name: Bird
   m_TagString: Enemy
@@ -240,18 +242,18 @@ MonoBehaviour:
   EXIT_RANGE: 0
   player: {fileID: 0}
   animator: {fileID: 5403350475875136591}
-  maxHealth: 0
-  health: 0
   speed: 0
   damage: 0
   debugStateText: {fileID: 0}
+  attackZoneGO: {fileID: 2447313981197691213}
+  attackSpeed: 7
+  moveAwaySpeed: 5
+  coolDownInterval: 5
   pointsNum: 0
   height: 9.6
   radius: 0
   center: {x: 0, y: 0, z: 0}
-  attackSpeed: 7
-  moveAwaySpeed: 5
-  coolDownInterval: 5
+  initialPlayerPos: {x: 0, y: 0, z: 0}
 --- !u!95 &5403350475875136591
 Animator:
   serializedVersion: 3
@@ -287,6 +289,40 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8602643014770231292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647179358491806814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcebec06c7708c44d8d0a60e62eff1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 3
+  _currentHealth: 3
+  _currentPhase: 0
+  _unitHealthPhases: []
+  _healthBar: {fileID: 0}
+  _deathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2447313981197691213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647179358491806814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0282653aae916459cf7373c6384e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollidingPlayer: 0
+  isCollidingGround: 0
 --- !u!1 &6982734792566795538
 GameObject:
   m_ObjectHideFlags: 0

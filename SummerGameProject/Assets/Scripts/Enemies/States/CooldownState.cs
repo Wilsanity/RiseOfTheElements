@@ -30,7 +30,7 @@ public class CooldownState : FSMState
         coolDownOver = false;
 
         timer = WorldData.Instance.worldTimer + interval;
-        Debug.Log("Cool Down Entered...");
+        //Debug.Log("Cool Down Entered...");
     }
 
     public override void Reason(Transform player, Transform npc)

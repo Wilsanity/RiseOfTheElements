@@ -42,7 +42,7 @@ public class AerialWanderState : FSMState
         animator.SetBool("Hit", false);
 
         // Initialize when state is entered
-        Debug.Log("Aerial Wander State Entered...");
+        //Debug.Log("Aerial Wander State Entered...");
     }
 
     public override void Reason(Transform player, Transform npc)
@@ -66,14 +66,17 @@ public class AerialWanderState : FSMState
         // If path has not yet been set, generate new points
         if(pathPoints == null)
         {
-            GeneratePathPoints(numOfPoints);
+            pathPoints = GeneratePathPoints(numOfPoints, npc,pathPoints,center,radius,height,destPos);
+            
+            // Set first position to the first point in the path
+            destPos = pathPoints[0].transform.position;
         }
         else
         {
             // Move enemy along path
             for (int i = 0; i < pathPoints.Length; i++)
             {
-                if (Vector3.Distance(npc.position, pathPoints[i].transform.position) <= 0.5f)
+                if (Vector3.Distance(npc.position, pathPoints[i].transform.position) <= 0.1f)
                 {
                     if (i + 1 > pathPoints.Length - 1)
                     {
@@ -99,8 +102,32 @@ public class AerialWanderState : FSMState
     /// Generates points on a path for enemy to follow during wander state.
     /// </summary>
     /// <param name="pointsNum"> number of points on the path</param>
-    public void GeneratePathPoints(int pointsNum)
+    public static GameObject[] GeneratePathPoints(int pointsNum, Transform npc, GameObject[] pathPoints, Vector3 center, float radius, float height, Vector3 destPos)
     {
+        
+        //Creating a child gameObject named "Waypoints" if it's not already created
+        Transform waypointsGO = ChildIsNamed("Waypoints", npc);
+
+        if(waypointsGO.childCount > 0)
+        {
+            //if we're in the editor and we click "Generate Waypoints" button, we want to 
+                //recycle the waypoints and spawn new ones.
+            //If we're in the application and there's already children, we should use those instead of creating
+                //new ones
+            if(Application.isPlaying)
+            {
+                pathPoints = GetChildrenGameObjects(waypointsGO);
+                waypointsGO.transform.parent = null;
+                return pathPoints;
+               
+            }
+            else
+            {
+                DestroyChildren(waypointsGO);
+            }
+            
+        }
+
         // Stores new path positions
         Vector3[] points = new Vector3[pointsNum];
 
@@ -119,12 +146,56 @@ public class AerialWanderState : FSMState
             // Create object for path point
             GameObject GO = new GameObject($"point {i}");
             GO.transform.position = points[i];
-
+            GO.AddComponent<DrawGizmosSphere>();
             // Set path point
             pathPoints[i] = GO;
+
+            //Setting the transform parent of the waypoints
+            pathPoints[i].transform.parent = waypointsGO;
+
+            if (Application.isPlaying)
+            {
+                waypointsGO.transform.parent = null;
+            }
+        }
+        return pathPoints;
+
+    }
+
+    public static GameObject[] GetChildrenGameObjects(Transform waypointsGO)
+    {
+        int childCount = waypointsGO.childCount;
+        GameObject[] childrenGOs = new GameObject[childCount];
+
+        for(int i = 0; i < childrenGOs.Length; i++)
+        {
+            Transform childTransform = waypointsGO.GetChild(i).GetComponent<Transform>();
+            childrenGOs[i] = childTransform.gameObject;
         }
 
-        // Set first position to the first point in the path
-        destPos = pathPoints[0].transform.position;
+        return childrenGOs; 
+    }
+
+    public static Transform ChildIsNamed(string nameToCheck, Transform npc)
+    {
+        foreach(Transform child in npc.transform.GetComponentInChildren<Transform>())
+        {
+            if (child.name.Equals(nameToCheck)) return child;
+        }
+
+        GameObject go = new GameObject(nameToCheck);
+        go.transform.parent = npc.transform;
+        return go.transform;
+    }
+
+    public static void DestroyChildren(Transform parentObject)
+    {
+        int childCount = parentObject.childCount;
+
+        for(int i = childCount - 1; i >= 0; i--)
+        {
+            GameObject.DestroyImmediate(parentObject.GetChild(i).gameObject);
+        }
+
     }
 }

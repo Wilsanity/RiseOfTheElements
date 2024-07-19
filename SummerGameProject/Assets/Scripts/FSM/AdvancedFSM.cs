@@ -10,6 +10,7 @@ public enum FSMStateType
     Attacking,
     MovingAway,
     Cooldown,
+    Defending,
     TakingDamage,
     Dead
 }
@@ -18,8 +19,11 @@ public enum TransitionType
 {
     None = 0,
     OutOfRange,
+    PlayerInRange,
     InChaseRange,
     InAttackRange,
+    InAttack2Range,
+    InAttack3Range,
     AttackOver,
     DamageTaken,
     Cooldown,

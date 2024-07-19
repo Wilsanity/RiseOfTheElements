@@ -8,6 +8,9 @@ public enum FSMStateType
     Wandering,
     Chasing,
     Attacking,
+    MovingAway,
+    Cooldown,
+    TakingDamage,
     Dead
 }
 
@@ -17,6 +20,10 @@ public enum TransitionType
     OutOfRange,
     InChaseRange,
     InAttackRange,
+    AttackOver,
+    DamageTaken,
+    Cooldown,
+    Hit,
     NoHealth
 }
 

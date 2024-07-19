@@ -29,10 +29,15 @@ public class RhinoController : MonoBehaviour
     Animator animator;
     Rigidbody body;
 
+    [SerializeField] private AnimationCurve rhinoJumpCurve;
+    float percent;
+    private float movementCooldown;
+    private float movementSpeedAfterCooldown;
+
     Transform player;
 
     Vector3 groundedNormal;
-
+    Vector3 targetJumpDestination;
     [SerializeField] float movementSpeed;
 
     // Start is called before the first frame update
@@ -41,11 +46,31 @@ public class RhinoController : MonoBehaviour
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody>();
 
-        player = FindObjectOfType<GameManager>().sceneObjects.player.transform;
+       
     }
 
     private void Update()
     {
+        movementCooldown -= Time.deltaTime;
+
+        if(player == null)
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, 40, LayerMask.GetMask("Player"));
+
+            //Set the player if they are in the sphere
+            if (colliders.Length > 0)
+            {
+                player = colliders[colliders.Length - 1].transform;
+            }
+            else
+            {
+                //if we didn't detect any player, then return since there's no need to run extra code.
+                return;
+            }
+        }
+        
+        
+
         //For each action, check if the Rhino is in range of the player
         foreach (RhinoAction action in rhinoActions)
             action.ready = Vector3.Distance(transform.position, player.position) <= action.radius;
@@ -68,6 +93,17 @@ public class RhinoController : MonoBehaviour
 
     private void AgroState()
     {
+        //If the rhino does the body slam attack, stop movement for a bit
+        if (AnimatorIsPlaying("BodySlam"))
+        {
+
+            return;
+        }
+
+        //For the Body Slam attack, travel above the player and then fall down
+        targetJumpDestination = player.transform.position + Vector3.up * 5;
+
+
         //Face towards the player immediately when triggered
         Vector3 direction = transform.position - player.position;
         direction.y = 0f; //Keep enemy's rotation level
@@ -79,6 +115,15 @@ public class RhinoController : MonoBehaviour
         if (!isTooCloseToPlayer) body.velocity = -transform.forward * movementSpeed + new Vector3(0, body.velocity.y, 0);
     }
 
+    bool AnimatorIsPlaying(string stateName)
+    {
+        bool isFinishedPlayingAnim = 
+            animator.GetCurrentAnimatorStateInfo(0).length >
+            animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+
+        return isFinishedPlayingAnim && animator.GetCurrentAnimatorStateInfo(0).IsName(stateName);
+    }
+
     private IEnumerator BodySlam()
     {
         //Set cooldown
@@ -88,8 +133,28 @@ public class RhinoController : MonoBehaviour
         animator.SetTrigger("BodySlam");
         Debug.Log("Body Slam!");
 
-        movementSpeed = 10;
+        
+        movementSpeed = 0;
 
+        float distanceFromTarget = Mathf.Abs(transform.position.magnitude - targetJumpDestination.magnitude);
+        Debug.Log(distanceFromTarget);
+
+        percent = 0;
+        while (distanceFromTarget > 3)
+        {
+            Debug.Log(distanceFromTarget);
+            
+            percent += Time.deltaTime;
+            Vector3 newScale = Vector3.Lerp(transform.position, targetJumpDestination, rhinoJumpCurve.Evaluate(percent));
+
+            transform.position = newScale;
+            distanceFromTarget = Mathf.Abs(transform.position.magnitude - targetJumpDestination.magnitude);
+        }
+        Debug.Log(distanceFromTarget);
+
+        
+
+        movementCooldown = 5;
         //Count Down seconds until the action can be used again
         yield return new WaitForSeconds(rhinoActions[1].coolDown);
 
@@ -137,13 +202,7 @@ public class RhinoController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //For each action, draw a sphere around the enemy to show the radius of the action
-        foreach (RhinoAction action in rhinoActions)
-        {
-            Gizmos.color = action.color;
-            Gizmos.DrawWireSphere(transform.position, action.radius);
-        }
-
+       
         //Draw the cardinal directions of the enemy
         //This is for those who can't see the rhino model at times...
         Gizmos.color = Color.red;
@@ -155,5 +214,18 @@ public class RhinoController : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, transform.position + -transform.forward * 5);
 
+        //For each action, draw a sphere around the enemy to show the radius of the action
+        if (rhinoActions == null) return;
+        if (rhinoActions.Count < 1) return;
+        foreach (RhinoAction action in rhinoActions)
+        {
+            Gizmos.color = action.color;
+            Gizmos.DrawWireSphere(transform.position, action.radius);
+        }
+
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(targetJumpDestination,1);
     }
+
 }

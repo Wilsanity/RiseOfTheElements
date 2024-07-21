@@ -12,7 +12,10 @@ public enum FSMStateType
     Cooldown,
     Defending,
     TakingDamage,
-    Dead
+    Dead,
+
+    //Root Monster States
+    RootSpearAttack
 }
 
 public enum TransitionType

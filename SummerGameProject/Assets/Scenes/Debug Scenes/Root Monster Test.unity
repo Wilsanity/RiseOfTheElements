@@ -346,13 +346,15 @@ MonoBehaviour:
   _barrageProjectileSpeed: 4.06
   _barrageProjectileMaxArc: 0
   _barrageDestinationOffsetRadius: 0
-  _rootSpearPrefab: {fileID: 2709277508206016526, guid: 5b855a417bdb003418c8feac2376c1dc, type: 3}
-  _rootSpearCountMin: 4
-  _rootSpearCountMax: 8
-  _rootSpearPopUpDelayMin: 3
-  _rootSpearPopUpDelayMax: 6
-  _rootSpearPopUpSpeed: 0
-  _rootRadiusAroundPlayer: 0
+  _rootSpearPrefab: {fileID: 527572918928805958, guid: 597811d0ec920a64c974cb63962fed81, type: 3}
+  _rootSpearInitialDelay: 0.078
+  _rootSpearCount: 5
+  _rootSpearSpawnDelay: 0.277
+  _rootSpearPopUpDelayMin: 0
+  _rootSpearPopUpDelayMax: 0
+  _rootSpearPopUpSpeed: 21.02
+  _rootRadiusAroundPlayer: 4.79
+  _rootSpearAttackDuration: 3
 --- !u!65 &500218127
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -508,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3838362652009802529, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.64426404
+      value: 0.644264
       objectReference: {fileID: 0}
     - target: {fileID: 3838362652009802529, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
       propertyPath: m_LocalRotation.x
@@ -516,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3838362652009802529, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.75822
+      value: 0.7582201
       objectReference: {fileID: 0}
     - target: {fileID: 3838362652009802529, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
       propertyPath: m_LocalRotation.z

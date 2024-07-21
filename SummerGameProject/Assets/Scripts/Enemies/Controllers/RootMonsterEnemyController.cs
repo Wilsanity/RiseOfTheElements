@@ -93,14 +93,9 @@ public class RootMonsterEnemyController : EnemyController
     private float _rootSpearInitialDelay;
 
     [SerializeField]
-    [Tooltip("Minimum Number of Root Spears to Spawn")]
+    [Tooltip("Number of Root Spears to Spawn")]
     [Range(1, 10)]
-    private int _rootSpearCountMin;
-
-    [SerializeField]
-    [Tooltip("Maximum Number of Root Spears to Spawn")]
-    [Range(1, 10)]
-    private int _rootSpearCountMax;
+    private int _rootSpearCount;
 
     [SerializeField]
     [Tooltip("The delay in seconds from spawning one root spear to the next. \n Spawn, Delay, Spawn, Delay...")]
@@ -123,6 +118,13 @@ public class RootMonsterEnemyController : EnemyController
     [SerializeField]
     [Tooltip("The area around the player to launch")]
     private float _rootRadiusAroundPlayer;
+
+
+    [SerializeField]
+    [Tooltip("After the Root Spears have been spawned, how long should the attack last before we retract the spears?")]
+    private float _rootSpearAttackDuration;
+
+
     #endregion
 
 
@@ -137,19 +139,19 @@ public class RootMonsterEnemyController : EnemyController
     //Root Spear Properties
     public float RootSpearInitialDelay { get => _rootSpearInitialDelay; }
     public GameObject RootSpearPrefab { get => _rootSpearPrefab;}
-    public int RootSpearCountMin { get => _rootSpearCountMin;}
-    public int RootSpearCountMax { get => _rootSpearCountMax; }
+    public int RootSpearCount { get => _rootSpearCount;}
     public float RootSpearSpawnDelay { get => _rootSpearSpawnDelay; }
     public float RootSpearPopUpDelayMin { get => _rootSpearPopUpDelayMin; }
     public float RootSpearPopUpDelayMax { get => _rootSpearPopUpDelayMax; }
     public float RootSpearPopUpSpeed { get => _rootSpearPopUpSpeed; }
     public float RootRadiusAroundPlayer { get => _rootRadiusAroundPlayer; }
+    public float RootSpearAttackDuration { get => _rootSpearAttackDuration; }
 
     protected override void ConstructFSM()
     {
         //Constructing the Enemy States
 
-        CooldownState cooldownState = new CooldownState(2, animator);
+        CooldownState cooldownState = new CooldownState(0.5f, animator);
 
         EarthBarrageState earthBarrageState = new EarthBarrageState(this, animator);
 
@@ -257,15 +259,12 @@ public class RootMonsterEnemyController : EnemyController
     private IEnumerator SpawnProjectilesCoroutine(RootSpearsState rootSpearsState)
     {
         bool haventSpawnedProjectiles = rootSpearsState.ProjectileGOs.Count == 0; //Object pooling. We can reuse projectiles
-        NavMeshHit samplePoint;
 
-        for (int i = 0; i < _barrageProjectileCount; i++)
+        for (int i = 0; i < _rootSpearCount; i++)
         {
             Vector3 spawnLocation = player.position + Random.insideUnitSphere * _rootRadiusAroundPlayer;
-            
-            NavMesh.SamplePosition(player.position, out samplePoint,50,0);
 
-            spawnLocation = new Vector3(spawnLocation.x, samplePoint.position.y - 10, spawnLocation.z);
+            spawnLocation = new Vector3(spawnLocation.x, - 10, spawnLocation.z);
             if (haventSpawnedProjectiles)
             {
                 GameObject go = Instantiate(_rootSpearPrefab, spawnLocation, Quaternion.identity);
@@ -276,10 +275,13 @@ public class RootMonsterEnemyController : EnemyController
                 rootSpearsState.ProjectileGOs[i].SetActive(true);
                 rootSpearsState.ProjectileGOs[i].transform.position = spawnLocation;
             }
-
+            rootSpearsState.ProjectileGOs[i].GetComponent<RootSpearProjectile>().Initialize(rootSpearsState,this, 0);
 
             yield return new WaitForSeconds(_rootSpearSpawnDelay);
         }
+
+        rootSpearsState.OriginalTime = Time.time;
+        rootSpearsState.ProjectileState = RootSpearsProjectileState.COMPLETE_SPAWN;
 
     }
 

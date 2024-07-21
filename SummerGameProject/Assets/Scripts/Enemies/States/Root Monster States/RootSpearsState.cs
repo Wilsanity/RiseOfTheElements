@@ -7,6 +7,7 @@ public enum RootSpearsProjectileState
 {
     INITIAL_DELAY,
     SPAWN,
+    SPAWNING,
     COMPLETE_SPAWN,
     RETRACT_SPEARS,
     HIDE_SPEARS,
@@ -21,15 +22,18 @@ public class RootSpearsState : FSMState
 
     private List<GameObject> _projectileGOs = new List<GameObject>();
 
-    private int _projectilesReachedGoal = 0;
+    private int _spikesRetracted = 0;
 
     private float _originalTime;
 
+    private bool _rootIsHit = false;
 
     //Properties
     public RootSpearsProjectileState ProjectileState { get => _rootState; set => _rootState = value; }
     public List<GameObject> ProjectileGOs { get => _projectileGOs; set => _projectileGOs = value; }
-    public int ProjectilesReachedGoal { get => _projectilesReachedGoal; set => _projectilesReachedGoal = value; }
+    public int SpikesRetracted { get => _spikesRetracted; set => _spikesRetracted = value; }
+    public float OriginalTime { set => _originalTime = value; }
+    public bool RootIsHit { get => _rootIsHit; set => _rootIsHit = value; }
 
     public RootSpearsState(RootMonsterEnemyController rootMonsterController, Animator animator)
     {
@@ -48,6 +52,10 @@ public class RootSpearsState : FSMState
 
             case RootSpearsProjectileState.SPAWN:
                 SpawnRootSpearState();
+                break;
+
+            case RootSpearsProjectileState.SPAWNING:
+                SpawningState();
                 break;
 
             case RootSpearsProjectileState.COMPLETE_SPAWN:
@@ -75,31 +83,60 @@ public class RootSpearsState : FSMState
     }
     private void SpawnRootSpearState()
     {
+ 
         if (Time.time < _originalTime + _rootMonsterController.RootSpearInitialDelay) return;
 
-        _rootState = RootSpearsProjectileState.COMPLETE_SPAWN;
+        _rootState = RootSpearsProjectileState.SPAWNING;
         _rootMonsterController.SpawnRootSpears(this);
 
     }
 
+
+    private void SpawningState()
+    {
+        //Do nothing
+    }
+
     private void CompleteSpawnState()
     {
-        if (_projectilesReachedGoal != _rootMonsterController.BarrageProjectileCount) return;
+        //The next state will be activated if time runs out OR a root spear gets hit by the player
 
-        ProjectileState = RootSpearsProjectileState.RETRACT_SPEARS;
+        if (_rootIsHit)
+        {
+            _rootState = RootSpearsProjectileState.RETRACT_SPEARS;
+        }
+
+
+
+        if (Time.time < _originalTime + _rootMonsterController.RootSpearAttackDuration) return;
+       
+
+        _rootState = RootSpearsProjectileState.RETRACT_SPEARS;
+     
+
     }
 
     private void RetractSpearState()
     {
-        _rootState = RootSpearsProjectileState.HIDE_SPEARS;
-        //_rootMonsterController.LaunchProjectiles(this);
+        
+        foreach(GameObject go in _projectileGOs)
+        {
+            go.GetComponent<RootSpearProjectile>().SpikeDown();
+        }
+
+        if(_spikesRetracted == _projectileGOs.Count)
+        {
+            _rootState = RootSpearsProjectileState.HIDE_SPEARS;
+        }
+
+        
     }
 
    
 
     private void HideProjectilesState()
     {
-        _projectilesReachedGoal = 0;
+        _spikesRetracted = 0;
         foreach (GameObject projGO in _projectileGOs)
         {
             projGO.SetActive(false);

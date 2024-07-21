@@ -14,7 +14,7 @@ public enum EarthBarrageProjectileState
 
 public class EarthBarrageState : FSMState
 {
-    private RootMonsterEnemyController _rootMonsterController;
+    private RootMonsterEnemyController _enemyController;
 
     private EarthBarrageProjectileState _projectileState = EarthBarrageProjectileState.SPAWN;
 
@@ -30,7 +30,7 @@ public class EarthBarrageState : FSMState
     public EarthBarrageState(RootMonsterEnemyController rootMonsterController, Animator animator)
     {
         stateType = FSMStateType.Attacking;
-        _rootMonsterController = rootMonsterController;
+        _enemyController = rootMonsterController;
     }
 
 
@@ -67,19 +67,19 @@ public class EarthBarrageState : FSMState
     private void SpawnProjectileState()
     {
         _projectileState = EarthBarrageProjectileState.COMPLETE_SPAWN;
-        _rootMonsterController.SpawnProjectiles(this);
+        _enemyController.SpawnProjectiles(this);
 
     }
 
     private void LaunchProjectileState()
     {
         _projectileState = EarthBarrageProjectileState.COMPLETE_LAUNCH;
-        _rootMonsterController.LaunchProjectiles(this);
+        _enemyController.LaunchProjectiles(this);
     }
 
     private void CompleteLaunchState()
     {
-        if (_projectilesReachedGoal != _rootMonsterController.BarrageProjectileCount) return;
+        if (_projectilesReachedGoal != _enemyController.BarrageProjectileCount) return;
 
         ProjectileState = EarthBarrageProjectileState.HIDE_PROJECTILES;
     }
@@ -97,9 +97,17 @@ public class EarthBarrageState : FSMState
 
     public override void Reason(Transform player, Transform npc)
     {
+
+        //Dead
+        if (_enemyController.UnitHealthScript.CurrentHealth == 0)
+        {
+            // Dead State
+            npc.GetComponent<EnemyController>().PerformTransition(TransitionType.NoHealth);
+        }
+
         //After the move finishes, we transition to the next state
 
-        if(_projectileState == EarthBarrageProjectileState.MOVE_TO_NEXT_STATE)
+        if (_projectileState == EarthBarrageProjectileState.MOVE_TO_NEXT_STATE)
         {
             _projectileState = EarthBarrageProjectileState.SPAWN;
             npc.GetComponent<EnemyController>().PerformTransition(TransitionType.AttackOver);

@@ -128,6 +128,7 @@ public class RootMonsterEnemyController : EnemyController
     #endregion
 
 
+    private UnitHealth _unitHealthScript;
 
     //Earth Barrage Properties
     public GameObject EarthBarrageProjectilePrefab { get => _barrageProjectilePrefab; }
@@ -146,12 +147,22 @@ public class RootMonsterEnemyController : EnemyController
     public float RootSpearPopUpSpeed { get => _rootSpearPopUpSpeed; }
     public float RootRadiusAroundPlayer { get => _rootRadiusAroundPlayer; }
     public float RootSpearAttackDuration { get => _rootSpearAttackDuration; }
+    public UnitHealth UnitHealthScript { get => _unitHealthScript; }
+
+    //Ranges
+    public float FarRangeFieldRadius { get => _farRangeFieldRadius; }
+    public float MidRangeFieldRadius { get => _midRangeFieldRadius; }
+    public float SpikeShieldRadius { get => _spikeShieldRadius; }
 
     protected override void ConstructFSM()
     {
+        _unitHealthScript = GetComponent<UnitHealth>();
+       
         //Constructing the Enemy States
 
-        CooldownState cooldownState = new CooldownState(0.5f, animator);
+        RootMonsterIdleState idleState = new RootMonsterIdleState(this, animator);
+
+        RootMonsterCooldownState cooldownState = new RootMonsterCooldownState(0.5f, animator, this);
 
         EarthBarrageState earthBarrageState = new EarthBarrageState(this, animator);
 
@@ -164,28 +175,38 @@ public class RootMonsterEnemyController : EnemyController
         DeadState deadState = new DeadState(animator);
 
 
+        //Idle to Attack
+        idleState.AddTransition(TransitionType.InAttackRange, FSMStateType.Attacking);
+        idleState.AddTransition(TransitionType.InAttack2Range, FSMStateType.RootSpearAttack);
+
+        idleState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
 
         //Earth Barrage to Wander
         earthBarrageState.AddTransition(TransitionType.Hit, FSMStateType.Cooldown);
         earthBarrageState.AddTransition(TransitionType.AttackOver, FSMStateType.Cooldown);
+        earthBarrageState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
 
         //Root Spears to Wander
         rootSpearsState.AddTransition(TransitionType.Hit, FSMStateType.Cooldown);
         rootSpearsState.AddTransition(TransitionType.AttackOver, FSMStateType.Cooldown);
+        rootSpearsState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
+
 
         //Cooldown State
-        cooldownState.AddTransition(TransitionType.InAttackRange, FSMStateType.Attacking);
-        cooldownState.AddTransition(TransitionType.OutOfRange, FSMStateType.Cooldown);
+        cooldownState.AddTransition(TransitionType.EnterIdle, FSMStateType.Idle);
+        cooldownState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
+
 
         //Spike Shield to Running from player
         spikeShieldState.AddTransition(TransitionType.AttackOver, FSMStateType.MovingAway);
         runFromPlayerState.AddTransition(TransitionType.OutOfRange, FSMStateType.Wandering);
         runFromPlayerState.AddTransition(TransitionType.PlayerInRange, FSMStateType.Attacking);
-
+        runFromPlayerState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
 
 
 
         //Adding the States
+        AddState(idleState);
         AddState(cooldownState);
         AddState(earthBarrageState);
         AddState(rootSpearsState);

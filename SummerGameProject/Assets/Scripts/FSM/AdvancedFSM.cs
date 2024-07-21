@@ -5,6 +5,7 @@ using UnityEngine;
 public enum FSMStateType
 {
     None = 0,
+    Idle,
     Wandering,
     Chasing,
     Attacking,
@@ -21,6 +22,7 @@ public enum FSMStateType
 public enum TransitionType
 {
     None = 0,
+    EnterIdle,
     OutOfRange,
     PlayerInRange,
     InChaseRange,

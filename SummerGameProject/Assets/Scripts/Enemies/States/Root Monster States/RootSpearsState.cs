@@ -16,7 +16,7 @@ public enum RootSpearsProjectileState
 
 public class RootSpearsState : FSMState
 {
-    private RootMonsterEnemyController _rootMonsterController;
+    private RootMonsterEnemyController _enemyController;
 
     private RootSpearsProjectileState _rootState = RootSpearsProjectileState.SPAWN;
 
@@ -37,8 +37,8 @@ public class RootSpearsState : FSMState
 
     public RootSpearsState(RootMonsterEnemyController rootMonsterController, Animator animator)
     {
-        stateType = FSMStateType.Attacking;
-        _rootMonsterController = rootMonsterController;
+        stateType = FSMStateType.RootSpearAttack;
+        _enemyController = rootMonsterController;
     }
 
 
@@ -84,10 +84,10 @@ public class RootSpearsState : FSMState
     private void SpawnRootSpearState()
     {
  
-        if (Time.time < _originalTime + _rootMonsterController.RootSpearInitialDelay) return;
+        if (Time.time < _originalTime + _enemyController.RootSpearInitialDelay) return;
 
         _rootState = RootSpearsProjectileState.SPAWNING;
-        _rootMonsterController.SpawnRootSpears(this);
+        _enemyController.SpawnRootSpears(this);
 
     }
 
@@ -108,7 +108,7 @@ public class RootSpearsState : FSMState
 
 
 
-        if (Time.time < _originalTime + _rootMonsterController.RootSpearAttackDuration) return;
+        if (Time.time < _originalTime + _enemyController.RootSpearAttackDuration) return;
        
 
         _rootState = RootSpearsProjectileState.RETRACT_SPEARS;
@@ -147,6 +147,13 @@ public class RootSpearsState : FSMState
 
     public override void Reason(Transform player, Transform npc)
     {
+        //Dead
+        if (_enemyController.UnitHealthScript.CurrentHealth == 0)
+        {
+            // Dead State
+            npc.GetComponent<EnemyController>().PerformTransition(TransitionType.NoHealth);
+        }
+
         //After the move finishes, we transition to the next state
 
         if (_rootState == RootSpearsProjectileState.MOVE_TO_NEXT_STATE)

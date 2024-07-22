@@ -331,7 +331,7 @@ MonoBehaviour:
   EXIT_RANGE: 16
   player: {fileID: 7289687459947549726}
   animator: {fileID: 500218125}
-  speed: 1
+  speed: 5
   damage: 6
   debugStateText: {fileID: 0}
   _wanderRadius: 3.37
@@ -355,6 +355,9 @@ MonoBehaviour:
   _rootSpearPopUpSpeed: 21.02
   _rootRadiusAroundPlayer: 4.79
   _rootSpearAttackDuration: 3
+  _spikeShiledPrefab: {fileID: 8114941661601695769, guid: 096e36c5704d66d47827417dcc9bd988, type: 3}
+  _spikeShieldDuration: 1.92
+  _runAwayMaxTime: 4.52
 --- !u!65 &500218127
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -510,7 +513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3838362652009802529, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.644264
+      value: 0.64426404
       objectReference: {fileID: 0}
     - target: {fileID: 3838362652009802529, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
       propertyPath: m_LocalRotation.x
@@ -518,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3838362652009802529, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7582201
+      value: 0.75822
       objectReference: {fileID: 0}
     - target: {fileID: 3838362652009802529, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
       propertyPath: m_LocalRotation.z

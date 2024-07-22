@@ -9,7 +9,8 @@ public enum EarthBarrageProjectileState
     LAUNCH,
     COMPLETE_LAUNCH,
     HIDE_PROJECTILES,
-    MOVE_TO_NEXT_STATE
+    MOVE_TO_NEXT_STATE,
+    MOVE_TO_SHIELD_STATE
 }
 
 public class EarthBarrageState : FSMState
@@ -36,13 +37,15 @@ public class EarthBarrageState : FSMState
 
     public override void Act(Transform player, Transform npc)
     {
-        switch(_projectileState)
+        CheckIfPlayerInShieldRange(player, npc);
+
+        switch (_projectileState)
         {
             case EarthBarrageProjectileState.SPAWN:
                 SpawnProjectileState();
                 break;
 
-            case EarthBarrageProjectileState.COMPLETE_SPAWN:
+            case EarthBarrageProjectileState.COMPLETE_SPAWN: 
                 break;
 
             case EarthBarrageProjectileState.LAUNCH:
@@ -55,6 +58,7 @@ public class EarthBarrageState : FSMState
 
             case EarthBarrageProjectileState.HIDE_PROJECTILES:
                 HideProjectilesState();
+
                 break;
 
             default:
@@ -93,6 +97,17 @@ public class EarthBarrageState : FSMState
         }
 
         _projectileState = EarthBarrageProjectileState.MOVE_TO_NEXT_STATE;
+
+    }
+
+    private void CheckIfPlayerInShieldRange(Transform player, Transform npc)
+    {
+        
+        //Transition to Spike Shield if the player gets too close
+        if (IsInRange(npc, player.position, (int)_enemyController.SpikeShieldRadius))
+        {
+            ProjectileState = EarthBarrageProjectileState.MOVE_TO_SHIELD_STATE;
+        }
     }
 
     public override void Reason(Transform player, Transform npc)
@@ -105,12 +120,24 @@ public class EarthBarrageState : FSMState
             npc.GetComponent<EnemyController>().PerformTransition(TransitionType.NoHealth);
         }
 
-        //After the move finishes, we transition to the next state
 
+        //Transition to Spike Shield if the player gets too close
+        if (_projectileState == EarthBarrageProjectileState.MOVE_TO_SHIELD_STATE)
+        {
+            Debug.Log("TRANSITIONING");
+            HideProjectilesState();
+            _projectileState = EarthBarrageProjectileState.SPAWN;
+            npc.GetComponent<EnemyController>().PerformTransition(TransitionType.Shield);
+        }
+
+        //After the move finishes, we transition to the next state
         if (_projectileState == EarthBarrageProjectileState.MOVE_TO_NEXT_STATE)
         {
+
             _projectileState = EarthBarrageProjectileState.SPAWN;
+
             npc.GetComponent<EnemyController>().PerformTransition(TransitionType.AttackOver);
+            
         }
     }
 

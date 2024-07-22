@@ -33,7 +33,10 @@ public enum TransitionType
     DamageTaken,
     Cooldown,
     Hit,
-    NoHealth
+    NoHealth,
+
+    //Root Monster Specific States
+    Shield
 }
 
 public class AdvancedFSM : FSM

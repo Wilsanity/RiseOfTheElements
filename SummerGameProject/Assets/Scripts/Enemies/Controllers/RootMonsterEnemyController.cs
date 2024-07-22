@@ -124,7 +124,34 @@ public class RootMonsterEnemyController : EnemyController
     [Tooltip("After the Root Spears have been spawned, how long should the attack last before we retract the spears?")]
     private float _rootSpearAttackDuration;
 
+    #endregion
 
+    #region Spikey Shield Variables
+    [Space]
+    [Title("Spike Shield Defense", TextAlignment.Left, TextColour.White, 20)]
+    [Separator]
+
+    [Header("Spawning The Shield")]
+    [SerializeField]
+    [Tooltip("The Spikey Shield Game Object that should be thrown using this defense")]
+    private GameObject _spikeShiledPrefab;
+
+    [SerializeField]
+    [Tooltip("Duration of this defense before switching states")]
+    private float _spikeShieldDuration;
+
+    #endregion
+
+
+
+    #region Run Away Variables
+    [Space]
+    [Title("Run Away From Player State", TextAlignment.Left, TextColour.White, 20)]
+    [Separator]
+
+    [SerializeField]
+    [Tooltip("The max amount of time we can be running away from the player before going to the next state")]
+    private float _runAwayMaxTime;
     #endregion
 
 
@@ -153,6 +180,8 @@ public class RootMonsterEnemyController : EnemyController
     public float FarRangeFieldRadius { get => _farRangeFieldRadius; }
     public float MidRangeFieldRadius { get => _midRangeFieldRadius; }
     public float SpikeShieldRadius { get => _spikeShieldRadius; }
+    public GameObject SpikeShiledPrefab { get => _spikeShiledPrefab; }
+    public float RunAwayMaxTime { get => _runAwayMaxTime; }
 
     protected override void ConstructFSM()
     {
@@ -168,9 +197,9 @@ public class RootMonsterEnemyController : EnemyController
 
         RootSpearsState rootSpearsState = new RootSpearsState(this, animator);
 
-        SpikeShieldState spikeShieldState = new SpikeShieldState();
+        SpikeShieldState spikeShieldState = new SpikeShieldState(this, _spikeShieldDuration);
 
-        RunFromPlayerState runFromPlayerState = new RunFromPlayerState();
+        RunFromPlayerState runFromPlayerState = new RunFromPlayerState(speed,animator,this);
 
         DeadState deadState = new DeadState(animator);
 
@@ -179,28 +208,31 @@ public class RootMonsterEnemyController : EnemyController
         idleState.AddTransition(TransitionType.InAttackRange, FSMStateType.Attacking);
         idleState.AddTransition(TransitionType.InAttack2Range, FSMStateType.RootSpearAttack);
 
+        idleState.AddTransition(TransitionType.Shield, FSMStateType.Defending);
         idleState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
 
-        //Earth Barrage to Wander
+        //Earth Barrage
         earthBarrageState.AddTransition(TransitionType.Hit, FSMStateType.Cooldown);
         earthBarrageState.AddTransition(TransitionType.AttackOver, FSMStateType.Cooldown);
         earthBarrageState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
+        earthBarrageState.AddTransition(TransitionType.Shield, FSMStateType.Defending);
 
-        //Root Spears to Wander
+        //Root Spears
         rootSpearsState.AddTransition(TransitionType.Hit, FSMStateType.Cooldown);
         rootSpearsState.AddTransition(TransitionType.AttackOver, FSMStateType.Cooldown);
         rootSpearsState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
-
+        rootSpearsState.AddTransition(TransitionType.Shield, FSMStateType.Defending);
 
         //Cooldown State
         cooldownState.AddTransition(TransitionType.EnterIdle, FSMStateType.Idle);
         cooldownState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
-
+        cooldownState.AddTransition(TransitionType.Shield, FSMStateType.Defending);
 
         //Spike Shield to Running from player
         spikeShieldState.AddTransition(TransitionType.AttackOver, FSMStateType.MovingAway);
-        runFromPlayerState.AddTransition(TransitionType.OutOfRange, FSMStateType.Wandering);
-        runFromPlayerState.AddTransition(TransitionType.PlayerInRange, FSMStateType.Attacking);
+
+        runFromPlayerState.AddTransition(TransitionType.Shield, FSMStateType.Defending);
+        runFromPlayerState.AddTransition(TransitionType.OutOfRange, FSMStateType.Cooldown);
         runFromPlayerState.AddTransition(TransitionType.NoHealth, FSMStateType.Dead);
 
 
@@ -307,6 +339,12 @@ public class RootMonsterEnemyController : EnemyController
     }
 
     #endregion
+
+
+    public GameObject SpawnGameObject(GameObject go, Vector3 position)
+    {
+        return Instantiate(go, position, Quaternion.identity);
+    }
 
     private void OnDrawGizmos()
     {

@@ -11,7 +11,8 @@ public enum RootSpearsProjectileState
     COMPLETE_SPAWN,
     RETRACT_SPEARS,
     HIDE_SPEARS,
-    MOVE_TO_NEXT_STATE
+    MOVE_TO_NEXT_STATE,
+    MOVE_TO_SHIELD_STATE
 }
 
 public class RootSpearsState : FSMState
@@ -27,6 +28,8 @@ public class RootSpearsState : FSMState
     private float _originalTime;
 
     private bool _rootIsHit = false;
+
+    private bool _shouldMoveToShieldState = false;
 
     //Properties
     public RootSpearsProjectileState ProjectileState { get => _rootState; set => _rootState = value; }
@@ -44,6 +47,8 @@ public class RootSpearsState : FSMState
 
     public override void Act(Transform player, Transform npc)
     {
+        CheckIfPlayerInShieldRange(player, npc);
+
         switch (_rootState)
         {
             case RootSpearsProjectileState.INITIAL_DELAY:
@@ -145,6 +150,20 @@ public class RootSpearsState : FSMState
         _rootState = RootSpearsProjectileState.MOVE_TO_NEXT_STATE;
     }
 
+
+    private void CheckIfPlayerInShieldRange(Transform player, Transform npc)
+    {
+        //Transition to Spike Shield if the player gets too close
+        if (IsInRange(npc, player.position, (int)_enemyController.SpikeShieldRadius))
+        {
+            Debug.Log("Detected in Shield Range");
+            _shouldMoveToShieldState = true;
+            ProjectileState = RootSpearsProjectileState.HIDE_SPEARS;
+        }
+    }
+
+
+
     public override void Reason(Transform player, Transform npc)
     {
         //Dead
@@ -154,12 +173,27 @@ public class RootSpearsState : FSMState
             npc.GetComponent<EnemyController>().PerformTransition(TransitionType.NoHealth);
         }
 
+
+
+        //Transition to Spike Shield if the player gets too close
+        if (_rootState == RootSpearsProjectileState.MOVE_TO_SHIELD_STATE)
+        {
+            Debug.Log("TRANSITIONING");
+            HideProjectilesState();
+            _rootState = RootSpearsProjectileState.SPAWN;
+            npc.GetComponent<EnemyController>().PerformTransition(TransitionType.Shield);
+        }
+
+
+
         //After the move finishes, we transition to the next state
 
         if (_rootState == RootSpearsProjectileState.MOVE_TO_NEXT_STATE)
         {
             _rootState = RootSpearsProjectileState.SPAWN;
+
             npc.GetComponent<EnemyController>().PerformTransition(TransitionType.AttackOver);
+            
         }
     }
 

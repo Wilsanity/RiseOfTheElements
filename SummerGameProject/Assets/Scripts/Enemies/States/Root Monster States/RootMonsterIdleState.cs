@@ -32,7 +32,7 @@ public class RootMonsterIdleState : FSMState
 
         if(IsInRange(npc, player.position, (int)_enemyController.SpikeShieldRadius))
         {
-
+            npc.GetComponent<EnemyController>().PerformTransition(TransitionType.Shield);
         }
         else if (IsInRange(npc, player.position, (int)_enemyController.MidRangeFieldRadius))
         {

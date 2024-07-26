@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jumping")]
     [SerializeField, Tooltip("Target jump height")] 
-    private float _jumpHeight = 1.5f;
+    public float _jumpHeight = 1.5f;
     [SerializeField, Tooltip("Acceleration percentage applied when airborne (prevents wild air movements)")]
     private float _airControl = 0.1f;
     [SerializeField, Tooltip("Can player change direction while airborne")] 

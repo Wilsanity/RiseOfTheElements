@@ -14,17 +14,17 @@ public abstract class EnemyController : AdvancedFSM
     [Tooltip("Enemy's State: Debug purposes only.")] [SerializeField] private string stateDebug;
 
     [Header("Agro Ranges")]
-    [Tooltip("Range enemy begins chasing (increses to increse agro).")] public int ENTER_RANGE;
+    [Tooltip("Range enemy begins chasing (increases to increase agro).")] public int ENTER_RANGE;
     [Tooltip("Range enemy stops chasing (keep this above enter range).")] public int EXIT_RANGE;
 
     public Transform player;
     public Animator animator;
 
     [Header("Base Variables")]
-    [Tooltip("Max health of enemy.")]
-    public int maxHealth;
-    [Tooltip("Current health of enemy.")]
-    public float health;
+    ///[Tooltip("Max health of enemy.")]
+    ///public int maxHealth;
+    ///[Tooltip("Current health of enemy.")]
+    ///public float health;
     [Tooltip("Speed enemy moves.")]
     public int speed;
     [Tooltip("Amount of damage applied to player")]
@@ -35,18 +35,20 @@ public abstract class EnemyController : AdvancedFSM
     /// <summary>
     /// Returns enemy health
     /// </summary>
-    public float GetHealth() { return health; }
+    ///public float GetHealth() { return health; }
 
-    public void TakeDamage(float damageAmt)
-    {
-        if(health > 0)
-        {
-            if (damageAmt > health)
-                health = 0;
-            else
-                health -= damage;
-        }
-    }
+    //public void TakeDamage(int damageAmt)
+    //{
+    //    //if(health > 0)
+    //    //{
+    //    //    if (damageAmt > health)
+    //    //        health = 0;
+    //    //    else
+    //    //        health -= damage;
+    //    //}
+
+    //    GetComponent<UnitHealth>().DamageUnit(damageAmt);
+    //}
 
     /// <summary>
     /// Returns CurrentState as a string
@@ -65,7 +67,8 @@ public abstract class EnemyController : AdvancedFSM
         //TO DO: Implement Animations
 
         // Set health value
-        health = maxHealth;
+        //health = maxHealth;
+        GetComponent<UnitHealth>().CurrentHealth = GetComponent<UnitHealth>().MaxHealth;
 
         ConstructFSM();
     }

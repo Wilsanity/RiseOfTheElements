@@ -14896,6 +14896,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   hitSpot: {fileID: 127045942}
+  _dodgeDoubleTapWindow: 0.4
 --- !u!54 &5795770302118775297
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14976,6 +14977,10 @@ MonoBehaviour:
   _airTurning: 1
   _useCustomGravity: 1
   _gravityValue: -15
+  _shortDodgeDistance: 1
+  _shortDodgeTime: 0.05
+  _longDodgeMultiplier: 3
+  _dodgeCooldown: 0.5
   _lookInMovementDirection: 1
   _turnSpeed: 50
   _groundCheckOffset: 0.1

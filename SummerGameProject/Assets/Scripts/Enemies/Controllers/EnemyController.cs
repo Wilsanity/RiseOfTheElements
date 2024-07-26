@@ -14,7 +14,7 @@ public abstract class EnemyController : AdvancedFSM
     [Tooltip("Enemy's State: Debug purposes only.")] [SerializeField] private string stateDebug;
 
     [Header("Agro Ranges")]
-    [Tooltip("Range enemy begins chasing (increses to increse agro).")] public int ENTER_RANGE;
+    [Tooltip("Range enemy begins chasing (increases to increase agro).")] public int ENTER_RANGE;
     [Tooltip("Range enemy stops chasing (keep this above enter range).")] public int EXIT_RANGE;
 
     public Transform player;

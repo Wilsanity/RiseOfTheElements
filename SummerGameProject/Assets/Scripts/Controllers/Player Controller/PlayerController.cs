@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask attackLayer;
     [SerializeField] GameObject hitSpot;
 
+    [SerializeField] private float _dodgeDoubleTapWindow = 0.4f;
+
 
     #endregion
 
@@ -66,6 +68,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator attackCoroutine;
     private Vector2 _moveInputRaw;
 
+    private Coroutine _dodgeDoubleInputWaitCoroutine;
     private bool isJumping; // Check if the player is pressing jump
     private bool isFalling; // Check if the player is falling
     private Vector3 lastGroundedPosition; // Store the position when grounded
@@ -180,6 +183,27 @@ public class PlayerController : MonoBehaviour
     private void TryJump()
     {
         _movement.Jump();
+    }
+    private void OnDodge()
+    {
+        if (_movement.IsGrounded)
+        {
+            //try normal dodge
+            // if the player has not begin the pre-dodge coroutine, start it
+            if (_movement.CanStartGroundDodge)
+            {
+                _movement.TryGroundDodge(_dodgeDoubleTapWindow);
+            }
+            // else, send the toggle to turn the dodge into a long dodge
+            else if(_movement.IsDodging)
+            {
+                _movement.QueueLongDodge();
+            }
+        }
+        else
+        {
+            //try air dodge
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

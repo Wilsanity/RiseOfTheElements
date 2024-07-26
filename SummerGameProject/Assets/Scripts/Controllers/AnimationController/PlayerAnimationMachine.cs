@@ -14,15 +14,6 @@ public class PlayerAnimationMachine : MonoBehaviour
     {
         _animator = GetComponent<Animator>();   
     }
-    public void UpdatePlayerAnim(PlayerAnimState state, Animator anim)
-    {
-        switch (state)
-        {
-            default:
-                Debug.LogError("PlayerAnimationMachine: Invalid PlayerAnimState");
-                return;
-        }
-    }
 
     //update bool anim states
     public void UpdatePlayerAnim(PlayerAnimState state, bool boolean)
@@ -38,6 +29,12 @@ public class PlayerAnimationMachine : MonoBehaviour
                 return;
             case PlayerAnimState.IsGrounded:
                 _animator.SetBool("IsGrounded", boolean);
+                return;
+            case PlayerAnimState.ShortDodge:
+                _animator.SetTrigger("ShortDodge");
+                return;
+            case PlayerAnimState.LongDodge:
+                _animator.SetTrigger("LongDodge");
                 return;
 
             default:
@@ -55,5 +52,7 @@ public enum PlayerAnimState
 {
     IsMoving,
     IsSprinting,
-    IsGrounded
+    IsGrounded,
+    ShortDodge,
+    LongDodge
 }

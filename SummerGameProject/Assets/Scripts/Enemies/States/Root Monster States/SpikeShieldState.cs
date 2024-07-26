@@ -71,6 +71,7 @@ public class SpikeShieldState : FSMState
         else
         {
             shieldGO.SetActive(true);
+            shieldGO.transform.position = npc.position;
         }
 
         _shieldState = ShieldState.COMPLETED_SPAWN;

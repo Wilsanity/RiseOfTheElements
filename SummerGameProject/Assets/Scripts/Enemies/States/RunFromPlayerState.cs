@@ -41,10 +41,7 @@ public class RunFromPlayerState : FSMState
             return;
         }
 
-
-        
-
-        if (_originalTime < Time.time + _enemyController.RunAwayMaxTime) return;
+        if (_originalTime + _enemyController.RunAwayMaxTime > Time.time) return;
 
         // Out of range
         if (!IsInRange(npc, player.position, (int)_enemyController.SpikeShieldRadius))
@@ -74,7 +71,7 @@ public class RunFromPlayerState : FSMState
 
     public override void Act(Transform player, Transform npc)
     {
-        Debug.Log("ACTING");
+        
         NavMeshAgent agent = npc.GetComponent<NavMeshAgent>();
 
         Vector3 dirToPlayer = player.position - npc.position;

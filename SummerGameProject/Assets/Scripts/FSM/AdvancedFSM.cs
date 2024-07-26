@@ -16,7 +16,13 @@ public enum FSMStateType
     Dead,
 
     //Root Monster States
-    RootSpearAttack
+    RootSpearAttack,
+
+    //Poison Frog States
+    BounceAttacking,
+    BounceBombAttacking,
+    TronRollAttacking
+
 }
 
 public enum TransitionType
@@ -35,8 +41,14 @@ public enum TransitionType
     Hit,
     NoHealth,
 
-    //Root Monster Specific States
-    Shield
+    //Root Monster Specific Transitions
+    Shield,
+
+    //Poison Frog Transitions
+    InBounceRange,
+    InBounceBombRange,
+    InTronRollRange
+
 }
 
 public class AdvancedFSM : FSM

@@ -11,6 +11,11 @@ public enum FSMStateType
     MovingAway,
     Cooldown,
     TakingDamage,
+
+    BounceAttacking,
+    BounceBombAttacking,
+    TronRollAttacking,
+
     Dead
 }
 
@@ -24,6 +29,11 @@ public enum TransitionType
     DamageTaken,
     Cooldown,
     Hit,
+
+    InBounceRange,
+    InBounceBombRange,
+    InTronRollRange,
+
     NoHealth
 }
 

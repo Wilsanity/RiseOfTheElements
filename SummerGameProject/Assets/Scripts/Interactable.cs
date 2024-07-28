@@ -27,6 +27,7 @@ public class Interactable : MonoBehaviour
         SphereCollider collider = gameObject.AddComponent<SphereCollider>();
         collider.radius = radius;
         collider.isTrigger = true;
+        gameObject.layer = LayerMask.NameToLayer("InteractableObject");
     }
 
     private void OnTriggerEnter(Collider other)

@@ -52,6 +52,7 @@ public class SO_BaseUnitPhaseEvent : ScriptableObject
     public virtual void DefeatedLogic()
     {
         Debug.Log("Performed defeat");
+        unitAssigned.GetComponent<UnitHealth>().HealthBar.transform.parent.gameObject.SetActive(false);
     }
 
     protected bool IsCompleted(int index)

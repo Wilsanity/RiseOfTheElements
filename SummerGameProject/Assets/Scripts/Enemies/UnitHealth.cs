@@ -46,6 +46,22 @@ public class UnitHealth : MonoBehaviour
                 so.Initialize(gameObject);
             }
         }
+
+        //Initialize with the death event too
+        //Check to see if we have an event. If we don't it'll give us an error index out of range so make sure to continue if have none.
+        bool getCount = _deathEvent.GetPersistentEventCount() > 0 ? true : false;
+
+        if (!getCount) return;
+        Object obj2 = _deathEvent.GetPersistentTarget(0);
+
+        //Check to see if the object we put in the inspector event is an SO_BaseUnitPhaseEvent
+        SO_BaseUnitPhaseEvent so2 = obj2 as SO_BaseUnitPhaseEvent;
+
+        if (so2 != null)
+        {
+            //Initialize the event
+            so2.Initialize(gameObject);
+        }
     }
 
     //Deal Damage to the unit this script is attached to

@@ -5,26 +5,50 @@ using UnityEngine;
 public enum FSMStateType
 {
     None = 0,
+    Idle,
     Wandering,
     Chasing,
     Attacking,
     MovingAway,
     Cooldown,
+    Defending,
     TakingDamage,
-    Dead
+    Dead,
+
+    //Root Monster States
+    RootSpearAttack,
+
+    //Poison Frog States
+    BounceAttacking,
+    BounceBombAttacking,
+    TronRollAttacking
+
 }
 
 public enum TransitionType
 {
     None = 0,
+    EnterIdle,
     OutOfRange,
+    PlayerInRange,
     InChaseRange,
     InAttackRange,
+    InAttack2Range,
+    InAttack3Range,
     AttackOver,
     DamageTaken,
     Cooldown,
     Hit,
-    NoHealth
+    NoHealth,
+
+    //Root Monster Specific Transitions
+    Shield,
+
+    //Poison Frog Transitions
+    InBounceRange,
+    InBounceBombRange,
+    InTronRollRange
+
 }
 
 public class AdvancedFSM : FSM

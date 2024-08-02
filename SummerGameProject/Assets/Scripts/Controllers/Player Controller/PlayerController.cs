@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask attackLayer;
     [SerializeField] GameObject hitSpot;
 
+    [SerializeField] private float _dodgeDoubleTapWindow = 0.4f;
+
 
     #endregion
 
@@ -66,6 +68,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator attackCoroutine;
     private Vector2 _moveInputRaw;
 
+    private Coroutine _dodgeDoubleInputWaitCoroutine;
     private bool isJumping; // Check if the player is pressing jump
     private bool isFalling; // Check if the player is falling
     private Vector3 lastGroundedPosition; // Store the position when grounded
@@ -181,12 +184,34 @@ public class PlayerController : MonoBehaviour
     {
         _movement.Jump();
     }
+    private void OnDodge()
+    {
+        if (_movement.IsGrounded)
+        {
+            //try normal dodge
+            // if the player has not begin the pre-dodge coroutine, start it
+            if (_movement.CanStartGroundDodge)
+            {
+                _movement.TryGroundDodge(_dodgeDoubleTapWindow);
+            }
+            // else, send the toggle to turn the dodge into a long dodge
+            else if(_movement.IsDodging)
+            {
+                _movement.QueueLongDodge();
+            }
+        }
+        else
+        {
+            //try air dodge
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "PortalFX_V2")//TEMPORARY CODE: If the player collides with the portal, the cave scene starts.
         {
-            SceneManager.LoadScene("Cave Scene");
+            SceneTransitionController.Instance.LoadSpecificSceneString("Cave Scene");
+            //SceneManager.LoadScene("Cave Scene");
         }
     }
 
@@ -300,8 +325,9 @@ public class PlayerController : MonoBehaviour
         //}
 
         /// Uncomment this if you want to damage bird enemy by only clicking (TESTING ONLY)
-        //GameObject enemy = GameObject.Find("BirdEnemy");
-        //enemy.GetComponent<UnitHealth>().DamageUnit(1);
+        GameObject enemy = GameObject.Find("BirdEnemy");
+        Debug.Log(enemy);
+        if (enemy != null) enemy.GetComponent<UnitHealth>().DamageUnit(1);
     }
 
     private void OnDrawGizmos()

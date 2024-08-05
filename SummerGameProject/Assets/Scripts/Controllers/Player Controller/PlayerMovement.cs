@@ -1,4 +1,5 @@
 using AmplifyShaderEditor;
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro.EditorUtilities;
@@ -8,6 +9,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Plug in Fields")]
+    [SerializeField] private CinemachineFreeLook _cameraFreeLook;
     // serialized fields 
     [Header("Movement Variables")]
     [SerializeField, Tooltip("Target max speed")] 
@@ -35,6 +38,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Tooltip("Long dodge will cover x more distnace in x more time, to keep speed constant between dodges")] 
     private float _longDodgeMultiplier = 2;
     [SerializeField] private float _dodgeCooldown = 0.5f;
+
+    [Header("Wolf Run")]
+    [SerializeField] private bool _isWolfRunning = false;
+    [SerializeField, Tooltip("Wolf run speed multiplier off the BASE movement speed (overwrites sprint speed, does not multiply it)")] 
+    private float _wolfRunSpeedMultiplier = 4;
+    [SerializeField, Tooltip("Sprint time required before wolf run kicks in")]
+    private float _wolfRunStartUpTime = 3;
+    [SerializeField, Tooltip("Max turn speed in degrees per second while wolf running")]
+    private float _wolfRunTurnSpeed = 10;
+    [SerializeField, Tooltip("Multiplier to jump height while wolf running")]
+    private float _wolfRunJumpHeightMultiplier = 2;
+    [SerializeField, Tooltip("Minimum speed that must be mantained for wolf run to be valid")]
+    private float _wolfRunMinSpeed = 5;
+    [SerializeField, Tooltip("Camera FOV while on wolf run")]
+    private float _wolfRunCameraFOV = 60;
+    [SerializeField, Tooltip("Camera FOV Lerp back duration")]
+    private float _FOVLerpBackDuration = 0.5f;
 
     [Header("Movement Settings")]
     [SerializeField, Tooltip("Force character to look in move direction")] 
@@ -68,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
     private float _dodgeSpeed;
     private Vector3 _dodgeLockedDirection;
     private bool _goIntoLongDodge;
+    private Coroutine _wolfRunWarmUp;
+    private float _cameraFOVDefaultValue = 0;
 
     // properties
     public bool CanMove { get; set; } = true;
@@ -81,14 +103,16 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 GroundNormal { get; private set; } = Vector3.up;
     public float LastGroundedTime { get; private set; }
     public Vector3 LastGroundedPosition { get; private set; }
-    public bool CanStartGroundDodge { get { return IsGrounded && !_isDodging && _lastDodgeTime + _dodgeCooldown <= Time.time; } }
+    public bool CanStartGroundDodge { get { return IsGrounded && !_isDodging && _lastDodgeTime + _dodgeCooldown <= Time.time && !_isWolfRunning; } }
     public bool IsDodging {  get { return _isDodging;} }
+    public bool IsWolfRunning { get { return _isWolfRunning;} }
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _animationStateMachine = GetComponentInChildren<PlayerAnimationMachine>();
+        _cameraFOVDefaultValue = _cameraFreeLook.m_Lens.FieldOfView;
 
         // if we handle gravity from here, disable gravity interaction from default unity physics
         _rigidbody.useGravity = !_useCustomGravity;
@@ -117,7 +141,13 @@ public class PlayerMovement : MonoBehaviour
         // in case we need it, create a local direction
         LocalMoveInput = transform.InverseTransformDirection(MoveInput);
 
-        if(_debugEnabled) Debug.DrawRay(transform.position, MoveInput, Color.green);
+        //sprint and wolf run checks
+        if (IsSprinting && !_isWolfRunning && _wolfRunWarmUp == null && HasMoveInput && _rigidbody.velocity.magnitude > _wolfRunMinSpeed/2)
+        {
+            _wolfRunWarmUp = StartCoroutine(WolfRunTimer());
+        }
+
+        if (_debugEnabled) Debug.DrawRay(transform.position, MoveInput, Color.green);
     }
 
     public void SetLookDirection(Vector3 lookDirection)
@@ -145,15 +175,21 @@ public class PlayerMovement : MonoBehaviour
     {
         // set IsSprinting, if yes, then movespeed multiplier equals sprint speed modifier
         IsSprinting = isSprinting;
-        _moveSpeedMultiplier = isSprinting ? _sprintMultiplier : 1f;
+        _moveSpeedMultiplier = GetMoveSpeedMultiplier();
         _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsSprinting, isSprinting);
+
+        if (!isSprinting)
+        {
+            WolfRunValidationAndDisable();
+        }
     }
     // attempts a jump, will fail if not grounded
     public void Jump()
     {
         if (!CanMove || !IsGrounded) return;
         // calculate jump velocity from jump height and gravity
-        float jumpVelocity = Mathf.Sqrt(2f * -_gravityValue * _jumpHeight);
+        float multiplier = _isWolfRunning ? _wolfRunJumpHeightMultiplier : 1f;
+        float jumpVelocity = Mathf.Sqrt(2f * -_gravityValue * _jumpHeight * multiplier);
         // override current y velocity but maintain x/z velocity
         _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, jumpVelocity, _rigidbody.velocity.z);
         _animationStateMachine.JumpAnimation();
@@ -170,11 +206,15 @@ public class PlayerMovement : MonoBehaviour
         bool isMoving = HasMoveInput && _rigidbody.velocity.magnitude > 0.1f;
         _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, isMoving);
         //Debug.DrawRay(transform.position, GroundNormal, Color.magenta);
+        if(_isWolfRunning || _wolfRunWarmUp != null)
+        {
+            WolfRunValidationAndDisable();
+        }
     }
 
     private void Update()
     {
-        // rotation is on normla update for a smoother rotation
+        // rotation is on normal update for a smoother rotation
         RotatePlayer();
     }
     // private methods
@@ -209,6 +249,7 @@ public class PlayerMovement : MonoBehaviour
 
         // add that final force to the rigidbody
         _rigidbody.AddForce(acceleration * _rigidbody.mass);
+
     }
 
     private void RotatePlayer()
@@ -289,6 +330,58 @@ public class PlayerMovement : MonoBehaviour
         _isDodging = false;
         _doingActualDodge = false;
     }
+
+    private IEnumerator WolfRunTimer()
+    {
+        float elapsed = 0;
+        float fovStart = _cameraFreeLook.m_Lens.FieldOfView;
+        while (elapsed < _wolfRunStartUpTime)
+        {
+            //gradiually increase fov
+            _cameraFreeLook.m_Lens.FieldOfView = Mathf.Lerp(fovStart, _wolfRunCameraFOV, elapsed / _wolfRunStartUpTime);
+            // particles?
+            Mathf.Clamp(elapsed += Time.deltaTime,0,_wolfRunStartUpTime);
+            yield return new WaitForEndOfFrame();
+        }
+        SetWolfRun(true);
+        _cameraFreeLook.m_Lens.FieldOfView = _wolfRunCameraFOV;
+        _wolfRunWarmUp = null;
+    }
+    private void SetWolfRun(bool isWolfRunning)
+    {
+        //camera
+        _isWolfRunning = isWolfRunning;
+        _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsWolfRunning, isWolfRunning);
+        _moveSpeedMultiplier = GetMoveSpeedMultiplier();
+        if (!isWolfRunning && _cameraFreeLook.m_Lens.FieldOfView != _cameraFOVDefaultValue)
+        {
+            StartCoroutine(LerpBackCameraFOV());
+        }
+    }
+    private void WolfRunValidationAndDisable()
+    {
+        if(!IsSprinting || _rigidbody.velocity.magnitude < _wolfRunMinSpeed)
+        {
+            if(_wolfRunWarmUp != null)
+            {
+                StopCoroutine(_wolfRunWarmUp);
+                _wolfRunWarmUp = null;
+            }
+            SetWolfRun(false);
+        }
+    }
+    private IEnumerator LerpBackCameraFOV()
+    {
+        float elapsed = 0;
+        float fovStart = _cameraFreeLook.m_Lens.FieldOfView;
+        while (elapsed < _FOVLerpBackDuration)
+        {
+            _cameraFreeLook.m_Lens.FieldOfView = Mathf.Lerp(fovStart, _cameraFOVDefaultValue, elapsed / _FOVLerpBackDuration);
+            elapsed += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        _cameraFreeLook.m_Lens.FieldOfView = _cameraFOVDefaultValue;
+    }
     private bool CheckGrounded()
     {
         // raycast downwards, looking for ground layer
@@ -312,6 +405,18 @@ public class PlayerMovement : MonoBehaviour
             return true;
         }
         return false;
+    }
+    public float GetMoveSpeedMultiplier()
+    {
+        if (_isWolfRunning)
+        {
+            return _wolfRunSpeedMultiplier;
+        }
+        if(IsSprinting)
+        {
+            return _sprintMultiplier;
+        }
+        return 1;
     }
 
 }

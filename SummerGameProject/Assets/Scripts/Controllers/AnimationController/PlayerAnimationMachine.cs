@@ -36,6 +36,9 @@ public class PlayerAnimationMachine : MonoBehaviour
             case PlayerAnimState.LongDodge:
                 _animator.SetTrigger("LongDodge");
                 return;
+            case PlayerAnimState.IsWolfRunning:
+                _animator.SetBool("WolfRunning", boolean);
+                return;
 
             default:
                 Debug.LogError("PlayerAnimationMachine: Invalid PlayerAnimState");
@@ -54,5 +57,6 @@ public enum PlayerAnimState
     IsSprinting,
     IsGrounded,
     ShortDodge,
-    LongDodge
+    LongDodge,
+    IsWolfRunning,
 }

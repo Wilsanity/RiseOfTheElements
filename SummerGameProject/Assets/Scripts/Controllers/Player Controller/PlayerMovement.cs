@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Tooltip("Long dodge will cover x more distnace in x more time, to keep speed constant between dodges")] 
     private float _longDodgeMultiplier = 2;
     [SerializeField] private float _dodgeCooldown = 0.5f;
+    [SerializeField] private float _airDodgeSpeedModifier = 5;
+    [SerializeField] private float _airDodgeAccelerationModifier = 5;
 
     [Header("Wolf Run")]
     [SerializeField] private bool _isWolfRunning = false;
@@ -83,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
     // private variables
     private float _moveSpeedMultiplier = 1;
     private bool _isDodging = false;
+    public bool _canDodgedThisJump = false;
     private bool _doingActualDodge;
     private float _lastDodgeTime = 0;
     private float _dodgeSpeed;
@@ -104,6 +107,7 @@ public class PlayerMovement : MonoBehaviour
     public float LastGroundedTime { get; private set; }
     public Vector3 LastGroundedPosition { get; private set; }
     public bool CanStartGroundDodge { get { return IsGrounded && !_isDodging && _lastDodgeTime + _dodgeCooldown <= Time.time && !_isWolfRunning; } }
+    public bool CanAirDodge { get { return _canDodgedThisJump && !IsGrounded; } }
     public bool IsDodging {  get { return _isDodging;} }
     public bool IsWolfRunning { get { return _isWolfRunning;} }
 
@@ -270,6 +274,7 @@ public class PlayerMovement : MonoBehaviour
             _lastDodgeTime = Time.time;
             _dodgeSpeed = _shortDodgeDistance / _shortDodgeTime;
             _goIntoLongDodge = false;
+            _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.LongDodge, _goIntoLongDodge);
 
             if (HasMoveInput)
             {
@@ -284,36 +289,59 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(PreGroundDodge(multiWindowTime));
         }
     }
+    public void TryAirDodge()
+    {
+        if(CanAirDodge)
+        {
+            if(HasMoveInput)
+            {
+                Vector3 input = MoveInput;
+                Vector3 right = Vector3.Cross(transform.up, input);
+                _dodgeLockedDirection = Vector3.Cross(right, GroundNormal);
+            }
+            else
+            {
+                _dodgeLockedDirection = LookDirection;
+            }
+            _canDodgedThisJump = false;
+            Vector3 targetVelocity = _dodgeLockedDirection * (_dodgeSpeed * _airDodgeSpeedModifier);
+            Vector3 velocityDiff = targetVelocity - _rigidbody.velocity;
+            velocityDiff.y = 0f;
+            Vector3 acceleration = velocityDiff * (_acceleration * _airDodgeAccelerationModifier);
+            _rigidbody.AddForce(acceleration * _rigidbody.mass);
+            _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.AirDodge);
+        }
+    }
     private IEnumerator PreGroundDodge(float multiWindowTime)
     {
         _isDodging = true;
+        _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.ShortDodge, true);
+
         float elapsed = 0;
-        //_animationStateMachine.UpdatePlayerAnim(PlayerAnimState.PreDodge, true);
         while (elapsed < multiWindowTime)
         {
             elapsed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
         float dodgeTime = _goIntoLongDodge ? _shortDodgeTime * _longDodgeMultiplier : _shortDodgeTime;
-        Debug.Log("pre dodging done");
+        //Debug.Log("pre dodging done");
+        _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.LongDodge, _goIntoLongDodge);
 
-        if (!_goIntoLongDodge)
-        {
-            Debug.Log("Doing short dodge");
-            _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.ShortDodge, true);
-        }
-        else
-        {
-            Debug.Log("Doing long dodge");
-            _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.LongDodge, true);
-        }
+        //if (!_goIntoLongDodge)
+        //{
+        //    Debug.Log("Doing short dodge");
+        //}
+        //else
+        //{
+        //    Debug.Log("Doing long dodge");
+        //}
         StartCoroutine(GroundDodge(dodgeTime));
     }
     public void QueueLongDodge()
     {
         if(!_doingActualDodge)
         {
-            Debug.Log("long dodge queded");
+            //Debug.Log("long dodge queded");
             _goIntoLongDodge = true;
         }
     }
@@ -326,7 +354,7 @@ public class PlayerMovement : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        Debug.Log("dodging done");
+        //Debug.Log("dodging done");
         _isDodging = false;
         _doingActualDodge = false;
     }
@@ -402,6 +430,7 @@ public class PlayerMovement : MonoBehaviour
             LastGroundedTime = Time.timeSinceLevelLoad;
             GroundNormal = hitInfo.normal;
             LastGroundedPosition = transform.position;
+            _canDodgedThisJump = true;
             return true;
         }
         return false;

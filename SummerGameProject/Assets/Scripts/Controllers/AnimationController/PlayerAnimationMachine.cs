@@ -16,7 +16,7 @@ public class PlayerAnimationMachine : MonoBehaviour
     }
 
     //update bool anim states
-    public void UpdatePlayerAnim(PlayerAnimState state, bool boolean)
+    public void UpdatePlayerAnim(PlayerAnimState state, bool boolean = true)
     {
         switch (state)
         {
@@ -34,10 +34,13 @@ public class PlayerAnimationMachine : MonoBehaviour
                 _animator.SetTrigger("ShortDodge");
                 return;
             case PlayerAnimState.LongDodge:
-                _animator.SetTrigger("LongDodge");
+                _animator.SetBool("GoingIntoLongDodge", boolean);
                 return;
             case PlayerAnimState.IsWolfRunning:
                 _animator.SetBool("WolfRunning", boolean);
+                return;
+            case PlayerAnimState.AirDodge:
+                _animator.SetTrigger("AirDodge");
                 return;
 
             default:
@@ -58,5 +61,6 @@ public enum PlayerAnimState
     IsGrounded,
     ShortDodge,
     LongDodge,
+    AirDodge,
     IsWolfRunning,
 }

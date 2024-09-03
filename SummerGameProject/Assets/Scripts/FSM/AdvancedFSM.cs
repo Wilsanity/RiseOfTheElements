@@ -21,8 +21,12 @@ public enum FSMStateType
     //Poison Frog States
     BounceAttacking,
     BounceBombAttacking,
-    TronRollAttacking
+    TronRollAttacking,
 
+    // Beetle States
+    MucusAttacking,
+    FlyingArrowAttacking,
+    HornSwipeAttacking
 }
 
 public enum TransitionType
@@ -47,7 +51,13 @@ public enum TransitionType
     //Poison Frog Transitions
     InBounceRange,
     InBounceBombRange,
-    InTronRollRange
+    InTronRollRange,
+
+    // Beetle Transitions
+    InTauntMode,
+    InAggroMode,
+    InMeleeRange,
+    OutOfMeleeRange
 
 }
 

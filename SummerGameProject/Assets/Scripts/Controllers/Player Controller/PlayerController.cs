@@ -325,7 +325,7 @@ public class PlayerController : MonoBehaviour
         //}
 
         /// Uncomment this if you want to damage bird enemy by only clicking (TESTING ONLY)
-        GameObject enemy = GameObject.Find("BirdEnemy");
+        GameObject enemy = GameObject.Find("BeetleEnemy");
         Debug.Log(enemy);
         if (enemy != null) enemy.GetComponent<UnitHealth>().DamageUnit(1);
     }

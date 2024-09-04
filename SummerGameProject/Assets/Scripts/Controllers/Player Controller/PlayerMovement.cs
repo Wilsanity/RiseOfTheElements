@@ -47,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
     private float _wolfRunSpeedMultiplier = 4;
     [SerializeField, Tooltip("Sprint time required before wolf run kicks in")]
     private float _wolfRunStartUpTime = 3;
+    [SerializeField, Tooltip("Should turn ratio be limited while on wolf run?")] 
+    private bool _limitWolfSpeedTurning = true;
     [SerializeField, Tooltip("Max turn speed in degrees per second while wolf running")]
     private float _wolfRunTurnSpeed = 10;
     [SerializeField, Tooltip("Multiplier to jump height while wolf running")]
@@ -164,7 +166,18 @@ public class PlayerMovement : MonoBehaviour
         }
         // else, register look direction as input direction
         HasTurnInput = true;
-        LookDirection = new Vector3(lookDirection.x, 0f, lookDirection.z).normalized;
+        Vector3 targetLookDirection = new Vector3(lookDirection.x, 0f, lookDirection.z).normalized;
+
+        // if we are wolf running, rotate toward target limited by wolf turn speed
+        if(_limitWolfSpeedTurning && _isWolfRunning)
+        {
+            LookDirection = Vector3.RotateTowards(transform.forward, targetLookDirection, _wolfRunTurnSpeed * Time.deltaTime, _wolfRunTurnSpeed);
+        }
+        // otherwise set the target direction straight
+        else
+        {
+            LookDirection = targetLookDirection;
+        }
     }
 
     // stop player movement and zero out physics forces
@@ -209,7 +222,8 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer();
         bool isMoving = HasMoveInput && _rigidbody.velocity.magnitude > 0.1f;
         _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, isMoving);
-        //Debug.DrawRay(transform.position, GroundNormal, Color.magenta);
+
+        // if is wolf running (or charging up) check that conditions to continue are still true
         if(_isWolfRunning || _wolfRunWarmUp != null)
         {
             WolfRunValidationAndDisable();
@@ -229,13 +243,21 @@ public class PlayerMovement : MonoBehaviour
         Vector3 right = Vector3.Cross(transform.up, input);
         Vector3 forward = Vector3.Cross(right, GroundNormal);
 
+        if(_isWolfRunning)
+        {
+            forward = LookDirection;
+        }
+
         // calculates target velocity based on max speed and multiliers. If we cannot move, target velocity becomes zero
         Vector3 targetVelocity = forward * (_moveSpeed * _moveSpeedMultiplier);
         if (!CanMove) targetVelocity = Vector3.zero;
+
+        //if we are currently mid-dodge, lock the move direction to that set in the beginning of the dodge
         if(_isDodging)
         {
             targetVelocity = _dodgeLockedDirection * (_dodgeSpeed);
         }
+
         // calculates acceleration required to reach desired velocity and applies air control if not grounded
         Vector3 velocityDiff = targetVelocity - _rigidbody.velocity;
         velocityDiff.y = 0f;
@@ -276,12 +298,14 @@ public class PlayerMovement : MonoBehaviour
             _goIntoLongDodge = false;
             _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.LongDodge, _goIntoLongDodge);
 
+            // if player has active move input, dodge in that direction
             if (HasMoveInput)
             {
                 Vector3 input = MoveInput;
                 Vector3 right = Vector3.Cross(transform.up, input);
                 _dodgeLockedDirection = Vector3.Cross(right, GroundNormal);
             }
+            // otherwise, dodge backwards based on look direction
             else
             {
                 _dodgeLockedDirection = LookDirection * -1;
@@ -293,36 +317,46 @@ public class PlayerMovement : MonoBehaviour
     {
         if(CanAirDodge)
         {
+            // if has move input, use that for direction
             if(HasMoveInput)
             {
                 Vector3 input = MoveInput;
                 Vector3 right = Vector3.Cross(transform.up, input);
                 _dodgeLockedDirection = Vector3.Cross(right, GroundNormal);
             }
+            // otherwise use the character's look direction
             else
             {
                 _dodgeLockedDirection = LookDirection;
             }
+            // make sure we can't double air dodge in a single jump
             _canDodgedThisJump = false;
+
+            // give the little boost to the player
             Vector3 targetVelocity = _dodgeLockedDirection * (_dodgeSpeed * _airDodgeSpeedModifier);
             Vector3 velocityDiff = targetVelocity - _rigidbody.velocity;
             velocityDiff.y = 0f;
             Vector3 acceleration = velocityDiff * (_acceleration * _airDodgeAccelerationModifier);
             _rigidbody.AddForce(acceleration * _rigidbody.mass);
+
+            // update anim state
             _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.AirDodge);
         }
     }
     private IEnumerator PreGroundDodge(float multiWindowTime)
     {
+        //start all dodging behavior, including animations
         _isDodging = true;
         _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.ShortDodge, true);
 
+        // being timer for multi input press (makign it a long dodge)
         float elapsed = 0;
         while (elapsed < multiWindowTime)
         {
             elapsed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+        // after the timer elapses, go into dodge with either the short or long dodges
         float dodgeTime = _goIntoLongDodge ? _shortDodgeTime * _longDodgeMultiplier : _shortDodgeTime;
         //Debug.Log("pre dodging done");
         _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.LongDodge, _goIntoLongDodge);
@@ -337,6 +371,7 @@ public class PlayerMovement : MonoBehaviour
         //}
         StartCoroutine(GroundDodge(dodgeTime));
     }
+    // method to be called by the player controller when expecting the second dodge input for a long dodge
     public void QueueLongDodge()
     {
         if(!_doingActualDodge)
@@ -347,6 +382,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private IEnumerator GroundDodge(float dodgeTime)
     {
+        // note that _doingActualDodge is used by animation and multi tap window calculations, while _isDodging is the actual bool affecting gameplay
         _doingActualDodge = true;
         float elapsed = 0;
         while (elapsed < dodgeTime)
@@ -367,20 +403,26 @@ public class PlayerMovement : MonoBehaviour
         {
             //gradiually increase fov
             _cameraFreeLook.m_Lens.FieldOfView = Mathf.Lerp(fovStart, _wolfRunCameraFOV, elapsed / _wolfRunStartUpTime);
-            // particles?
+            // to-do: particles?
             Mathf.Clamp(elapsed += Time.deltaTime,0,_wolfRunStartUpTime);
             yield return new WaitForEndOfFrame();
         }
+        // at timer end, toggle wolf run on
         SetWolfRun(true);
+        //make sure the camera is at the desired FOV
         _cameraFreeLook.m_Lens.FieldOfView = _wolfRunCameraFOV;
         _wolfRunWarmUp = null;
     }
+    // for toggling wolf run both on or off
     private void SetWolfRun(bool isWolfRunning)
     {
-        //camera
+        // set the gameplay bool
         _isWolfRunning = isWolfRunning;
+        //update anim state
         _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsWolfRunning, isWolfRunning);
+        //set the move speed multiplier
         _moveSpeedMultiplier = GetMoveSpeedMultiplier();
+        // if camera FOV values are modified, lerp back to base values
         if (!isWolfRunning && _cameraFreeLook.m_Lens.FieldOfView != _cameraFOVDefaultValue)
         {
             StartCoroutine(LerpBackCameraFOV());
@@ -388,13 +430,17 @@ public class PlayerMovement : MonoBehaviour
     }
     private void WolfRunValidationAndDisable()
     {
+        // check that the conditions for wolf running are still valid 
+        // meaning we are still pressing the sprint button and we have not collided with terrain (thus reducing our speed)
         if(!IsSprinting || _rigidbody.velocity.magnitude < _wolfRunMinSpeed)
         {
+            // if we were charging up the wolf run, stop 
             if(_wolfRunWarmUp != null)
             {
                 StopCoroutine(_wolfRunWarmUp);
                 _wolfRunWarmUp = null;
             }
+            // if we were actually wolf running, also stop that
             SetWolfRun(false);
         }
     }
@@ -435,6 +481,7 @@ public class PlayerMovement : MonoBehaviour
         }
         return false;
     }
+    // set the movement speed multiplier based on movement conditions
     public float GetMoveSpeedMultiplier()
     {
         if (_isWolfRunning)

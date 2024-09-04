@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //try air dodge
+            _movement.TryAirDodge();
         }
     }
 

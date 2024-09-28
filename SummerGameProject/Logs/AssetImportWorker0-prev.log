@@ -1,125 +1,125 @@
 Using pre-set license
 Built from '2021.1/staging' branch; Version is '2021.1.11f1 (4d8c25f7477e) revision 5082149'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Home; OS build 19045.4780; Version 2009; 64bit' Language: 'en' Physical Memory: 32588 MB
+OS: 'Windows 10 Home; OS build 19045.4894; Version 2009; 64bit' Language: 'en' Physical Memory: 32670 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2021.1.11f1\Editor\Unity.exe
+D:\Software\Installers\UnityEditorInstallations\2021.1.11f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Repos/RiseOfTheElements/SummerGameProject
+D:/Documents/GitHub/RiseOfTheElements/SummerGameProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-65410
-Successfully changed project path to: D:/Repos/RiseOfTheElements/SummerGameProject
-D:/Repos/RiseOfTheElements/SummerGameProject
+60147
+Successfully changed project path to: D:/Documents/GitHub/RiseOfTheElements/SummerGameProject
+D:/Documents/GitHub/RiseOfTheElements/SummerGameProject
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 85.37 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 76.56 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.11f1 (4d8c25f7477e)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Repos/RiseOfTheElements/SummerGameProject/Assets
+[Subsystems] Discovering subsystems at path D:/Software/Installers/UnityEditorInstallations/2021.1.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Documents/GitHub/RiseOfTheElements/SummerGameProject/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f15)
+    Renderer: NVIDIA GeForce RTX 2070 (ID=0x1f07)
     Vendor:   NVIDIA
-    VRAM:     5969 MB
-    Driver:   31.0.15.4633
+    VRAM:     8019 MB
+    Driver:   31.0.15.3623
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56724
+Mono path[0] = 'D:/Software/Installers/UnityEditorInstallations/2021.1.11f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Software/Installers/UnityEditorInstallations/2021.1.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Software/Installers/UnityEditorInstallations/2021.1.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56980
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001809 seconds.
+Register platform support module: D:/Software/Installers/UnityEditorInstallations/2021.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001004 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.32 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 74.08 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.100 seconds
+- Completed reload, in  1.027 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1101ms)
-		BeginReloadAssembly (47ms)
+	ReloadAssembly (1027ms)
+		BeginReloadAssembly (54ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (441ms)
-			LoadAssemblies (45ms)
+		EndReloadAssembly (340ms)
+			LoadAssemblies (54ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (158ms)
+			SetupTypeCache (112ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (28ms)
-			SetupLoadedEditorAssemblies (211ms)
+			RebuildScriptCaches (20ms)
+			SetupLoadedEditorAssemblies (176ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (83ms)
+				RefreshPlugins (74ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (92ms)
-				ProcessInitializeOnLoadMethodAttributes (28ms)
+				ProcessInitializeOnLoadAttributes (75ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005261 seconds.
+Registered in 0.004177 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 83.44 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 74.84 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.388 seconds
+- Completed reload, in  1.137 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1389ms)
-		BeginReloadAssembly (137ms)
+	ReloadAssembly (1137ms)
+		BeginReloadAssembly (110ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (1196ms)
-			LoadAssemblies (90ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (990ms)
+			LoadAssemblies (89ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (335ms)
+			SetupTypeCache (268ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (85ms)
-			SetupLoadedEditorAssemblies (588ms)
+			RebuildScriptCaches (81ms)
+			SetupLoadedEditorAssemblies (492ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (83ms)
-				BeforeProcessingInitializeOnLoad (83ms)
-				ProcessInitializeOnLoadAttributes (405ms)
+				RefreshPlugins (75ms)
+				BeforeProcessingInitializeOnLoad (75ms)
+				ProcessInitializeOnLoadAttributes (332ms)
 				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.91 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 0.99 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4631 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 241.1 MB.
-System memory in use after: 241.3 MB.
+Unloading 5315 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 267.5 MB.
+System memory in use after: 267.9 MB.
 
-Unloading 157 unused Assets to reduce memory usage. Loaded Objects now: 5073.
-Total: 3.776700 ms (FindLiveObjects: 0.336400 ms CreateObjectMapping: 0.421700 ms MarkObjects: 2.785700 ms  DeleteObjects: 0.232000 ms)
+Unloading 163 unused Assets to reduce memory usage. Loaded Objects now: 5755.
+Total: 3.523800 ms (FindLiveObjects: 0.386400 ms CreateObjectMapping: 0.140200 ms MarkObjects: 2.765300 ms  DeleteObjects: 0.230900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -133,328 +133,22 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Art Related/Enemies/Malevolent Moray
-  artifactKey: Guid(7ca033e8f188a6c45bd92bed800f86b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray using Guid(7ca033e8f188a6c45bd92bed800f86b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ff0a67133def0df0a3e606f3077d05f') in 0.012045 seconds 
+  path: Assets/Scripts/Input/GameControls.inputactions
+  artifactKey: Guid(8de57f687a8637843ab9ffaba4e4dfc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Input/GameControls.inputactions using Guid(8de57f687a8637843ab9ffaba4e4dfc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a6a3aa6cca4c5cd1d66b0237c5c4026') in 0.024211 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 36.914150 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/malevolentMoray_low.fbx
-  artifactKey: Guid(8ceaaf820feb1e74b8525757c6f51b1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/malevolentMoray_low.fbx using Guid(8ceaaf820feb1e74b8525757c6f51b1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22d531b5863313826629420fb065d8b5') in 0.386100 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.792542 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture
-  artifactKey: Guid(7bb6a332b569aea409b00f376dfb805c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture using Guid(7bb6a332b569aea409b00f376dfb805c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbfba0eadc57ad2d8eabefa352d39986') in 0.009381 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.187157 seconds.
-  path: Assets/Art Related/Enemies/Root Monster/Texture/alt/New Material.mat
-  artifactKey: Guid(a9ff0a213ec50114c97c324ecb7e2e58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Root Monster/Texture/alt/New Material.mat using Guid(a9ff0a213ec50114c97c324ecb7e2e58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63ece87da73fd1148daef540abcd43af') in 0.120768 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.411862 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_Eyes_Emission.png
-  artifactKey: Guid(ba337779b53095d4693ce8218207afa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_Eyes_Emission.png using Guid(ba337779b53095d4693ce8218207afa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17eb923059c3ae5162999a3d721947b9') in 0.035657 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 18.060784 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_Eyes_AlbedoTransparency.png
-  artifactKey: Guid(8c01052dd6cdacb43941052fcf0b2cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_Eyes_AlbedoTransparency.png using Guid(8c01052dd6cdacb43941052fcf0b2cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fd551927b92de18174bfbc4787fadbf') in 0.019657 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_upperFin_AlbedoTransparency.png
-  artifactKey: Guid(4228a78e3fb1d3e44afb8f3950ff391b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_upperFin_AlbedoTransparency.png using Guid(4228a78e3fb1d3e44afb8f3950ff391b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bc676e30fe65d2154759f79d68d3f60') in 0.019333 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000143 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_Eyes_Normal.png
-  artifactKey: Guid(ccc1bd434a5a2a84fb8040bf2631678e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_Eyes_Normal.png using Guid(ccc1bd434a5a2a84fb8040bf2631678e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf7bed9585c364cd18ed1eca7ce75897') in 0.024334 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000154 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_tailFin_MetallicSmoothness.png
-  artifactKey: Guid(fac3581e619b8e8418aa304e7e3d2aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_tailFin_MetallicSmoothness.png using Guid(fac3581e619b8e8418aa304e7e3d2aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98a5946888a587f76c0cf131fa499741') in 0.032778 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000196 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_Eyes_MetallicSmoothness.png
-  artifactKey: Guid(cf47f3893ba7cb044b786571dc925214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_Eyes_MetallicSmoothness.png using Guid(cf47f3893ba7cb044b786571dc925214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c9ce26f7b5032fe2defcb94837f2898') in 0.019465 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_lowerFin_Normal.png
-  artifactKey: Guid(209e0f0afc33d1d4ea8e94f1efa3a42b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_lowerFin_Normal.png using Guid(209e0f0afc33d1d4ea8e94f1efa3a42b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1944af233dc32b262e7ffad866bebc06') in 0.019404 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000132 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_malevolentMoray_low_AlbedoTransparency.png
-  artifactKey: Guid(dd36db791c7af2b4b877fec497f79849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_malevolentMoray_low_AlbedoTransparency.png using Guid(dd36db791c7af2b4b877fec497f79849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e92616961a1c0e50d41d15c3b0e94740') in 0.016705 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000140 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_teeth_MetallicSmoothness.png
-  artifactKey: Guid(2fc4ce731839d984b90120f23e246a0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_teeth_MetallicSmoothness.png using Guid(2fc4ce731839d984b90120f23e246a0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f00ff54d740d353739b80febea939c2') in 0.017953 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000144 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_malevolentMoray_low_MetallicSmoothness.png
-  artifactKey: Guid(b1e0618cd8a542b46b8d46fcdb6753e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_malevolentMoray_low_MetallicSmoothness.png using Guid(b1e0618cd8a542b46b8d46fcdb6753e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '714bd5c8bb0e3cbcc2c80ce5952ef057') in 0.015811 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000168 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_teeth_Normal.png
-  artifactKey: Guid(e5df89f3b0025d2488423ae667546339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_teeth_Normal.png using Guid(e5df89f3b0025d2488423ae667546339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '559feb78afb1de13818d5c87edefcd63') in 0.016125 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000149 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_tailFin_AlbedoTransparency.png
-  artifactKey: Guid(c22a3dcfa0167ee4a8ac904408e8240f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_tailFin_AlbedoTransparency.png using Guid(c22a3dcfa0167ee4a8ac904408e8240f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60787daef779b65e9fe3a0405e646b13') in 0.014715 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000182 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_lowerFin_AlbedoTransparency.png
-  artifactKey: Guid(895cc9057bdeb0246938e31bf7ca0bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_lowerFin_AlbedoTransparency.png using Guid(895cc9057bdeb0246938e31bf7ca0bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1366068af973f61eda4fe97e1de0fb9a') in 0.022627 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000162 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_lowerFin_MetallicSmoothness.png
-  artifactKey: Guid(87f6a6c381ad3fe4a9f8527270380dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_lowerFin_MetallicSmoothness.png using Guid(87f6a6c381ad3fe4a9f8527270380dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9633be264edda484f23d5e6c8f8ce50e') in 0.016920 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000153 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_malevolentMoray_low_Normal.png
-  artifactKey: Guid(0d4095126487ce04d8697e3db94461cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_malevolentMoray_low_Normal.png using Guid(0d4095126487ce04d8697e3db94461cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e803cd6993438c02c4b8b3db7ac117bd') in 0.014781 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000166 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_tailFin_Normal.png
-  artifactKey: Guid(c1d142c08d9de34449488fcde980a538) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_tailFin_Normal.png using Guid(c1d142c08d9de34449488fcde980a538) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c93ae3b9925affc105a8e05e64de7330') in 0.015216 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000154 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_teeth_AlbedoTransparency.png
-  artifactKey: Guid(36da3416cee71894abcd83c9669ebe36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_teeth_AlbedoTransparency.png using Guid(36da3416cee71894abcd83c9669ebe36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8f7c0109cf49b6641ca4295c6372b0e') in 0.014476 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000167 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_upperFin_Normal.png
-  artifactKey: Guid(fe0decb504192014d8d61531ed3cf77f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_upperFin_Normal.png using Guid(fe0decb504192014d8d61531ed3cf77f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e87100526a8208049998aebee030c786') in 0.016573 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000161 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_upperFin_MetallicSmoothness.png
-  artifactKey: Guid(69125fa6e79d14440aae031c82baafc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/malevolentMoray_low_upperFin_MetallicSmoothness.png using Guid(69125fa6e79d14440aae031c82baafc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa1f30d22eac59f18fc4e40d14d689c8') in 0.015321 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 53.569876 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes
-  artifactKey: Guid(8c361171f21484544a66a9c25d194a2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes using Guid(8c361171f21484544a66a9c25d194a2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8f9cd6257cabdbcfe4da2b7cea5820f') in 0.009057 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 81.153819 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Body
-  artifactKey: Guid(c5f815714a0073446adc3e76037a1b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Body using Guid(c5f815714a0073446adc3e76037a1b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd67ae87d777e83d7d6d5a090613e66b8') in 0.008727 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 29.894269 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin
-  artifactKey: Guid(c5f815714a0073446adc3e76037a1b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin using Guid(c5f815714a0073446adc3e76037a1b7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a9188599927149e2f8525c5c0f57b9e') in 0.009654 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.907857 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Body
-  artifactKey: Guid(05e53c0fd3f0aac4fb543db1cf656461) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Body using Guid(05e53c0fd3f0aac4fb543db1cf656461) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9178dcb0d60eba068d97fd85ea6e5f36') in 0.002459 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 228.672625 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin
-  artifactKey: Guid(d58e51a80e2189446960b170dd8818f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin using Guid(d58e51a80e2189446960b170dd8818f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bda8fc8c52b3fb4b0c1d78ea90b3093c') in 0.008885 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 55.787278 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail
-  artifactKey: Guid(c4e48431967f42c4ebf4ad9909e7e668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail using Guid(c4e48431967f42c4ebf4ad9909e7e668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd43fefb3e91b24706fb5ace2cf98af4') in 0.009308 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.559652 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/New Material.mat
-  artifactKey: Guid(a70610fcc40bb2e40a4f4464ab70973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/New Material.mat using Guid(a70610fcc40bb2e40a4f4464ab70973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02b1067173d524dcac982b6297718029') in 0.029453 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.981053 seconds.
-  path: Assets/Art Related/Enemies/Root Monster/Texture/Body/RootMonster_Body.mat
-  artifactKey: Guid(a9c0e7c010ac47943ac42a0d5ee60e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Root Monster/Texture/Body/RootMonster_Body.mat using Guid(a9c0e7c010ac47943ac42a0d5ee60e6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75c6094a24fbad30ec0cc9a2eb8532da') in 0.073469 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 28.146650 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/MalevolentMoray_Body.mat
-  artifactKey: Guid(490190e9e1e157f439e7f2349d8335c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/MalevolentMoray_Body.mat using Guid(490190e9e1e157f439e7f2349d8335c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2266fe38d616b9406be51b01374163b') in 0.014305 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.433368 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/MalevolentMoray_Eyes.mat
-  artifactKey: Guid(a70610fcc40bb2e40a4f4464ab70973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/MalevolentMoray_Eyes.mat using Guid(a70610fcc40bb2e40a4f4464ab70973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '766d71e1ba24a7475908d455fd5df8d4') in 0.014323 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.227186 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/MalevolentMoray_LowerFin.mat
-  artifactKey: Guid(be34802d1decb6d479a9a36c64a50b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/MalevolentMoray_LowerFin.mat using Guid(be34802d1decb6d479a9a36c64a50b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20f90ac9d6344f29e3a848ebf9466d59') in 0.015696 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.771675 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/MalevolentMoray_LowerFin 1.mat
-  artifactKey: Guid(8ca506b614833a848a64d6eebc879c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/MalevolentMoray_LowerFin 1.mat using Guid(8ca506b614833a848a64d6eebc879c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63d739f1aef2fce21e338552d79361c7') in 0.013378 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.453294 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/MalevolentMoray_UpperFin.mat
-  artifactKey: Guid(8ca506b614833a848a64d6eebc879c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/MalevolentMoray_UpperFin.mat using Guid(8ca506b614833a848a64d6eebc879c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54ffb796e7a62761c3bf43cb8d0d5d37') in 0.014727 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.639713 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/MalevolentMoray_Tail.mat
-  artifactKey: Guid(8d93a239e436bb54da0a8f05286d601e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/MalevolentMoray_Tail.mat using Guid(8d93a239e436bb54da0a8f05286d601e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f4a97a754e54a468bcbd9157a746dab') in 0.014754 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 30.652543 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/malevolentMoray_low_Eyes_Normal.png
-  artifactKey: Guid(ccc1bd434a5a2a84fb8040bf2631678e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/malevolentMoray_low_Eyes_Normal.png using Guid(ccc1bd434a5a2a84fb8040bf2631678e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4979b50f95fd189306a95a5f58da603b') in 0.052903 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 100.409386 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/malevolentMoray_low_malevolentMoray_low_Normal.png
-  artifactKey: Guid(0d4095126487ce04d8697e3db94461cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/malevolentMoray_low_malevolentMoray_low_Normal.png using Guid(0d4095126487ce04d8697e3db94461cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd848b9528310e4efc6613ac5af0e97c') in 0.018576 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 59.586161 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/malevolentMoray_low_lowerFin_Normal.png
-  artifactKey: Guid(209e0f0afc33d1d4ea8e94f1efa3a42b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/malevolentMoray_low_lowerFin_Normal.png using Guid(209e0f0afc33d1d4ea8e94f1efa3a42b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69928996e7a427f07dc7756de09da0a8') in 0.017736 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 26.704962 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/malevolentMoray_low_tailFin_Normal.png
-  artifactKey: Guid(c1d142c08d9de34449488fcde980a538) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/malevolentMoray_low_tailFin_Normal.png using Guid(c1d142c08d9de34449488fcde980a538) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4aa457848bee1962b2d30dd44230ad2') in 0.016395 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.201116 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/malevolentMoray_low_upperFin_Normal.png
-  artifactKey: Guid(fe0decb504192014d8d61531ed3cf77f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/malevolentMoray_low_upperFin_Normal.png using Guid(fe0decb504192014d8d61531ed3cf77f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b13d8564a08a20109e32b23fc5c47ab9') in 0.016970 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 95.959688 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/MalevolentMoray_Eyes.mat
-  artifactKey: Guid(a70610fcc40bb2e40a4f4464ab70973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/MalevolentMoray_Eyes.mat using Guid(a70610fcc40bb2e40a4f4464ab70973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b16e64a9311f08133da5a83670a6d381') in 0.040503 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000148 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/New Material.mat
-  artifactKey: Guid(b51ef8c6a778f4d448f9dbc8e2656ac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/New Material.mat using Guid(b51ef8c6a778f4d448f9dbc8e2656ac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e24ee9824baac8cdd7712580056c1413') in 0.008055 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 77.630008 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/MalevolentMoray_Body.mat
-  artifactKey: Guid(490190e9e1e157f439e7f2349d8335c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/MalevolentMoray_Body.mat using Guid(490190e9e1e157f439e7f2349d8335c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d4a9e18d7bfb2c49949f76627506ddd') in 0.023969 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5051.846665 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/MalevolentMoray_Body.mat
-  artifactKey: Guid(490190e9e1e157f439e7f2349d8335c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/MalevolentMoray_Body.mat using Guid(490190e9e1e157f439e7f2349d8335c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5dba8cbd2bcb342bbf8877bdd2fc91a') in 0.067830 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 635.283373 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/teeth.png
-  artifactKey: Guid(10f90554883ff69429bef48e969f15b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/teeth.png using Guid(10f90554883ff69429bef48e969f15b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7aa4543a14830539ddccc77d2722b149') in 0.020597 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.119414 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/teeth.png
-  artifactKey: Guid(10f90554883ff69429bef48e969f15b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/teeth.png using Guid(10f90554883ff69429bef48e969f15b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c46fc1171f5c451e6b624c9279dfe9c') in 0.042942 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.350457 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/New Material.mat
-  artifactKey: Guid(4929a4775b66ce94c8600edacf431519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/New Material.mat using Guid(4929a4775b66ce94c8600edacf431519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f9470dd85a2507e2c983ff9a206938d') in 0.014550 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 975.295648 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/teethTest.png
-  artifactKey: Guid(00c5952507a221c45b42d6d2f4e39ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/teethTest.png using Guid(00c5952507a221c45b42d6d2f4e39ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62c05ebf8be2ada03e1017cc006ba683') in 0.013257 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.612894 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/teethTest.png
-  artifactKey: Guid(00c5952507a221c45b42d6d2f4e39ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/teethTest.png using Guid(00c5952507a221c45b42d6d2f4e39ac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6063d679f62a3ae1738f200a860c280') in 0.035619 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1887.992667 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/teethMoray.png
-  artifactKey: Guid(d5ecd994b97e77a49bde0969d10aa37c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/teethMoray.png using Guid(d5ecd994b97e77a49bde0969d10aa37c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfbd99e159480e7ed7dac38e7cd4414b') in 0.016146 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.364169 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/teethMoray.png
-  artifactKey: Guid(d5ecd994b97e77a49bde0969d10aa37c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/teethMoray.png using Guid(d5ecd994b97e77a49bde0969d10aa37c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3e655db1263face7490b0a0f7859170') in 0.026085 seconds 
+  Time since last request: 0.000152 seconds.
+  path: Assets/Animations/Player/Wolf@Dodgeroll.fbx
+  artifactKey: Guid(e48dbd48382ce2d44b71e9dfb8d58301) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animations/Player/Wolf@Dodgeroll.fbx using Guid(e48dbd48382ce2d44b71e9dfb8d58301) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bbae87a04b624a5148de74379f0a3e9') in 0.363669 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.427378 seconds.
+Registered in 0.004965 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.19 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 0.97 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -466,43 +160,43 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 [Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
 
 Mono: successfully reloaded assembly
-- Completed reload, in  2.284 seconds
+- Completed reload, in  0.895 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2285ms)
-		BeginReloadAssembly (286ms)
+	ReloadAssembly (895ms)
+		BeginReloadAssembly (122ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (26ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (108ms)
-		EndReloadAssembly (1923ms)
-			LoadAssemblies (125ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (737ms)
+			LoadAssemblies (80ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (461ms)
+			SetupTypeCache (235ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (94ms)
-			SetupLoadedEditorAssemblies (684ms)
+			RebuildScriptCaches (69ms)
+			SetupLoadedEditorAssemblies (271ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
-				SetLoadedEditorAssemblies (1ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (89ms)
-				ProcessInitializeOnLoadAttributes (569ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
-				AfterProcessingInitializeOnLoad (9ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (201ms)
+				ProcessInitializeOnLoadMethodAttributes (5ms)
+				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (34ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.03 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 0.99 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4248 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 303.5 MB.
-System memory in use after: 303.7 MB.
+Unloading 4886 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 248.9 MB.
+System memory in use after: 249.3 MB.
 
-Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 5605.
-Total: 4.900500 ms (FindLiveObjects: 0.623900 ms CreateObjectMapping: 0.386200 ms MarkObjects: 3.772000 ms  DeleteObjects: 0.116900 ms)
+Unloading 27 unused Assets to reduce memory usage. Loaded Objects now: 5841.
+Total: 3.810700 ms (FindLiveObjects: 0.407500 ms CreateObjectMapping: 0.140900 ms MarkObjects: 3.164900 ms  DeleteObjects: 0.096400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -514,4 +208,166 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 92.837828 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/malevolentMoray_low_upperFin_AlbedoTransparency.png
+  artifactKey: Guid(4228a78e3fb1d3e44afb8f3950ff391b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/malevolentMoray_low_upperFin_AlbedoTransparency.png using Guid(4228a78e3fb1d3e44afb8f3950ff391b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ad1c0165ec648e48f53f5968a7a6445') in 0.092977 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/malevolentMoray_low_Eyes_Normal.png
+  artifactKey: Guid(ccc1bd434a5a2a84fb8040bf2631678e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/malevolentMoray_low_Eyes_Normal.png using Guid(ccc1bd434a5a2a84fb8040bf2631678e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55923c70f63d1406b28e000f3559b982') in 0.017993 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/malevolentMoray_low_Eyes_AlbedoTransparency.png
+  artifactKey: Guid(8c01052dd6cdacb43941052fcf0b2cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/malevolentMoray_low_Eyes_AlbedoTransparency.png using Guid(8c01052dd6cdacb43941052fcf0b2cdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dce789080339f9f4af0c25502fcc544') in 0.012967 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/malevolentMoray_low_tailFin_MetallicSmoothness.png
+  artifactKey: Guid(fac3581e619b8e8418aa304e7e3d2aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/malevolentMoray_low_tailFin_MetallicSmoothness.png using Guid(fac3581e619b8e8418aa304e7e3d2aa5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a68403c255b700926893b0a0cf01624') in 0.012377 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000107 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/malevolentMoray_low_Eyes_MetallicSmoothness.png
+  artifactKey: Guid(cf47f3893ba7cb044b786571dc925214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/malevolentMoray_low_Eyes_MetallicSmoothness.png using Guid(cf47f3893ba7cb044b786571dc925214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba52c08979171f5d151a58fef1930a60') in 0.012980 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/malevolentMoray_low_lowerFin_Normal.png
+  artifactKey: Guid(209e0f0afc33d1d4ea8e94f1efa3a42b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/malevolentMoray_low_lowerFin_Normal.png using Guid(209e0f0afc33d1d4ea8e94f1efa3a42b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2128bc6c75bc303aa77da713c0482f14') in 0.011488 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/malevolentMoray_low_malevolentMoray_low_AlbedoTransparency.png
+  artifactKey: Guid(dd36db791c7af2b4b877fec497f79849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/malevolentMoray_low_malevolentMoray_low_AlbedoTransparency.png using Guid(dd36db791c7af2b4b877fec497f79849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a885245913eea6f9256ac2299a3d25b3') in 0.011036 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/malevolentMoray_low.fbx
+  artifactKey: Guid(8ceaaf820feb1e74b8525757c6f51b1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/malevolentMoray_low.fbx using Guid(8ceaaf820feb1e74b8525757c6f51b1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0815804478545b1634796e09733d9b16') in 0.208439 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/MalevolentMoray_Eyes.mat
+  artifactKey: Guid(a70610fcc40bb2e40a4f4464ab70973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/MalevolentMoray_Eyes.mat using Guid(a70610fcc40bb2e40a4f4464ab70973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61ce6b186d031837b499c717ae0083a1') in 0.017168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/malevolentMoray_low_Eyes_Emission.png
+  artifactKey: Guid(ba337779b53095d4693ce8218207afa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/malevolentMoray_low_Eyes_Emission.png using Guid(ba337779b53095d4693ce8218207afa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1542fecb629004ae74317b4d78c60ec') in 0.013018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000147 seconds.
+  path: Assets/Prefabs/Enemy(ArtONLY)/malevolentMoray_low.prefab
+  artifactKey: Guid(3ebde6f84d2bd0d4e9472270c7546d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy(ArtONLY)/malevolentMoray_low.prefab using Guid(3ebde6f84d2bd0d4e9472270c7546d1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76b3426e24aa58dc423c71ec334c1b93') in 0.234339 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000135 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/malevolentMoray_low_malevolentMoray_low_MetallicSmoothness.png
+  artifactKey: Guid(b1e0618cd8a542b46b8d46fcdb6753e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/malevolentMoray_low_malevolentMoray_low_MetallicSmoothness.png using Guid(b1e0618cd8a542b46b8d46fcdb6753e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd645907a64217362200e39a710a27a10') in 0.012682 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000118 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/malevolentMoray_low_tailFin_AlbedoTransparency.png
+  artifactKey: Guid(c22a3dcfa0167ee4a8ac904408e8240f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/malevolentMoray_low_tailFin_AlbedoTransparency.png using Guid(c22a3dcfa0167ee4a8ac904408e8240f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb86656769d3ceab4713419be7fe3f78') in 0.013510 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/malevolentMoray_low_lowerFin_AlbedoTransparency.png
+  artifactKey: Guid(895cc9057bdeb0246938e31bf7ca0bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/malevolentMoray_low_lowerFin_AlbedoTransparency.png using Guid(895cc9057bdeb0246938e31bf7ca0bdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6870d8d5ead8972ae3df3134a1235914') in 0.012245 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000129 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/malevolentMoray_low_lowerFin_MetallicSmoothness.png
+  artifactKey: Guid(87f6a6c381ad3fe4a9f8527270380dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/malevolentMoray_low_lowerFin_MetallicSmoothness.png using Guid(87f6a6c381ad3fe4a9f8527270380dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ceac3f6fa8b9fa44ee8f901641ced9d') in 0.012915 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000126 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/malevolentMoray_low_malevolentMoray_low_Normal.png
+  artifactKey: Guid(0d4095126487ce04d8697e3db94461cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/malevolentMoray_low_malevolentMoray_low_Normal.png using Guid(0d4095126487ce04d8697e3db94461cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fb681f51d56ae041f18c50655cb56b1') in 0.016900 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000131 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/malevolentMoray_low_tailFin_Normal.png
+  artifactKey: Guid(c1d142c08d9de34449488fcde980a538) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/malevolentMoray_low_tailFin_Normal.png using Guid(c1d142c08d9de34449488fcde980a538) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db0faf72be16249593fece7f246d9616') in 0.012230 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000131 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/teethMoray.png
+  artifactKey: Guid(d5ecd994b97e77a49bde0969d10aa37c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/teethMoray.png using Guid(d5ecd994b97e77a49bde0969d10aa37c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2568487cf82854922ae8e353630ac522') in 0.033412 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000139 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/malevolentMoray_low_upperFin_Normal.png
+  artifactKey: Guid(fe0decb504192014d8d61531ed3cf77f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/malevolentMoray_low_upperFin_Normal.png using Guid(fe0decb504192014d8d61531ed3cf77f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b0c3adb20992dd09d01a4d14b302120') in 0.011630 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/MalevolentMoray_Tail.mat
+  artifactKey: Guid(8d93a239e436bb54da0a8f05286d601e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/MalevolentMoray_Tail.mat using Guid(8d93a239e436bb54da0a8f05286d601e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4650126fd4f31e7a30745aeac1854115') in 0.019581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/MalevolentMoray_LowerFin.mat
+  artifactKey: Guid(be34802d1decb6d479a9a36c64a50b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/lowerFin/MalevolentMoray_LowerFin.mat using Guid(be34802d1decb6d479a9a36c64a50b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26f749ea41f855fbde5f8590ced24261') in 0.015926 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000133 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/MalevolentMoray_Body.mat
+  artifactKey: Guid(490190e9e1e157f439e7f2349d8335c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Body/MalevolentMoray_Body.mat using Guid(490190e9e1e157f439e7f2349d8335c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1bce056db74e5be575aab2b9184cf42') in 0.020905 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000137 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/MalevolentMoray_UpperFin.mat
+  artifactKey: Guid(8ca506b614833a848a64d6eebc879c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/MalevolentMoray_UpperFin.mat using Guid(8ca506b614833a848a64d6eebc879c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81ce8853121fea73556201ab6d9a7884') in 0.013702 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/malevolentMoray_low_upperFin_MetallicSmoothness.png
+  artifactKey: Guid(69125fa6e79d14440aae031c82baafc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/malevolentMoray_low_upperFin_MetallicSmoothness.png using Guid(69125fa6e79d14440aae031c82baafc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ab1e815b98d82e9c1411daa7c52c43a') in 0.015132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.173440 seconds.
+  path: Assets/Prefabs/Characters/World 1 [Earth]/Enemies/Root Monster/Earth Barrage Projectile.prefab
+  artifactKey: Guid(5b855a417bdb003418c8feac2376c1dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Characters/World 1 [Earth]/Enemies/Root Monster/Earth Barrage Projectile.prefab using Guid(5b855a417bdb003418c8feac2376c1dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24045a7b6c75502ce5ab143f6c827b44') in 0.011604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.436212 seconds.
+  path: Assets/Prefabs/Characters/World 1 [Earth]/Enemies/Root Monster/Spikey Shield.prefab
+  artifactKey: Guid(096e36c5704d66d47827417dcc9bd988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Characters/World 1 [Earth]/Enemies/Root Monster/Spikey Shield.prefab using Guid(096e36c5704d66d47827417dcc9bd988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0918a42dbf16522d5bb09d98c5675c7') in 0.010027 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 37.243733 seconds.
+  path: Assets/Prefabs/Characters/World 1 [Earth]/Enemies/Plant Prefab.prefab
+  artifactKey: Guid(4b76e535f33b60945b6d95a067382fe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Characters/World 1 [Earth]/Enemies/Plant Prefab.prefab using Guid(4b76e535f33b60945b6d95a067382fe3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6226584e3dcbcf15e7b1bf9ed6fb1bf') in 0.055643 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -20,6 +20,9 @@ public static class PlayerAnimationMachine
     {
         switch (state)
         {
+            case PlayerAnimState.Idle:
+                anim.SetBool("Idle", boolean);
+                return;
             case PlayerAnimState.IsMoving:
                 anim.SetBool("IsMoving", boolean);
                 return;
@@ -39,4 +42,9 @@ public enum PlayerAnimState
 {
     IsMoving,
     IsSprinting,
+    Idle, 
+    Hurt,
+    Affect1,
+    Affect2,
+    Affect3,
 }

@@ -30,8 +30,8 @@ public class UserInput : MonoBehaviour
     private InputAction pauseAction;
 
     //control schemes
-    public static string GamepadControlScheme = "GamePad";
-    public static string KeyboardControlScheme = "KeyBoard";
+    public static string GamepadControlScheme = "Gamepad";
+    public static string KeyboardControlScheme = "KeyBoard And Mouse";
 
     public static string CurrentControlScheme { get; private set; }
 
@@ -66,10 +66,10 @@ public class UserInput : MonoBehaviour
     {
         MoveInput = moveAction.ReadValue<Vector2>();
         LookInput = lookAction.ReadValue<Vector2>();
-        //jumpPressed = jumpAction.WasPressedThisFrame();
-        //atkPressed = atkAction.WasPerformedThisFrame();
-        //lockPressed = lockAction.WasPressedThisFrame();
-        //pausedPressed = pauseAction.WasPressedThisFrame();
+        jumpPressed = jumpAction.WasPressedThisFrame();
+        atkPressed = atkAction.WasPerformedThisFrame();
+        lockPressed = lockAction.WasPressedThisFrame();
+        pausedPressed = pauseAction.WasPressedThisFrame();
     }
 
     public void SwitchControls(PlayerInput input)

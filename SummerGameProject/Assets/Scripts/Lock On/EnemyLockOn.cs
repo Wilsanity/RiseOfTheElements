@@ -37,13 +37,13 @@ public class EnemyLockOn : MonoBehaviour
     [SerializeField] Transform lockOnCanvas;
 
 
-    private void Awake()
-    {
-        playerInput = GetComponent<PlayerInput>();
-        lockOnAction = playerInput.actions["Lock In"];
+    //private void Awake()
+    //{
+    //    playerInput = GetComponent<PlayerInput>();
+    //    lockOnAction = playerInput.actions["Lock In"];
 
-        lockOnAction.started += ctx => LockIn();
-    }
+    //    lockOnAction.started += ctx => LockIn();
+    //}
 
     void Start()
     {
@@ -53,6 +53,7 @@ public class EnemyLockOn : MonoBehaviour
 
     void Update()
     {
+        if (UserInput.instance.lockPressed) LockIn();
         if (enemyLocked) 
         {
             if (!TargetInRange())

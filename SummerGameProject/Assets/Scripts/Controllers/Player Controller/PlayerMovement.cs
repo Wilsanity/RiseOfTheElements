@@ -2,6 +2,7 @@ using AmplifyShaderEditor;
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Json;
 using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.AI;
@@ -64,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Tooltip("Force character to look in move direction")] 
     private bool _lookInMovementDirection = true;
     [SerializeField, Tooltip("Speed at which character faces new target direction")] 
-    private float _turnSpeed = 10f;
+    public float _turnSpeed = 10f;
 
     [Header("Grounded Raycast Settings")]
     [SerializeField, Tooltip("Height inside character where grounding ray starts")] 
@@ -83,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody _rigidbody;
     private NavMeshAgent _navMeshAgent;
     private PlayerAnimationMachine _animationStateMachine;
+    private PlayerClimbing _playerClimbing;
 
     // private variables
     private float _moveSpeedMultiplier = 1;
@@ -119,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _animationStateMachine = GetComponentInChildren<PlayerAnimationMachine>();
         _cameraFOVDefaultValue = _cameraFreeLook.m_Lens.FieldOfView;
+        _playerClimbing = GetComponent<PlayerClimbing>();
 
         // if we handle gravity from here, disable gravity interaction from default unity physics
         _rigidbody.useGravity = !_useCustomGravity;
@@ -215,19 +218,26 @@ public class PlayerMovement : MonoBehaviour
     // updates
     private void FixedUpdate()
     {
-        IsGrounded = CheckGrounded();
-        _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsGrounded, IsGrounded);
-        //Set the NavMeshAgent destination using nma.SetDestination.
-        //if (_navMeshAgent.enabled) _navMeshAgent.SetDestination(transform.position + MoveInput);
-        MovePlayer();
-        bool isMoving = HasMoveInput && _rigidbody.velocity.magnitude > 0.1f;
-        _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, isMoving);
-
-        // if is wolf running (or charging up) check that conditions to continue are still true
-        if(_isWolfRunning || _wolfRunWarmUp != null)
+        if (!_playerClimbing.IsClimbing)
         {
-            WolfRunValidationAndDisable();
+            IsGrounded = CheckGrounded();
+            _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsGrounded, IsGrounded);
+            //Set the NavMeshAgent destination using nma.SetDestination.
+            //if (_navMeshAgent.enabled) _navMeshAgent.SetDestination(transform.position + MoveInput);
+            MovePlayer();
+            bool isMoving = HasMoveInput && _rigidbody.velocity.magnitude > 0.1f;
+            _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsMoving, isMoving);
+
+            // if is wolf running (or charging up) check that conditions to continue are still true
+            if (_isWolfRunning || _wolfRunWarmUp != null)
+            {
+                WolfRunValidationAndDisable();
+            }
         }
+
+      
+
+
     }
 
     private void Update()

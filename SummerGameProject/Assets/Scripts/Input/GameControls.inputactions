@@ -11,7 +11,8 @@
                     "id": "5d3ca268-13d6-41f0-8b2c-be4d9be10baa",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Look",
@@ -19,7 +20,8 @@
                     "id": "2cd12c21-b337-4675-983f-8f137d681b1d",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Sprint",
@@ -27,7 +29,8 @@
                     "id": "247a2930-d3c6-4284-9e86-770e4853ecc0",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2),Hold(duration=0.6)"
+                    "interactions": "Press(behavior=2),Hold(duration=0.6)",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Jump",
@@ -35,7 +38,8 @@
                     "id": "6b4e86c4-d1ee-44ad-b418-b223fd88c179",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Dodge",
@@ -43,7 +47,8 @@
                     "id": "6f0fd874-6e19-43f7-9d4e-1956164651a4",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap"
+                    "interactions": "Tap",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Attack",
@@ -51,7 +56,8 @@
                     "id": "ae48ac90-edd8-45a5-b4fd-dcc1a41cd5d3",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Interact",
@@ -59,7 +65,17 @@
                     "id": "b2c813bd-84c8-46d7-a79b-34d78f6af4ea",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Climb",
+                    "type": "Button",
+                    "id": "0f3c68f1-41f5-467c-92c8-5b8fef84efdc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -181,6 +197,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "202ae53a-549b-44f8-b0e1-b9f786e6fb4d",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Climb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

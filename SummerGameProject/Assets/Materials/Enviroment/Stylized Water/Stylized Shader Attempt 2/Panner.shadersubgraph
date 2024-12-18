@@ -4,10 +4,10 @@
     "m_ObjectId": "fb96efcad2e3470e8fa8ade2703410c3",
     "m_Properties": [
         {
-            "m_Id": "44f5be2ac5734ae3a7b82f49edfc97ae"
+            "m_Id": "3847890f5b624e35a667177d755f3289"
         },
         {
-            "m_Id": "3847890f5b624e35a667177d755f3289"
+            "m_Id": "31470b3de58f4f4a8bd38eb212641380"
         }
     ],
     "m_Keywords": [],
@@ -28,13 +28,13 @@
             "m_Id": "66ecf3373bfb45a391f42be0b40b078b"
         },
         {
-            "m_Id": "6c05545524184953aa17524e7cd45a5c"
-        },
-        {
             "m_Id": "40dd85e450794bd2975f257f3d4ac3d9"
         },
         {
             "m_Id": "0cdd055d5d8a42db906d56e732baaefa"
+        },
+        {
+            "m_Id": "ddd232536f3e483ab50bb9aa3f8748db"
         }
     ],
     "m_GroupDatas": [],
@@ -85,7 +85,7 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "6c05545524184953aa17524e7cd45a5c"
+                    "m_Id": "ddd232536f3e483ab50bb9aa3f8748db"
                 },
                 "m_SlotId": 0
             },
@@ -308,6 +308,34 @@
 {
     "m_SGVersion": 1,
     "m_Type": "UnityEditor.ShaderGraph.Internal.Vector2ShaderProperty",
+    "m_ObjectId": "31470b3de58f4f4a8bd38eb212641380",
+    "m_Guid": {
+        "m_GuidSerialized": "ff7c3d78-1d83-4f45-9a3e-57a22cffe949"
+    },
+    "m_Name": "Speed",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Speed",
+    "m_DefaultReferenceName": "_Speed",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector2ShaderProperty",
     "m_ObjectId": "3847890f5b624e35a667177d755f3289",
     "m_Guid": {
         "m_GuidSerialized": "9b34fdd4-bf74-4e3d-a65e-33b15c495967"
@@ -394,31 +422,24 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "44f5be2ac5734ae3a7b82f49edfc97ae",
-    "m_Guid": {
-        "m_GuidSerialized": "8730c592-7560-46b0-81a1-099caa02df9e"
-    },
-    "m_Name": "Speed",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Speed",
-    "m_DefaultReferenceName": "_Speed",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
+    "m_ObjectId": "44cd57c7dc104a9da46beb292bed16e7",
+    "m_Id": 0,
+    "m_DisplayName": "Speed",
+    "m_SlotType": 1,
     "m_Hidden": false,
-    "m_Value": 0.0,
-    "m_FloatType": 0,
-    "m_RangeValues": {
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
         "x": 0.0,
-        "y": 1.0
-    }
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_Labels": []
 }
 
 {
@@ -550,42 +571,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
-    "m_ObjectId": "6c05545524184953aa17524e7cd45a5c",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Property",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -370.0,
-            "y": 89.0,
-            "width": 109.0,
-            "height": 34.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "b8c867c22172486f9c4b1a25972f1fe5"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Property": {
-        "m_Id": "44f5be2ac5734ae3a7b82f49edfc97ae"
-    }
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
     "m_ObjectId": "779def8e1da24404bf3a8ef6b7c26736",
     "m_Id": 0,
@@ -678,10 +663,10 @@
     "m_Name": "",
     "m_ChildObjectList": [
         {
-            "m_Id": "44f5be2ac5734ae3a7b82f49edfc97ae"
+            "m_Id": "3847890f5b624e35a667177d755f3289"
         },
         {
-            "m_Id": "3847890f5b624e35a667177d755f3289"
+            "m_Id": "31470b3de58f4f4a8bd38eb212641380"
         }
     ]
 }
@@ -704,21 +689,6 @@
         "x": 0.0,
         "y": 0.0
     },
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "b8c867c22172486f9c4b1a25972f1fe5",
-    "m_Id": 0,
-    "m_DisplayName": "Speed",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
     "m_Labels": []
 }
 
@@ -767,6 +737,42 @@
         "e31": 0.0,
         "e32": 0.0,
         "e33": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "ddd232536f3e483ab50bb9aa3f8748db",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -371.9999694824219,
+            "y": 90.99999237060547,
+            "width": 110.00003051757813,
+            "height": 34.00001525878906
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "44cd57c7dc104a9da46beb292bed16e7"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "31470b3de58f4f4a8bd38eb212641380"
     }
 }
 

@@ -15,7 +15,7 @@ E:/Work/Eleos Games/RiseOfTheElements/SummerGameProject
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62507
+51136
 Successfully changed project path to: E:/Work/Eleos Games/RiseOfTheElements/SummerGameProject
 E:/Work/Eleos Games/RiseOfTheElements/SummerGameProject
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,14 +49,14 @@ E:/Work/Eleos Games/RiseOfTheElements/SummerGameProject
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [49616]  Target information:
+Player connection [12216]  Target information:
 
-Player connection [49616]  * "[IP] 192.168.2.11 [Port] 0 [Flags] 2 [Guid] 1434064506 [EditorId] 1434064506 [Version] 1048832 [Id] WindowsEditor(7,Netrunner) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [12216]  * "[IP] 192.168.2.11 [Port] 0 [Flags] 2 [Guid] 3797280580 [EditorId] 3797280580 [Version] 1048832 [Id] WindowsEditor(7,Netrunner) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [49616] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [49616] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [12216] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [12216] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 10.65 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 13.54 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.44f1 (c3ae09b9f03c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/Resources/UnitySubsystems
@@ -72,44 +72,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56620
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56576
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007096 seconds.
-- Loaded All Assemblies, in  0.313 seconds
+Registered in 0.005871 seconds.
+- Loaded All Assemblies, in  0.316 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.238 seconds
-Domain Reload Profiling: 550ms
-	BeginReloadAssembly (96ms)
+- Finished resetting the current domain, in  0.235 seconds
+Domain Reload Profiling: 549ms
+	BeginReloadAssembly (101ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (58ms)
-	LoadAllAssembliesAndSetupDomain (118ms)
-		LoadAssemblies (94ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (51ms)
+	LoadAllAssembliesAndSetupDomain (120ms)
+		LoadAssemblies (99ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (116ms)
-			TypeCache.Refresh (115ms)
-				TypeCache.ScanAssembly (105ms)
+		AnalyzeDomain (119ms)
+			TypeCache.Refresh (117ms)
+				TypeCache.ScanAssembly (106ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (239ms)
+	FinalizeReload (236ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (200ms)
+		SetupLoadedEditorAssemblies (194ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
+			InitializePlatformSupportModulesInManaged (11ms)
 			SetLoadedEditorAssemblies (8ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (134ms)
-			ProcessInitializeOnLoadMethodAttributes (46ms)
+			ProcessInitializeOnLoadAttributes (129ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,54 +118,54 @@ Domain Reload Profiling: 550ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.643 seconds
+- Loaded All Assemblies, in  0.609 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.773 seconds
-Domain Reload Profiling: 1414ms
-	BeginReloadAssembly (148ms)
+- Finished resetting the current domain, in  0.718 seconds
+Domain Reload Profiling: 1324ms
+	BeginReloadAssembly (134ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (26ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (39ms)
-	LoadAllAssembliesAndSetupDomain (418ms)
-		LoadAssemblies (283ms)
+		CreateAndSetChildDomain (21ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (42ms)
+	LoadAllAssembliesAndSetupDomain (387ms)
+		LoadAssemblies (257ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (219ms)
-			TypeCache.Refresh (187ms)
-				TypeCache.ScanAssembly (174ms)
-			ScanForSourceGeneratedMonoScriptInfo (23ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (774ms)
+		AnalyzeDomain (207ms)
+			TypeCache.Refresh (165ms)
+				TypeCache.ScanAssembly (147ms)
+			ScanForSourceGeneratedMonoScriptInfo (30ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (718ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (579ms)
+		SetupLoadedEditorAssemblies (526ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (6ms)
-			SetLoadedEditorAssemblies (6ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (76ms)
-			ProcessInitializeOnLoadAttributes (417ms)
-			ProcessInitializeOnLoadMethodAttributes (66ms)
+			BeforeProcessingInitializeOnLoad (74ms)
+			ProcessInitializeOnLoadAttributes (359ms)
+			ProcessInitializeOnLoadMethodAttributes (75ms)
 			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 3.90 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 5.80 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6146 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 54 unused Assets / (3.4 MB). Loaded Objects now: 6603.
-Memory consumption went from 333.1 MB to 329.7 MB.
-Total: 5.186700 ms (FindLiveObjects: 0.558400 ms CreateObjectMapping: 0.378800 ms MarkObjects: 3.130600 ms  DeleteObjects: 1.118000 ms)
+Unloading 6147 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 54 unused Assets / (3.4 MB). Loaded Objects now: 6604.
+Memory consumption went from 333.6 MB to 330.2 MB.
+Total: 5.636600 ms (FindLiveObjects: 0.801900 ms CreateObjectMapping: 0.519100 ms MarkObjects: 3.158700 ms  DeleteObjects: 1.155700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -183,140 +183,312 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 118703.064001 seconds.
-  path: Assets/Materials/Enviroment/Stylized Water/M_StylizedWater_SRS.mat
-  artifactKey: Guid(65da5939e1b598747a033884098d71ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Enviroment/Stylized Water/M_StylizedWater_SRS.mat using Guid(65da5939e1b598747a033884098d71ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd60b2615b55514ec0585026a47dd8ae1') in 0.310748 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 20
-========================================================================
-Received Import Request.
-  Time since last request: 29.277343 seconds.
-  path: Assets/Materials/Enviroment/Stylized Water/StylizedWater_Test_SRS.shadergraph
-  artifactKey: Guid(1207a95ba1d541a42a325e2877a4f6fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Enviroment/Stylized Water/StylizedWater_Test_SRS.shadergraph using Guid(1207a95ba1d541a42a325e2877a4f6fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'baacc074df0dcc1f51453cdce37d7feb') in 0.032647 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/FlatKit/PresetsShared/Materials/ToonBlurry__StylSurf_Single_HGrad.mat
-  artifactKey: Guid(545a8fba51c9e44b8ab053736f81fbee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/FlatKit/PresetsShared/Materials/ToonBlurry__StylSurf_Single_HGrad.mat using Guid(545a8fba51c9e44b8ab053736f81fbee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'f8816dcb2bac87df0292f7c799a03aec') in 2.765262 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Materials/caveMat/Sunbeam 1.mat
-  artifactKey: Guid(afee499fbc4f88c4bbd4a92126052486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/caveMat/Sunbeam 1.mat using Guid(afee499fbc4f88c4bbd4a92126052486) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '4a01ed4bdcf18270858dab270ecf7db8') in 0.305920 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.959399 seconds.
-  path: Assets/Materials/Weapons/World 1 [Earth] 1/Boss Weapons/SM_EarthHammer_Mat.mat
-  artifactKey: Guid(c32f1594c598d474fa880dcffe3ea7f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Weapons/World 1 [Earth] 1/Boss Weapons/SM_EarthHammer_Mat.mat using Guid(c32f1594c598d474fa880dcffe3ea7f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '1dcbbe898e35898326559a1c154c8302') in 0.136130 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 4
-========================================================================
-Received Import Request.
-  Time since last request: 1.930318 seconds.
-  path: Assets/Materials/Weapons/World 1 [Earth] 1/hammerNew/M_hammerTop.mat
-  artifactKey: Guid(0548ae77d63f2c64da81c8bd3d059115) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Weapons/World 1 [Earth] 1/hammerNew/M_hammerTop.mat using Guid(0548ae77d63f2c64da81c8bd3d059115) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '389fc16c082af2cddbf0ef2a4cc17b8d') in 1.070939 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 6
-========================================================================
-Received Import Request.
-  Time since last request: 1006.875317 seconds.
+  Time since last request: 218730.993897 seconds.
   path: Assets/Materials/Enviroment/Stylized Water/New Material.mat
   artifactKey: Guid(9dc6b2d49268ccf4bbc328cb517fc9ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Materials/Enviroment/Stylized Water/New Material.mat using Guid(9dc6b2d49268ccf4bbc328cb517fc9ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '2cd4013185da9cc179d8134ef0d56a9c') in 0.015833 seconds
-Number of updated asset objects reloaded before import = 1
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 7.561709 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/MalevolentMoray_Eyes.mat
-  artifactKey: Guid(a70610fcc40bb2e40a4f4464ab70973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Eyes/MalevolentMoray_Eyes.mat using Guid(a70610fcc40bb2e40a4f4464ab70973a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '62a1094627132770cd13dc3ad8a832bb') in 0.836827 seconds
+ -> (artifact id: '6770ea9054dfa90e6ba683abb28467fc') in 0.316240 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 6
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/MalevolentMoray_Tail.mat
-  artifactKey: Guid(8d93a239e436bb54da0a8f05286d601e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/Tail/MalevolentMoray_Tail.mat using Guid(8d93a239e436bb54da0a8f05286d601e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '4ddb41fd4aec08bd178d50880cbf5cbd') in 1.186337 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 5
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/MalevolentMoray_UpperFin.mat
-  artifactKey: Guid(8ca506b614833a848a64d6eebc879c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art Related/Enemies/Malevolent Moray/Texture/upperFin/MalevolentMoray_UpperFin.mat using Guid(8ca506b614833a848a64d6eebc879c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '2f5ea602dde20a4145ba08657d35d60c') in 0.534728 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 5
-========================================================================
-Received Import Request.
-  Time since last request: 0.887242 seconds.
-  path: Assets/Materials/Characters/New_Char_MAT.mat
-  artifactKey: Guid(f1ee930f94c5cc340b9e2a0043b0a486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Characters/New_Char_MAT.mat using Guid(f1ee930f94c5cc340b9e2a0043b0a486) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '6b4a1bd7fdb2484da8d39ad3be256056') in 0.890647 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 6
-========================================================================
-Received Import Request.
-  Time since last request: 1184.825990 seconds.
-  path: Assets/_URP/UniversalRenderPipelineAsset_Renderer.asset
-  artifactKey: Guid(0086ba564e9bc6e4ba9b97a70439c36d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_URP/UniversalRenderPipelineAsset_Renderer.asset using Guid(0086ba564e9bc6e4ba9b97a70439c36d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'f4926ad380903c85f243bdcc7a3d517a') in 0.001196 seconds
+  Time since last request: 39.651177 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2
+  artifactKey: Guid(ce894801e7d7282469e2e748adc60577) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2 using Guid(ce894801e7d7282469e2e748adc60577) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '80007beca1dfb66f19e2d0f1c4da424d') in 0.000490 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 134.093462 seconds.
-  path: Assets/Materials/Enviroment/Stylized Water/New Shader Graph.shadergraph
-  artifactKey: Guid(eebe1bcb695bf3d4a9d667e69009e689) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Enviroment/Stylized Water/New Shader Graph.shadergraph using Guid(eebe1bcb695bf3d4a9d667e69009e689) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 22.462465 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/StylizedRiver.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/StylizedRiver.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd0a62bb2ca1391490ee890b0e522a38d') in 0.606877 seconds
+ -> (artifact id: '32fc448e50312d164c5bec5e9bd17981') in 0.020716 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 7.360588 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bde4a960e2e4489f57d1357f059ac528') in 0.308613 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 3.727194 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f0844c1eb82f7ba643ccad0fe625f910') in 0.014638 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 44.354526 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/SG_StylizedRiver_SRS.shadergraph
+  artifactKey: Guid(0c3d8e6deef656f4c88e3824d12ac1ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/SG_StylizedRiver_SRS.shadergraph using Guid(0c3d8e6deef656f4c88e3824d12ac1ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6b8f28f8cef3954d05badfe1d6a8e513') in 0.545815 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1219.951218 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/vein 5 - 512x512.png
+  artifactKey: Guid(388e924c943fa2c49ab22d0327444bea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/vein 5 - 512x512.png using Guid(388e924c943fa2c49ab22d0327444bea) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c7be710ce2359760a46c2c1110338245') in 0.020406 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 2813.418771 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/T_Water_01.png
+  artifactKey: Guid(ed50f935977295447aaa4ebc408fce62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/T_Water_01.png using Guid(ed50f935977295447aaa4ebc408fce62) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cceebe53aab340fe19b326858eaa15f5') in 0.024440 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 789.564205 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/DepthFade_SRS.shadersubgraph
+  artifactKey: Guid(ab686a8fa7069fc408edae9639ecb044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/DepthFade_SRS.shadersubgraph using Guid(ab686a8fa7069fc408edae9639ecb044) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b3458c3336f0012d63dc96cd37010107') in 0.003960 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 24.488619 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/DepthFade_SRS.shadersubgraph
+  artifactKey: Guid(ab686a8fa7069fc408edae9639ecb044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/DepthFade_SRS.shadersubgraph using Guid(ab686a8fa7069fc408edae9639ecb044) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '51023f5f2969eda712fe88002b148f4c') in 0.000918 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 16.423821 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/DepthFade_SRS.shadersubgraph
+  artifactKey: Guid(ab686a8fa7069fc408edae9639ecb044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/DepthFade_SRS.shadersubgraph using Guid(ab686a8fa7069fc408edae9639ecb044) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '31e3f3622ac54e546c0e89e198f43721') in 0.001038 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 9505.296732 seconds.
+  path: Assets/Materials/Enviroment/World 1 [Earth]/Earth Rock
+  artifactKey: Guid(47fa08beca38a934181b9dfc20fc1c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/World 1 [Earth]/Earth Rock using Guid(47fa08beca38a934181b9dfc20fc1c33) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a961af47c3513a8893bafe0c34812570') in 0.000582 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.816055 seconds.
+  path: Assets/caveAssets/Cave Mesh
+  artifactKey: Guid(cd1f6e0ee54bc554a91c52191914aa46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/caveAssets/Cave Mesh using Guid(cd1f6e0ee54bc554a91c52191914aa46) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '47b81a36dbffc82d0cbfc09347b4cfdb') in 0.000535 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.403289 seconds.
+  path: Assets/caveAssets/Cave Mesh/eggPlaceholder.prefab
+  artifactKey: Guid(b990c9f987fe7494da404d30af4b4582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/caveAssets/Cave Mesh/eggPlaceholder.prefab using Guid(b990c9f987fe7494da404d30af4b4582) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9de26856f30a778e1b2545f7cb56f826') in 0.316973 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 118.126957 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/New Shader Graph.shadergraph
+  artifactKey: Guid(193c4026983a7d64186c714f8b5899f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/New Shader Graph.shadergraph using Guid(193c4026983a7d64186c714f8b5899f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd9c9ddc797d5752f7db4a90ac81bc375') in 0.878715 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 36.616974 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a53e31998f6571bc5b50adb5d5ed3925') in 0.530087 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Materials/Characters/World 1 [Earth]/NPC_Blacksmith_Mat.mat
-  artifactKey: Guid(6687d82f396be8842b1e43ec5586bb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Characters/World 1 [Earth]/NPC_Blacksmith_Mat.mat using Guid(6687d82f396be8842b1e43ec5586bb73) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+  Time since last request: 51.575113 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/New Shader Graph.shadergraph
+  artifactKey: Guid(193c4026983a7d64186c714f8b5899f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/New Shader Graph.shadergraph using Guid(193c4026983a7d64186c714f8b5899f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'a656d70eabcfd14bd1aa8c7333cfbf93') in 0.112095 seconds
+ -> (artifact id: 'd59109017d626db050862d76e9fbdd84') in 0.780376 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 279.769046 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/New Shader Graph.shadergraph
+  artifactKey: Guid(193c4026983a7d64186c714f8b5899f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/New Shader Graph.shadergraph using Guid(193c4026983a7d64186c714f8b5899f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8e307cc88ab68a0837933b30d41fdb3d') in 0.753139 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 11.333978 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2dadffed8b82ea74a764d44a21c930ce') in 0.554780 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 74.225735 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '62a17f063b0e5d7ab38dd1085680365d') in 0.478268 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 398.685646 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/NewUnlitShader.shader
+  artifactKey: Guid(cf02b94456f83d540aa2146c72ff3c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/NewUnlitShader.shader using Guid(cf02b94456f83d540aa2146c72ff3c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '99712b6d02631625da99cbf25910a79d') in 0.001461 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 21.825547 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '84669d5813a4218074ba999edce15711') in 0.170216 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 120.728843 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '09734f64561ab49830940f5cfa5fd79b') in 0.353284 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 45.458789 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c6c59431d08cf0c8c1b40c7f04559947') in 0.876632 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 64.235025 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '01190e89d5f38b0a905f51c2f2e6025f') in 0.274487 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 9.186861 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b39fbccf53a4b3919b910f2fa0dfeb44') in 0.147344 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 261.253536 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat
+  artifactKey: Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/M_StylizedRiver_SRS.mat using Guid(382cab595113bba43b3a39a126b86db3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '564919daf4edab28456299b4c5656fa1') in 0.364308 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 1891.945301 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/T_Fire_Distortion.PNG
+  artifactKey: Guid(7e08281381133834a908a53bf3e245d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Stylized Shader Attempt 2/T_Fire_Distortion.PNG using Guid(7e08281381133834a908a53bf3e245d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4e7d9f7d983281bf78395cfad98987b0') in 0.017479 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 55.998889 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/DepthFade_SRS.shadersubgraph
+  artifactKey: Guid(ab686a8fa7069fc408edae9639ecb044) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/DepthFade_SRS.shadersubgraph using Guid(ab686a8fa7069fc408edae9639ecb044) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c2a7a8b3c1c71cd66e44012141054ea5') in 0.001143 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 9.697033 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/Panner.shadersubgraph
+  artifactKey: Guid(2e27081e7d4ce3f479e05eeab2df3353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/Panner.shadersubgraph using Guid(2e27081e7d4ce3f479e05eeab2df3353) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9a71a3ffd7571118ccf7ed97a792e33d') in 0.001131 seconds
+Number of updated asset objects reloaded before import = 1
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.012344 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/New Material.mat
+  artifactKey: Guid(9dc6b2d49268ccf4bbc328cb517fc9ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/New Material.mat using Guid(9dc6b2d49268ccf4bbc328cb517fc9ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e029d14f61067d6af55bc4b8dfdd23fc') in 0.651420 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1845.550366 seconds.
+  path: Assets/Materials/Enviroment/Stylized Water/6185-normal.jpg
+  artifactKey: Guid(ffe9e45497a98af40acb59967e7af353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Enviroment/Stylized Water/6185-normal.jpg using Guid(ffe9e45497a98af40acb59967e7af353) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4bd7a0efc5455d35df6795d6cd64d1a2') in 0.024925 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2

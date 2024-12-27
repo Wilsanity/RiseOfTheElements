@@ -94,6 +94,9 @@ public class PlayerController : MonoBehaviour
         sprintAction.canceled += ctx => SetSprint(false);
         //moveAction.performed += ctx => SetMoveInput(ctx);
 
+        //Adding out UI actions here might be the play... 
+        //uiAction.started += ctx => ProgressUI();
+
         #endregion
 
         anim = GetComponentInChildren<Animator>();

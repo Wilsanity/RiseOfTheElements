@@ -35,8 +35,5 @@ public class DialogueHandler : MonoBehaviour
         text.text = info.name + "\n" + info.sentences[0];
 
         
-        //How do we change controls?
-
-
     }
 }

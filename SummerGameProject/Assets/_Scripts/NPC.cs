@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class NPC : MonoBehaviour
 {
     //Member variables
@@ -42,11 +43,26 @@ public class NPC : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         orientToInterest(player.transform);
 
-        //text.GetComponent<TMP_Text>().SetText(m_Dialogue.sentences[0]);
-        //We need to get the players dialogue ui..?
+        //Not sure if this should be controller here but rather in DialogueHandler
 
-        player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerUI");
-        myHandler.SendDialogue(m_Dialogue);
+        //Send data to UI First
+        GameObject.FindGameObjectWithTag("UIController").GetComponent<UIManager>().sendData(m_Dialogue);
+
+
+        player.GetComponent<PlayerController>().enableUI(0);
+        player.GetComponent<PlayerController>().swapInputContext("PlayerUI");
+
+
+
+        //Npc sends dialogue to UIController.
+
+
+        //myHandler.SendDialogue(m_Dialogue);
+
+
+
+        //Slight coupling with NPC talking to UI Manager....
+
 
     }
 

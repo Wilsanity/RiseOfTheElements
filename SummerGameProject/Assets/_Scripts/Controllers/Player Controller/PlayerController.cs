@@ -7,6 +7,10 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//Shane's edit
+using UnityEngine.Assertions;
+using System;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +20,7 @@ public class PlayerController : MonoBehaviour
     PlayerAnimationMachine _playerAnimationMachine;
     PlayerAttack _attack;
     PlayerMovement _movement;
+    
 
     #region input actions
 
@@ -23,6 +28,10 @@ public class PlayerController : MonoBehaviour
     InputAction sprintAction;
     InputAction jumpAction;
     InputAction attackAction;
+
+    //UI Controls
+    InputAction uiContinue;
+    InputAction uiExit;
     #endregion
 
     Animator anim;
@@ -88,6 +97,11 @@ public class PlayerController : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
 
+        uiContinue = playerInput.actions["Select"];
+        uiExit = playerInput.actions["Exit"];
+
+
+
         attackAction.started += ctx => Attack();
         jumpAction.performed += ctx => TryJump();
         sprintAction.performed += ctx => SetSprint(true);
@@ -95,7 +109,8 @@ public class PlayerController : MonoBehaviour
         //moveAction.performed += ctx => SetMoveInput(ctx);
 
         //Adding out UI actions here might be the play... 
-        //uiAction.started += ctx => ProgressUI();
+        uiContinue.performed += ctx => inputUI();
+        uiExit.performed += ctx => exitUI();
 
         #endregion
 
@@ -401,6 +416,41 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
+    }
+
+    //Shane's Edit
+    public void swapInputContext(string contextName)
+    {
+        //This is hardcoded in since I don't know how to pull in our input Contexts... Needs to be updated whenever new context is used!
+        Assert.IsTrue(contextName == "Player" || contextName == "PlayerUI");
+
+        playerInput.SwitchCurrentActionMap(contextName);
+    }
+
+
+    public void enableUI(int uiIndex)
+    {
+
+        //Kind of a gross call but essentially calling our UIManager to enable our specific index.
+        GameObject.FindGameObjectWithTag("UIController").GetComponent<UIManager>().enableUI(uiIndex);
+    }
+
+    private void inputUI()
+    {
+        Debug.Log("Input ui called");
+        GameObject.FindGameObjectWithTag("UIController").GetComponent<UIManager>().interact();
+
+    }
+
+    private void exitUI()
+    {
+        //Only used when escape is pressed.
+        //Needs to talk to our UIHandler and drop any active controlling ui elements.
+        GameObject.FindGameObjectWithTag("UIController").GetComponent<UIManager>().disableUI();
+        swapInputContext("Player");
+
+
+
     }
 
 

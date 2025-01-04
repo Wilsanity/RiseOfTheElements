@@ -31,27 +31,34 @@ public class UIDialogue : UIElement
         //When we are visible we need to make sure our ui is loaded. Always load the first in the queue.
 
         Debug.Log(dialogueQueue.Count);
-        displayText.text = dialogueQueue[0].sentences[sentenceIndex];
+
+        //Stops issue with index array
+        if (dialogueQueue.Count > 0)
+        {
+            displayText.text = dialogueQueue[0].sentences[sentenceIndex];
+        }
+
+        //Clear our queue when dialogue UI will be exited, clearing any unfinished dialogue. & Reset our sentence index.
+        if (visible == false)
+        {
+            dialogueQueue.Clear();
+            sentenceIndex = 0;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().swapInputContext("Player");
+        }
         this.gameObject.SetActive(isVisible);
+        //Awkward but we need to call our player class when we disable ourself..
+
 
         
     }
 
     public override void interactUI()
     {
-        //Interact could have different contexts here,
-        //During Dialogue I assume we can progress (speed through dialogue), or select a response to the dialogue.
-
-        //The selection is a bit more complex since it involves a selection process however we can add the speed through dialogue portion.
-        //Need to make sure the dialogue ends once the array of sentences are completed.
-
-        //This is where we should use class-defined function calls to implement proper procedure.
-
-
-        //Here we want to 
-        
-
         if (progressChat())
+        {
+            setVisibility(false);
+        }
+        else
         {
             //Check if there is anything in our buffer
             if (dialogueQueue.Count > 0)
@@ -61,21 +68,9 @@ public class UIDialogue : UIElement
             }
             else
             {
-                //Our dialogue is finished.
-                //
                 setVisibility(false);
-                
-                
-                
             }
-
         }
-        else
-        {
-
-        }
-
-
     }
 
 
@@ -90,17 +85,11 @@ public class UIDialogue : UIElement
 
 
 
-    //Return here is a bit ambiguous, it's used to tell if dialogue is completed & been removed (true) or dialogue is displaying the next sentence.
-    //Used for potentially 
+
+    //Progress our sentence from our current dialogue, if dialogue has no more sentences, check if our buffer has another 
     private bool progressChat()
     {
         sentenceIndex += 1;
-        Debug.Log("Progress chat called");
-        //
-        //I don't think we need a queue entirely but more of a buffer.
-
-        //This works since our queue works as a buffer, once the sentences are complete, it gets removed, and the new dialogue item 
-        //Is back at 0
 
         if (dialogueQueue[0].sentences.Length == sentenceIndex)
         {
@@ -112,10 +101,6 @@ public class UIDialogue : UIElement
             sentenceIndex = 0;
             return true;
         }
-
-        //Given our main check alreay happened we don't need an if statement.
-
-        //Increase our sentenceIndex.
         displayText.text = dialogueQueue[0].sentences[sentenceIndex];
         return false;
         

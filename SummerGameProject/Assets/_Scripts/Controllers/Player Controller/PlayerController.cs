@@ -458,6 +458,19 @@ public class PlayerController : MonoBehaviour
     // legacy code
     //This is when the player attacks the cave plant enemies. This is a temporary solution since using an array caused them collectively to die
     //when only 1 was killed by the player.
+    //Shane's edit, I re-added OnTriggerEnter, this is for our player tool tip.
+    private void OnTriggerEnter(Collider other)
+    {
+        //This is probably a terrible call and expensive
+        if(other.gameObject.GetComponent<Interactable>())
+        {
+        }
+        
+    }
+
+
+
+
     //private void OnTriggerEnter(Collider other)
     //{
 

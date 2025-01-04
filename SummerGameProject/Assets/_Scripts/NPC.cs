@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 public class NPC : MonoBehaviour
 {
     //Member variables
-    public string m_Name = "NULL";
     private int m_Id;
 
 

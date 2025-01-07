@@ -145,6 +145,21 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Move();
+        ProcessMovementInput();
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        CheckFalling();
+        CheckJumping();
+    }
+
+
+    //The original movement Calcs that were in Update
+    private void ProcessMovementInput()
+    {
         // get input from the playerInput, process it to match camera forward
         Vector3 up = Vector3.up;
         Vector3 right = Camera.main.transform.right;
@@ -156,20 +171,6 @@ public class PlayerController : MonoBehaviour
         // send player input to character movement for further processing
         _movement.SetMoveInput(moveInput);
         _movement.SetLookDirection(moveInput);
-
-        if (health <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
-        if (attackAction.triggered)
-        {
-            Debug.Log("Pressed");
-            Attack();
-        }
-
-        CheckFalling();
-        CheckJumping();
     }
 
     private void OnMove(InputValue value)
@@ -195,7 +196,7 @@ public class PlayerController : MonoBehaviour
                 _movement.TryGroundDodge(_dodgeDoubleTapWindow);
             }
             // else, send the toggle to turn the dodge into a long dodge
-            else if(_movement.IsDodging)
+            else if (_movement.IsDodging)
             {
                 _movement.QueueLongDodge();
             }
@@ -250,6 +251,7 @@ public class PlayerController : MonoBehaviour
     //}
     public void Attack()
     {
+        Debug.Log("Attack Input Pressed");
         //if not ready to attack or is attacking, return
         if (!readyToAttack || attacking) return;
 

@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject hitSpot;
 
     [SerializeField] private float _dodgeDoubleTapWindow = 0.4f;
+    [SerializeField] private float _dodgeCheckThreshold = 0.01f;
 
 
     #endregion
@@ -187,12 +188,13 @@ public class PlayerController : MonoBehaviour
     }
     private void OnDodge()
     {
-        if (_movement.IsGrounded)
+        if (_movement.IsGrounded && (_movement.MoveInput.x > _dodgeCheckThreshold || _movement.MoveInput.x < -_dodgeCheckThreshold))
         {
             //try normal dodge
             // if the player has not begin the pre-dodge coroutine, start it
             if (_movement.CanStartGroundDodge)
             {
+                
                 _movement.TryGroundDodge(_dodgeDoubleTapWindow);
             }
             // else, send the toggle to turn the dodge into a long dodge

@@ -498,11 +498,21 @@ MonoBehaviour:
     m_Extent: {x: 6, y: 0.1, z: 6}
   positionTolerance: 0.001
   idleTime: 1
+  TargetFound:
+    m_PersistentCalls:
+      m_Calls: []
+  TargetReached:
+    m_PersistentCalls:
+      m_Calls: []
+  TargetCleared:
+    m_PersistentCalls:
+      m_Calls: []
   gizmoColor: {r: 1, g: 1, b: 1, a: 1}
   targetColor: {r: 0, g: 1, b: 0, a: 1}
-  showStations: 0
-  showWanderBounds: 0
+  showStations: 1
+  showWanderBounds: 1
   showTarget: 1
+  logEvents: 1
 --- !u!4 &1074203458
 Transform:
   m_ObjectHideFlags: 0

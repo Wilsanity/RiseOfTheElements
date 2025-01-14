@@ -66,8 +66,9 @@ namespace Kibo.NPCs.Behaviour
             if (IsAtTarget)
             {
                 if (timeAtTarget == 0) TargetReached.Invoke();
-
                 timeAtTarget += Time.deltaTime;
+
+                agent.ResetPath();
 
                 float pauseTime = targetStation ? targetStation.ActionTime : idleTime;
                 if (timeAtTarget >= pauseTime) FindTarget();

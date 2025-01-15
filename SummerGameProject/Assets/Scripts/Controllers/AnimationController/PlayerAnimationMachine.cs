@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PlayerAnimationMachine : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class PlayerAnimationMachine : MonoBehaviour
     private PlayerMovement _movement;
     private PlayerController _controller;
     private Animator _animator;
+    [SerializeField]
+    Transform leftFoot, rightFoot;
+
     //update trigger anim states
 
     private void Awake()
@@ -49,7 +53,20 @@ public class PlayerAnimationMachine : MonoBehaviour
     {
         _animator.SetTrigger("Jump");
     }
+
+    public void KickUpDustRight(VisualEffect visualEffect)
+    {
+        Instantiate(visualEffect, rightFoot.position, Quaternion.identity);
+        Destroy(visualEffect, 1.2f);
+    }
+    public void KickUpDustLeft(VisualEffect visualEffect)
+    {
+        Instantiate(visualEffect, leftFoot.position, Quaternion.identity);
+        Destroy(visualEffect, 1.2f);
+    }
 }
+
+
 
 public enum PlayerAnimState
 {

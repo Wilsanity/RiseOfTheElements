@@ -1,10 +1,11 @@
-using AmplifyShaderEditor;
+//using AmplifyShaderEditor;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
+//using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
+using UnityEngine.VFX;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class PlayerMovement : MonoBehaviour
     private bool _useCustomGravity = true;
     [SerializeField, Tooltip("Custom gravity acceleration")]
     private float _gravityValue = -15f;
+    [SerializeField, Tooltip("Jump Take Off VFX")]
+    private VisualEffect jumpVFX;
+    [SerializeField, Tooltip("Jump Take Off VFX Spawn Point")]
+    private Transform jumpPoint;
+    Color baseJumpColor;
 
     [Header("Movement Settings")]
     [SerializeField, Tooltip("Force character to look in move direction")] 
@@ -77,6 +83,8 @@ public class PlayerMovement : MonoBehaviour
 
         // if we handle gravity from here, disable gravity interaction from default unity physics
         _rigidbody.useGravity = !_useCustomGravity;
+
+        baseJumpColor = jumpVFX.GetVector4("Color");
     }
 
     // public methods
@@ -142,6 +150,53 @@ public class PlayerMovement : MonoBehaviour
         // override current y velocity but maintain x/z velocity
         _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, jumpVelocity, _rigidbody.velocity.z);
         _animationStateMachine.JumpAnimation();
+
+        Ray ray = new Ray(transform.position, Vector3.down);
+        if (Physics.Raycast(ray, out RaycastHit hit, 10, _groundLayerMask))
+        {
+            Renderer renderer = hit.collider.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                Material material = renderer.material;
+
+                // Check if the material has a texture
+                if (material.HasProperty("_MainTex"))
+                {
+                    Texture2D texture = material.GetTexture("_MainTex") as Texture2D;
+                    if (texture != null)
+                    {
+                        // Convert hit UV coordinates to pixel coordinates
+                        Vector2 uv = hit.textureCoord;
+                        int x = Mathf.FloorToInt(uv.x * texture.width);
+                        int y = Mathf.FloorToInt(uv.y * texture.height);
+
+                        // Sample the texture color
+                        Color textureColor = texture.GetPixel(x, y);
+
+                        // Modify the texture color with the material's tint if available
+                        if (material.HasProperty("_Color"))
+                        {
+                            Color tint = material.GetColor("_Color");
+                            textureColor *= tint; // Multiply by the tint
+                        }
+
+                        // Update the VFX graph color
+                        if (jumpVFX != null)
+                        {
+                            jumpVFX.SetVector4("Color", (Vector4)textureColor);
+                        }
+                    }
+                }
+            }
+        }
+
+        else
+        {
+            jumpVFX.SetVector4("Color", baseJumpColor);
+        }
+
+        VisualEffect VE = Instantiate(jumpVFX, transform.position, Quaternion.identity);
+        Destroy(VE, 1);
     }
 
     // updates

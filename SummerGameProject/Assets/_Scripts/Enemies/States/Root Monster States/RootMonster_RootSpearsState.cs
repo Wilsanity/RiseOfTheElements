@@ -134,7 +134,12 @@ public class RootMonster_RootSpearsState : FSMState
             _rootState = RootSpearsProjectileState.HIDE_SPEARS;
         }
 
-        
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("RumbleVFX");
+
+        foreach(GameObject go in objects)
+        {
+            GameObject.Destroy(go);
+        }
     }
 
    

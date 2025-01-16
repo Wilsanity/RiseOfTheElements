@@ -27,9 +27,9 @@ public class RootMonster_CooldownState : FSMState
 
     public override void EnterStateInit()
     {
-        animator.SetBool("Idle", true);
-        animator.SetBool("Attacking", false);
-        animator.SetBool("Hit", false);
+        ///animator.SetBool("Idle", true);
+        ///animator.SetBool("Attacking", false);
+        ///animator.SetBool("Hit", false);
 
         coolDownOver = false;
 

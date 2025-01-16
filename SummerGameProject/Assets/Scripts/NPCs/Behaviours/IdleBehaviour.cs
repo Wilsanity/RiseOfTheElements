@@ -59,6 +59,16 @@ namespace Kibo.NPCs.Behaviour
             FindTarget();
         }
 
+        private void OnEnable()
+        {
+            agent.enabled = true;
+        }
+
+        private void OnDisable()
+        {
+            agent.enabled = false;
+        }
+
         private void Update()
         {
             if (HasTarget) agent.destination = TargetPosition.Value;

@@ -15,6 +15,12 @@ public enum FSMStateType
     TakingDamage,
     Dead,
 
+    // Game Manager States
+    Start,
+    Pause,
+    End,
+    Play,
+
     //Root Monster States
     RootSpearAttack,
 
@@ -44,6 +50,12 @@ public enum TransitionType
     Cooldown,
     Hit,
     NoHealth,
+
+    // Game Manager Transitions
+    Starting,
+    Pausing,
+    Ending,
+    Playing,
 
     //Root Monster Specific Transitions
     Shield,

@@ -8,7 +8,7 @@ namespace Kibo.NPCs
         [Tooltip("Optional")]
         [SerializeField] private IdleBehaviour idleBehaviour;
         [Tooltip("Optional")]
-        [SerializeField] private LookAtPlayerBehaviour lookAtPlayerBehaviour;
+        [SerializeField] private LookAtBehaviour lookAtPlayerBehaviour;
         [Header("Mesh Bones")]
         [Tooltip("Optional")]
         [SerializeField] private Transform head;
@@ -18,14 +18,14 @@ namespace Kibo.NPCs
         {
             if (lookAtPlayerBehaviour)
             {
-                lookAtPlayerBehaviour.PlayerApproachedEvent.AddListener(OnPlayerApproached);
-                lookAtPlayerBehaviour.PlayerDepartedEvent.AddListener(OnPlayerDeparted);
+                lookAtPlayerBehaviour.TargetApproachedEvent.AddListener(OnPlayerApproached);
+                lookAtPlayerBehaviour.TargetDepartedEvent.AddListener(OnPlayerDeparted);
             }
         }
 
         private void OnEnable()
         {
-            if ((lookAtPlayerBehaviour == null || lookAtPlayerBehaviour.Player == null) && idleBehaviour) idleBehaviour.enabled = true;
+            if ((lookAtPlayerBehaviour == null || lookAtPlayerBehaviour.Target == null) && idleBehaviour) idleBehaviour.enabled = true;
             if (lookAtPlayerBehaviour) lookAtPlayerBehaviour.enabled = true;
         }
 
@@ -49,7 +49,7 @@ namespace Kibo.NPCs
 
         private void OnPlayerDeparted()
         {
-            if (lookAtPlayerBehaviour.Player) return;
+            if (lookAtPlayerBehaviour.Target) return;
 
             if (idleBehaviour) idleBehaviour.enabled = true;
         } 
@@ -58,7 +58,7 @@ namespace Kibo.NPCs
         private void FaceTarget()
         {
             Vector3 target;
-            if (lookAtPlayerBehaviour && lookAtPlayerBehaviour.Player) target = lookAtPlayerBehaviour.Player.position;
+            if (lookAtPlayerBehaviour && lookAtPlayerBehaviour.Target) target = lookAtPlayerBehaviour.Target.position;
             else if (idleBehaviour && idleBehaviour.HasTarget) target = idleBehaviour.TargetPosition.Value;
             else return;
 

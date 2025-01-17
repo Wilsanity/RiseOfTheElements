@@ -720,8 +720,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1276009865}
   - {fileID: 1278930794}
+  - {fileID: 1276009865}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1074203459
@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 1278930796}
   - component: {fileID: 1278930795}
   m_Layer: 0
-  m_Name: Look At Player Behaviour
+  m_Name: Look At Behaviour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -958,11 +958,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dd35d1d1c6fc954cbe360a089c330bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
-  PlayerApproached:
+  targetTags:
+  - Player
+  TargetApproached:
     m_PersistentCalls:
       m_Calls: []
-  PlayerDeparted:
+  TargetDeparted:
     m_PersistentCalls:
       m_Calls: []
   logEvents: 0
@@ -1862,15 +1863,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 157785867, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.10013132
+      value: 0.100131236
       objectReference: {fileID: 0}
     - target: {fileID: 157785867, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000148262735
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 157785867, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000014920731
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 157785868, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_ComponentOwner
@@ -1886,7 +1887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 217971321, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00000047683716
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 217971321, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1894,15 +1895,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 217971321, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07578919
+      value: 0.07578917
       objectReference: {fileID: 0}
     - target: {fileID: 217971321, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000031710858
+      value: -0.000000023373987
       objectReference: {fileID: 0}
     - target: {fileID: 217971321, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.4102642e-10
+      value: 0.0000000017766046
       objectReference: {fileID: 0}
     - target: {fileID: 217971322, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_ComponentOwner
@@ -1974,23 +1975,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1776561635, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00000047683716
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1776561635, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9986721
+      value: 0.99867207
       objectReference: {fileID: 0}
     - target: {fileID: 1776561635, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.05151792
+      value: 0.051517867
       objectReference: {fileID: 0}
     - target: {fileID: 1776561635, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000206256
+      value: -0.0000000126275195
       objectReference: {fileID: 0}
     - target: {fileID: 1776561635, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000010640008
+      value: 6.5140787e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1776561636, guid: b3472b8bb2de19149a941b107f18cc39, type: 3}
       propertyPath: m_ComponentOwner

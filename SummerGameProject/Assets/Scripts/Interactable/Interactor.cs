@@ -18,6 +18,8 @@ namespace Kibo.Interactable
         [SerializeField] private UnityEvent NewInteractableFound;
         [SerializeField] private UnityEvent InteractableLost;
         [Header("Debug")]
+        [SerializeField] private Color gizmoColor = Color.white;
+        [SerializeField] private bool showPhysicsChecks;
         [SerializeField] private bool logEvents;
 
         private IInteractable interactable;
@@ -32,7 +34,7 @@ namespace Kibo.Interactable
         #region Unity Messages
         protected virtual void Awake()
         {
-            Assert.IsNotNull(viewPoint, $"{nameof(viewPoint)} is not assigned on {name}'s {GetType().Name}");
+            Assert.IsNotNull(viewPoint, $"{GetType().Name}'s {nameof(viewPoint)} is null");
 
             if (logEvents)
             {
@@ -46,10 +48,11 @@ namespace Kibo.Interactable
             CheckForInteractable();
         }
 
-        protected virtual void OnDrawGizmosSelected()
+        protected virtual void OnDrawGizmos()
         {
-            if (!Application.isPlaying || !isActiveAndEnabled) return;
+            if (!Application.isPlaying || !isActiveAndEnabled || !showPhysicsChecks) return;
 
+            Gizmos.color = gizmoColor;
             Gizmos.DrawLine(viewPoint.position, InteractPoint);
             if (interactable != null) Gizmos.DrawWireSphere(InteractPoint, .5f);
         }
@@ -58,19 +61,19 @@ namespace Kibo.Interactable
         #region Interaction
         private void CheckForInteractable()
         {
+            IInteractable oldInteractable = interactable;
+
             Ray ray = new(viewPoint.position, Forward);
             bool hitInteractable = Physics.SphereCast(ray, aimAssistRadius, out hitInfo, maxInteractDistance, interactMask);
-            IInteractable newInteractable = hitInteractable ? hitInfo.collider.GetComponent<IInteractable>() : null;
-            if (newInteractable != interactable)
+            interactable = hitInteractable ? hitInfo.collider.GetComponent<IInteractable>() : null;
+            if (interactable != oldInteractable)
             {
-                if (newInteractable != null) NewInteractableFound.Invoke();
+                if (interactable != null) NewInteractableFound.Invoke();
                 else InteractableLost.Invoke();
             }
-
-            interactable = newInteractable;
         }
 
-        public void OnInteract(InputValue value)
+        private void OnInteract(InputValue value)
         {
             if (!value.isPressed) return;
 

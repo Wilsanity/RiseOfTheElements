@@ -39,9 +39,7 @@ public class PlayerController : MonoBehaviour
 
     #region inspector
 
-    //[SerializeField] float moveSpeed;
-    //[SerializeField] float jumpPower;
-    //[SerializeField] float sprintPower;
+    
     [SerializeField] Image healthBar;
 
 
@@ -105,18 +103,7 @@ public class PlayerController : MonoBehaviour
         
         cameraFollowTargetTransform = transform.GetChild(0).transform;
 
-        //if a portal was used to telleport
-        if (PlayerPrefs.GetInt("isPortalUsed", 0) == 1)
-        {
-            //Find the name of the portal that was used
-            string currentPortal = PlayerPrefs.GetString("currentPortal");
-            if (currentPortal != null)
-            {
-                //move the player to the portal's spawn position
-                transform.position = GameObject.Find(currentPortal).transform.GetChild(0).position;
-                PlayerPrefs.SetInt("isPortalUsed", 0);
-            }
-        }
+        HandlePortalTeleport();
     }
 
     
@@ -124,12 +111,6 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         //single press button input notation. 
-        #region input actions
-
-        
-        
-
-        #endregion
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -157,6 +138,21 @@ public class PlayerController : MonoBehaviour
         CheckJumping();
     }
 
+    private void HandlePortalTeleport()
+    {
+        //if a portal was used to telleport
+        if (PlayerPrefs.GetInt("isPortalUsed", 0) == 1)
+        {
+            //Find the name of the portal that was used
+            string currentPortal = PlayerPrefs.GetString("currentPortal");
+            if (currentPortal != null)
+            {
+                //move the player to the portal's spawn position
+                transform.position = GameObject.Find(currentPortal).transform.GetChild(0).position;
+                PlayerPrefs.SetInt("isPortalUsed", 0);
+            }
+        }
+    }
 
     //The original movement Calcs that were in Update
     private void ProcessMovementInput()
@@ -244,8 +240,7 @@ public class PlayerController : MonoBehaviour
         healthBar.fillAmount = health / 10f;
         if (health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Destroy(gameObject);
+            OnPlayerDeath();
         }
     }
 
@@ -345,6 +340,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnPlayerDeath()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Destroy(gameObject);
+    }
 
     // Debug and Stat Check
     public Vector3 GetMovementInput()

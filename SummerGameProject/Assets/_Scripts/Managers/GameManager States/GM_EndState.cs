@@ -44,3 +44,14 @@ public class GM_EndState : FSMState
 
     }
 }
+
+/*
+NOTES
+This State should Destroy any objects in the world that have not already been destroyed, and stop all timers or anything that may have been running in the background
+For example,
+Player
+NPC
+
+For Now, 
+I will represent all of this with a couple cubes i think?
+*/

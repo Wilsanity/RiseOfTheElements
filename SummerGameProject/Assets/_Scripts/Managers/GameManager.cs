@@ -27,13 +27,13 @@ public class GameManager : AdvancedFSM
         // Create States
         //
         // Create Start State
-        GM_StartState start = new GM_StartState(slider);
+        GM_StartState start = new GM_StartState(slider, sceneObjects);
 
         // Create Pause State
         GM_PauseState pause = new GM_PauseState(slider);
 
         // Create End State
-        GM_EndState end = new GM_EndState(slider);
+        GM_EndState end = new GM_EndState(slider, sceneObjects);
 
         // Create Play State
         GM_PlayState play = new GM_PlayState(slider);
@@ -69,7 +69,27 @@ public class GameManager : AdvancedFSM
     }
 }
 
-[Serializable] public class SceneObjects
+[Serializable] public class SceneObjects : IEnumerable<GameObject>
 {
     public GameObject player;
+    public List<GameObject> testCube;
+
+    //I added these so that I can call on the SceneObjects in other states - Luka
+    public IEnumerator<GameObject> GetEnumerator()
+    {
+        if (player != null)
+        {
+            yield return player;
+        }
+
+        if(testCube != null)
+        {
+            foreach(var cube in testCube)
+            {
+                yield return cube;
+            }
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() { return GetEnumerator(); }
 }

@@ -6,17 +6,29 @@ using UnityEngine.UI;
 public class GM_EndState : FSMState
 {
     private Slider slider;
+    private SceneObjects _sceneObjects;
 
     // Constructor
-    public GM_EndState(Slider inSlider)
+    public GM_EndState(Slider inSlider, SceneObjects sceneObjects)
     {
         stateType = FSMStateType.End;
         slider = inSlider;
+        _sceneObjects = sceneObjects;
     }
 
     public override void EnterStateInit()
     {
         Debug.Log("End State Entered.");
+
+        foreach (var go in _sceneObjects)
+        {
+            var Destroying = go.GetComponent<IStateInterface>();
+            if (Destroying != null)
+            {
+                Debug.Log("Ebd for game object being called");
+                Destroying.End();
+            }
+        }
     }
 
     public override void Reason(Transform player, Transform gm)

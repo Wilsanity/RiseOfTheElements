@@ -97,8 +97,8 @@ public class PlayerController : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
 
-        uiContinue = playerInput.actions["Select"];
-        uiExit = playerInput.actions["Exit"];
+        //uiContinue = playerInput.actions["Select"];
+        //uiExit = playerInput.actions["Exit"];
 
 
 
@@ -109,8 +109,8 @@ public class PlayerController : MonoBehaviour
         //moveAction.performed += ctx => SetMoveInput(ctx);
 
         //Adding out UI actions here might be the play... 
-        uiContinue.performed += ctx => inputUI();
-        uiExit.performed += ctx => exitUI();
+        //uiContinue.performed += ctx => inputUI();
+        //uiExit.performed += ctx => exitUI();
 
         #endregion
 
@@ -427,7 +427,7 @@ public class PlayerController : MonoBehaviour
         playerInput.SwitchCurrentActionMap(contextName);
     }
 
-
+    /*
     public void enableUI(int uiIndex)
     {
 
@@ -452,7 +452,7 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
+    */
 
 
     // legacy code

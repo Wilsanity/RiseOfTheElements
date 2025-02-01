@@ -27,12 +27,12 @@ public class GM_PlayState : FSMState
                 gm.GetComponent<GameManager>().PerformTransition(TransitionType.Starting);
                 break;
             case 2:
-                gm.GetComponent<GameManager>().PerformTransition(TransitionType.Pausing);
                 break;
             case 3:
-                gm.GetComponent<GameManager>().PerformTransition(TransitionType.Ending);
+                gm.GetComponent<GameManager>().PerformTransition(TransitionType.Pausing);
                 break;
             case 4:
+                gm.GetComponent<GameManager>().PerformTransition(TransitionType.Ending);
                 break;
             default:
                 break;
@@ -41,6 +41,6 @@ public class GM_PlayState : FSMState
 
     public override void Act(Transform player, Transform gm)
     {
-
+        Time.timeScale = 1;
     }
 }

@@ -48,13 +48,13 @@ public class GM_StartState :  FSMState
             case 1:
                 break;
             case 2:
-                gm.GetComponent<GameManager>().PerformTransition(TransitionType.Pausing);
+                gm.GetComponent<GameManager>().PerformTransition(TransitionType.Playing);
                 break;
             case 3:
-                gm.GetComponent<GameManager>().PerformTransition(TransitionType.Ending);
+                gm.GetComponent<GameManager>().PerformTransition(TransitionType.Pausing);
                 break;
             case 4:
-                gm.GetComponent<GameManager>().PerformTransition(TransitionType.Playing);
+                gm.GetComponent<GameManager>().PerformTransition(TransitionType.Ending);
                 break;
             default:
                 break;

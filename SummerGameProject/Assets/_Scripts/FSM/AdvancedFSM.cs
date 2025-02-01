@@ -53,9 +53,9 @@ public enum TransitionType
 
     // Game Manager Transitions
     Starting,
+    Playing,
     Pausing,
     Ending,
-    Playing,
 
     //Root Monster Specific Transitions
     Shield,

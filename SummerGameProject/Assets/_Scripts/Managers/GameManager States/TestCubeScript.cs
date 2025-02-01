@@ -36,6 +36,6 @@ public class TestCubeScript : MonoBehaviour, IStateInterface
     
     {
         StopCoroutine(ChangeColorOverTime());
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }

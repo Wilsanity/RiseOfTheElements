@@ -9,6 +9,7 @@ public class GameManager : AdvancedFSM
     public SceneObjects sceneObjects;
 
     public Slider slider = null;
+    public GameObject pauseScreen = null;
 
     protected override void Initialize()
     {
@@ -30,7 +31,7 @@ public class GameManager : AdvancedFSM
         GM_StartState start = new GM_StartState(slider, sceneObjects);
 
         // Create Pause State
-        GM_PauseState pause = new GM_PauseState(slider);
+        GM_PauseState pause = new GM_PauseState(slider, pauseScreen);
 
         // Create End State
         GM_EndState end = new GM_EndState(slider, sceneObjects);
@@ -41,19 +42,19 @@ public class GameManager : AdvancedFSM
         // Add Transitions
         //
         // Transitions out of Start state
+        start.AddTransition(TransitionType.Playing, FSMStateType.Play);
         start.AddTransition(TransitionType.Pausing, FSMStateType.Pause);
         start.AddTransition(TransitionType.Ending, FSMStateType.End);
-        start.AddTransition(TransitionType.Playing, FSMStateType.Play);
 
         // Transitions out of Pause state
         pause.AddTransition(TransitionType.Starting, FSMStateType.Start);
-        pause.AddTransition(TransitionType.Ending, FSMStateType.End);
         pause.AddTransition(TransitionType.Playing, FSMStateType.Play);
+        pause.AddTransition(TransitionType.Ending, FSMStateType.End);
 
         // Transitions out of End State
         end.AddTransition(TransitionType.Starting, FSMStateType.Start);
-        end.AddTransition(TransitionType.Pausing, FSMStateType.Pause);
         end.AddTransition(TransitionType.Playing, FSMStateType.Play);
+        end.AddTransition(TransitionType.Pausing, FSMStateType.Pause);
 
         // Transitions out of Play State
         play.AddTransition(TransitionType.Starting, FSMStateType.Start);
@@ -63,9 +64,9 @@ public class GameManager : AdvancedFSM
         // Add States to List
         //
         AddState(start);
+        AddState(play);
         AddState(pause);
         AddState(end);
-        AddState(play);
     }
 }
 

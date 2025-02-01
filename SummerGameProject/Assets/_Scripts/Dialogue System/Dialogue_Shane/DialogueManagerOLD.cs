@@ -5,18 +5,26 @@ using UnityEngine.UI;
 using TMPro;
 
 //This should be a singleton, or some form of that.
-public class DialogueManager : MonoBehaviour
+public class DialogueManagerOLD : MonoBehaviour
 {
-    private DialogueNode currentNode;
+    private DialogueNodeOLD currentNode;
 
     //Quick slam of a ui Element
+    //Linking ui is ok I think given it's one entire prefab. 
+    //However, removing the choices is good, since we want to 
     public GameObject ui;
     public TMP_Text myText;
     public TMP_Text[] choices;
 
 
-    public void StartDialogue(DialogueNode startingNode)
+    public void StartDialogue(DialogueNodeOLD startingNode)
     {
+
+        //Here either some reference to game manager instance or other solution.
+        //This is to handle swapping input contexts & disabling player controls to ui.
+        //For now we will use player controller script.
+        FindObjectOfType<PlayerController>().swapInputContext("PlayerUI");
+
         currentNode = startingNode;
         DisplayCurrentDialogue();
 
@@ -29,10 +37,20 @@ public class DialogueManager : MonoBehaviour
         myText.text = currentNode.DialogueText;
 
 
+        
+        //Here we should use our choices count to determine the amount of choices we have ?
+
+
+
         for (int i = 0; i < currentNode.Choices.Count; i++)
         {
             Debug.Log($" {i + 1}: {currentNode.Choices[i].ChoiceText}");
+            
+
+
+            //This is deprecated, needs to be different (not dragged in)
             choices[i].text = currentNode.Choices[i].ChoiceText;
+
 
         }
     }
@@ -48,4 +66,11 @@ public class DialogueManager : MonoBehaviour
         currentNode = currentNode.Choices[choiceIndex].NextNode;
         DisplayCurrentDialogue();
     }
+
+    public void EndDialogue()
+    {
+        ui.SetActive(false);
+    }
+
+
 }

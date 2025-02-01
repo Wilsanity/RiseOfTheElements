@@ -1,27 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Experimental.GraphView;
 
-public class DialogueNode
+public class DialogueNode : Node
 {
-    public string DialogueText { get; set; }
-    public List<Choice> Choices { get; set; }
+    public Port parentPort;
+    public int Layer;
+    public int Index;
+    public Sentence sentence;
+    public string GUID;
+    public string conversationText;
+    public bool isEntryPoint;
 
-    public DialogueNode(string dialogueText)
-    {
-        DialogueText = dialogueText;
-        Choices = new List<Choice>();
-    }
-}
 
-public class Choice
-{
-    public string ChoiceText { get; set; }
-    public DialogueNode NextNode { get; set; }
 
-    public Choice(string choiceText, DialogueNode nextNode)
-    {
-        ChoiceText = choiceText;
-        NextNode = nextNode;
-    }
+    public Port inputPort;
+    public List<Port> outputPorts = new List<Port>();
+
 }

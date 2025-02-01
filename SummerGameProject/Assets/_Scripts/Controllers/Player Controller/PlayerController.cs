@@ -97,8 +97,8 @@ public class PlayerController : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
 
-        //uiContinue = playerInput.actions["Select"];
-        //uiExit = playerInput.actions["Exit"];
+        uiContinue = playerInput.actions["Select"];
+        uiExit = playerInput.actions["Exit"];
 
 
 
@@ -109,8 +109,8 @@ public class PlayerController : MonoBehaviour
         //moveAction.performed += ctx => SetMoveInput(ctx);
 
         //Adding out UI actions here might be the play... 
-        //uiContinue.performed += ctx => inputUI();
-        //uiExit.performed += ctx => exitUI();
+        uiContinue.performed += ctx => inputUI();
+        uiExit.performed += ctx => exitUI();
 
         #endregion
 
@@ -427,18 +427,13 @@ public class PlayerController : MonoBehaviour
         playerInput.SwitchCurrentActionMap(contextName);
     }
 
-    /*
-    public void enableUI(int uiIndex)
-    {
-
-        //Kind of a gross call but essentially calling our UIManager to enable our specific index.
-        GameObject.FindGameObjectWithTag("UIController").GetComponent<UIManager>().enableUI(uiIndex);
-    }
 
     private void inputUI()
     {
         Debug.Log("Input ui called");
-        GameObject.FindGameObjectWithTag("UIController").GetComponent<UIManager>().interact();
+        FindObjectOfType<DialogueManagerOLD>().SelectChoice(0);
+        //
+
 
     }
 
@@ -446,13 +441,13 @@ public class PlayerController : MonoBehaviour
     {
         //Only used when escape is pressed.
         //Needs to talk to our UIHandler and drop any active controlling ui elements.
-        GameObject.FindGameObjectWithTag("UIController").GetComponent<UIManager>().disableUI();
+        FindObjectOfType<DialogueManagerOLD>().EndDialogue();
         swapInputContext("Player");
 
 
 
     }
-    */
+    
 
 
     // legacy code

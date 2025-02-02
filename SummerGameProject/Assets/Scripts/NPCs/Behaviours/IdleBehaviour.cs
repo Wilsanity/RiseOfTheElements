@@ -7,7 +7,7 @@ using UnityEngine.AI;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
 
-namespace Kibo.NPCs.Behaviour
+namespace Kibo.NPCs.Behaviours
 {
     public class IdleBehaviour : MonoBehaviour
     {
@@ -19,8 +19,8 @@ namespace Kibo.NPCs.Behaviour
         [SerializeField] private Bounds wanderBounds = new(Vector3.zero, Vector3.one);
         [SerializeField][Min(0f)] private float positionTolerance = 1e-3f, idleTime = 1f;
         [Header("Events")]
-        [SerializeField] private UnityEvent TargetFound;
-        [SerializeField] private UnityEvent TargetReached, TargetCleared;
+        [SerializeField] private UnityEvent targetFound;
+        [SerializeField] private UnityEvent targetReached, targetCleared;
         [Header("Debug")]
         [SerializeField] private Color gizmoColor = Color.white;
         [SerializeField] private Color targetColor = Color.green;
@@ -33,9 +33,9 @@ namespace Kibo.NPCs.Behaviour
         public NavMeshAgent Agent => agent;
         public Station[] Stations => stations;
         public Bounds WanderBounds => wanderBounds;
-        public UnityEvent TargetFoundEvent => TargetFound;
-        public UnityEvent TargetReachedEvent => TargetReached;
-        public UnityEvent TargetClearedEvent => TargetCleared;
+        public UnityEvent TargetFound => targetFound;
+        public UnityEvent TargetReached => targetReached;
+        public UnityEvent TargetCleared => targetCleared;
         public Station TargetStation => targetStation;
         public Vector3? TargetPosition => targetStation ? targetStation.transform.position : targetWanderPosition;
         public bool HasTarget => TargetPosition.HasValue;
@@ -49,9 +49,9 @@ namespace Kibo.NPCs.Behaviour
 
             if (logEvents)
             {
-                TargetFound.AddListener(() => Debug.Log(nameof(TargetFound)));
-                TargetReached.AddListener(() => Debug.Log(nameof(TargetReached)));
-                TargetCleared.AddListener(() => Debug.Log(nameof(TargetCleared)));
+                targetFound.AddListener(() => Debug.Log(nameof(targetFound)));
+                targetReached.AddListener(() => Debug.Log(nameof(targetReached)));
+                targetCleared.AddListener(() => Debug.Log(nameof(targetCleared)));
             }
         }
 
@@ -60,23 +60,13 @@ namespace Kibo.NPCs.Behaviour
             FindTarget();
         }
 
-        private void OnEnable()
-        {
-            agent.enabled = true;
-        }
-
-        private void OnDisable()
-        {
-            agent.enabled = false;
-        }
-
         private void Update()
         {
             if (HasTarget) agent.destination = TargetPosition.Value;
 
             if (IsAtTarget)
             {
-                if (timeAtTarget == 0) TargetReached.Invoke();
+                if (timeAtTarget == 0) targetReached.Invoke();
                 timeAtTarget += Time.deltaTime;
 
                 agent.ResetPath();
@@ -134,7 +124,7 @@ namespace Kibo.NPCs.Behaviour
 
             timeAtTarget = 0f;
 
-            TargetFound.Invoke();
+            targetFound.Invoke();
         }
 
         [ContextMenu(nameof(ClearTarget))]
@@ -143,7 +133,7 @@ namespace Kibo.NPCs.Behaviour
             targetStation = null;
             targetWanderPosition = null;
 
-            TargetCleared.Invoke();
+            targetCleared.Invoke();
         } 
         #endregion
     }

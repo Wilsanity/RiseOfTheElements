@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Kibo.NPCs.Behaviour
+namespace Kibo.NPCs.Behaviours
 {
     [RequireComponent(typeof(SphereCollider))]
     public class LookAtBehaviour : MonoBehaviour

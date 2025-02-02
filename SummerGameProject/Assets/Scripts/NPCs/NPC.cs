@@ -1,5 +1,5 @@
 using Kibo.Interactable;
-using Kibo.NPCs.Behaviour;
+using Kibo.NPCs.Behaviours;
 using UnityEngine;
 
 namespace Kibo.NPCs
@@ -10,6 +10,8 @@ namespace Kibo.NPCs
         [SerializeField] private IdleBehaviour idleBehaviour;
         [Tooltip("Optional")]
         [SerializeField] private LookAtBehaviour lookAtBehaviour;
+        [Tooltip("Optional")]
+        [SerializeField] private EnvironmentAwarenessBehaviour environmentAwarenessBehaviour;
         [Header("Mesh Bones")]
         [Tooltip("Optional")]
         [SerializeField] private Transform head;
@@ -24,18 +26,26 @@ namespace Kibo.NPCs
                 lookAtBehaviour.TargetApproachedEvent.AddListener(OnTargetApproached);
                 lookAtBehaviour.TargetDepartedEvent.AddListener(OnTargetDeparted);
             }
+
+            if (environmentAwarenessBehaviour)
+            {
+                environmentAwarenessBehaviour.EmitterHeard.AddListener(OnEmitterHeard);
+                environmentAwarenessBehaviour.EmitterReached.AddListener(OnEmitterApproached);
+            }
         }
 
         private void OnEnable()
         {
             if ((lookAtBehaviour == null || lookAtBehaviour.Target == null) && idleBehaviour) idleBehaviour.enabled = true;
             if (lookAtBehaviour) lookAtBehaviour.enabled = true;
+            if (environmentAwarenessBehaviour) environmentAwarenessBehaviour.enabled = true;
         }
 
         private void OnDisable()
         {
             if (idleBehaviour) idleBehaviour.enabled = false;
             if (lookAtBehaviour) lookAtBehaviour.enabled = false;
+            if (environmentAwarenessBehaviour) environmentAwarenessBehaviour.enabled = false;
         }
 
         private void Update()
@@ -44,24 +54,11 @@ namespace Kibo.NPCs
         }
         #endregion
 
-        #region Look At Event Listeners
-        private void OnTargetApproached()
-        {
-            if (idleBehaviour) idleBehaviour.enabled = false;
-        }
-
-        private void OnTargetDeparted()
-        {
-            if (lookAtBehaviour.Target) return;
-
-            if (idleBehaviour) idleBehaviour.enabled = true;
-        } 
-        #endregion
-
         private void FaceTarget()
         {
             Vector3 target;
-            if (lookAtBehaviour && lookAtBehaviour.Target) target = lookAtBehaviour.Target.position;
+            if (environmentAwarenessBehaviour && environmentAwarenessBehaviour.TargetEmitter) target = environmentAwarenessBehaviour.TargetEmitter.transform.position;
+            else if (lookAtBehaviour && lookAtBehaviour.Target) target = lookAtBehaviour.Target.position;
             else if (idleBehaviour && idleBehaviour.HasTarget) target = idleBehaviour.TargetPosition.Value;
             else return;
 
@@ -75,6 +72,34 @@ namespace Kibo.NPCs
                 head.forward = lookDirectly ? target - head.position : bodyForward;
             }
         }
+
+        #region Look At Behaviour
+        private void OnTargetApproached()
+        {
+            if (idleBehaviour) idleBehaviour.enabled = false;
+        }
+
+        private void OnTargetDeparted()
+        {
+            if (lookAtBehaviour.Target) return;
+
+            if (idleBehaviour) idleBehaviour.enabled = true;
+        }
+        #endregion
+
+        #region Environment Awareness Behaviour
+        private void OnEmitterHeard()
+        {
+            if (idleBehaviour) idleBehaviour.enabled = false;
+            if (lookAtBehaviour) lookAtBehaviour.enabled = false;
+        }
+
+        private void OnEmitterApproached()
+        {
+            if (idleBehaviour) idleBehaviour.enabled = true;
+            if (lookAtBehaviour) lookAtBehaviour.enabled = true;
+        }
+        #endregion
 
         #region Interaction
         public bool Interact()

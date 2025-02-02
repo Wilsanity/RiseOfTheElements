@@ -433,10 +433,7 @@ public class PlayerController : MonoBehaviour
     private void inputUIChoice()
     {
         float i = uiOptionSelect.ReadValue<float>();
-
         int index = (int)i;
-
-        //Scuffed way to do it for now.
         FindObjectOfType<DialogueManager>().OptionsOnClick(index - 1);
 
     }

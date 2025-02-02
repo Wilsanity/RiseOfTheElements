@@ -74,16 +74,27 @@ public class DialogueManager : MonoBehaviour
         //If we are scrolling, end scrolling & instantly populate text field.
         if (isScrolling)
         {
-            StopAllCoroutines();
-            loadText();
-            isScrolling = false;
-            return;
+            if (currentSentence.nextSentence.HasOptions())
+            {
+                StopAllCoroutines();
+                loadText();
+                isScrolling = false;
+
+                //Advance to next sentence
+                currentSentence = currentSentence.nextSentence;
+                DisplayDialogue();
+            }
+            else
+            {
+                StopAllCoroutines();
+                loadText();
+                isScrolling = false;
+                
+            }
         }
 
-        //If last sentence, end dialogue
 
-
-        if (currentSentence.nextSentence == null && currentSentence.HasOptions())
+        if (false)
         {
             EndDialogue();
             return;
@@ -93,8 +104,8 @@ public class DialogueManager : MonoBehaviour
 
         
 
-        currentSentence = currentSentence.nextSentence;
-        DisplayDialogue();
+        //currentSentence = currentSentence.nextSentence;
+        //DisplayDialogue();
 
 
     }
@@ -168,9 +179,15 @@ public class DialogueManager : MonoBehaviour
 
         }
         isScrolling = false;
-        //Auto move on feature...
-        
-        //GoToNextSentence();
+
+        //This is when our typeout is finished I think.
+        if (currentSentence.nextSentence != null && currentSentence.nextSentence.HasOptions())
+        {
+            //Is scrolling is finished.
+            //Update our sentence since might as well show our options.
+            currentSentence = currentSentence.nextSentence;
+            DisplayDialogue();
+        }
 
 
 
@@ -178,6 +195,15 @@ public class DialogueManager : MonoBehaviour
 
     public void OptionsOnClick(int index)
     {
+        Debug.Log(index);
+
+
+        if (!currentSentence.HasOptions())
+        {
+            return;
+        }
+
+
         Choice option = currentSentence.options[index];
         if (option.consequence != null)
         {

@@ -692,7 +692,13 @@ PrefabInstance:
       addedObject: {fileID: 298223443}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9b4dfc2f64bee946add12c8aa41d4ff, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 298223447}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9b4dfc2f64bee946add12c8aa41d4ff, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 298223442}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c9b4dfc2f64bee946add12c8aa41d4ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 298223446}
   m_SourcePrefab: {fileID: 100100000, guid: c9b4dfc2f64bee946add12c8aa41d4ff, type: 3}
 --- !u!1 &298223441 stripped
 GameObject:
@@ -727,6 +733,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 298223447}
+        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
+        m_MethodName: orientToInterest
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 472892782}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   destroyOnInteract: 0
 --- !u!114 &298223443
 MonoBehaviour:
@@ -742,6 +760,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myDialogue: {fileID: 11400000, guid: 050ebcaeab282fb4f9c026f0e5f708e9, type: 2}
   obj: {fileID: 1028644499}
+--- !u!114 &298223446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298223441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b600e1e8d6e2ad4da7563636857d19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e0a4bc126795bb94b9fd72070b4395e0, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &298223447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298223441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418eaa9a42b238f42a1eb2efd3debc1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RotFix: 1
 --- !u!1 &356724955
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,6 +934,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356724955}
   m_CullTransparentMesh: 1
+--- !u!4 &472892782 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4106133732319899715, guid: 658d44f7746edc74daaab7bc922fe295, type: 3}
+  m_PrefabInstance: {fileID: 1927808715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &632458259
 GameObject:
   m_ObjectHideFlags: 0

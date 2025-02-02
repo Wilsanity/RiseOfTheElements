@@ -184,9 +184,28 @@ public class DialogueGraphView : GraphView
             for (int i = 0; i < sentence.options.Count; i++)
             {
                 var port = GeneratePort(newDialogueNode, Direction.Output);
-                TextField t = new TextField();
+                var t = new TextField();
                 t.SetValueWithoutNotify(sentence.options[i].text);
-                t.RegisterValueChangedCallback((evt) => sentence.options[i].text = evt.newValue);
+                //t.RegisterValueChangedCallback((evt) => sentence.options[0].text = evt.newValue);
+
+                switch (i)
+                {
+                    case 0:
+                        t.RegisterValueChangedCallback((evt) => sentence.options[0].text = evt.newValue);
+                        break;
+
+                    case 1:
+                        t.RegisterValueChangedCallback((evt) => sentence.options[1].text = evt.newValue);
+                        break;
+
+                    case 2:
+                        t.RegisterValueChangedCallback((evt) => sentence.options[2].text = evt.newValue);
+                        break;
+                    default:
+                        break;
+                }
+
+
                 t.multiline = true;
                 t.style.flexBasis = 100f;
 
@@ -293,7 +312,7 @@ public class DialogueGraphView : GraphView
                         bool repeated = CheckRepeat(currentSentence);
                         if (!repeated)
                         {
-                            RenderNormally(currentSentence, layer, parentNode);
+                            RenderNormally(currentSentence, layer, parentNode, i);
                         }
                         else
                         {

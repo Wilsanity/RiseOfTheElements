@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     //UI Controls
     InputAction uiContinue;
     InputAction uiExit;
+    InputAction uiOptionSelect;
     #endregion
 
     Animator anim;
@@ -99,7 +100,7 @@ public class PlayerController : MonoBehaviour
 
         uiContinue = playerInput.actions["Select"];
         uiExit = playerInput.actions["Exit"];
-
+        uiOptionSelect = playerInput.actions["OptionSelect"];
 
 
         attackAction.started += ctx => Attack();
@@ -111,6 +112,7 @@ public class PlayerController : MonoBehaviour
         //Adding out UI actions here might be the play... 
         uiContinue.performed += ctx => inputUI();
         uiExit.performed += ctx => exitUI();
+        uiOptionSelect.performed += ctx => inputUIChoice();
 
         #endregion
 
@@ -428,11 +430,25 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    private void inputUIChoice()
+    {
+        float i = uiOptionSelect.ReadValue<float>();
+
+        int index = (int)i;
+
+        //Scuffed way to do it for now.
+        FindObjectOfType<DialogueManager>().OptionsOnClick(index - 1);
+
+    }
+
     private void inputUI()
     {
         Debug.Log("Input ui called");
-        FindObjectOfType<DialogueManagerOLD>().SelectChoice(0);
-        //
+        //FindObjectOfType<DialogueManagerOLD>().SelectChoice(0);
+
+        
+        //Needs to be updated to just jump to end of scrolling.
+        FindObjectOfType<DialogueManager>().GoToNextSentence();
 
 
     }
@@ -441,7 +457,9 @@ public class PlayerController : MonoBehaviour
     {
         //Only used when escape is pressed.
         //Needs to talk to our UIHandler and drop any active controlling ui elements.
-        FindObjectOfType<DialogueManagerOLD>().EndDialogue();
+        //FindObjectOfType<DialogueManagerOLD>().EndDialogue();
+
+        FindObjectOfType<DialogueManager>().EndDialogue();
         swapInputContext("Player");
 
 

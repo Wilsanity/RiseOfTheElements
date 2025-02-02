@@ -13,17 +13,16 @@ MonoBehaviour:
   m_Name: Sentence2
   m_EditorClassIdentifier: 
   from: {fileID: 11400000, guid: 02b3f61f771583a49902e3c8c4b73db0, type: 2}
-  text: '
-
-'
+  text: 
+  audio: {fileID: 0}
   nextSentence: {fileID: 0}
   options:
-  - text: 
+  - text: Do you have any quests?
     nextSentence: {fileID: 11400000, guid: 9b0ae1a5cfa6a6b4b9d35929f7eaa378, type: 2}
     consequence: {fileID: 0}
-  - text: 
-    nextSentence: {fileID: 0}
+  - text: Where's the closest town?
+    nextSentence: {fileID: 11400000, guid: 0cb60793c13c13e4a8f627c412f63808, type: 2}
     consequence: {fileID: 0}
-  - text: 
-    nextSentence: {fileID: 0}
+  - text: Goodbye
+    nextSentence: {fileID: 11400000, guid: 8e44f323c0875b34b92c1d97475f83d3, type: 2}
     consequence: {fileID: 0}

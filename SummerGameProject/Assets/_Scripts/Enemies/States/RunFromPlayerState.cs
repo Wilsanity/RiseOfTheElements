@@ -71,15 +71,18 @@ public class RunFromPlayerState : FSMState
 
     public override void Act(Transform player, Transform npc)
     {
-        
+
         NavMeshAgent agent = npc.GetComponent<NavMeshAgent>();
 
         Vector3 dirToPlayer = player.position - npc.position;
         dirToPlayer.Normalize();
 
-        //Now get the opposite direction and add randomness
-        Vector3 oppositeDir = -dirToPlayer * 5;
+        Vector3 oppositeDir = -dirToPlayer;
+
+        // Calculate the destination in the opposite direction
+        Vector3 fleeDestination = npc.position + oppositeDir * 5;
+
         agent.speed = chaseSpeed;
-        agent.destination = player.position + new Vector3(oppositeDir.x, player.position.y, oppositeDir.z);
+        agent.destination = fleeDestination;
     }
 }

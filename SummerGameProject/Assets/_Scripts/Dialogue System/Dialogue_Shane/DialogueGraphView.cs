@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using System.Linq;
 
 
@@ -124,6 +123,7 @@ public class DialogueGraphView : GraphView
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
     {
+        Debug.Log("Compat ports?");
         var compatiblePorts = new List<Port>();
         ports.ForEach(port =>
         {

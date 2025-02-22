@@ -421,13 +421,17 @@ public class PlayerController : MonoBehaviour
     }
 
     //Shane's Edit
-    public void swapInputContext(string contextName)
+    private void SetInputContext(string contextName)
     {
         //This is hardcoded in since I don't know how to pull in our input Contexts... Needs to be updated whenever new context is used!
         Assert.IsTrue(contextName == "Player" || contextName == "PlayerUI");
 
         playerInput.SwitchCurrentActionMap(contextName);
     }
+
+
+
+
 
 
     private void inputUIChoice()
@@ -450,6 +454,90 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
+    private Camera tempCamera;
+    public void DialogueBegin()
+    {
+
+        //Swap our input, & enable camera specifics?
+        SetInputContext("PlayerUI");
+
+        //We need to get our main camera...
+        /*
+        GameObject[] tmp = GameObject.FindGameObjectsWithTag("MainCamera");
+
+        //We know there should only be one....
+        //Now create our new cam.
+
+
+
+        GameObject temporary = new GameObject();
+        temporary.transform.parent = transform.parent;
+
+
+        Camera dialogueCam = temporary.AddComponent<Camera>();
+        dialogueCam.transform.position = tmp[0].transform.position;
+        dialogueCam.transform.rotation = tmp[0].transform.rotation;
+        Camera values = tmp[0].GetComponent<Camera>();
+        dialogueCam.fieldOfView = values.fieldOfView;
+
+
+
+        tempCamera = dialogueCam;
+
+
+
+        //Math to move our camera forward and to the right.
+
+        Vector3 desiredLoc = dialogueCam.transform.position;
+        desiredLoc.y += 5;
+
+
+        StartCoroutine(CameraLerp(dialogueCam.transform.position, desiredLoc, 5.0f));
+
+        */
+
+    }
+
+
+    private IEnumerator CameraLerp(Vector3 originLoc, Vector3 desiredLoc, float duration)
+    {
+        float time = 0.0f;
+
+        while (time < duration)
+        {
+
+            tempCamera.transform.position = Vector3.Lerp(originLoc, desiredLoc, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        tempCamera.transform.position = desiredLoc;
+    }
+
+
+
+    public void DialogueEnd()
+    {
+        SetInputContext("Player");
+
+
+        //StopAllCoroutines();
+        //Before destroying camera kill our co-routine.
+        
+        
+        GameObject[] tmp = GameObject.FindGameObjectsWithTag("MainCamera");
+
+        //WIP
+        //StartCoroutine(CameraLerp(tempCamera.transform.position, tmp[0].transform.position, 5.0f));
+        
+
+        //Destroy after our Coroutine has ran it's course.
+        //Destroy(tempCamera.gameObject, 6.0f);
+
+
+    }
+
+
     private void exitUI()
     {
         //Only used when escape is pressed.
@@ -457,7 +545,7 @@ public class PlayerController : MonoBehaviour
         //FindObjectOfType<DialogueManagerOLD>().EndDialogue();
 
         FindObjectOfType<DialogueManager>().EndDialogue();
-        swapInputContext("Player");
+        SetInputContext("Player");
 
 
 

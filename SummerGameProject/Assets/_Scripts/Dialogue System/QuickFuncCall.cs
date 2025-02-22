@@ -10,22 +10,9 @@ public class QuickFuncCall : MonoBehaviour
     public GameObject obj;
     
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void startConvo()
     {
         Debug.Log("Enable convo?");
-
-        FindObjectOfType<PlayerController>().swapInputContext("PlayerUI");
 
 
         obj.GetComponent<DialogueManager>().StartDialogue(myDialogue);

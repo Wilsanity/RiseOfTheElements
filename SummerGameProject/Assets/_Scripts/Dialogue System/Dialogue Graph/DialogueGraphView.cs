@@ -1,9 +1,8 @@
-using AmplifyShaderEditor;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UIElements;
 using System.Linq;
 
@@ -11,15 +10,14 @@ using System.Linq;
 public class DialogueGraphView : GraphView
 {
     private readonly Vector2 entryPosition = new Vector2(200, 200);
-
     private readonly Vector2 defaultNodeSize = new Vector2(200, 200);
 
     public DialogueGraphView()
     {
+
         SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
 
-
-
+        //Adding controls to our graph
         this.AddManipulator(new ContentDragger());
         this.AddManipulator(new SelectionDragger());
         this.AddManipulator(new RectangleSelector());
@@ -27,7 +25,6 @@ public class DialogueGraphView : GraphView
 
 
 
-        //AddElement(GenerateEntryPointNode());
 
         style.backgroundColor = new Color(0.16f, 0.16f, 0.16f);
     }
@@ -83,13 +80,32 @@ public class DialogueGraphView : GraphView
         AddElement(node);
     }
 
+
+    //TO DO NOT IMPLEMENTED
+    public void CreateDialogueNode()
+    {
+        //DialogueNode tmp = CreateDialogueNode("NewNode");
+        
+
+
+        //Create obj and link it to our new node
+        //Sentence newObj = UnityEngine.ScriptableObject.CreateInstance<Sentence>();
+        
+        //AssetDatabase.CreateAsset(newObj, "Assets/Temp/newObj.asset");
+
+
+        //tmp.sentence = newObj;
+        //RenderNode(tmp);
+    }
+
     public DialogueNode CreateDialogueNode(string nodeName)
     {
         DialogueNode dialogueNode = new DialogueNode
         {
             title = nodeName,
             GUID = System.Guid.NewGuid().ToString(),
-            conversationText = "txt..."
+            conversationText = "txt...",
+            isEntryPoint = false
         };
 
         var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);

@@ -74,14 +74,6 @@ public class DialogueGraph : EditorWindow
                 ConstructGraphView();
                 _graphView.AutoGenerateNodes(startingSentence);
             }
-
-
-            //_graphView.CreateNode("Dialogue Node");
-
-
-
-
-
         })
         {
             text = "Show Dialogue Graph"
@@ -108,7 +100,6 @@ public class DialogueGraph : EditorWindow
 
         //Add our dialogue clear button
         toolbar.Add(clearBtn);
-;
 
         rootVisualElement.Add(toolbar);
     }

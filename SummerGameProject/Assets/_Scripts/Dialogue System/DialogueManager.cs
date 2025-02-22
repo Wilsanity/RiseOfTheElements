@@ -74,13 +74,16 @@ public class DialogueManager : MonoBehaviour
         //If we are scrolling, end scrolling & instantly populate text field.
         if (isScrolling)
         {
+
+
+            //If we are scrolling & we have options, load our option fields? 
             if (currentSentence.nextSentence.HasOptions())
             {
                 StopAllCoroutines();
                 loadText();
                 isScrolling = false;
 
-                //Advance to next sentence
+                //Advance to next sentence (This specifically loads our options fields)
                 currentSentence = currentSentence.nextSentence;
                 DisplayDialogue();
             }
@@ -92,20 +95,21 @@ public class DialogueManager : MonoBehaviour
                 
             }
         }
-
-
-        if (false)
+        else
         {
-            EndDialogue();
-            return;
+            //Let's say we stop scrolling...
+            //Now we need to do something when e is pressed.
+
+            if (currentSentence.nextSentence == null && !currentSentence.HasOptions())
+            {
+                //We reached the end of our dialogue then.
+                EndDialogue();
+            }
+
+
+
         }
 
-
-
-        
-
-        //currentSentence = currentSentence.nextSentence;
-        //DisplayDialogue();
 
 
     }
@@ -165,9 +169,6 @@ public class DialogueManager : MonoBehaviour
     IEnumerator Typeout(string sentence, TMP_Text textbox)
     {
         textbox.text = "";
-
-
-
         foreach (var letter in sentence.ToCharArray())
         {
             isScrolling = true;
@@ -195,9 +196,6 @@ public class DialogueManager : MonoBehaviour
 
     public void OptionsOnClick(int index)
     {
-        Debug.Log(index);
-
-
         if (!currentSentence.HasOptions())
         {
             return;

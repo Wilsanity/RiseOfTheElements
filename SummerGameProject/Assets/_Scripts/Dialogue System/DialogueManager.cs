@@ -2,63 +2,261 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.Audio;
 
-public class DialogueManager : MonoBehaviour {
+public class DialogueManager : MonoBehaviour
+{
+    //The main coupling between our data information for dialogue and the showable ui.
 
-	public Text nameText;
-	public Text dialogueText;
+    [Header("GameEvents")]
+    public GameEvent ConversationEnded;
+    public GameEvent ConversationStarted;
 
-	public Animator animator;
+    [Space]
+    public StringVariable playerName;
 
-	private Queue<string> sentences;
+    [Tooltip("For the typing animation. Determine how long it takes for each character to appear")]
+    public float timeBetweenChars = 0.05f;
 
-	// Use this for initialization
-	void Start () {
-		sentences = new Queue<string>();
-	}
+    [Header("UI")]
+    public TMP_Text playerNameTxtUI;
+    public TMP_Text npcNameTextUI;
+    public TMP_Text playerTextUI;
+    public TMP_Text npcTextUI;
 
-	public void StartDialogue (Dialogue dialogue)
-	{
-		animator.SetBool("IsOpen", true);
+    [Tooltip("The part of UI that display the UI")]
+    public GameObject DialogueUI;
 
-		nameText.text = dialogue.name;
+    [Tooltip("The text UIs that display options")]
+    public TMP_Text[] optionsUI;
 
-		sentences.Clear();
+    DialogueSO dialogue;
+    Sentence currentSentence;
 
-		foreach (string sentence in dialogue.sentences)
-		{
-			sentences.Enqueue(sentence);
-		}
+    bool isScrolling = false;
 
-		DisplayNextSentence();
-	}
 
-	public void DisplayNextSentence ()
-	{
-		if (sentences.Count == 0)
-		{
-			EndDialogue();
-			return;
-		}
+    public void StartDialogue(DialogueSO dialogueSO)
+    {
+        if(!dialogueSO.isAvailable)
+        {
+            return;
+        }
+        if (ConversationStarted != null)
+        {
+            ConversationStarted.Raise();
+        }
 
-		string sentence = sentences.Dequeue();
-		StopAllCoroutines();
-		StartCoroutine(TypeSentence(sentence));
-	}
+        playerTextUI.text = null;
+        npcTextUI.text = null;
+        HideOptions();
+        DialogueUI.SetActive(false);
 
-	IEnumerator TypeSentence (string sentence)
-	{
-		dialogueText.text = "";
-		foreach (char letter in sentence.ToCharArray())
-		{
-			dialogueText.text += letter;
-			yield return null;
-		}
-	}
+        dialogue = dialogueSO;
 
-	void EndDialogue()
-	{
-		animator.SetBool("IsOpen", false);
-	}
+        if (playerNameTxtUI != null)
+        {
+            playerNameTxtUI.text = playerName.Value;
+        }
+
+        currentSentence = dialogue.startingSentence;
+
+        DisplayDialogue();
+
+
+    }
+
+    public void GoToNextSentence()
+    {
+        //Kill coroutines.
+
+        //If we are scrolling, end scrolling & instantly populate text field.
+        if (isScrolling)
+        {
+
+
+            //If we are scrolling & we have options, load our option fields? 
+            if (currentSentence.nextSentence.HasOptions())
+            {
+                StopAllCoroutines();
+                loadText();
+                isScrolling = false;
+
+                //Advance to next sentence (This specifically loads our options fields)
+                currentSentence = currentSentence.nextSentence;
+                DisplayDialogue();
+            }
+            else
+            {
+                StopAllCoroutines();
+                loadText();
+                isScrolling = false;
+                
+            }
+        }
+        else
+        {
+            //Let's say we stop scrolling...
+            //Now we need to do something when e is pressed.
+
+            if (currentSentence.nextSentence == null && !currentSentence.HasOptions())
+            {
+                //We reached the end of our dialogue then.
+                EndDialogue();
+            }
+
+
+
+        }
+
+
+
+    }
+
+    public void DisplayDialogue()
+    {
+        if (currentSentence == null)
+        {
+            EndDialogue();
+            return;
+        }
+
+        if (!currentSentence.HasOptions())
+        {
+            DialogueUI.SetActive(true);
+            HideOptions();
+
+
+            TMP_Text dialogueText;
+
+            if (currentSentence.from.Value == playerName.Value)
+            {
+
+                if (playerNameTxtUI != null)
+                {
+                    playerNameTxtUI.text = playerName.Value;
+                }
+                dialogueText = playerTextUI;
+            }
+            else
+            {
+                if (npcNameTextUI != null)
+                {
+                    npcNameTextUI.text = currentSentence.from.Value;
+                }
+                dialogueText = npcTextUI;
+            }
+
+            StopAllCoroutines();
+            StartCoroutine(Typeout(currentSentence.text, dialogueText));
+
+            //currentSentence.audio.LoadAudioData();
+            
+            
+
+
+        }
+        else
+        {
+            DisplayOptions();
+        }
+    }
+    private void loadText()
+    {
+        npcTextUI.text = currentSentence.text;
+    }
+    IEnumerator Typeout(string sentence, TMP_Text textbox)
+    {
+        textbox.text = "";
+        foreach (var letter in sentence.ToCharArray())
+        {
+            isScrolling = true;
+            textbox.text += letter;
+
+            yield return new WaitForSeconds(timeBetweenChars);
+
+            
+
+        }
+        isScrolling = false;
+
+        //This is when our typeout is finished I think.
+        if (currentSentence.nextSentence != null && currentSentence.nextSentence.HasOptions())
+        {
+            //Is scrolling is finished.
+            //Update our sentence since might as well show our options.
+            currentSentence = currentSentence.nextSentence;
+            DisplayDialogue();
+        }
+
+
+
+    }
+
+    public void OptionsOnClick(int index)
+    {
+        if (!currentSentence.HasOptions())
+        {
+            return;
+        }
+
+
+        Choice option = currentSentence.options[index];
+        if (option.consequence != null)
+        {
+            Debug.Log("Raise Events");
+            option.consequence.Raise();
+        }
+        currentSentence = option.nextSentence;
+
+        DisplayDialogue();
+    }
+
+    public void DisplayOptions()
+    {
+        //This is bad...
+        //We want our dialogue to display the options...
+        //DialogueUI.SetActive(false);
+
+        if (currentSentence.from.Value == playerName.Value)
+        {
+
+            if (playerNameTxtUI != null)
+            {
+                playerNameTxtUI.text = playerName.Value;
+            }
+        }
+
+        if (currentSentence.options.Count <= optionsUI.Length)
+        {
+            for (int i = 0; i < currentSentence.options.Count ; i++)
+            {
+                Debug.Log(currentSentence.options[i].text);
+                optionsUI[i].text = currentSentence.options[i].text;
+                optionsUI[i].gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void HideOptions()
+    {
+        foreach (TMP_Text option in optionsUI)
+        {
+            option.gameObject.SetActive(false);
+        }
+    }
+
+    public void EndDialogue()
+    {
+        Debug.Log("Dialogue Ended");
+        DialogueUI.SetActive(false);
+
+        if (ConversationEnded != null)
+        {
+            ConversationEnded.Raise();
+        }
+
+    }
 
 }

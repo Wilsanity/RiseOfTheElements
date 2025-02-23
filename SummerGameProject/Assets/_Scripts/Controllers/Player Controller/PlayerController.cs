@@ -7,6 +7,10 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+//Shane's edit
+using UnityEngine.Assertions;
+using System;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +20,7 @@ public class PlayerController : MonoBehaviour
     PlayerAnimationMachine _playerAnimationMachine;
     PlayerAttack _attack;
     PlayerMovement _movement;
+    
 
     #region input actions
 
@@ -23,6 +28,11 @@ public class PlayerController : MonoBehaviour
     InputAction sprintAction;
     InputAction jumpAction;
     InputAction attackAction;
+
+    //UI Controls
+    InputAction uiContinue;
+    InputAction uiExit;
+    InputAction uiOptionSelect;
     #endregion
 
     Animator anim;
@@ -87,11 +97,21 @@ public class PlayerController : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
 
+        uiContinue = playerInput.actions["Select"];
+        uiExit = playerInput.actions["Exit"];
+        uiOptionSelect = playerInput.actions["OptionSelect"];
+
+
         attackAction.started += ctx => Attack();
         jumpAction.performed += ctx => TryJump();
         sprintAction.performed += ctx => SetSprint(true);
         sprintAction.canceled += ctx => SetSprint(false);
         //moveAction.performed += ctx => SetMoveInput(ctx);
+
+        //Adding out UI actions here might be the play... 
+        uiContinue.performed += ctx => inputUI();
+        uiExit.performed += ctx => exitUI();
+        uiOptionSelect.performed += ctx => inputUIChoice();
 
         #endregion
 
@@ -404,11 +424,155 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Shane's Edit
+    private void SetInputContext(string contextName)
+    {
+        //This is hardcoded in since I don't know how to pull in our input Contexts... Needs to be updated whenever new context is used!
+        Assert.IsTrue(contextName == "Player" || contextName == "PlayerUI");
+
+        playerInput.SwitchCurrentActionMap(contextName);
+    }
+
+
+
+
+
+
+    private void inputUIChoice()
+    {
+        float i = uiOptionSelect.ReadValue<float>();
+        int index = (int)i;
+        FindObjectOfType<DialogueManager>().OptionsOnClick(index - 1);
+
+    }
+
+    private void inputUI()
+    {
+        Debug.Log("Input ui called");
+        //FindObjectOfType<DialogueManagerOLD>().SelectChoice(0);
+
+        
+        //Needs to be updated to just jump to end of scrolling.
+        FindObjectOfType<DialogueManager>().GoToNextSentence();
+
+
+    }
+
+
+    private Camera tempCamera;
+    public void DialogueBegin()
+    {
+
+        //Swap our input, & enable camera specifics?
+        SetInputContext("PlayerUI");
+
+        //We need to get our main camera...
+        /*
+        GameObject[] tmp = GameObject.FindGameObjectsWithTag("MainCamera");
+
+        //We know there should only be one....
+        //Now create our new cam.
+
+
+
+        GameObject temporary = new GameObject();
+        temporary.transform.parent = transform.parent;
+
+
+        Camera dialogueCam = temporary.AddComponent<Camera>();
+        dialogueCam.transform.position = tmp[0].transform.position;
+        dialogueCam.transform.rotation = tmp[0].transform.rotation;
+        Camera values = tmp[0].GetComponent<Camera>();
+        dialogueCam.fieldOfView = values.fieldOfView;
+
+
+
+        tempCamera = dialogueCam;
+
+
+
+        //Math to move our camera forward and to the right.
+
+        Vector3 desiredLoc = dialogueCam.transform.position;
+        desiredLoc.y += 5;
+
+
+        StartCoroutine(CameraLerp(dialogueCam.transform.position, desiredLoc, 5.0f));
+
+        */
+
+    }
+
+
+    private IEnumerator CameraLerp(Vector3 originLoc, Vector3 desiredLoc, float duration)
+    {
+        float time = 0.0f;
+
+        while (time < duration)
+        {
+
+            tempCamera.transform.position = Vector3.Lerp(originLoc, desiredLoc, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        tempCamera.transform.position = desiredLoc;
+    }
+
+
+
+    public void DialogueEnd()
+    {
+        SetInputContext("Player");
+
+
+        //StopAllCoroutines();
+        //Before destroying camera kill our co-routine.
+        
+        
+        GameObject[] tmp = GameObject.FindGameObjectsWithTag("MainCamera");
+
+        //WIP
+        //StartCoroutine(CameraLerp(tempCamera.transform.position, tmp[0].transform.position, 5.0f));
+        
+
+        //Destroy after our Coroutine has ran it's course.
+        //Destroy(tempCamera.gameObject, 6.0f);
+
+
+    }
+
+
+    private void exitUI()
+    {
+        //Only used when escape is pressed.
+        //Needs to talk to our UIHandler and drop any active controlling ui elements.
+        //FindObjectOfType<DialogueManagerOLD>().EndDialogue();
+
+        FindObjectOfType<DialogueManager>().EndDialogue();
+        SetInputContext("Player");
+
+
+
+    }
+    
 
 
     // legacy code
     //This is when the player attacks the cave plant enemies. This is a temporary solution since using an array caused them collectively to die
     //when only 1 was killed by the player.
+    //Shane's edit, I re-added OnTriggerEnter, this is for our player tool tip.
+    private void OnTriggerEnter(Collider other)
+    {
+        //This is probably a terrible call and expensive
+        if(other.gameObject.GetComponent<Interactable>())
+        {
+        }
+        
+    }
+
+
+
+
     //private void OnTriggerEnter(Collider other)
     //{
 

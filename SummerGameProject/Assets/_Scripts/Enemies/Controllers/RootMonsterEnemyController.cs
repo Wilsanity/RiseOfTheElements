@@ -88,6 +88,9 @@ public class RootMonsterEnemyController : EnemyController
     private GameObject _rootSpearPrefab;
 
     [SerializeField]
+    private GameObject rumbleEffect;
+
+    [SerializeField]
     [Tooltip("Delay, in seconds, for the aniticipation of starting this attack (spawning the root spears)")]
     [Range(0, 2)]
     private float _rootSpearInitialDelay;
@@ -152,6 +155,10 @@ public class RootMonsterEnemyController : EnemyController
     [SerializeField]
     [Tooltip("The max amount of time we can be running away from the player before going to the next state")]
     private float _runAwayMaxTime;
+
+    [SerializeField]
+    [Tooltip("The speed the enemy runs away from the player")]
+    private float _runAwaySpeed;
     #endregion
 
 
@@ -199,7 +206,7 @@ public class RootMonsterEnemyController : EnemyController
 
         RootMonster_SpikeShieldState spikeShieldState = new RootMonster_SpikeShieldState(this, _spikeShieldDuration);
 
-        RunFromPlayerState runFromPlayerState = new RunFromPlayerState(speed,animator,this);
+        RunFromPlayerState runFromPlayerState = new RunFromPlayerState(_runAwaySpeed,animator,this);
 
         DeadState deadState = new DeadState(animator);
 
@@ -289,10 +296,17 @@ public class RootMonsterEnemyController : EnemyController
 
     private IEnumerator LaunchProjectilesCoroutine(RootMonster_EarthBarrageState barrageState)
     {
-        //Launch projectiles one after another towards the player's previous position
-        for(int i = 0; i < _barrageProjectileCount; i++)
+        // Launch projectiles one after another towards a position slightly behind the player relative to the enemy's attack direction
+        for (int i = 0; i < _barrageProjectileCount; i++)
         {
-            barrageState.ProjectileGOs[i].GetComponent<RootMonster_EarthBarrageProjectile>().Launch(barrageState, BarrageProjectileSpeed, player.position);
+            // Calculate the direction from the enemy to the player
+            Vector3 direction = (player.position - transform.position).normalized;
+
+            // Determine the target position slightly behind the player in the right direction
+            Vector3 targetPosition = player.position + (direction * 2.0f);
+
+            // Launch the projectile at the calculated target position
+            barrageState.ProjectileGOs[i].GetComponent<RootMonster_EarthBarrageProjectile>().Launch(barrageState, BarrageProjectileSpeed, targetPosition);
             yield return new WaitForSeconds(_barrageProjectileLaunchDelay);
         }
 
@@ -312,15 +326,32 @@ public class RootMonsterEnemyController : EnemyController
     private IEnumerator SpawnProjectilesCoroutine(RootMonster_RootSpearsState rootSpearsState)
     {
         bool haventSpawnedProjectiles = rootSpearsState.ProjectileGOs.Count == 0; //Object pooling. We can reuse projectiles
+        Vector3 spawnLocation = Vector3.zero;
 
         for (int i = 0; i < _rootSpearCount; i++)
         {
-            Vector3 spawnLocation = player.position + Random.insideUnitSphere * _rootRadiusAroundPlayer;
+            if(i < 2)
+            {
+                spawnLocation = player.position;
+                GameObject rumble = Instantiate(rumbleEffect, new Vector3(spawnLocation.x, -0.64f, spawnLocation.z), Quaternion.identity);
+                yield return new WaitForSeconds(0.5f);
+
+            }
+            else
+            {
+                spawnLocation = player.position + Random.insideUnitSphere * _rootRadiusAroundPlayer;
+                GameObject rumble = Instantiate(rumbleEffect, new Vector3(spawnLocation.x, -0.64f, spawnLocation.z), Quaternion.identity);
+                //yield return new WaitForSeconds(0.5f);
+            }
 
             spawnLocation = new Vector3(spawnLocation.x, - 10, spawnLocation.z);
             if (haventSpawnedProjectiles)
             {
                 GameObject go = Instantiate(_rootSpearPrefab, spawnLocation, Quaternion.identity);
+
+                int rand = Random.Range(1, 4);
+
+                go.transform.localScale = new Vector3(1, rand, 1);
                 rootSpearsState.ProjectileGOs.Add(go);
             }
             else

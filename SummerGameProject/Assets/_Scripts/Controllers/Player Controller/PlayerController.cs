@@ -49,9 +49,7 @@ public class PlayerController : MonoBehaviour
 
     #region inspector
 
-    //[SerializeField] float moveSpeed;
-    //[SerializeField] float jumpPower;
-    //[SerializeField] float sprintPower;
+    
     [SerializeField] Image healthBar;
 
 
@@ -62,6 +60,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject hitSpot;
 
     [SerializeField] private float _dodgeDoubleTapWindow = 0.4f;
+    [SerializeField] private float _dodgeCheckThreshold = 0.01f;
 
 
     #endregion
@@ -124,18 +123,7 @@ public class PlayerController : MonoBehaviour
         
         cameraFollowTargetTransform = transform.GetChild(0).transform;
 
-        //if a portal was used to telleport
-        if (PlayerPrefs.GetInt("isPortalUsed", 0) == 1)
-        {
-            //Find the name of the portal that was used
-            string currentPortal = PlayerPrefs.GetString("currentPortal");
-            if (currentPortal != null)
-            {
-                //move the player to the portal's spawn position
-                transform.position = GameObject.Find(currentPortal).transform.GetChild(0).position;
-                PlayerPrefs.SetInt("isPortalUsed", 0);
-            }
-        }
+        HandlePortalTeleport();
     }
 
     
@@ -143,12 +131,6 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         //single press button input notation. 
-        #region input actions
-
-        
-        
-
-        #endregion
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -165,6 +147,36 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //Move();
+        ProcessMovementInput();
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        CheckFalling();
+        CheckJumping();
+    }
+
+    private void HandlePortalTeleport()
+    {
+        //if a portal was used to telleport
+        if (PlayerPrefs.GetInt("isPortalUsed", 0) == 1)
+        {
+            //Find the name of the portal that was used
+            string currentPortal = PlayerPrefs.GetString("currentPortal");
+            if (currentPortal != null)
+            {
+                //move the player to the portal's spawn position
+                transform.position = GameObject.Find(currentPortal).transform.GetChild(0).position;
+                PlayerPrefs.SetInt("isPortalUsed", 0);
+            }
+        }
+    }
+
+    //The original movement Calcs that were in Update
+    private void ProcessMovementInput()
+    {
         // get input from the playerInput, process it to match camera forward
         Vector3 up = Vector3.up;
         Vector3 right = Camera.main.transform.right;
@@ -176,20 +188,6 @@ public class PlayerController : MonoBehaviour
         // send player input to character movement for further processing
         _movement.SetMoveInput(moveInput);
         _movement.SetLookDirection(moveInput);
-
-        if (health <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
-        if (attackAction.triggered)
-        {
-            Debug.Log("Pressed");
-            Attack();
-        }
-
-        CheckFalling();
-        CheckJumping();
     }
 
     private void OnMove(InputValue value)
@@ -206,16 +204,17 @@ public class PlayerController : MonoBehaviour
     }
     private void OnDodge()
     {
-        if (_movement.IsGrounded)
+        if (_movement.IsGrounded && (_movement.MoveInput.x > _dodgeCheckThreshold || _movement.MoveInput.x < -_dodgeCheckThreshold))
         {
             //try normal dodge
             // if the player has not begin the pre-dodge coroutine, start it
             if (_movement.CanStartGroundDodge)
             {
+                
                 _movement.TryGroundDodge(_dodgeDoubleTapWindow);
             }
             // else, send the toggle to turn the dodge into a long dodge
-            else if(_movement.IsDodging)
+            else if (_movement.IsDodging)
             {
                 _movement.QueueLongDodge();
             }
@@ -261,8 +260,7 @@ public class PlayerController : MonoBehaviour
         healthBar.fillAmount = health / 10f;
         if (health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Destroy(gameObject);
+            OnPlayerDeath();
         }
     }
 
@@ -270,6 +268,7 @@ public class PlayerController : MonoBehaviour
     //}
     public void Attack()
     {
+        Debug.Log("Attack Input Pressed");
         //if not ready to attack or is attacking, return
         if (!readyToAttack || attacking) return;
 
@@ -361,6 +360,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void OnPlayerDeath()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Destroy(gameObject);
+    }
 
     // Debug and Stat Check
     public Vector3 GetMovementInput()

@@ -1,10 +1,13 @@
+using Kibo.Data;
 using Kibo.Interactable;
 using Kibo.NPCs.Behaviours;
+using Kibo.NPCs.Data;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Kibo.NPCs
 {
-    public class NPC : MonoBehaviour, IInteractable
+    public class NPC : GlobalIdentityBehaviour<NPC, NPCData>, IInteractable
     {
         [Tooltip("Optional")]
         [SerializeField] private IdleBehaviour idleBehaviour;
@@ -15,12 +18,31 @@ namespace Kibo.NPCs
         [Header("Mesh Bones")]
         [Tooltip("Optional")]
         [SerializeField] private Transform head;
+        [Header("Events")]
+        [SerializeField] private UnityEvent wasInteractedWith;
 
-        public string InteractionName => $"Talk to {name}";
+        public UnityEvent WasInteractedWith => wasInteractedWith;
+        public virtual string InteractionName => $"Talk to {name}";
 
         #region Unity Messages
-        private void Start()
+        protected virtual void OnEnable()
         {
+            if ((lookAtBehaviour == null || lookAtBehaviour.Target == null) && idleBehaviour) idleBehaviour.enabled = true;
+            if (lookAtBehaviour) lookAtBehaviour.enabled = true;
+            if (environmentAwarenessBehaviour) environmentAwarenessBehaviour.enabled = true;
+        }
+
+        protected virtual void OnDisable()
+        {
+            if (idleBehaviour) idleBehaviour.enabled = false;
+            if (lookAtBehaviour) lookAtBehaviour.enabled = false;
+            if (environmentAwarenessBehaviour) environmentAwarenessBehaviour.enabled = false;
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+
             if (lookAtBehaviour)
             {
                 lookAtBehaviour.TargetApproachedEvent.AddListener(OnTargetApproached);
@@ -34,21 +56,7 @@ namespace Kibo.NPCs
             }
         }
 
-        private void OnEnable()
-        {
-            if ((lookAtBehaviour == null || lookAtBehaviour.Target == null) && idleBehaviour) idleBehaviour.enabled = true;
-            if (lookAtBehaviour) lookAtBehaviour.enabled = true;
-            if (environmentAwarenessBehaviour) environmentAwarenessBehaviour.enabled = true;
-        }
-
-        private void OnDisable()
-        {
-            if (idleBehaviour) idleBehaviour.enabled = false;
-            if (lookAtBehaviour) lookAtBehaviour.enabled = false;
-            if (environmentAwarenessBehaviour) environmentAwarenessBehaviour.enabled = false;
-        }
-
-        private void Update()
+        protected virtual void Update()
         {
             FaceTarget();
         }
@@ -102,12 +110,27 @@ namespace Kibo.NPCs
         #endregion
 
         #region Interaction
-        public bool Interact()
+        public virtual bool Interact()
         {
+            wasInteractedWith.Invoke();
+
             Debug.Log(InteractionName); // TODO: Integrate with upcoming dialog system
 
             return true;
         }
+        #endregion
+
+        #region Save/Load Overrides
+        public override void SaveTo(ref NPCData npcData)
+        {
+            npcData.GUID = GUID;
+            npcData.Name = name;
+        }
+
+        public override void LoadFrom(NPCData npcData)
+        {
+            name = npcData.Name;
+        } 
         #endregion
     }
 }

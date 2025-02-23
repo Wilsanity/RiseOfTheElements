@@ -8,7 +8,7 @@ using UnityEngine.AI;
 /// Basic enemy controller
 /// </summary>
 [RequireComponent(typeof(NavMeshAgent))]
-public abstract class EnemyController : AdvancedFSM
+public abstract class EnemyController : AdvancedFSM, IDamageable
 {
     [Header("State Debug Info")]
     [Tooltip("Enemy's State: Debug purposes only.")] [SerializeField] private string stateDebug;
@@ -83,4 +83,26 @@ public abstract class EnemyController : AdvancedFSM
     }
 
     protected abstract void ConstructFSM();
+
+
+
+
+    //Interface definition.
+    //Ideally this isn't in every monster class....
+    public void TakeDamage()
+    {
+
+        Debug.Log(this.gameObject.name +  ", I'm receiving damage!");
+
+
+
+    }
+
+    public void DealDamage()
+    {
+
+    }
+
+
+
 }

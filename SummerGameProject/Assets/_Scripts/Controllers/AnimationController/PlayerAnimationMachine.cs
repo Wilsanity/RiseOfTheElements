@@ -57,15 +57,16 @@ public class PlayerAnimationMachine : MonoBehaviour
         _animator.SetTrigger("Jump");
     }
 
+    //I had to edit these as the Destroy was giving an error since we were trying to delete an asset
     public void KickUpDustRight(VisualEffect visualEffect)
     {
-        Instantiate(visualEffect, rightFoot.position, Quaternion.identity);
-        Destroy(visualEffect, 1.2f);
+        VisualEffect tmp = Instantiate(visualEffect, rightFoot.position, Quaternion.identity);
+        Destroy(tmp.gameObject, 1.2f);
     }
     public void KickUpDustLeft(VisualEffect visualEffect)
     {
-        Instantiate(visualEffect, leftFoot.position, Quaternion.identity);
-        Destroy(visualEffect, 1.2f);
+        VisualEffect tmp = Instantiate(visualEffect, leftFoot.position, Quaternion.identity);
+        Destroy(tmp.gameObject, 1.2f);
     }
 }
 

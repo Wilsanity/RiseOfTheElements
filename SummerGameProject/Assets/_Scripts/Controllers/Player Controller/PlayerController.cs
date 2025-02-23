@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     #region components
 
@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
         jumpAction = playerInput.actions["Jump"];
         attackAction = playerInput.actions["Attack"];
 
+        //We bind our interaction here to allow for different combo attacks depending on press type
         attackAction.started += ctx => Attack();
         jumpAction.performed += ctx => TryJump();
         sprintAction.performed += ctx => SetSprint(true);
@@ -136,6 +137,14 @@ public class PlayerController : MonoBehaviour
 
         CheckFalling();
         CheckJumping();
+
+
+
+        //Used for combo
+        if (inputTimer)
+        {
+            triggerDelay += Time.deltaTime;
+        }
     }
 
     private void HandlePortalTeleport()
@@ -234,8 +243,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) isGrounded = false;
     }
 
+    
     public void TakeDamage()
     {
+        anim.SetTrigger("Hit");
         health -= 1;
         healthBar.fillAmount = health / 10f;
         if (health <= 0)
@@ -244,24 +255,91 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+    public void DealDamage()
+    {
+
+    }
+
+    public void ComboCheck()
+    {
+        if (doDoubleAttack)
+        {
+            Debug.Log("Double attack");
+            anim.SetTrigger("AttackDouble");
+
+            
+
+            doDoubleAttack = false;
+            inputTimer = false;
+        }
+    }
+
+    public void EndAttack()
+    {
+        Debug.Log("End attack triggered via anim event");
+
+
+        inputTimer = false;
+        triggerDelay = 0.0f;
+    }
+
+    private float triggerDelay = 0.0f;
+    private bool inputTimer = false;
+    private bool doDoubleAttack = false;
     //}
     public void Attack()
     {
-        Debug.Log("Attack Input Pressed");
         //if not ready to attack or is attacking, return
-        if (!readyToAttack || attacking) return;
+        //if (!readyToAttack || attacking) return;
 
         // else set ready to attack false nad attack 
         readyToAttack = false;
         attacking = true;
 
 
-        //finish attacking and reset the attack with delay attackSpeed
-        Invoke(nameof(ResetAttack), attackSpeed);
+        //Initiate attack.
+        if (!inputTimer)
+        {
+            Debug.Log("Attack normal triggered");
 
-        AttackRayCast();
+
+            anim.SetTrigger("Attack");
+            inputTimer = true;
+        }
+        else
+        {
+
+            Debug.Log("Input timer is enabled");
+
+            if (triggerDelay <= 0.5f)
+            {
+                Debug.Log("Trigger delay is less than 0.5 seconds do double attk");
+                doDoubleAttack = true;
+            }
+        }
+        triggerDelay = 0.0f;
+
+
+        /*
+
+        //Start our timer on first input press
+        if (inputTimer == false)
+        {
+            StartCoroutine(CheckCombo());
+        }
+        else
+        {
+            //Our timer is enabled (Within window of combo opportunity.
+            //
+            StopCoroutine(this.CheckCombo());
+            anim.SetTrigger("AttackDouble");
+
+            Invoke(nameof(ResetAttack), attackSpeed);
+            AttackRayCast();
+        }
+        */
     }
+
 
     IEnumerator Attacking()
     {
@@ -297,7 +375,8 @@ public class PlayerController : MonoBehaviour
         //Using the a gameobject and create a raycast from there
         if(Physics.Raycast(startOfTransform.position , startOfTransform.forward, out RaycastHit hit, attackDistance))
         {
-
+            Debug.Log(hit.transform.gameObject.name);
+            
             UnitHealth unitHealth = hit.transform.GetComponent<UnitHealth>();
            
             if (unitHealth == null)
@@ -503,7 +582,6 @@ public class PlayerController : MonoBehaviour
     //    yield return new WaitForSeconds(0.1f);
 
     //    jumpOnCoolDown = false;
-
 
 
 }

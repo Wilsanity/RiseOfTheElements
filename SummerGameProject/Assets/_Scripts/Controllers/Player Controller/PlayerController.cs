@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 
 public class PlayerController : MonoBehaviour
@@ -64,6 +65,8 @@ public class PlayerController : MonoBehaviour
 
     private bool attacking = false;
     private bool readyToAttack = true;
+    private bool canComboAttack = false;
+    private bool attackComboQueued = false;
     private IEnumerator attackCoroutine;
     private Vector2 _moveInputRaw;
 
@@ -245,39 +248,60 @@ public class PlayerController : MonoBehaviour
     }
 
     
-    //}
     public void Attack()
     {
         Debug.Log("Attack Input Pressed");
-        //if not ready to attack or is attacking, return
-        if (!readyToAttack || attacking) return;
+        ////if not ready to attack or is attacking, return
+        //if (!readyToAttack || attacking) return;
+        if(attacking)
+        {
+            if(canComboAttack)
+            {
+                attackComboQueued = true;
+                Debug.Log("Player Can combo attack");
+            }
+            return;
+        }
 
-        // else set ready to attack false nad attack 
-        readyToAttack = false;
-        attacking = true;
 
+        //// else set ready to attack false nad attack 
+        //canComboAttack = true;
+        //attacking = true;
 
         //finish attacking and reset the attack with delay attackSpeed
-        Invoke(nameof(ResetAttack), attackSpeed);
-
-        AttackRayCast();
+        //Invoke(nameof(ResetAttack), attackSpeed);
+        StartCoroutine(Attacking(PlayerAnimState.BasicAttack));
+        //AttackRayCast();
     }
 
-    IEnumerator Attacking()
+    IEnumerator Attacking(PlayerAnimState animState)
     {
-        //if not ready to attack or is attacking, return
-        if (!readyToAttack || attacking) yield break;
-
+        //if not ready to attack, return
+        if (attacking && !canComboAttack) yield break;
+        Debug.Log("Performing attack: " + animState);
         // else set ready to attack false nad attack 
         readyToAttack = false;
         attacking = true;
+        canComboAttack = false;
 
+        bool wasComboQueued = attackComboQueued;
+        attackComboQueued = false;
+
+        _playerAnimationMachine.UpdatePlayerAnim(animState, attacking);
         AttackRayCast();
+
+        yield return new WaitForSeconds(attackSpeed * 0.3f);
+        canComboAttack = true;
 
         //finish attacking and reset the attack with delay attackSpeed
         yield return new WaitForSeconds(attackSpeed);
-        
+
+        if (attackComboQueued)
+        {
+            StartCoroutine(Attacking(PlayerAnimState.ComboAttack));
+        }
         ResetAttack();
+
         yield break;
     }
 
@@ -286,6 +310,10 @@ public class PlayerController : MonoBehaviour
     {
         attacking = false; 
         readyToAttack = true;
+        canComboAttack = false;
+        attackComboQueued = false;
+
+        StopCoroutine("Attacking");
     }
 
     //Create a raycast and give damage to the first target hit

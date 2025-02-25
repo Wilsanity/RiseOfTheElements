@@ -47,6 +47,13 @@ public class PlayerAnimationMachine : MonoBehaviour
                 _animator.SetTrigger("AirDodge");
                 return;
 
+            case PlayerAnimState.BasicAttack:
+                _animator.SetTrigger("Attack");
+                return;
+            case PlayerAnimState.ComboAttack:
+                _animator.SetBool("GoingIntoComboAttack", boolean);
+                return;
+
             default:
                 Debug.LogError("PlayerAnimationMachine: Invalid PlayerAnimState");
                 return;
@@ -80,4 +87,6 @@ public enum PlayerAnimState
     LongDodge,
     AirDodge,
     IsWolfRunning,
+    BasicAttack,
+    ComboAttack,
 }

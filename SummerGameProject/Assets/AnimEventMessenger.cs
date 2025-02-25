@@ -36,4 +36,15 @@ public class AnimEventMessenger : MonoBehaviour
     }
 
 
+    public void PunchEnable(int fistId)
+    {
+        playerController.PunchEnable(fistId);
+    }
+
+    public void PunchDisable(int fistId)
+    {
+        playerController.PunchDisable(fistId);
+    }
+
+
 }

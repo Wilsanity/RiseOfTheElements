@@ -35,11 +35,16 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private NavMeshAgent nma;
 
+    [SerializeField] CapsuleCollider fistColliderL;
+    [SerializeField] CapsuleCollider fistColliderR;
+
+
+
     #endregion
 
     #region inspector
 
-    
+
     [SerializeField] Image healthBar;
 
 
@@ -139,7 +144,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         CheckJumping();
 
 
-
         //Used for combo
         if (inputTimer)
         {
@@ -214,14 +218,62 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+
+        Debug.Log(other.gameObject.name);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
+
+
+        Collider myCollider = collision.GetContact(0).thisCollider;
+
+        Debug.Log(myCollider.gameObject.name);
+
+
         if (collision.gameObject.name == "PortalFX_V2")//TEMPORARY CODE: If the player collides with the portal, the cave scene starts.
         {
             SceneTransitionController.Instance.LoadSpecificSceneString("Cave Scene");
             //SceneManager.LoadScene("Cave Scene");
         }
     }
+
+    public void PunchEnable(int fistId)
+    {
+        switch (fistId)
+        {
+            case 0:
+                //Left hand.
+                fistColliderL.enabled = true;
+                break;
+            case 1:
+                //Right Hand.
+                fistColliderR.enabled = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void PunchDisable(int fistId)
+    {
+        switch (fistId)
+        {
+            case 0:
+                //Left hand.
+                fistColliderL.enabled = false;
+                break;
+            case 1:
+                //Right Hand.
+                fistColliderR.enabled = false;
+                break;
+            default:
+                break;
+        }
+    }
+
 
     void OnCollisionStay(Collision collision)
     {
@@ -246,9 +298,19 @@ public class PlayerController : MonoBehaviour, IDamageable
     
     public void TakeDamage()
     {
+        //Instead of using a variable check if we are currently in our hit anim and if so don't deal damage.
+
+
         anim.SetTrigger("Hit");
         health -= 1;
-        healthBar.fillAmount = health / 10f;
+
+
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = health / 10f;
+        }
+
+
         if (health <= 0)
         {
             OnPlayerDeath();
@@ -300,17 +362,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         //Initiate attack.
         if (!inputTimer)
         {
-            Debug.Log("Attack normal triggered");
-
-
             anim.SetTrigger("Attack");
             inputTimer = true;
         }
         else
         {
-
-            Debug.Log("Input timer is enabled");
-
             if (triggerDelay <= 0.5f)
             {
                 Debug.Log("Trigger delay is less than 0.5 seconds do double attk");
@@ -318,26 +374,6 @@ public class PlayerController : MonoBehaviour, IDamageable
             }
         }
         triggerDelay = 0.0f;
-
-
-        /*
-
-        //Start our timer on first input press
-        if (inputTimer == false)
-        {
-            StartCoroutine(CheckCombo());
-        }
-        else
-        {
-            //Our timer is enabled (Within window of combo opportunity.
-            //
-            StopCoroutine(this.CheckCombo());
-            anim.SetTrigger("AttackDouble");
-
-            Invoke(nameof(ResetAttack), attackSpeed);
-            AttackRayCast();
-        }
-        */
     }
 
 

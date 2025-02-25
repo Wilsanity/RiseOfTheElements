@@ -250,56 +250,52 @@ public class PlayerController : MonoBehaviour
     
     public void Attack()
     {
-        Debug.Log("Attack Input Pressed");
-        ////if not ready to attack or is attacking, return
-        //if (!readyToAttack || attacking) return;
+        if (!readyToAttack) return;
+
+
         if(attacking)
         {
+            //When the player clicks attack and they are within the combo attack window
             if(canComboAttack)
             {
-                attackComboQueued = true;
-                Debug.Log("Player Can combo attack");
+                Debug.Log("Player Combo attack");
+                StartCoroutine(Attacking(PlayerAnimState.ComboAttack));
             }
-            return;
+            else
+            {
+                return;
+            }
         }
 
-
-        //// else set ready to attack false nad attack 
-        //canComboAttack = true;
-        //attacking = true;
-
-        //finish attacking and reset the attack with delay attackSpeed
-        //Invoke(nameof(ResetAttack), attackSpeed);
-        StartCoroutine(Attacking(PlayerAnimState.BasicAttack));
-        //AttackRayCast();
+        //otherwise do the regular attack
+        else if(!attacking)
+        {
+            StartCoroutine(Attacking(PlayerAnimState.BasicAttack));
+        }
     }
 
     IEnumerator Attacking(PlayerAnimState animState)
     {
-        //if not ready to attack, return
-        if (attacking && !canComboAttack) yield break;
         Debug.Log("Performing attack: " + animState);
-        // else set ready to attack false nad attack 
-        readyToAttack = false;
         attacking = true;
         canComboAttack = false;
-
-        bool wasComboQueued = attackComboQueued;
         attackComboQueued = false;
 
-        _playerAnimationMachine.UpdatePlayerAnim(animState, attacking);
         AttackRayCast();
 
-        yield return new WaitForSeconds(attackSpeed * 0.3f);
+        _playerAnimationMachine.UpdatePlayerAnim(animState, true);
+
+        //Time in the animation that the player can click to do their combo attack
+        yield return new WaitForSeconds(attackSpeed * 0.5f);
         canComboAttack = true;
 
         //finish attacking and reset the attack with delay attackSpeed
-        yield return new WaitForSeconds(attackSpeed);
+        yield return new WaitForSeconds(attackSpeed * 0.5f);
 
-        if (attackComboQueued)
-        {
-            StartCoroutine(Attacking(PlayerAnimState.ComboAttack));
-        }
+        //The player has missed the combo attack window, make sure they cant start the attack again
+        readyToAttack = false;
+
+        
         ResetAttack();
 
         yield break;
@@ -312,6 +308,10 @@ public class PlayerController : MonoBehaviour
         readyToAttack = true;
         canComboAttack = false;
         attackComboQueued = false;
+        Debug.Log("Resetting Attack");
+
+        //Set this bool back to false so that the player doesn't always go into combo attack after first time doing it
+        _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.ComboAttack, false);
 
         StopCoroutine("Attacking");
     }

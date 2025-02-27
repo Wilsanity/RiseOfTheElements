@@ -17,6 +17,14 @@ public class RootMonster_EarthBarrageState : FSMState
 {
     private RootMonsterEnemyController _enemyController;
 
+    public ref RootMonsterEnemyController getOwner()
+    {
+        return ref _enemyController;
+    }
+
+
+
+
     private EarthBarrageProjectileState _projectileState = EarthBarrageProjectileState.SPAWN;
 
     private List<GameObject> _projectileGOs = new List<GameObject>();

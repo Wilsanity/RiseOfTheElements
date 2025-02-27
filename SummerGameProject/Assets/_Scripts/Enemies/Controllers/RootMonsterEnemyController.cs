@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class RootMonsterEnemyController : EnemyController
+public class RootMonsterEnemyController : EnemyController, IDamageable
 {
 
     [Space]
@@ -408,4 +408,17 @@ public class RootMonsterEnemyController : EnemyController
 
         #endif
     }
+
+
+    public void TakeDamage(GameObject instigator, int amount)
+    {
+        this._unitHealthScript.DamageUnit(amount);
+    }
+
+    public void DealDamage(GameObject target, int amount)
+    {
+        target.GetComponent<IDamageable>().TakeDamage(this.gameObject, damage);
+    }
+
+
 }

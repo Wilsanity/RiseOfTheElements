@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 using Cinemachine;
 
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     #region components
 
@@ -74,7 +74,14 @@ public class PlayerController : MonoBehaviour
     private bool isJumping; // Check if the player is pressing jump
     private bool isFalling; // Check if the player is falling
     private Vector3 lastGroundedPosition; // Store the position when grounded
+
+
+    //Used for melee attacks regarding the fists. (Might not be the best implementation)
+    [SerializeField] CapsuleCollider fistColliderL;
+    [SerializeField] CapsuleCollider fistColliderR;
+
     #endregion
+
 
 
     private void Awake()
@@ -105,6 +112,10 @@ public class PlayerController : MonoBehaviour
 
         
         cameraFollowTargetTransform = transform.GetChild(0).transform;
+
+        fistColliderL.enabled = false;
+        fistColliderR.enabled = false;
+
 
         HandlePortalTeleport();
     }
@@ -208,6 +219,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+
+    //-- COLLISION --\\
+
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "PortalFX_V2")//TEMPORARY CODE: If the player collides with the portal, the cave scene starts.
@@ -237,14 +253,106 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) isGrounded = false;
     }
 
-    public void TakeDamage()
+    //Used specifically for our fist interaction.
+    private void OnTriggerEnter(Collider other)
     {
-        health -= 1;
-        healthBar.fillAmount = health / 10f;
+        Debug.Log(other.gameObject);
+        IDamageable temp;
+
+
+        //We need to check it to make sure we actually have an attached component which has iDamageable... & We check through the parents as well...
+        if (other.gameObject.TryGetComponent<IDamageable>(out temp) ||  other.GetComponentInParent<IDamageable>() != null)
+        {
+
+
+            if (other.GetComponentInParent<IDamageable>() != null)
+            {
+                DealDamage(other.transform.parent.gameObject, 1);
+            }
+
+        }
+        else
+        {
+            Debug.Log("We can't damage a non damageable object!");
+            return;
+        }
+    }
+
+    //Interface definition
+    public void TakeDamage(GameObject instigator, int amount)
+    {
+
+        //Ensure we can't take damage when in our hit animation (this is giving the player i-frames during the hit animation)
+        if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("Base.Hit"))
+        {
+            Debug.Log("Player is not taking damage, since in invul state via stuck in hit animation");
+        }
+        else
+        {
+
+            UnitHealth temp = this.GetComponent<UnitHealth>();
+            _playerAnimationMachine.UpdatePlayerAnim(PlayerAnimState.Hit);
+            temp.DamageUnit(amount);
+
+        }
+
+        
+        /*
+
+        if (healthBar != null)
+        {
+            //healthBar.fillAmount = health / 10f;
+        }
+
         if (health <= 0)
         {
-            OnPlayerDeath();
+            //OnPlayerDeath();
         }
+        */
+    }
+
+
+    public void PunchEnable(int fistId)
+    {
+        switch (fistId)
+        {
+            case 0:
+                //Left hand.
+                fistColliderL.enabled = true;
+                break;
+            case 1:
+                //Right Hand.
+                fistColliderR.enabled = true;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void PunchDisable(int fistId)
+    {
+        switch (fistId)
+        {
+            case 0:
+                //Left hand.
+                fistColliderL.enabled = false;
+                break;
+            case 1:
+                //Right Hand.
+                fistColliderR.enabled = false;
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
+    //Interface definition
+    public void DealDamage(GameObject target, int amount)
+    {
+        //Deal 1 damage!
+        target.GetComponent<IDamageable>().TakeDamage(this.gameObject, 1);
     }
 
     
@@ -281,7 +389,8 @@ public class PlayerController : MonoBehaviour
         canComboAttack = false;
         attackComboQueued = false;
 
-        AttackRayCast();
+        //No longer necessary as controlled by anim events.
+        //AttackRayCast();
 
         _playerAnimationMachine.UpdatePlayerAnim(animState, true);
 
@@ -316,6 +425,8 @@ public class PlayerController : MonoBehaviour
         StopCoroutine("Attacking");
     }
 
+
+    //Potentially deprecated function, since we use anim events to detect collision via fists.
     //Create a raycast and give damage to the first target hit
     void AttackRayCast()
     {

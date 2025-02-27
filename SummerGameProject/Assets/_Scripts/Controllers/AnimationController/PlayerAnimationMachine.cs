@@ -54,6 +54,10 @@ public class PlayerAnimationMachine : MonoBehaviour
                 _animator.SetBool("GoingIntoComboAttack", boolean);
                 return;
 
+            case PlayerAnimState.Hit:
+                _animator.SetTrigger("Hit");
+                return;
+
             default:
                 Debug.LogError("PlayerAnimationMachine: Invalid PlayerAnimState");
                 return;
@@ -66,13 +70,13 @@ public class PlayerAnimationMachine : MonoBehaviour
 
     public void KickUpDustRight(VisualEffect visualEffect)
     {
-        Instantiate(visualEffect, rightFoot.position, Quaternion.identity);
-        Destroy(visualEffect, 1.2f);
+        VisualEffect tmp = Instantiate(visualEffect, rightFoot.position, Quaternion.identity);
+        Destroy(tmp.gameObject, 1.2f);
     }
     public void KickUpDustLeft(VisualEffect visualEffect)
     {
-        Instantiate(visualEffect, leftFoot.position, Quaternion.identity);
-        Destroy(visualEffect, 1.2f);
+        VisualEffect tmp = Instantiate(visualEffect, leftFoot.position, Quaternion.identity);
+        Destroy(tmp.gameObject, 1.2f);
     }
 }
 
@@ -89,4 +93,5 @@ public enum PlayerAnimState
     IsWolfRunning,
     BasicAttack,
     ComboAttack,
+    Hit,
 }

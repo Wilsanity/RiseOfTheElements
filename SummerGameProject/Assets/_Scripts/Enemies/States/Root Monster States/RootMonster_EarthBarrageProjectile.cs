@@ -55,4 +55,36 @@ public class RootMonster_EarthBarrageProjectile : MonoBehaviour
     {
         Gizmos.DrawWireSphere(_endPosition, 1f);
     }
+
+    
+
+    //We hit something, etc. (Could be a trigger if we wanted...
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        Debug.Log(collision.gameObject);
+
+
+        IDamageable temp;
+        if (!collision.gameObject.TryGetComponent<IDamageable>(out temp))
+        {
+            Debug.Log("We can't damage a non damageable object!");
+            return;
+        }
+
+        //Patch solution... 
+        //Need to use owner to deal damage to player 
+        //I don't entirely like this. Since yes the root monster is the one dealing damage, however we have no information on what exactly kills the player
+        //Like It'd be cool if we could rather pass the instigator as like the specific projectile maybe?
+
+        if (collision.gameObject == _earthBarrageState.getOwner().gameObject)
+        {
+            Debug.Log("Can't hurt ourself with our own projectile....");
+        }
+        else
+        {
+            _earthBarrageState.getOwner().DealDamage(collision.gameObject, 1);
+        }
+    }
+
 }

@@ -83,4 +83,8 @@ public abstract class EnemyController : AdvancedFSM
     }
 
     protected abstract void ConstructFSM();
+
+
+    //Interface IDamageable definitions.
+   
 }

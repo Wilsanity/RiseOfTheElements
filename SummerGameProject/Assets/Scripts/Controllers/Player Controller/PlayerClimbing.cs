@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,28 +14,37 @@ public class PlayerClimbing : MonoBehaviour
     [SerializeField, Tooltip("Turn off gravity when climbing")]
     private bool _disableGravityWhileClimbing = true;
 
+    [Header("Ledge Settings")]
+    [SerializeField] private float _ledgeCheckHeight = 1.5f; // Height to check for ledge
+    [SerializeField] private float _ledgeGrabOffset = 0.5f;  // Offset for grabbing ledge
+    [SerializeField] private float _ledgeMoveSpeed = 2f;
+    [SerializeField] private float _ledgeClimbUpSpeed = 3f;
+
     private PlayerMovement _playerMovement;
-    private PlayerAnimationMachine _animationStateMachine;
     private Rigidbody _rigidbody;
     private PlayerInput _playerInput;
 
     private InputAction _climbAction;
+    private InputAction _jumpAction;
 
     private bool _isClimbing = false;
+    private bool _isHanging = false;  // New state for ledge holding
     private Vector3 _wallNormal = Vector3.zero;
+    private Vector3 _ledgePosition; // Position where the player grabs the ledge
 
     public bool IsClimbing { get { return _isClimbing; } }
+    public bool IsHanging { get { return _isHanging; } }
 
     void Awake()
     {
         _playerMovement = GetComponent<PlayerMovement>();
-        _animationStateMachine = GetComponentInChildren<PlayerAnimationMachine>();
         _rigidbody = GetComponent<Rigidbody>();
         _playerInput = GetComponent<PlayerInput>();
 
         if (_playerInput != null && _playerInput.actions != null)
         {
             _climbAction = _playerInput.actions["Climb"];
+            _jumpAction = _playerInput.actions["Jump"];
         }
     }
 
@@ -44,8 +53,10 @@ public class PlayerClimbing : MonoBehaviour
         if (_climbAction != null)
         {
             _climbAction.performed += OnClimbPerformed;
-            // We will not rely on canceled anymore, so no need to subscribe
-            // _climbAction.canceled += OnClimbCanceled;
+        }
+        if (_jumpAction != null)
+        {
+            _jumpAction.performed += OnJumpPerformed;
         }
     }
 
@@ -54,7 +65,10 @@ public class PlayerClimbing : MonoBehaviour
         if (_climbAction != null)
         {
             _climbAction.performed -= OnClimbPerformed;
-            // _climbAction.canceled -= OnClimbCanceled;
+        }
+        if (_jumpAction != null)
+        {
+            _jumpAction.performed -= OnJumpPerformed;
         }
     }
 
@@ -63,6 +77,10 @@ public class PlayerClimbing : MonoBehaviour
         if (_isClimbing)
         {
             ClimbMovement();
+        }
+        else if (_isHanging)
+        {
+            LedgeMovement();
         }
     }
 
@@ -74,14 +92,20 @@ public class PlayerClimbing : MonoBehaviour
         }
     }
 
-    // Removed OnClimbCanceled since we no longer want to rely on holding the button.
-    // private void OnClimbCanceled(InputAction.CallbackContext ctx)
-    // {
-    //     if (_isClimbing)
-    //     {
-    //         ExitClimb();
-    //     }
-    // }
+    private void OnJumpPerformed(InputAction.CallbackContext ctx)
+    {
+        if (_isHanging)
+        {
+            // Climb up from the ledge
+            ClimbUpLedge();
+        }
+        else if (_isClimbing)
+        {
+            // Fall off the wall
+            ExitClimb();
+        }
+
+    }
 
     private void TryStartClimbing()
     {
@@ -98,65 +122,107 @@ public class PlayerClimbing : MonoBehaviour
 
             _rigidbody.velocity = Vector3.zero;
             _playerMovement.CanMove = false;
-
-           /* if (_animationStateMachine != null)
-                _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsClimbing, true);*/
         }
     }
 
     private void ExitClimb()
     {
         _isClimbing = false;
+        _isHanging = false;
 
-        if (_disableGravityWhileClimbing)
-        {
-            _rigidbody.useGravity = true;
-        }
+        // Restore normal physics movement
+        _rigidbody.useGravity = true;
+        _rigidbody.constraints = RigidbodyConstraints.None;
+        _rigidbody.constraints = RigidbodyConstraints.FreezeRotation; // Allow normal movement
 
         _playerMovement.CanMove = true;
-
-       /* if (_animationStateMachine != null)
-            _animationStateMachine.UpdatePlayerAnim(PlayerAnimState.IsClimbing, false);*/
     }
 
     private void ClimbMovement()
     {
         if (!_isClimbing) return;
 
-        // Project movement onto the wall surface
         Vector3 wallUp = Vector3.up;
         Vector3 wallRight = Vector3.Cross(_wallNormal, wallUp).normalized;
         Vector3 wallUpDir = Vector3.Cross(wallRight, _wallNormal).normalized;
 
-        // The player's directions are reversed, so invert them:
-        // If pressing forward (Z positive), we want to go UP. If pressing right (X positive), we want to go RIGHT.
-        // Currently: climbDirection = (wallRight * input.x + wallUpDir * input.z)
-        // To reverse it correctly, let's invert both axes:
-        Vector3 input = _playerMovement.MoveInput;
-        // Invert input so that pressing forward (positive Z) goes UP, and pressing right (positive X) goes RIGHT as intended.
-        // If currently up is down, that means we need to flip the sign on the wallUpDir and wallRight.
-        // Let's just multiply input by -1 to correct it:
-        input = -input;
-        // Now pressing forward (Z positive) will move up the wall, pressing right (X positive) will move right along the wall.
-
+        Vector3 input = -_playerMovement.MoveInput;
         Vector3 climbDirection = (wallRight * input.x + wallUpDir * input.z) * _climbSpeed;
 
         _rigidbody.velocity = climbDirection;
-
         RotateWhileClimbing();
 
-        // Check if we've reached the top of the wall:
-        // We'll raycast forward at a slightly higher position to see if there's still climbable surface.
-        // If player tries to climb upward (input.z > 0), check if we still have climbable surface ahead.
         if (input.z > 0)
         {
-            Vector3 topCheckPos = transform.position + Vector3.up * 1.5f; // check a bit higher
+            Vector3 topCheckPos = transform.position + Vector3.up * _ledgeCheckHeight;
             if (!Physics.Raycast(topCheckPos, transform.forward, _climbCheckDistance, _climbableLayerMask))
             {
-                // No more climbable surface ahead, exit climbing
-                ExitClimb();
+                EnterLedgeGrab();
             }
         }
+    }
+
+    private void EnterLedgeGrab()
+    {
+        _isClimbing = false;
+        _isHanging = true;
+
+        // Completely stop physics movement
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.useGravity = false;
+
+        // Freeze Rigidbody Y-movement to prevent slipping
+        _rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+
+        // Snap player to ledge position to avoid sliding
+        _ledgePosition = transform.position + Vector3.up * _ledgeGrabOffset;
+        transform.position = _ledgePosition;
+    }
+
+    private void LedgeMovement()
+    {
+        if (!_isHanging) return;
+
+        Vector3 wallRight = Vector3.Cross(Vector3.up, _wallNormal).normalized;
+        Vector3 input = _playerMovement.MoveInput;
+
+        Vector3 ledgeMoveDirection = wallRight * input.x * _ledgeMoveSpeed;
+
+        // Move along the ledge
+        Vector3 newPosition = transform.position + ledgeMoveDirection * Time.fixedDeltaTime;
+
+        // Ensure we don't move in Y-axis while hanging
+        newPosition.y = _ledgePosition.y;
+
+        transform.position = newPosition;
+
+        // Update the ledge position to prevent teleportation
+        _ledgePosition = newPosition;
+    }
+
+    private void ClimbUpLedge()
+    {
+        if (!_isHanging) return;
+
+        _isHanging = false;
+        StartCoroutine(ClimbLedgeCoroutine());
+    }
+
+    private IEnumerator ClimbLedgeCoroutine()
+    {
+        Vector3 climbTarget = _ledgePosition + Vector3.up * 1f + transform.forward * 0.5f;
+        float elapsedTime = 0f;
+        float duration = 0.5f;
+
+        while (elapsedTime < duration)
+        {
+            transform.position = Vector3.Lerp(transform.position, climbTarget, (elapsedTime / duration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = climbTarget;
+        ExitClimb();
     }
 
     private void RotateWhileClimbing()
